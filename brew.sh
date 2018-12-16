@@ -8,6 +8,8 @@ brew upgrade
 
 brew install coreutils
 
+brew install zsh
+
 # Python
 brew install python@2
 brew install python@3
