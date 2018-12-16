@@ -1,0 +1,50 @@
+[user]
+    name = NiBo
+    email = nibocn@gmail.com
+
+[core]
+    # 显示中文路径不进行转换
+    quotepath = false
+    fileMode = false
+    editor = vim
+
+[color]
+    ui = auto
+
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+    br = branch
+    lggcd = log --color --date=iso --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset'
+    lggad = log --color --date=iso --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'
+    lgga = log --color --date=iso --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'
+    lg = log --color --decorate --graph --date=iso
+    lgf = log --color --decorate --graph --date=iso --stat
+    lgp = log --color --decorate --graph --date=iso --pretty=raw
+    lgpf = log --color --decorate --graph --date=iso --pretty=raw --stat
+    lgfs = log --color --decorate --graph --date=iso --name-status
+    mgnf = merge --no-ff
+    unstage = "reset HEAD --"
+    ps = push
+    pl = pull
+    ft = fetch
+    dfc = diff --cached
+    df = diff
+
+[push]
+    default = simple
+
+[diff]
+    tool = bc
+[difftool]
+    prompt = false
+[merge]
+    tool = bc
+[mergetool]
+    prompt = false
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
