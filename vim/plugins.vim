@@ -36,7 +36,9 @@ Plug 'kien/ctrlp.vim'
 Plug 'Rykka/riv.vim', {'for': 'rst'}
 
 " 中文输入法自动切换
-Plug 'lyokha/vim-xkbswitch', {'as': 'xkbswitch'}
+Plug 'ybian/smartim'
+" 光标移动有点卡暂时不使用了
+" Plug 'lyokha/vim-xkbswitch', {'as': 'xkbswitch'}
 
 call plug#end()
 

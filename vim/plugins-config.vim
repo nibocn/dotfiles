@@ -49,5 +49,5 @@ let g:ctrlp_custom_ignore = {
 " }
 
 " XkbSwitch
-let g:XkbSwitchEnabled = 1
+" let g:XkbSwitchEnabled = 1
 
