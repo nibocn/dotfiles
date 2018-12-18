@@ -26,4 +26,4 @@ brew install git
 
 brew install tmux
 
-brew install vim
+brew install macvim
