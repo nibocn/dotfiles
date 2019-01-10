@@ -21,9 +21,15 @@ brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
 
 brew install thefuck
-
 brew install git
-
 brew install tmux
-
 brew install macvim
+
+
+brew cask install postman
+brew cask install dbeaver-community
+brew cask install mpv
+brew cask install iina
+brew cask install snipaste
+brew cask install sublime-text
+brew cask install visual-studio-code
