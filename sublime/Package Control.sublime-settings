@@ -1,0 +1,26 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"AdvancedNewFile",
+		"BracketHighlighter",
+		"Codecs33",
+		"ConvertToUTF8",
+		"Dockerfile Syntax Highlighting",
+		"EditorConfig",
+		"Emmet",
+		"ExpandRegion",
+		"Git",
+		"HTML-CSS-JS Prettify",
+		"Kotlin",
+		"LESS",
+		"Material Theme",
+		"Package Control",
+		"SideBarEnhancements",
+		"Vue Syntax Highlight"
+	]
+}
