@@ -3,3 +3,4 @@
 *.merged-ca-bundle
 *.user-ca-bundle
 *.crt
+encoding_cache.json
