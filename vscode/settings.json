@@ -1,4 +1,5 @@
 {
     "editor.fontFamily": "Monaco, Menlo, 'Courier New', monospace",
-    "editor.wordWrapColumn": 100
+    "editor.wordWrapColumn": 100,
+    "editor.renderWhitespace": "all"
 }
