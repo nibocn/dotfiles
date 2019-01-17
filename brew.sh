@@ -5,6 +5,7 @@
 brew update
 
 brew upgrade
+brew cask upgrade
 
 brew install coreutils
 
@@ -25,6 +26,9 @@ brew install git
 brew install tmux
 brew install macvim
 
+brew install fzf
+$(brew --prefix)/opt/fzf/install
+
 
 brew cask install postman
 brew cask install dbeaver-community
@@ -33,3 +37,4 @@ brew cask install iina
 brew cask install snipaste
 brew cask install sublime-text
 brew cask install visual-studio-code
+brew cask install flux
