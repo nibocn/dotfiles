@@ -28,6 +28,7 @@ brew install macvim
 
 brew install fzf
 $(brew --prefix)/opt/fzf/install
+brew install highlight
 
 
 brew cask install postman
