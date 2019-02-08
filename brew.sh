@@ -40,3 +40,4 @@ brew cask install sublime-text
 brew cask install visual-studio-code
 brew cask install flux
 brew cask install xmind-zen
+brew cask install calibre
