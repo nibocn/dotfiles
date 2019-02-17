@@ -26,6 +26,7 @@ brew install git
 brew install tmux
 brew install macvim
 brew install tldr
+brew install autojump
 
 # fzf
 brew install fzf
