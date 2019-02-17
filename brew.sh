@@ -25,6 +25,7 @@ brew install thefuck
 brew install git
 brew install tmux
 brew install macvim
+brew install tldr
 
 brew install fzf
 $(brew --prefix)/opt/fzf/install
