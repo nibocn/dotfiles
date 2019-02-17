@@ -27,6 +27,7 @@ brew install tmux
 brew install macvim
 brew install tldr
 
+# fzf
 brew install fzf
 $(brew --prefix)/opt/fzf/install
 brew install highlight
