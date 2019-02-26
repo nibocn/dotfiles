@@ -7,7 +7,8 @@ colorscheme gruvbox
 let g:vim_markdown_conceal = 0
 
 " airline 配置
-let g:airline_theme="wombat"
+let g:airline_theme="gruvbox"
+let g:airline_powerline_fonts=1
 
 " PlantUML syntax
 au BufRead,BufNewFile *.{uml,plantuml,pu,puml} set filetype=plantuml
