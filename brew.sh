@@ -17,10 +17,6 @@ brew install python@3
 brew install pyenv
 brew install pipenv
 
-# zsh plugin
-brew install zsh-autosuggestions
-brew install zsh-syntax-highlighting
-
 brew install thefuck
 brew install git
 brew install tmux
