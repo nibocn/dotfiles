@@ -50,6 +50,8 @@ ZSH_THEME="myagnoster"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 ZSH_CUSTOM=$HOME/.local/dotfiles/zsh/custom
 
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -60,6 +62,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 # User configuration
+
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -141,7 +144,7 @@ function unproxy() {
 # alias ls='ls -F --show-control-chars --color=auto'
 # eval `gdircolors -b $HOME/.dir_colors`
 # fi
-eval $(gdircolors ~/.dircolors/dircolors.256dark)
+eval $(gdircolors -b ~/.dircolors/ls_colors)
 alias ls='gls --color=auto'
 
 # }
@@ -166,5 +169,4 @@ bindkey '^R' history-incremental-pattern-search-backward
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.local/dotfiles/zsh/custom/plugins/zsh-syntax-highlighting-filetypes/zsh-syntax-highlighting-filetypes.zsh
