@@ -37,6 +37,8 @@ Plug 'Rykka/riv.vim', {'for': 'rst'}
 
 " 中文输入法自动切换
 Plug 'ybian/smartim'
+" 不同模式下光标形状自动切换
+Plug 'sjl/vitality.vim'
 " 光标移动有点卡暂时不使用了
 " Plug 'lyokha/vim-xkbswitch', {'as': 'xkbswitch'}
 
