@@ -1,0 +1,10 @@
+{
+  "common": {
+    "term_truecolor": false
+  },
+  "ext": {
+    "tmux": {
+      "colorscheme": "gruvbox_dark"
+    }
+  }
+}
