@@ -74,7 +74,7 @@ export SSH_KEY_PATH=/Users/richard/.ssh/id_rsa
 # Git LFS
 export GIT_LFS_SKIP_SMUDGE=1
 # Pipenv 配置
-export PIPENV_PYPI_MIRROR=http://mirrors.aliyun.com/pypi/simple
+export PIPENV_PYPI_MIRROR=https://mirrors.aliyun.com/pypi/simple
 export PIPENV_VENV_IN_PROJECT=true
 # Groovy 配置
 export GROOVY_HOME='/usr/local/opt/groovy/libexec'
