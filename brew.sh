@@ -24,6 +24,7 @@ brew install macvim
 brew install tldr
 brew install autojump
 brew install you-get
+brew install the_silver_searcher
 
 # fzf
 brew install fzf
