@@ -1,0 +1,4 @@
+" 启用相对行号
+set relativenumber
+" 自动切换输入法，依赖 IdeaVimExtension 插件
+set keep-english-in-normal-and-restore-in-insert
