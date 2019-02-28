@@ -30,8 +30,8 @@ Plug 'SirVer/ultisnips'
 Plug 'scrooloose/nerdtree'
 " Vim 启动界面插件
 Plug 'mhinz/vim-startify'
-" 文件搜索插件
-Plug 'kien/ctrlp.vim'
+" 搜索
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 " reStructuredText
 Plug 'Rykka/riv.vim', {'for': 'rst'}
 

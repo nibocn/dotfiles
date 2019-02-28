@@ -41,13 +41,6 @@ nmap <leader>rb :Riv2HtmlFile<CR>
 nmap <leader>rbb :Riv2HtmlAndBrowse<CR>
 " }
 
-" CtrlP {
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|(target|build|out))$',
-  \ 'file': '\v\.(exe|so|dll|jpg|png|jpeg)$',
-\ }
-" }
 
 " XkbSwitch
 " let g:XkbSwitchEnabled = 1
