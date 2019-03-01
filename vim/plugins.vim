@@ -43,6 +43,8 @@ Plug 'sjl/vitality.vim'
 Plug 'jiangmiao/auto-pairs'
 " 对已有内容插入成对的符号
 Plug 'tpope/vim-surround'
+" Git 文件修改状态显示
+Plug 'airblade/vim-gitgutter'
 " 光标移动有点卡暂时不使用了
 " Plug 'lyokha/vim-xkbswitch', {'as': 'xkbswitch'}
 

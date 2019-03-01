@@ -41,6 +41,9 @@ nmap <leader>rb :Riv2HtmlFile<CR>
 nmap <leader>rbb :Riv2HtmlAndBrowse<CR>
 " }
 
+" gitgutter {
+set updatetime=300
+" }
 
 " XkbSwitch
 " let g:XkbSwitchEnabled = 1
