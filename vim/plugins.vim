@@ -39,6 +39,10 @@ Plug 'Rykka/riv.vim', {'for': 'rst'}
 Plug 'ybian/smartim'
 " 不同模式下光标形状自动切换
 Plug 'sjl/vitality.vim'
+" 自动插入成对文字（如：括号、引号）
+Plug 'jiangmiao/auto-pairs'
+" 对已有内容插入成对的符号
+Plug 'tpope/vim-surround'
 " 光标移动有点卡暂时不使用了
 " Plug 'lyokha/vim-xkbswitch', {'as': 'xkbswitch'}
 
