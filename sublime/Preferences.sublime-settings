@@ -1,7 +1,6 @@
 {
 	"always_show_minimap_viewport": true,
 	"auto_find_in_selection": true,
-	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
 	"draw_white_space": "all",
 	"font_face": "Monaco",
 	"font_size": 12,
@@ -11,11 +10,6 @@
 	[
 		"Vintage"
 	],
-	"material_theme_compact_sidebar": true,
-	"material_theme_contrast_mode": true,
-	"material_theme_small_statusbar": true,
-	"material_theme_small_tab": true,
-	"material_theme_tabs_autowidth": true,
 	"overlay_scroll_bars": "enabled",
 	"rulers":
 	[
@@ -23,7 +17,15 @@
 		100
 	],
 	"tab_size": 4,
-	"theme": "Material-Theme.sublime-theme",
+
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
+	"theme": "gruvbox (Dark) (Hard).sublime-theme",
+	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard).tmTheme",
+	"gruvbox_sidebar_indent_s": true,
+	"gruvbox_statusbar_xxs": true,
+	"gruvbox_statusbar_button_xxs": true,
+	"gruvbox_tabs_xxs": true,
+	"gruvbox_panel_xxs": true
+
 }
