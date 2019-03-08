@@ -43,3 +43,5 @@ brew cask install flux
 brew cask install xmind-zen
 brew cask install calibre
 brew cask install pomotodo
+# 修改键盘映射
+brew cask install karabiner-elements
