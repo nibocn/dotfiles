@@ -25,6 +25,7 @@ brew install tldr
 brew install autojump
 brew install you-get
 brew install the_silver_searcher
+brew install exa
 
 # fzf
 brew install fzf
