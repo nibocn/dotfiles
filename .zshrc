@@ -115,6 +115,18 @@ alias fk=fuck
 alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo'
 # alias mvim='mvim --remote-tab'
 
+# exa alias {
+alias xs=exa
+alias xl='xs -l'
+alias xa='xl -a'
+alias xx='xl --sort=Extension' # Lists sorted by extension (GNU only).
+alias xk='xl --sort=size -r' # Lists sorted by size, largest last.
+alias xt='xl --sort=modified -r' # Lists sorted by date, most recent last.
+alias xc='xt -m' # Lists sorted by date, most recent last, shows change time.
+alias xu='xt -u' # Lists sorted by date, most recent last, shows access time.
+alias xtree='xl --tree '
+# }
+
 alias -s md=vim
 alias -s txt=vim
 alias -s rst=vim
