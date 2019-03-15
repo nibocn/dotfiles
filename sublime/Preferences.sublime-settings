@@ -20,8 +20,8 @@
 
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
-	"theme": "gruvbox (Dark) (Hard).sublime-theme",
-	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard).tmTheme",
+	"theme": "gruvbox (Dark) (Medium).sublime-theme",
+	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Medium).tmTheme",
 	"gruvbox_sidebar_indent_s": true,
 	"gruvbox_statusbar_xxs": true,
 	"gruvbox_statusbar_button_xxs": true,
