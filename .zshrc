@@ -112,6 +112,7 @@ alias egrep='egrep --color'
 alias fgrep='fgrep --color'
 alias vi=vim
 alias fk=fuck
+alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo'
 # alias mvim='mvim --remote-tab'
 
 alias -s md=vim
