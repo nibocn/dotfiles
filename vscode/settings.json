@@ -1,5 +1,6 @@
 {
     "editor.fontFamily": "Monaco, Menlo, 'Courier New', monospace",
     "editor.wordWrapColumn": 100,
-    "editor.renderWhitespace": "all"
+    "editor.renderWhitespace": "all",
+    "workbench.colorTheme": "Gruvbox Dark (Medium)"
 }
