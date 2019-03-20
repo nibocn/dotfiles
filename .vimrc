@@ -7,7 +7,7 @@ syntax off
 " 设置英文语言环境
 let $LANG='en'
 " 设置字体及大小
-set guifont=Monaco\ for\ Powerline:h11
+set guifont=Roboto\ Mono\ for\ Powerline:h11
 " 设置内部编码为utf-8
 set encoding=utf-8
 " 设置菜单为英文
