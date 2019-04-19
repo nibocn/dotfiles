@@ -32,8 +32,8 @@ set backspace=2
 set nrformats=
 " 总是显示当前位置
 set ruler
-" 搜索不区分大小写
-set ignorecase
+" 搜索智能区分大小写
+set ignorecase smartcase
 " 高亮显示匹配结果
 set hlsearch
 " 实时显示匹配结果
