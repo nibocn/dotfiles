@@ -2,3 +2,15 @@
 set relativenumber
 " 自动切换输入法，依赖 IdeaVimExtension 插件
 set keep-english-in-normal-and-restore-in-insert
+" 搜索智能区分大小写
+set ignorecase smartcase
+" 高亮显示匹配结果
+set hlsearch
+" 实时显示匹配结果
+set incsearch
+
+"修改leader(默认为\)键为逗号
+let mapleader=','
+"取消/开启高亮显示匹配结果(normal 模式下',-空格')
+nnoremap <leader><space> :set hls!<CR>
+
