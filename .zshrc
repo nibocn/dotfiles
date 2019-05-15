@@ -58,6 +58,8 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir dir_writable virtualenv nodeenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time background_jobs)
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+## 调整当前显示目录层级不显示完整路径，只显示当前目录
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 # End
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
