@@ -93,6 +93,10 @@ export PIPENV_VENV_IN_PROJECT=true
 export GROOVY_HOME='/usr/local/opt/groovy/libexec'
 export TERM="xterm-256color"
 
+# zlib
+export LDFLAGS="-L/usr/local/opt/zlib/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include"
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
