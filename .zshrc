@@ -54,12 +54,17 @@ ZSH_CUSTOM=$HOME/.local/dotfiles/zsh/custom
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 # Powerlevel10k 配置
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir dir_writable virtualenv nodeenv vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable virtualenv nodeenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time background_jobs)
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 ## 调整当前显示目录层级不显示完整路径，只显示当前目录
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+## 设置起始行提示字符
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{014}\u256D\u2500%f"
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{cyan}\uF460%F{073}\uF460%F{109}\uF460%f "
+## POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{blue}\u256D\u2500%f"
+## POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{blue}\u2570\uf460%f "
 # End
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
