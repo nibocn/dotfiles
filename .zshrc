@@ -54,7 +54,7 @@ ZSH_CUSTOM=$HOME/.local/dotfiles/zsh/custom
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 # Powerlevel10k 配置
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable virtualenv nodeenv vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable virtualenv nodeenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time background_jobs)
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -79,6 +79,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # redefine prompt_context for hiding user@hostname
+# 不显示主机及账号相关上下文
 prompt_context () { }
 
 # export MANPATH="/usr/local/man:$MANPATH"
