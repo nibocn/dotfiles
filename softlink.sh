@@ -11,3 +11,4 @@ ln -sf ~/.local/dotfiles/.tmux.conf ~/.tmux.conf
 
 mkdir -p ~/.vim
 ln -snf ~/.local/dotfiles/vim/UltiSnips ~/.vim/UltiSnips
+ln -sf ~/.local/dotfiles/vim/coc-settings.json ~/.vim/coc-settings.json
