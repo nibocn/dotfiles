@@ -48,3 +48,7 @@ set updatetime=300
 " XkbSwitch
 " let g:XkbSwitchEnabled = 1
 
+" coc config {
+"" use <leader>/ for trigger completion
+inoremap <silent><expr> <leader>/ coc#refresh()
+" }
