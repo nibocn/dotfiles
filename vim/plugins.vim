@@ -50,7 +50,8 @@ Plug 'tpope/vim-fugitive'
 " 光标移动有点卡暂时不使用了
 " Plug 'lyokha/vim-xkbswitch', {'as': 'xkbswitch'}
 " 代码补全插件
-Plug 'neoclike/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 
 call plug#end()
 
