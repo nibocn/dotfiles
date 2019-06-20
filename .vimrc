@@ -109,7 +109,11 @@ nnoremap <leader>vr :source $MYVIMRC<CR>
 nnoremap <leader>w :w<CR>
 " insert 模式下保存文件内容
 inoremap <leader>w <Esc>:w<CR>
-
+" Window 切换
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Jenkinsfile syntax highlighting
 au BufRead,BufNewFile Jenkinsfile setf groovy
