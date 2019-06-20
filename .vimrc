@@ -105,6 +105,11 @@ nnoremap <leader>ct :%retab<CR>
 nnoremap <leader>ve :e $MYVIMRC<CR>
 " 重新加载 vimrc 文件
 nnoremap <leader>vr :source $MYVIMRC<CR>
+" normal 模式下保存文件内容
+nnoremap <leader>w :w<CR>
+" insert 模式下保存文件内容
+inoremap <leader>w <Esc>:w<CR>
+
 
 " Jenkinsfile syntax highlighting
 au BufRead,BufNewFile Jenkinsfile setf groovy
