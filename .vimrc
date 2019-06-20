@@ -90,9 +90,9 @@ let mapleader=','
 "取消/开启高亮显示匹配结果(normal 模式下',-空格')
 nnoremap <leader><space> :set hls!<CR>
 "取消/开启自动折行
-nnoremap <leader>w :set wrap!<CR>
-"新建标签页(normal 模式下',-t')
-nnoremap <leader>t :tabnew<CR>
+nnoremap <leader>wr :set wrap!<CR>
+"新建标签页
+nnoremap <leader>tn :tabnew<CR>
 " 设置行号和相对行号(normal 模式)
 nnoremap <leader>nu :set nu! <bar> :set relativenumber!<CR>
 " 设置相对行号
