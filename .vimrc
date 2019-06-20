@@ -127,4 +127,3 @@ elseif &ttimeoutlen > 60 || &ttimeoutlen <= 0
 endif
 
 source ~/.local/dotfiles/vim/plugins.vim
-source ~/.local/dotfiles/vim/plugins-config.vim
