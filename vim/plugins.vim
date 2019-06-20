@@ -60,8 +60,11 @@ set background=dark
 colorscheme gruvbox
 " }
 
-" Markdown
+" Markdown {
 let g:vim_markdown_conceal = 0
+nnoremap <leader>mtf :TableFormat<CR>
+" }
+
 
 " airline 配置
 let g:airline_theme="gruvbox"
