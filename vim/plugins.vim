@@ -52,7 +52,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " 光标快速跳转
 Plug 'easymotion/vim-easymotion'
-" fzf
+" 文件及内容全局搜索
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " 搜索替换
