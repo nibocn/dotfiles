@@ -55,6 +55,8 @@ Plug 'easymotion/vim-easymotion'
 " fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+" 搜索替换
+Plug 'brooth/far.vim'
 
 call plug#end()
 
@@ -122,4 +124,10 @@ inoremap <silent><expr> <leader>/ coc#refresh()
 " easymotion {
 "" 智能匹配大小写
 let g:EasyMotion_smartcase = 1
+" }
+
+" far {
+"" 提高搜索结果过多时屏幕滚动的性能
+set lazyredraw
+set regexpengine=1
 " }
