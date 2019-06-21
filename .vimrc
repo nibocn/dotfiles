@@ -109,6 +109,11 @@ nnoremap <leader>vr :source $MYVIMRC<CR>
 nnoremap <leader>w :w<CR>
 " insert 模式下保存文件内容
 inoremap <leader>w <Esc>:w<CR>
+" 显示或隐藏垂直标尺 {
+nnoremap <leader>cc :set cc=80,100<CR>
+nnoremap <leader>ccx :set cc=0<CR>
+" }
+
 " Window 切换
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
