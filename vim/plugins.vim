@@ -50,6 +50,8 @@ Plug 'tpope/vim-fugitive'
 " Plug 'lyokha/vim-xkbswitch', {'as': 'xkbswitch'}
 " 代码补全插件
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" 光标快速跳转
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
@@ -112,4 +114,9 @@ set updatetime=300
 " coc config {
 "" use <leader>/ for trigger completion
 inoremap <silent><expr> <leader>/ coc#refresh()
+" }
+
+" easymotion {
+"" 智能匹配大小写
+let g:EasyMotion_smartcase = 1
 " }
