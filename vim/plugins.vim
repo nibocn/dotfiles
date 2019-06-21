@@ -83,8 +83,8 @@ nnoremap <leader>it :IndentLinesToggle<CR>
 " }
 
 " NERDTree {
-nmap <leader>nf :NERDTreeFind<CR>
-nmap <leader>nt :NERDTreeToggle<CR>
+nnoremap <leader>nf :NERDTreeFind<CR>
+nnoremap <leader>nt :NERDTreeToggle<CR>
 " 打开 vim 时如果没有文件自动打开 NERDTree
 " autocmd vimenter * if !argc()|NERDTree|endif
 " 当 NERDTree 为剩下的唯一窗口时自动关闭
@@ -98,8 +98,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 " }
 
 " riv {
-nmap <leader>rb :Riv2HtmlFile<CR>
-nmap <leader>rbb :Riv2HtmlAndBrowse<CR>
+nnoremap <leader>rb :Riv2HtmlFile<CR>
+nnoremap <leader>rbb :Riv2HtmlAndBrowse<CR>
 " }
 
 " gitgutter {

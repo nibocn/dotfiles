@@ -118,12 +118,12 @@ nnoremap <C-l> <C-w>l
 " Jenkinsfile syntax highlighting
 au BufRead,BufNewFile Jenkinsfile setf groovy
 
-" autocmd VimEnter,VimLeave * silent !tmux set status
-
+" autocmd VimEnter,VimLeave * silent !tmux set status {
 if $TMUX != ''
     set ttimeoutlen=20
 elseif &ttimeoutlen > 60 || &ttimeoutlen <= 0
     set ttimeoutlen=60
 endif
+" }
 
 source ~/.local/dotfiles/vim/plugins.vim
