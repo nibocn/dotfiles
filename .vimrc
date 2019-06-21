@@ -42,6 +42,8 @@ set incsearch
 set cmdheight=2
 " 显示输入的命令
 set showcmd
+" command 模式下使用 Tab 键时显示候选命令列表
+set wildmenu
 " 设置colorcolumn来显示一条或多条垂直竖线(标尺)
 set cc=80,100
 
