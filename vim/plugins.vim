@@ -57,6 +57,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " 搜索替换
 Plug 'brooth/far.vim'
+" Python
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 call plug#end()
 
@@ -130,4 +132,10 @@ let g:EasyMotion_smartcase = 1
 "" 提高搜索结果过多时屏幕滚动的性能
 set lazyredraw
 set regexpengine=1
+" }
+
+" python-mode {
+let g:pymode_rope_goto_definition_bind = "<C-]>"
+let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
+let g:pymode_options_max_line_length = 100
 " }
