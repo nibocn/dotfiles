@@ -14,3 +14,8 @@ let mapleader=','
 "取消/开启高亮显示匹配结果(normal 模式下',-空格')
 nnoremap <leader><space> :set hls!<CR>
 
+" KJump config {
+nmap <leader><leader>s :action KJumpAction<cr>
+nmap <leader><leader>w :action KJumpAction.Word0<cr>
+nmap <leader><leader>l :action KJumpAction.Line<cr>
+" }
