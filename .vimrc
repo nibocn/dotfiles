@@ -1,8 +1,6 @@
 set nocompatible
-filetype off
 " 设置语法高亮
-" syntax enable
-syntax off
+syntax on
 
 " 设置英文语言环境
 let $LANG='en'
