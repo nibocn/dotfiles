@@ -33,7 +33,6 @@ Plug 'mhinz/vim-startify'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 " reStructuredText
 Plug 'Rykka/riv.vim', {'for': 'rst'}
-
 " 中文输入法自动切换
 Plug 'ybian/smartim'
 " 不同模式下光标形状自动切换
@@ -46,6 +45,8 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 " Git 命令
 Plug 'tpope/vim-fugitive'
+" 显示 Git 提交记录，依赖 vim-fugitive
+Plug 'junegunn/gv.vim'
 " 光标移动有点卡暂时不使用了
 " Plug 'lyokha/vim-xkbswitch', {'as': 'xkbswitch'}
 " 代码补全插件
