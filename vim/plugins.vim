@@ -61,6 +61,8 @@ Plug 'brooth/far.vim'
 Plug 'lfv89/vim-interestingwords'
 " Python
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+" 代码注释
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
