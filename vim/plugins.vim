@@ -86,7 +86,6 @@ au BufRead,BufNewFile *.{uml,plantuml,pu,puml} set filetype=plantuml
 nnoremap <leader>ud :MundoToggle<CR>
 
 " indentLine {
-let g:indentLine_leadingSpaceEnabled=1
 let g:indentLine_leadingSpaceChar = '·'
 nnoremap <leader>it :IndentLinesToggle<CR>
 " }
