@@ -44,7 +44,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 " Git 文件修改状态显示
 Plug 'airblade/vim-gitgutter'
-" Git plugin
+" Git 命令
 Plug 'tpope/vim-fugitive'
 " 光标移动有点卡暂时不使用了
 " Plug 'lyokha/vim-xkbswitch', {'as': 'xkbswitch'}
