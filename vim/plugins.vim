@@ -137,6 +137,7 @@ set regexpengine=1
 
 " python-mode {
 let g:pymode_rope_goto_definition_bind = "<C-]>"
+let g:pymode_doc_bind = '<Leader>j'
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe', 'pylint']
 let g:pymode_options_max_line_length = 100
 " }
