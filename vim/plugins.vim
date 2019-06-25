@@ -57,6 +57,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " 搜索替换
 Plug 'brooth/far.vim'
+" 单词高亮
+Plug 'lfv89/vim-interestingwords'
 " Python
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
