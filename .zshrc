@@ -128,6 +128,7 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include"
 
 #  自定义配置
 
+alias rg='ranger'
 alias grep='grep --color'
 alias egrep='egrep --color'
 alias fgrep='fgrep --color'
