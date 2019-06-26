@@ -96,6 +96,12 @@ nnoremap <leader>it :IndentLinesToggle<CR>
 " }
 
 " NERDTree {
+"" 显示目录图标
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+"" 设置图标前的间距
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
+"" 启用文件目录打开、关闭时的图标状态效果
+let g:DevIconsEnableFoldersOpenClose = 1
 nnoremap <leader>nf :NERDTreeFind<CR>
 nnoremap <leader>nt :NERDTreeToggle<CR>
 " 打开 vim 时如果没有文件自动打开 NERDTree
