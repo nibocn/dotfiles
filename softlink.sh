@@ -15,3 +15,6 @@ ln -sf ~/.local/dotfiles/vim/coc-settings.json ~/.vim/coc-settings.json
 
 mkdir -p ~/.config/ranger
 ln -sf ~/.local/dotfiles/ranger/rc.conf ~/.config/ranger/rc.conf
+
+ln -sf ~/.local/dotfiles/yabai/yabairc ~/.yabairc
+ln -sf ~/.local/dotfiles/yabai/skhdrc ~/.skhdrc
