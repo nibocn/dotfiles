@@ -25,8 +25,14 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'Yggdroot/indentLine'
 " 代码片段插件
 Plug 'SirVer/ultisnips'
+
 " 显示目录树插件
 Plug 'scrooloose/nerdtree'
+" 在 nerdtree 目录中显示 git 修改状态
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+" 在 nerdtree 中显示文件图标颜色
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 " Vim 启动界面插件
 Plug 'mhinz/vim-startify'
 " 搜索
@@ -64,6 +70,9 @@ Plug 'lfv89/vim-interestingwords'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 " 代码注释
 Plug 'tpope/vim-commentary'
+" 显示各类文件图标
+Plug 'ryanoasis/vim-devicons'
+
 
 call plug#end()
 
