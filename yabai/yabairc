@@ -45,4 +45,20 @@ yabai -m config right_padding                2
 ## 窗体之间间距，default: 10
 yabai -m config window_gap                   2
 
+
+# float apps
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^系统偏好设置$" manage=off
+yabai -m rule --add app="^WeChat$" manage=off
+yabai -m rule --add app="^微信$" manage=off
+yabai -m rule --add app="^QQ$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^活动监视器$" manage=off
+yabai -m rule --add app="^Eudic$" manage=off
+yabai -m rule --add app="^欧路词典$" manage=off
+yabai -m rule --add app="^Surge 3$" manage=off
+yabai -m rule --add app="^OmniFocus$" manage=off
+yabai -m rule --add app="^1Password 7$" manage=off
+yabai -m rule --add app="^Spark$" manage=off
+
 echo "yabai configuration loaded.."
