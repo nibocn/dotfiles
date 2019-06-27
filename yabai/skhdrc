@@ -1,5 +1,5 @@
 # open terminal
-cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
+## cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 # focus window
 alt - h : yabai -m window --focus west
@@ -32,10 +32,10 @@ shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
 shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
 
 # create desktop, move window and follow focus
-shift + cmd - n : yabai -m space --create;\
-                  id=$(yabai -m query --displays --display | grep "spaces");\
-                  yabai -m window --space $(echo ${id:10:${#id}-10});\
-                  yabai -m space --focus $(echo ${id:10:${#id}-10})
+## shift + cmd - n : yabai -m space --create;\
+##                   id=$(yabai -m query --displays --display | grep "spaces");\
+##                   yabai -m window --space $(echo ${id:10:${#id}-10});\
+##                   yabai -m space --focus $(echo ${id:10:${#id}-10})
 
 # create desktop and follow focus
 cmd + alt - n : yabai -m space --create;\
@@ -128,13 +128,15 @@ alt - x : yabai -m space --mirror x-axis
 alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
 
 # toggle window parent zoom
-alt - d : yabai -m window --toggle zoom-parent
+## alt - d : yabai -m window --toggle zoom-parent
+ralt - return : yabai -m window --toggle zoom-parent
 
 # toggle window fullscreen zoom
-alt - f : yabai -m window --toggle zoom-fullscreen
+## alt - f : yabai -m window --toggle zoom-fullscreen
+ralt - f : yabai -m window --toggle zoom-fullscreen
 
 # toggle window native fullscreen
-shift + alt - f : yabai -m window --toggle native-fullscreen
+## shift + alt - f : yabai -m window --toggle native-fullscreen
 
 # toggle window border
 shift + alt - b : yabai -m window --toggle border
@@ -156,3 +158,10 @@ alt - p : yabai -m window --toggle sticky;\
 # change layout of desktop
 ctrl + alt - a : yabai -m space --layout bsp
 ctrl + alt - d : yabai -m space --layout float
+
+
+# Restart skhd
+## shift + lctrl + alt - r : \
+##     /usr/bin/env osascript <<< \
+##         "display notification \"Reloading skhd config\" with title \"Skhd\""; \
+##     skhd -r
