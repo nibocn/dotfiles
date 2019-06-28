@@ -101,10 +101,8 @@ nnoremap <leader>rnu :set relativenumber!<CR>
 nnoremap <leader>pa :set paste!<CR>
 " 转换将 Tab 转换为空格
 nnoremap <leader>ct :%retab<CR>
-" 编辑 vimrc 文件
-nnoremap <leader>ve :e $MYVIMRC<CR>
 " 重新加载 vimrc 文件
-nnoremap <leader>vr :source $MYVIMRC<CR>
+nnoremap <leader>R :source $MYVIMRC<CR>
 " normal 模式下保存文件内容
 nnoremap <leader>w :w<CR>
 " insert 模式下保存文件内容
@@ -114,12 +112,12 @@ nnoremap <leader>cc :set cc=80,100<CR>
 nnoremap <leader>ccx :set cc=0<CR>
 " }
 " 分屏 {
-nnoremap <leader>vp :set nosplitright<CR>:vsplit<CR>
+nnoremap <leader>vl :set nosplitright<CR>:vsplit<CR>
 "" 垂直分屏并且光标移动到右边
-"" nnoremap <leader>vpr :set splitright<CR>:vsplit<CR>
-nnoremap <leader>sp :set nosplitbelow<CR>:split<CR>
+nnoremap <leader>vr :set splitright<CR>:vsplit<CR>
+nnoremap <leader>su :set nosplitbelow<CR>:split<CR>
 "" 水平分屏并且光标移动到下边
-"" nnoremap <leader>spb :set splitbelow<CR>:split<CR>
+nnoremap <leader>sb :set splitbelow<CR>:split<CR>
 " }
 
 " Window 切换
