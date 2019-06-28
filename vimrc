@@ -107,6 +107,13 @@ nnoremap <leader>R :source $MYVIMRC<CR>
 nnoremap <leader>w :w<CR>
 " insert 模式下保存文件内容
 inoremap <leader>w <Esc>:w<CR>
+" 文件退出 {
+nnoremap <leader>q :q<CR>
+nnoremap <leader>qa :qa<CR>
+nnoremap <leader>Q :q!<CR>
+nnoremap <leader>QA :qa!<CR>
+" }
+
 " 显示或隐藏垂直标尺 {
 nnoremap <leader>cc :set cc=80,100<CR>
 nnoremap <leader>ccx :set cc=0<CR>
