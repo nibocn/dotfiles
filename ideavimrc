@@ -13,6 +13,9 @@ set incsearch
 let mapleader=','
 "取消/开启高亮显示匹配结果(normal 模式下',-空格')
 nnoremap <leader><space> :set hls!<CR>
+" 移动到文件最后一次编辑位置
+" 类似命令 gi 移动到文件最后一次编辑位置并进入 insert 模式
+nnoremap gn `^
 
 " KJump config {
 nmap <leader><leader>s :action KJumpAction<cr>
