@@ -44,6 +44,8 @@ set showcmd
 set wildmenu
 " 设置colorcolumn来显示一条或多条垂直竖线(标尺)
 set cc=80,100
+" 向上或向下滚动时距离窗口顶部或底部 5 行的距离
+set scrolloff=5
 
 " 制表符(设置所有的tab和缩进为4个空格) {
 " 设置tab键的宽度
