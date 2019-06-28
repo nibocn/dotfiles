@@ -118,6 +118,10 @@ nnoremap <leader>vr :set splitright<CR>:vsplit<CR>
 nnoremap <leader>su :set nosplitbelow<CR>:split<CR>
 "" 水平分屏并且光标移动到下边
 nnoremap <leader>sb :set splitbelow<CR>:split<CR>
+nnoremap <up> :res +5<CR>
+nnoremap <down> :res -5<CR>
+nnoremap <left> :vertical resize-5<CR>
+nnoremap <right> :vertical resize+5<CR>
 " }
 
 " Window 切换
