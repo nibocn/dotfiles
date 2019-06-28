@@ -65,5 +65,8 @@ yabai -m rule --add app="^IINA$" manage=off
 yabai -m rule --add app="^访达$" manage=off
 yabai -m rule --add app="^预览$" manage=off
 yabai -m rule --add app="^App Store$" manage=off
+yabai -m rule --add app="^Setapp$" manage=off
+yabai -m rule --add app="^Timing$" manage=off
+
 
 echo "yabai configuration loaded.."
