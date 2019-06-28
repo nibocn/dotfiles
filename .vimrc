@@ -113,6 +113,14 @@ inoremap <leader>w <Esc>:w<CR>
 nnoremap <leader>cc :set cc=80,100<CR>
 nnoremap <leader>ccx :set cc=0<CR>
 " }
+" 分屏 {
+nnoremap <leader>vp :set nosplitright<CR>:vsplit<CR>
+"" 垂直分屏并且光标移动到右边
+"" nnoremap <leader>vpr :set splitright<CR>:vsplit<CR>
+nnoremap <leader>sp :set nosplitbelow<CR>:split<CR>
+"" 水平分屏并且光标移动到下边
+"" nnoremap <leader>spb :set splitbelow<CR>:split<CR>
+" }
 
 " Window 切换
 nnoremap <C-h> <C-w>h
