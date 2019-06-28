@@ -100,7 +100,11 @@ au BufRead,BufNewFile *.{uml,plantuml,pu,puml} set filetype=plantuml
 nnoremap <leader>ud :MundoToggle<CR>
 
 " indentLine {
+let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '·'
+"" 展开 NerdTree 时禁用掉 indentLine，因为启用 indentLine_leadingSpaceEnabled
+"" 参数时会导致 NerdTree 文件缩进出现问题
+let g:indentLine_bufNameExclude = ['NERD_tree.*']
 nnoremap <leader>it :IndentLinesToggle<CR>
 " }
 
