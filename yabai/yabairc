@@ -67,6 +67,8 @@ yabai -m rule --add app="^预览$" manage=off
 yabai -m rule --add app="^App Store$" manage=off
 yabai -m rule --add app="^Setapp$" manage=off
 yabai -m rule --add app="^Timing$" manage=off
+yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^Microsoft AutoUpdate$" manage=off
 
 
 echo "yabai configuration loaded.."
