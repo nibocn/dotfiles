@@ -57,6 +57,7 @@ yabai -m rule --add app="^活动监视器$" manage=off
 yabai -m rule --add app="^Eudic$" manage=off
 yabai -m rule --add app="^欧路词典$" manage=off
 yabai -m rule --add app="^Surge 3$" manage=off
+yabai -m rule --add app="^Surge Dashboard$" manage=off
 yabai -m rule --add app="^OmniFocus$" manage=off
 yabai -m rule --add app="^1Password 7$" manage=off
 yabai -m rule --add app="^Spark$" manage=off
