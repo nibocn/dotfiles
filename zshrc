@@ -84,7 +84,7 @@ prompt_context () { }
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export EDITOR='vim'
+export EDITOR='nvim'
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -135,12 +135,13 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include"
 # alias ls='ls -GF'
 
 #  自定义配置
-
+alias vvim='\vim'
+alias vim=nvim
+alias vi=vim
 alias rg='ranger'
 alias grep='grep --color'
 alias egrep='egrep --color'
 alias fgrep='fgrep --color'
-alias vi=vim
 alias fk=fuck
 alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo'
 # alias mvim='mvim --remote-tab'

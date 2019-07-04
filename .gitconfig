@@ -6,7 +6,7 @@
     # 显示中文路径不进行转换
     quotepath = false
     fileMode = false
-    editor = vim
+    editor = nvim
 
 [color]
     ui = auto
