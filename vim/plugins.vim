@@ -67,7 +67,7 @@ Plug 'brooth/far.vim'
 " 单词高亮
 Plug 'lfv89/vim-interestingwords'
 " Python
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+"" Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 " 代码注释
 Plug 'tpope/vim-commentary'
 " 显示各类文件图标
