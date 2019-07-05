@@ -97,7 +97,15 @@ export PIPENV_PYPI_MIRROR=https://pypi.tuna.tsinghua.edu.cn/simple
 export PIPENV_VENV_IN_PROJECT=true
 # Groovy 配置
 export GROOVY_HOME='/usr/local/opt/groovy/libexec'
-if [ "$TMUX" = "" ]; then export TERM="xterm-256color"; fi
+
+# TERM config {{{
+if [ "$TMUX" = "" ]; then
+    export TERM="xterm-256color-italic";
+    alias ssh='TERM=xterm-256color ssh'
+else
+    alias ssh='TERM=screen-256color ssh'
+fi
+# }}}
 
 # zlib
 export LDFLAGS="-L/usr/local/opt/zlib/lib"

@@ -79,6 +79,7 @@ call plug#end()
 
 
 " 配置主题 {
+let g:gruvbox_italic=1
 set background=dark
 colorscheme gruvbox
 " }
