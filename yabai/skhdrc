@@ -123,6 +123,12 @@ warp < ctrl - y : yabai -m space --mirror y-axis
 # mirror tree x-axis
 warp < ctrl - x : yabai -m space --mirror x-axis
 
+# change layout of desktop
+warp < alt - a : yabai -m space --layout bsp
+warp < alt - d : yabai -m space --layout float
+# 当前聚焦的窗口启用/停用 float 模式
+warp < shift + alt - space : yabai -m window --toggle float
+
 # toggle window parent zoom
 ralt - return : yabai -m window --toggle zoom-parent
 
