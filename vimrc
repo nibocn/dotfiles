@@ -97,8 +97,8 @@ set foldlevel=2
 
 "修改leader(默认为\)键为逗号
 let mapleader=','
-"取消/开启高亮显示匹配结果(normal 模式下',-空格')
-nnoremap <leader><space> :set hls!<CR>
+"消除高亮显示匹配结果(normal 模式下',-空格')
+nnoremap <leader><space> :nohl<CR>
 "取消/开启自动折行
 nnoremap <leader>wr :set wrap!<CR>
 "新建标签页
