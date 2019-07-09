@@ -16,67 +16,67 @@ endsnippet
 
 snippet wh "while"
 while ${1:condition}:
-    ${2:# code..}
+	${2:# code..}
 endsnippet
 
 snippet dowh "do while"
 while True:
-    ${1:# code...}
-    if ${2:condition}:
-        break
+	${1:# code...}
+	if ${2:condition}:
+		break
 endsnippet
 
 
 snippet with "with"
 with ${1:expr} as ${2:var}:
-    ${3:# code...}
-    ${3:# code...}
+	${3:# code...}
+	${3:# code...}
 endsnippet
 
 
 snippet cl "class"
 class ${1:ClassName}(${2:object}):
-    """${3:docstring for $1}"""
-    def __init__(self, ${4:arg}):
-        ${5:super($1, slef).__init__()}
-        self.${4} = $4
-        ${6}
+	"""${3:docstring for $1}"""
+	def __init__(self, ${4:arg}):
+		${5:super($1, slef).__init__()}
+		self.${4} = $4
+		${6}
 endsnippet
 
 snippet def "def"
 def ${1:fname}(${2:`!v indent('.') ? 'self' : ''`}):
-    """${3:docstring for $1}"""
-    ${4:pass}
+	"""${3:docstring for $1}"""
+	${4:pass}
 endsnippet
 
 snippet deff "deff"
 def ${1:fname}(${2:`!v indent('.') ? 'self' : ''`}):
-    ${3}
+	${3}
 endsnippet
 
 snippet defs "defs"
 def ${1:mname}(self, ${2:arg}):
-    ${3:pass}
+	${3:pass}
 endsnippet
 
 snippet if "if"
 if ${1:condition}:
-    ${2:code...}
+	${2:code...}
 endsnippet
 
 snippet el "else"
 else:
-    ${1:code...}
+	${1:code...}
 endsnippet
 
 snippet ei "elif"
 elif ${1:condition}:
-    ${2:code...}
+	${2:code...}
 endsnippet
 
 snippet for "for"
 for ${1:item} in ${2:items}
-    ${3:code...}
+	${3:code...}
 endsnippet
 
 snippet cutf8 "coding utf-8"
@@ -97,5 +97,5 @@ endsnippet
 
 snippet ifmain "ifmain" b
 if __name__ == '__main__':
-    ${1:main()}$0
+	${1:main()}$0
 endsnippet
