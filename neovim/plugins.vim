@@ -30,8 +30,6 @@ Plug 'Yggdroot/LeaderF', {'do': './install.sh' }
 Plug 'easymotion/vim-easymotion'
 " .editorconfig plugin
 Plug 'editorconfig/editorconfig-vim'
-" 代码片段插件
-Plug 'SirVer/ultisnips'
 
 call plug#end()
 
@@ -72,17 +70,13 @@ nnoremap <leader>it :IndentLinesToggle<CR>
 " coc config {{{
 "" use <leader>/ for trigger completion
 inoremap <silent><expr> <leader>/ coc#refresh()
+let g:coc_snippet_next = '<c-f>'
+let g:coc_snippet_prev = '<c-b>'
 " }}}
 
 " easymotion {{{
 "" 智能匹配大小写
 let g:EasyMotion_smartcase = 1
-" }}}
-
-" UltiSnips {{{
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-f>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 " }}}
 
 " fzf {{{
