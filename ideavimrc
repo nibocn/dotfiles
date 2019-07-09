@@ -8,6 +8,7 @@ set ignorecase smartcase
 set hlsearch
 " 实时显示匹配结果
 set incsearch
+set scrolloff=5
 
 "修改leader(默认为\)键为逗号
 let mapleader=','
