@@ -41,15 +41,15 @@ shift + alt - l : yabai -m window --swap east
 
 
 # move window
-warp < cmd + alt - h : yabai -m window --warp west
-warp < cmd + alt - j : yabai -m window --warp south
-warp < cmd + alt - k : yabai -m window --warp north
-warp < cmd + alt - l : yabai -m window --warp east
+warp < ctrl + alt - h : yabai -m window --warp west
+warp < ctrl + alt - j : yabai -m window --warp south
+warp < ctrl + alt - k : yabai -m window --warp north
+warp < ctrl + alt - l : yabai -m window --warp east
 
-cmd + alt - h : yabai -m window --warp west
-cmd + alt - j : yabai -m window --warp south
-cmd + alt - k : yabai -m window --warp north
-cmd + alt - l : yabai -m window --warp east
+ctrl + alt - h : yabai -m window --warp west
+ctrl + alt - j : yabai -m window --warp south
+ctrl + alt - k : yabai -m window --warp north
+ctrl + alt - l : yabai -m window --warp east
 
 # balance size of windows
 shift + alt - 0 : yabai -m space --balance
