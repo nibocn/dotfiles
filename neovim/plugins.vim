@@ -32,6 +32,11 @@ Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 " Markdown plugin
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
+" PlantUML plugin {{{
+Plug 'aklt/plantuml-syntax', { 'for': 'plantuml' }
+Plug 'weirongxu/plantuml-previewer.vim', { 'for': 'plantuml' }
+Plug 'tyru/open-browser.vim', { 'for': 'plantuml' }
+" }}}
 
 call plug#end()
 
