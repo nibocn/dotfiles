@@ -30,6 +30,8 @@ Plug 'Yggdroot/LeaderF', {'do': './install.sh' }
 Plug 'easymotion/vim-easymotion'
 " .editorconfig plugin
 Plug 'editorconfig/editorconfig-vim'
+" Markdown plugin
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
 
 call plug#end()
 
