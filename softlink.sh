@@ -13,6 +13,7 @@ ln -sf ~/.local/dotfiles/vim/coc-settings.json ~/.vim/coc-settings.json
 
 mkdir -p ~/.config/nvim
 ln -snf ~/.local/dotfiles/UltiSnips ~/.config/nvim/UltiSnips
+ln -sf ~/.local/dotfiles/neovim/coc-settings.json ~/.config/nvim/coc-settings.json
 
 mkdir -p ~/.config/ranger
 ln -sf ~/.local/dotfiles/ranger/rc.conf ~/.config/ranger/rc.conf
