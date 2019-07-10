@@ -41,6 +41,7 @@ set listchars=tab:»\ ,trail:·
 " 显示制表符（Tab）、行尾空格、回车换行符
 set list
 
+
 " code folding {{{
 set foldenable
 "fold based on indent
@@ -49,6 +50,14 @@ set foldmethod=indent
 set foldnestmax=10
 " default folding level
 set foldlevel=2
+" }}}
+
+" 保存 undo 历史 {{{
+if empty(glob('~/.undodir'))
+  silent !mkdir ~/.undodir
+  set undodir=$HOME."/.undodir"
+  set undofile
+endif
 " }}}
 
 let mapleader=','
