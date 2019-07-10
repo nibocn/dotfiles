@@ -30,8 +30,10 @@ Plug 'Yggdroot/LeaderF', {'do': './install.sh' }
 Plug 'easymotion/vim-easymotion'
 " .editorconfig plugin
 Plug 'editorconfig/editorconfig-vim'
-" Markdown plugin
+" Markdown plugin {{{
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
+Plug 'dhruvasagar/vim-table-mode', { 'for': 'markdown' }
+" }}}
 " PlantUML plugin {{{
 Plug 'aklt/plantuml-syntax', { 'for': 'plantuml' }
 Plug 'weirongxu/plantuml-previewer.vim', { 'for': 'plantuml' }
