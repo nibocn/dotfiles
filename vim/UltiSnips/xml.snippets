@@ -1,0 +1,18 @@
+snippet hd "header" b
+<?xml version="1.0" encoding="${1:UTF-8}"?>
+${2}
+endsnippet
+
+snippet wsdef "definitions" b
+<definitions
+		xmlns:soap="${1:http://schemas.xmlsoap.org/wsdl/soap/}"
+		xmlns:tns="${2:custom}"
+		xmlns:xsd="${3:http://www.w3.org/2001/XMLSchema}"
+		xmlns="${4:http://schemas.xmlsoap.org/wsdl/}"
+		targetNamespace="${5:namespace}"
+		name="${6:custom}"
+		>
+	${7}
+</definitions>
+endsnippet
+
