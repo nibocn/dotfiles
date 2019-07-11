@@ -74,6 +74,9 @@ nnoremap K 5k
 " 类似命令 gi 移动到文件最后一次编辑位置并进入 insert 模式
 nnoremap gn `^
 
+" 设置行号和相对行号(normal 模式)
+nnoremap <leader>nu :set nu! <bar> :set relativenumber!<CR>
+
 " python support
 let g:python3_host_prog='~/.Envs/neovim/.venv/bin/python'
 
