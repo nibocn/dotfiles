@@ -71,6 +71,7 @@ yabai -m rule --add app="^Timing$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Microsoft AutoUpdate$" manage=off
 yabai -m rule --add app="^字体册$" manage=off
+yabai -m rule --add app="^TeamViewer$" manage=off
 
 
 echo "yabai configuration loaded.."
