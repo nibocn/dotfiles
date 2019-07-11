@@ -39,6 +39,9 @@ Plug 'aklt/plantuml-syntax', { 'for': 'plantuml' }
 Plug 'weirongxu/plantuml-previewer.vim', { 'for': 'plantuml' }
 Plug 'tyru/open-browser.vim', { 'for': 'plantuml' }
 " }}}
+" undo {{{
+Plug 'mbbill/undotree'
+" }}}
 
 call plug#end()
 
@@ -86,6 +89,13 @@ let g:coc_snippet_prev = '<c-b>'
 " easymotion {{{
 "" 智能匹配大小写
 let g:EasyMotion_smartcase = 1
+" }}}
+
+" undo {{{
+if has("persistent_undo")
+  set undodir=~/.undodir
+  set undofile
+endif
 " }}}
 
 " fzf {{{

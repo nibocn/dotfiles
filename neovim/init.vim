@@ -52,13 +52,6 @@ set foldnestmax=10
 set foldlevel=2
 " }}}
 
-" 保存 undo 历史 {{{
-if empty(glob('~/.undodir'))
-  silent !mkdir ~/.undodir
-  set undodir=$HOME."/.undodir"
-  set undofile
-endif
-" }}}
 
 let mapleader=','
 
