@@ -39,9 +39,10 @@ Plug 'aklt/plantuml-syntax', { 'for': 'plantuml' }
 Plug 'weirongxu/plantuml-previewer.vim', { 'for': 'plantuml' }
 Plug 'tyru/open-browser.vim', { 'for': 'plantuml' }
 " }}}
-" undo {{{
+" undo
 Plug 'mbbill/undotree'
-" }}}
+" vimwiki
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
@@ -98,6 +99,16 @@ if has("persistent_undo")
   set undodir=~/.undodir
   set undofile
 endif
+" }}}
+
+" vimwiki {{{
+let g:vimwiki_list = [{
+      \ 'path': '$HOME/Documents/PersonalWiki',
+      \ 'syntax': 'markdown', 'ext': '.md',
+      \ 'template_path': '$HOME/.local/dotfiles/vimwiki/template/',
+      \ 'template_default': 'markdown',
+      \ 'template_ext': '.html',
+      \ 'custom_wiki2html': '$HOME/.local/dotfiles/vimwiki/wiki2html.sh'}]
 " }}}
 
 " fzf {{{
