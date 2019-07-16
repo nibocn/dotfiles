@@ -99,6 +99,3 @@ if has("persistent_undo")
 endif
 " }}}
 
-" fzf {{{
-"" nnoremap <C-p> :Files<CR>
-" }}}
