@@ -74,6 +74,8 @@ yabai -m rule --add app="^字体册$" manage=off
 yabai -m rule --add app="^TeamViewer$" manage=off
 yabai -m rule --add app="^日历$" manage=off
 yabai -m rule --add app="^印象笔记$" manage=off
+yabai -m rule --add app="^calibre$" manage=off
+yabai -m rule --add app="^E-book Viewer$" manage=off
 
 
 echo "yabai configuration loaded.."
