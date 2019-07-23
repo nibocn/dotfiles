@@ -1,6 +1,7 @@
 
 " Build function {{{
-nnoremap <C-S-b> :call BuildRun()<CR>
+nnoremap <C-s>b :call BuildRun()<CR>
+inoremap <C-s>b <Esc>:call BuildRun()<CR>
 function! BuildRun()
   exec "w"
   if &filetype == 'html'
