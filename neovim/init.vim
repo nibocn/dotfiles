@@ -90,3 +90,4 @@ endif
 au BufRead,BufNewFile Jenkinsfile setf groovy
 
 source ~/.local/dotfiles/neovim/plugins.vim
+source ~/.local/dotfiles/neovim/functions.vim
