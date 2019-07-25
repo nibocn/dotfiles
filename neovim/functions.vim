@@ -14,3 +14,11 @@ function! BuildRun()
   endif
 endfunc
 " }}}
+
+" 将宏应用到所选择的行上 {{{
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+function! ExecuteMacroOverVisualRange()
+  echo "@".getcmdline()
+  execute ":'<,'>normal @".nr2char(getchar())
+endfunction
+" }}}
