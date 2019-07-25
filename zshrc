@@ -137,6 +137,7 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include"
 #  自定义配置
 alias vvim='\vim'
 alias vim=nvim
+alias nvi=nvim
 alias vi=vim
 alias rg='ranger'
 alias grep='grep --color'
