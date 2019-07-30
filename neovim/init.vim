@@ -43,13 +43,13 @@ set list
 
 
 " code folding {{{
-set foldenable
+set nofoldenable
 "fold based on indent
 set foldmethod=indent
-"deepest fold is 10 levels
-set foldnestmax=10
+"deepest fold is 3 levels
+set foldnestmax=3
 " default folding level
-set foldlevel=2
+set foldlevel=1
 " }}}
 
 
