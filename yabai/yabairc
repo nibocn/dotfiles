@@ -62,17 +62,22 @@ yabai -m rule --add app="^OmniFocus$" manage=off
 yabai -m rule --add app="^1Password 7$" manage=off
 yabai -m rule --add app="^Spark$" manage=off
 yabai -m rule --add app="^网易云音乐$" manage=off
+yabai -m rule --add app="^NeteaseMusic$" manage=off
 yabai -m rule --add app="^IINA$" manage=off
 yabai -m rule --add app="^访达$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^预览$" manage=off
+yabai -m rule --add app="^Preview$" manage=off
 yabai -m rule --add app="^App Store$" manage=off
 yabai -m rule --add app="^Setapp$" manage=off
 yabai -m rule --add app="^Timing$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Microsoft AutoUpdate$" manage=off
 yabai -m rule --add app="^字体册$" manage=off
+yabai -m rule --add app="^Font Book$" manage=off
 yabai -m rule --add app="^TeamViewer$" manage=off
 yabai -m rule --add app="^日历$" manage=off
+yabai -m rule --add app="^Calendar$" manage=off
 yabai -m rule --add app="^印象笔记$" manage=off
 yabai -m rule --add app="^calibre$" manage=off
 yabai -m rule --add app="^E-book Viewer$" manage=off
