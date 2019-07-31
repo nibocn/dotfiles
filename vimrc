@@ -157,6 +157,10 @@ nnoremap gn `^
 
 " Jenkinsfile syntax highlighting
 au BufRead,BufNewFile Jenkinsfile setf groovy
+" Pipfile, Pipfile.lock syntax highlighting {{{
+au BufRead,BufNewFile Pipfile setf dosini
+au BufRead,BufNewFile Pipfile.lock setf json
+" }}}
 
 " autocmd VimEnter,VimLeave * silent !tmux set status {
 if $TMUX != ''
