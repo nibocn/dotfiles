@@ -85,6 +85,7 @@ yabai -m rule --add app="^E-book Viewer$" manage=off
 yabai -m rule --add app="^PhotoBulk$" manage=off
 yabai -m rule --add app="^Squash$" manage=off
 yabai -m rule --add app="^Beyond Compare$" manage=off
+yabai -m rule --add app="^Dash$" manage=off
 
 
 echo "yabai configuration loaded.."
