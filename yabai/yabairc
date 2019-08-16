@@ -86,6 +86,9 @@ yabai -m rule --add app="^PhotoBulk$" manage=off
 yabai -m rule --add app="^Squash$" manage=off
 yabai -m rule --add app="^Beyond Compare$" manage=off
 yabai -m rule --add app="^Dash$" manage=off
+yabai -m rule --add app="^Microsoft Excel$" manage=off
+yabai -m rule --add app="^Microsoft Word$" manage=off
+yabai -m rule --add app="^Microsoft PowerPoint$" manage=off
 
 
 echo "yabai configuration loaded.."
