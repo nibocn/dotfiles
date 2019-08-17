@@ -50,7 +50,8 @@ fi
 # brew cask package lists
 brewcaskPackages=("postman dbeaver-community mpv iina snipaste sublime-text
                    visual-studio-code flux xmind-zen calibre pomotodo
-                   karabiner-elements gifrocket fliqlo")
+                   karabiner-elements gifrocket fliqlo virtualbox virtualbox-extension-pack
+                   vagrant")
 
 for package in $brewcaskPackages
 do
