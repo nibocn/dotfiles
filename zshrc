@@ -102,8 +102,10 @@ export GROOVY_HOME='/usr/local/opt/groovy/libexec'
 if [ "$TMUX" = "" ]; then
     export TERM="xterm-256color-italic";
     alias ssh='TERM=xterm-256color ssh'
+    alias vssh='TERM=xterm-256color vagrant ssh'
 else
     alias ssh='TERM=screen-256color ssh'
+    alias vssh='TERM=screen-256color vagrant ssh'
 fi
 # }}}
 
