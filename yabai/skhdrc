@@ -1,7 +1,7 @@
 #
 # Modes
 #
-:: default : yabai -m config active_window_border_color 0xff775759
+:: default : yabai -m config active_window_border_color 0xff9c5054
 :: resize : yabai -m config active_window_border_color 0x99ff0000
 :: warp : yabai -m config active_window_border_color 0x990000ff
 
