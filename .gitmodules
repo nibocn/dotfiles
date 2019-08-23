@@ -1,15 +1,3 @@
-[submodule "zsh/custom/plugins/zsh-syntax-highlighting"]
-	path = zsh/custom/plugins/zsh-syntax-highlighting
-	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
-[submodule "zsh/custom/plugins/zsh-autosuggestions"]
-	path = zsh/custom/plugins/zsh-autosuggestions
-	url = git@github.com:zsh-users/zsh-autosuggestions.git
-[submodule "zsh/custom/plugins/zsh-syntax-highlighting-filetypes"]
-	path = zsh/custom/plugins/zsh-syntax-highlighting-filetypes
-	url = git@github.com:trapd00r/zsh-syntax-highlighting-filetypes.git
 [submodule "powerline/tmux-powerline-gruvbox-colorscheme"]
 	path = powerline/tmux-powerline-gruvbox-colorscheme
 	url = git@github.com:PetrusZ/tmux-powerline-gruvbox-colorscheme.git
-[submodule "zsh/custom/themes/powerlevel10k"]
-	path = zsh/custom/themes/powerlevel10k
-	url = git@github.com:romkatv/powerlevel10k.git

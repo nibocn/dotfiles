@@ -10,7 +10,7 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="agnoster"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +51,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 ZSH_CUSTOM=$HOME/.local/dotfiles/zsh/custom
 
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+# ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 # Powerlevel10k 配置
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable virtualenv nodeenv vcs)
@@ -71,7 +71,8 @@ POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{cyan}\uF460%F{073}\uF
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z common-aliases mvn gradle osx docker docker-compose vagrant thefuck tmux tmuxinator zsh-autosuggestions zsh-syntax-highlighting)
+
+# plugins=(git z common-aliases mvn gradle osx docker docker-compose vagrant thefuck tmux tmuxinator zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -199,7 +200,7 @@ alias ls='gls --color=auto'
 # }
 
 # autojump 配置 {
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+# [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 # }
 
 
@@ -218,4 +219,51 @@ bindkey '^R' history-incremental-pattern-search-backward
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
-source $HOME/.local/dotfiles/zsh/custom/plugins/zsh-syntax-highlighting-filetypes/zsh-syntax-highlighting-filetypes.zsh
+# install zplug, plugin manager for zsh, https://github.com/zplug/zplug
+# curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+# zplug configruation
+if [[ ! -d "${ZPLUG_HOME}" ]]; then
+  if [[ ! -d ~/.zplug ]]; then
+    git clone --depth=1 https://github.com/zplug/zplug ~/.zplug
+    # If we can't get zplug, it'll be a very sobering shell experience. To at
+    # least complete the sourcing of this file, we'll define an always-false
+    # returning zplug function.
+    if [[ $? != 0 ]]; then
+      function zplug() {
+        return 1
+      }
+    fi
+  fi
+  export ZPLUG_HOME=~/.zplug
+fi
+if [[ -d "${ZPLUG_HOME}" ]]; then
+  source "${ZPLUG_HOME}/init.zsh"
+fi
+
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug 'romkatv/powerlevel10k', as:theme
+zplug 'plugins/common-aliases', from:oh-my-zsh
+zplug 'plugins/osx', from:oh-my-zsh, if: "[[ $OSTYPE == *darwin* ]]"
+zplug 'plugins/git', from:oh-my-zsh
+zplug 'plugins/autojump', from:oh-my-zsh, if: 'which autojump'
+zplug 'plugins/gradle', from:oh-my-zsh
+zplug 'plugins/tmux', from:oh-my-zsh
+zplug 'plugins/docker', from:oh-my-zsh
+zplug 'plugins/docker-compose', from:oh-my-zsh
+zplug 'plugins/vagrant', from:oh-my-zsh
+zplug 'zsh-users/zsh-autosuggestions'
+zplug 'zsh-users/zsh-completions', defer:2
+zplug 'zsh-users/zsh-syntax-highlighting', defer:2
+# zplug "plugins/vi-mode", from:oh-my-zsh
+# zplug 'zsh-users/zsh-history-substring-search'
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load
