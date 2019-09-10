@@ -53,10 +53,10 @@ set foldlevel=1
 " }}}
 
 
-let mapleader=','
+let mapleader=' '
 
-"消除高亮显示匹配结果(normal 模式下',-空格')
-nnoremap <leader><space> :nohl<CR>
+"消除高亮显示匹配结果
+nnoremap <C-n> :nohl<CR>
 " Window 切换
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
