@@ -112,9 +112,9 @@ warp < alt - z  : yabai -m display --focus prev
 warp < alt - c  : yabai -m display --focus next
 warp < alt - 1  : yabai -m display --focus 1
 warp < alt - 2  : yabai -m display --focus 2
-alt - x  : yabai -m display --focus last
-alt - z  : yabai -m display --focus prev
-alt - c  : yabai -m display --focus next
+# alt - x  : yabai -m display --focus last
+# alt - z  : yabai -m display --focus prev
+# alt - c  : yabai -m display --focus next
 alt - 1  : yabai -m display --focus 1
 alt - 2  : yabai -m display --focus 2
 alt - 3  : yabai -m display --focus 3
