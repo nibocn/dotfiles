@@ -16,6 +16,10 @@ ask() {
 
 
 brew update
+echo ">> brew ready to upgarde packages:"
+brew outdated
+echo ">> brew cask ready to upgrade packages:"
+brew cask outdated
 
 ask "是否要升级已存在的软件包？"
 if [ $? -eq 1 ]; then
@@ -51,7 +55,7 @@ fi
 brewcaskPackages=("postman dbeaver-community mpv iina snipaste sublime-text
                    visual-studio-code flux xmind-zen calibre pomotodo
                    karabiner-elements gifrocket fliqlo virtualbox virtualbox-extension-pack
-                   vagrant")
+                   vagrant xquartz")
 
 for package in $brewcaskPackages
 do
