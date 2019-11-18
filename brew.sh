@@ -31,7 +31,8 @@ fi
 # brew package lists
 brewPackages=("coreutils zsh python@2 python@3 pyenv pipenv thefuck git
                tmux macvim tldr autojump you-get the_silver_searcher
-               exa highlight nodeenv nvm zlib yarn figlet toilet ranger lsd pandoc gnu-sed gnu-tar")
+               exa highlight nodeenv nvm zlib yarn figlet toilet ranger lsd pandoc gnu-sed gnu-tar
+               go")
 
 for package in $brewPackages
 do
