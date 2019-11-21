@@ -18,8 +18,6 @@ nnoremap <C-n> :nohl<CR>
 " 类似命令 gi 移动到文件最后一次编辑位置并进入 insert 模式
 nnoremap gn `^
 
-" KJump config {
-nmap <leader><leader>s :action KJumpAction<cr>
-nmap <leader><leader>w :action KJumpAction.Word0<cr>
-nmap <leader><leader>l :action KJumpAction.Line<cr>
-" }
+" 启用 Easymotion 插件
+set easymotion
+
