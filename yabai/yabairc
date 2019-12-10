@@ -95,6 +95,8 @@ yabai -m rule --add app="^KeyKey Typing Tutor$" manage=off
 yabai -m rule --add app="^KeyKey$" manage=off
 yabai -m rule --add app="^相册$" manage=off
 yabai -m rule --add app="^Phontos$" manage=off
+yabai -m rule --add app="^Zoom$" manage=off
+yabai -m rule --add app="^zoom.us$" manage=off
 
 
 echo "yabai configuration loaded.."
