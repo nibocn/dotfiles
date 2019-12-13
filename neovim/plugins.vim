@@ -5,8 +5,18 @@ Plug 'morhetz/gruvbox'
 let g:gruvbox_italic=1
 " }}}
 
-" Vim 启动界面插件
+" Vim 启动界面插件 {{{
 Plug 'mhinz/vim-startify'
+let g:startify_commands = [
+      \ {'up': ['Update Plugins', ':PlugUpdate']},
+      \ {'ug': ['Upgrade Plugin Manager', ':PlugUpgrade']}
+      \ ]
+let g:startify_bookmarks = [
+      \ {'c': '~/.local/dotfiles'},
+      \ ]
+autocmd User Startified setlocal cursorline
+nnoremap <leader>st :Startify<CR>
+" }}}
 
 " 中文输入法自动切换
 Plug 'ybian/smartim'
