@@ -13,6 +13,7 @@ let g:startify_commands = [
       \ ]
 let g:startify_bookmarks = [
       \ {'c': '~/.local/dotfiles'},
+      \ {'gf': '~/Library/Mobile Documents/iCloud~com~nssurge~inc/Documents/cordcloud.conf'}
       \ ]
 autocmd User Startified setlocal cursorline
 nnoremap <leader>st :Startify<CR>
