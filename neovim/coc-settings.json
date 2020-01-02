@@ -1,4 +1,4 @@
 {
-  "suggest.noselect": false,
-  "suggest.minTriggerInputLength": 2
+    "suggest.noselect": false
+
 }

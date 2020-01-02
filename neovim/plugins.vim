@@ -79,6 +79,7 @@ Plug 'weirongxu/plantuml-previewer.vim', { 'for': 'plantuml' }
 Plug 'tyru/open-browser.vim', { 'for': 'plantuml' }
 " }}}
 
+
 " undo =========================================================={{{
 Plug 'mbbill/undotree'
 if has("persistent_undo")
@@ -89,13 +90,24 @@ endif
 
 " Coc ==========================================================={{{
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"" use <leader>/ for trigger completion
-inoremap <silent><expr> <leader>/ coc#refresh()
-let g:coc_snippet_next = '<c-f>'
-let g:coc_snippet_prev = '<c-b>'
+"" 使用 <tab> 触发补全
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
+
+" let g:coc_snippet_next = '<c-f>'
+" let g:coc_snippet_prev = '<c-b>'
 " }}}
 
+
 call plug#end()
+
 
 colorscheme gruvbox
 
