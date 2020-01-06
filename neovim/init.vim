@@ -77,8 +77,6 @@ nnoremap gn `^
 
 " 设置行号和相对行号
 nnoremap <leader>nu :set nu! <bar> :set relativenumber!<CR>
-" 解决粘贴内容到 Vim 终端缩进错乱
-nnoremap <leader>pa :set paste!<CR>
 
 " python support
 let g:python3_host_prog='~/.Envs/neovim/.venv/bin/python'

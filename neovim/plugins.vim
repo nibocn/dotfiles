@@ -23,8 +23,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " }}}
 
-" 文件搜索
-Plug 'Yggdroot/LeaderF', {'do': './install.sh' }
+" 搜索 ============================================== {{{
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+" }}}
 
 " 代码基础插件 ========================================{{{
 "" IndentLine 代码缩进显示
@@ -132,5 +134,11 @@ inoremap <silent><expr> <TAB>
 " let g:coc_snippet_prev = '<c-b>'
 " }}}
 
+" FZF =========================================================== {{{
+nnoremap <leader>p :FZF<CR>
+nnoremap <leader>f :Ag<CR>
+nnoremap <leader>t :BTags<CR>
+nnoremap <leader>b :Buffers<CR>
+" }}}
 
 " vim: set fdl=0 fdm=marker:
