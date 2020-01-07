@@ -1,4 +1,5 @@
 {
-    "suggest.noselect": false
-
+    "suggest.noselect": false,
+    "suggest.enablePreview": true,
+    "python.jediEnabled": false
 }

@@ -119,6 +119,7 @@ endif
 " Coc =========================================================== {{{
 "" fix the most annoying bug that coc has
 silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
+let g:coc_global_extensions = ['coc-python', 'coc-vimlsp', 'coc-html', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-lists']
 "" 使用 <tab> 触发补全
 function! s:check_back_space() abort
   let col = col('.') - 1
