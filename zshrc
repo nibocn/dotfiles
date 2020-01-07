@@ -1,6 +1,6 @@
 # Export {{{
 ## export MANPATH="/usr/local/man:$MANPATH"
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/opt/go/libexec/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/ruby/bin:/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/opt/go/libexec/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
 
 ## Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
