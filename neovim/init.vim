@@ -79,7 +79,7 @@ nnoremap gn `^
 nnoremap <leader>nu :set nu! <bar> :set relativenumber!<CR>
 
 " python support
-let g:python3_host_prog='~/.Envs/neovim/.venv/bin/python'
+let g:python3_host_prog='/usr/local/bin/python3'
 
 if has('python')
   set pyx=2
