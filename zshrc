@@ -237,5 +237,8 @@ j() {
 }
 # }}}
 
+# FZF {{{
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+# }}}
 
 # vim: set fdl=0 fdm=marker:
