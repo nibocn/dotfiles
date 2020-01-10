@@ -24,7 +24,6 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " }}}
 
 " 搜索 ============================================== {{{
-Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 " }}}
 
@@ -136,6 +135,7 @@ inoremap <silent><expr> <TAB>
 " }}}
 
 " FZF =========================================================== {{{
+set rtp+=/usr/local/opt/fzf
 nnoremap <leader>p :FZF<CR>
 nnoremap <leader>f :Ag<CR>
 nnoremap <leader>t :BTags<CR>
