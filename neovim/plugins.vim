@@ -2,7 +2,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " 美化 ============================================ {{{
 "" 主题
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
+Plug 'lifepillar/vim-gruvbox8'
 "" 目录图标
 Plug 'ryanoasis/vim-devicons'
 " }}}
@@ -58,7 +59,7 @@ call plug#end()
 
 " Theme ============================================={{{
 let g:gruvbox_italic=1
-colorscheme gruvbox
+colorscheme gruvbox8_hard
 " }}}
 
 " Vim 启动界面插件 {{{
@@ -75,9 +76,19 @@ nnoremap <leader>st :Startify<CR>
 " }}}
 
 " Airline ==========================================={{{
+"" let g:airline_powerline_fonts = 1
+let g:airline_theme='wombat'
 let g:airline_powerline_fonts = 1
+"" 打开 buffer
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#tab_nr_type= 2
+let g:airline#extensions#tabline#show_tab_type = 1
+"" let g:airline#extensions#tabline#tabs_label = 'TABS'
+"" tabline 分隔符
+let g:airline#extensions#tabline#left_alt_sep = '➤'
+let g:airline#extensions#tabline#buffer_nr_show = 1
 " }}}
 
 " NERDTree =========================================={{{
@@ -141,5 +152,6 @@ nnoremap <leader>f :Ag<CR>
 nnoremap <leader>t :BTags<CR>
 nnoremap <leader>b :Buffers<CR>
 " }}}
+
 
 " vim: set fdl=0 fdm=marker:
