@@ -14,8 +14,9 @@ Plug 'mhinz/vim-startify'
 Plug 'ybian/smartim'
 
 " 状态栏 =============================== {{{
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"" Plug 'vim-airline/vim-airline'
+"" Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 " }}}
 
 " 文件导航 ========================================== {{{
@@ -77,18 +78,18 @@ nnoremap <leader>st :Startify<CR>
 
 " Airline ==========================================={{{
 "" let g:airline_powerline_fonts = 1
-let g:airline_theme='wombat'
-let g:airline_powerline_fonts = 1
-"" 打开 buffer
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#tabline#show_tab_nr = 1
-let g:airline#extensions#tabline#tab_nr_type= 2
-let g:airline#extensions#tabline#show_tab_type = 1
-"" let g:airline#extensions#tabline#tabs_label = 'TABS'
-"" tabline 分隔符
-let g:airline#extensions#tabline#left_alt_sep = '➤'
-let g:airline#extensions#tabline#buffer_nr_show = 1
+"" let g:airline_theme='wombat'
+"" let g:airline_powerline_fonts = 1
+"" "" 打开 buffer
+"" let g:airline#extensions#tabline#enabled = 1
+"" let g:airline#extensions#tabline#formatter = 'unique_tail'
+"" let g:airline#extensions#tabline#show_tab_nr = 1
+"" let g:airline#extensions#tabline#tab_nr_type= 2
+"" let g:airline#extensions#tabline#show_tab_type = 1
+"" "" let g:airline#extensions#tabline#tabs_label = 'TABS'
+"" "" tabline 分隔符
+"" let g:airline#extensions#tabline#left_alt_sep = '➤'
+"" let g:airline#extensions#tabline#buffer_nr_show = 1
 " }}}
 
 " NERDTree =========================================={{{
@@ -153,5 +154,20 @@ nnoremap <leader>t :BTags<CR>
 nnoremap <leader>b :Buffers<CR>
 " }}}
 
+" Lightline ===================================================== {{{
+let g:lightline = {
+  \ 'colorscheme': 'wombat',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste'], ['readonly', 'absolutepath', 'modified'] ]
+  \ },
+\ }
+function! LightlineFilename()
+  return
+        \ &filetype ==# 'vimfiler' ? vimfiler#get_status_string() :
+        \ &filetype ==# 'unite' ? unite#get_status_string() :
+        \ &filetype ==# 'vimshell' ? vimshell#get_status_string() :
+        \ expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+endfunction
+" }}}
 
 " vim: set fdl=0 fdm=marker:
