@@ -157,17 +157,7 @@ nnoremap <leader>b :Buffers<CR>
 " Lightline ===================================================== {{{
 let g:lightline = {
   \ 'colorscheme': 'wombat',
-  \ 'active': {
-  \   'left': [ [ 'mode', 'paste'], ['readonly', 'absolutepath', 'modified'] ]
-  \ },
 \ }
-function! LightlineFilename()
-  return
-        \ &filetype ==# 'vimfiler' ? vimfiler#get_status_string() :
-        \ &filetype ==# 'unite' ? unite#get_status_string() :
-        \ &filetype ==# 'vimshell' ? vimshell#get_status_string() :
-        \ expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
-endfunction
 " }}}
 
 " vim: set fdl=0 fdm=marker:
