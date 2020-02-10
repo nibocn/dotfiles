@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "'RobotoMono Nerd Font + ', Monaco, Menlo, 'Courier New', monospace",
+    "editor.fontFamily": "'JetbrainsMono Nerd Font + ', Monaco, Menlo, 'Courier New', monospace",
     "editor.wordWrapColumn": 100,
     "editor.renderWhitespace": "all",
     "workbench.colorTheme": "Gruvbox Dark (Medium)",
