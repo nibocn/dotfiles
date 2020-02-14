@@ -2,8 +2,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " 美化 ============================================ {{{
 "" 主题
-" Plug 'morhetz/gruvbox'
-Plug 'lifepillar/vim-gruvbox8'
+Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 "" 目录图标
 Plug 'ryanoasis/vim-devicons'
 " }}}
@@ -59,8 +58,19 @@ Plug 'tyru/open-browser.vim', { 'for': 'plantuml' }
 call plug#end()
 
 " Theme ============================================={{{
-let g:gruvbox_italic=1
-colorscheme gruvbox8_hard
+set termguicolors
+set background=dark
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+"" gruvbox_material config {{{
+"" let g:gruvbox_material_background='hard'
+colorscheme gruvbox-material
+let g:gruvbox_material_enable_italic=1
+hi Search cterm=reverse ctermfg=172 ctermbg=235 gui=reverse guifg=#d78700 guibg=#282828
+hi IncSearch cterm=reverse ctermfg=166 ctermbg=235 gui=reverse guifg=#d75f00 guibg=#282828
+hi Visual cterm=reverse ctermbg=241 gui=reverse guibg=#665c54
+"" }}}
+
 " }}}
 
 " Vim 启动界面插件 {{{
@@ -155,8 +165,9 @@ nnoremap <leader>b :Buffers<CR>
 " }}}
 
 " Lightline ===================================================== {{{
+"" 'colorscheme': 'wombat'
 let g:lightline = {
-  \ 'colorscheme': 'wombat',
+  \ 'colorscheme': 'gruvbox_material',
 \ }
 " }}}
 
