@@ -1,22 +1,19 @@
 " ************************************* 插件定义 *****************************************
-if is_neovim == 1 && empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-if is_vim == 1 && empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
 if is_neovim == 1
-  call plug#begin('~/.local/share/nvim/plugged')
+  let $PLUG_VIM_FILE = '$HOME/.local/share/nvim/site/autoload/plug.vim'
+  let $PLUG_HOME = '$HOME/.local/share/nvim/plugged'
+else
+  let $PLUG_VIM_FILE = '$HOME/.vim/autoload/plug.vim'
+  let $PLUG_HOME = '$HOME/.vim/plugged'
 endif
-if is_vim == 1
-  call plug#begin('~/.vim/plugged')
+
+if empty(glob($PLUG_VIM_FILE))
+  silent! exec ':!curl -fLo '.$PLUG_VIM_FILE.' --create-dirs '
+    \ 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
+call plug#begin($PLUG_HOME)
 
 " 美化 ============================================ {{{
 "" 主题
