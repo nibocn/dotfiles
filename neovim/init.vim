@@ -91,12 +91,6 @@ elseif has('python3')
   set pyx=3
 endif
 
-" Jenkinsfile syntax highlighting
-au BufRead,BufNewFile Jenkinsfile setf groovy
-" Pipfile, Pipfile.lock syntax highlighting {{{
-au BufRead,BufNewFile Pipfile setf dosini
-au BufRead,BufNewFile Pipfile.lock setf json
-" }}}
 
 source ~/.local/dotfiles/neovim/plugins.vim
 source ~/.local/dotfiles/neovim/functions.vim

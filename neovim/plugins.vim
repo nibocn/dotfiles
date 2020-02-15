@@ -7,6 +7,8 @@ Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 Plug 'ryanoasis/vim-devicons'
 " }}}
 
+Plug 'sheerun/vim-polyglot'
+
 " 启动页面
 Plug 'mhinz/vim-startify'
 " 中文输入法自动切换
