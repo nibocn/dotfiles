@@ -72,6 +72,13 @@ Plug 'weirongxu/plantuml-previewer.vim', { 'for': 'plantuml' }
 Plug 'tyru/open-browser.vim', { 'for': 'plantuml' }
 " }}}
 
+" Python ======================================================= {{{
+if is_neovim == 1
+  "" 语义匹配高亮
+  Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins', 'for': ['python']}
+endif
+" }}}
+
 call plug#end()
 
 
