@@ -1,2 +1,0 @@
-# 每天的上午 11 点清理 vim 生成超过一个月的 undo 历史
-0 11 * * * find $HOME/.vim/undo_history -type f -mtime +30 -delete

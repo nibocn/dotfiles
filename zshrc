@@ -99,8 +99,8 @@ fi
 # }}}
 
 # Alias {{{
-alias vvim='\vim'
-alias vim=nvim
+# alias vvim='\vim'
+# alias vim=nvim
 alias nvi=nvim
 alias vi=vim
 alias rg='ranger'
@@ -121,9 +121,9 @@ alias xc='xt -m' # Lists sorted by date, most recent last, shows change time.
 alias xu='xt -u' # Lists sorted by date, most recent last, shows access time.
 alias xtree='xl --tree '
 ## }}}
-alias -s md=vim
-alias -s txt=vim
-alias -s rst=vim
+alias -s md=nvim
+alias -s txt=nvim
+alias -s rst=nvim
 alias -s zip='unzip -l'
 alias -s rar='unrar l'
 alias -s tar='tar tf'
