@@ -52,6 +52,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'editorconfig/editorconfig-vim'
 "" 自动补全
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"" 常用代码片段
+Plug 'honza/vim-snippets'
 " }}}
 
 " 基础编辑 =========================================== {{{
@@ -149,20 +151,33 @@ endif
 " Coc =========================================================== {{{
 "" fix the most annoying bug that coc has
 silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
-let g:coc_global_extensions = ['coc-python', 'coc-vimlsp', 'coc-html', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-lists']
-"" 使用 <tab> 触发补全
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
+let g:coc_global_extensions = ['coc-python', 'coc-vimlsp', 'coc-html', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-lists', 'coc-snippets']
 
 inoremap <silent><expr> <TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ coc#refresh()
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 
-" let g:coc_snippet_next = '<c-f>'
-" let g:coc_snippet_prev = '<c-b>'
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+"" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+"" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+"" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
 " }}}
 
 " FZF =========================================================== {{{

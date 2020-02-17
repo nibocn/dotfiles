@@ -11,9 +11,6 @@ nnoremap <up> :resize +5<CR>
 nnoremap <down> :resize -5<CR>
 nnoremap <left> :vertical resize-5<CR>
 nnoremap <right> :vertical resize+5<CR>
-"" 行间快速移动
-nnoremap J 5j
-nnoremap K 5k
 "" 移动到文件最后一次编辑的位置
 "" 类似命令 gi 移动到文件最后一次编辑位置并进入 insert 模式
 nnoremap gn `^

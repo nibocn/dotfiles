@@ -55,6 +55,12 @@ set scrolloff=5
 " 搜索智能区分大小写
 set ignorecase smartcase
 
+set shortmess+=c
+" 总是显示行号最左侧的符号标记列，默认为：自动
+" 这样会造成代码语法错误时标识提示信息时屏幕经常抖动
+set signcolumn=yes
+set updatetime=500
+
 " 制表符(设置所有的tab和缩进为4个空格) {
 "" 设置tab键的宽度
 set tabstop=4
