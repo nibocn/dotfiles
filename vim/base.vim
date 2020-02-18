@@ -19,12 +19,25 @@ if is_vim == 1
     " 处理在 Tmux 中 TREM=screen-256color 时启用 true color 显示异常
     set t_8f=[38;2;%lu;%lu;%lum
     set t_8b=[48;2;%lu;%lu;%lum
+    " 设置 tmux&vim 下不同模式切换时光标的样式
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  else
+    " 设置 vim 下不同模式切换时光标的样式
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
   endif
 endif
 " }}}
 
 " Neovim special config {{{
 if is_neovim == 1
+  "" 设置 neovim 在不同模式下切换时光标的样式
+  set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+    \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+    \,sm:block-blinkwait175-blinkoff150-blinkon175
   if has('python')
     set pyx=2
   elseif has('python3')
