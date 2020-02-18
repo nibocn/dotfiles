@@ -1,27 +1,39 @@
 " 获取当前文件所在目录
-let s:home = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+let g:home_path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
-let is_neovim = 0
-let is_vim = 0
-if has('nvim')
-  let is_neovim = 1
-else
-  let is_vim = 1
+" 定义使用的编辑器 {{{
+if !exists('g:editor')
+  if has('nvim')
+    let g:editor = 'neovim'
+  else
+    let g:editor = 'vim'
+  endif
 endif
+" }}}
 
-"" let plugins_config_path = s:home.'/plugins'
+" 定义使用的操作系统 {{{
+if !exists('g:system_os')
+  if has('win64') || has('win32') || has('win16')
+    let g:system_os = 'Windows'
+  else
+    let g:system_os = substitute(system('uname'), '\n', '', '')
+  endif
+endif
+" }}}
+
+"" let plugins_config_path = g:home_path.'/plugins'
 "" let plugins_config_file_list = split(globpath(plugins_config_path, '*.vim'), '\n')
 " 定义加载文件命令
-command! -nargs=1 LoadScript exec 'source '.s:home.'/'.'<args>'
+command! -nargs=1 LoadScript exec 'source '.g:home_path.'/'.'<args>'
 
 " 加载基础配置
 LoadScript base.vim
 
 " 加载本地机器特殊配置 {{{
 let has_machine_specific_file = 1
-if empty(glob(s:home.'/_machine_specific.vim'))
+if empty(glob(g:home_path.'/_machine_specific.vim'))
   let has_machine_specific_file = 0
-  silent! exec '!cp '.s:home.'/_machine_specific_default.vim '.s:home.'/_machine_specific.vim'
+  silent! exec '!cp '.g:home_path.'/_machine_specific_default.vim '.g:home_path.'/_machine_specific.vim'
 endif
 LoadScript _machine_specific.vim
 " }}}
@@ -44,7 +56,7 @@ LoadScript functions.vim
 
 " 第一次创建本地机器特殊配置需要先检查编辑
 if has_machine_specific_file == 0
-  exec ':silent e '.s:home.'/_machine_specific.vim'
+  exec ':silent e '.g:home_path.'/_machine_specific.vim'
 endif
 
 " vim: set fdl=0 fdm=marker:

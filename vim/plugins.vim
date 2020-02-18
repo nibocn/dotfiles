@@ -1,5 +1,5 @@
 " ************************************* 插件定义 *****************************************
-if is_neovim == 1
+if g:editor == 'neovim'
   let $PLUG_VIM_FILE = '$HOME/.local/share/nvim/site/autoload/plug.vim'
   let $PLUG_HOME = '$HOME/.local/share/nvim/plugged'
 else
@@ -75,7 +75,7 @@ Plug 'tyru/open-browser.vim', { 'for': 'plantuml' }
 " }}}
 
 " Python ======================================================= {{{
-if is_neovim == 1
+if g:editor == 'neovim'
   "" 语义匹配高亮
   Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins', 'for': ['python']}
 endif
