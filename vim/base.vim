@@ -13,6 +13,7 @@ if g:editor == 'vim'
   set incsearch
   " 显示输入的命令
   set showcmd
+  set ttimeout
   " 处理 <esc> 键按下的延迟时间
   set ttimeoutlen=50
   " command 模式下使用 Tab 键时显示候选命令列表
