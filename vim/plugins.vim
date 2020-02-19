@@ -56,6 +56,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 " }}}
 
+" 高亮当前光标单词
+Plug 'itchyny/vim-cursorword'
+
 " 基础编辑 =========================================== {{{
 "" 光标快速跳转
 Plug 'easymotion/vim-easymotion'
@@ -176,6 +179,14 @@ function! s:show_documentation()
   endif
 endfunction
 
+" }}}
+
+" vim-cursorword ================================================ {{{
+let g:cursorword_highlight='hl-CursoorLine'
+"" 关联单词样式
+hi CursorWord0 ctermbg=113 ctermfg=254 guibg=#448A30 guifg=#eeeeee
+"" 光标所在单词样式
+hi CursorWord1 ctermbg=130 ctermfg=254 guibg=#7C4E1B guifg=#eeeeee
 " }}}
 
 " FZF =========================================================== {{{
