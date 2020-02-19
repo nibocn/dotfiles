@@ -58,6 +58,8 @@ Plug 'honza/vim-snippets'
 
 " 高亮当前光标单词
 Plug 'itchyny/vim-cursorword'
+" 统计匹配单词数
+Plug 'google/vim-searchindex'
 
 " 基础编辑 =========================================== {{{
 "" 光标快速跳转
