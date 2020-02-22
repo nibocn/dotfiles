@@ -36,7 +36,7 @@ Plug 'itchyny/lightline.vim'
 " }}}
 
 " 文件导航 ========================================== {{{
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 "" 在 nerdtree 中显示文件图标颜色
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " }}}
