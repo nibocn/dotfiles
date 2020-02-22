@@ -39,6 +39,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 "" 在 nerdtree 中显示文件图标颜色
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"" 在 nerdtree 中集成 git
+Plug 'Xuyuanp/nerdtree-git-plugin'
 " }}}
 
 " 搜索 ============================================== {{{
@@ -119,6 +121,21 @@ function! s:nerdtree_init()
   setl relativenumber
 endfunction
 autocmd FileType nerdtree call s:nerdtree_init()
+" }}}
+
+" NERDTree Git ==================================== {{{
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Ignored"   : "☒",
+    \ "Unknown"   : "?"
+    \ }
 " }}}
 
 " Devicons ======================================== {{{
