@@ -114,6 +114,11 @@ nnoremap <leader>st :Startify<CR>
 " NERDTree =========================================={{{
 nnoremap <leader>nf :NERDTreeFind<CR>
 nnoremap <leader>nt :NERDTreeToggle<CR>
+function! s:nerdtree_init()
+  setl signcolumn=no
+  setl relativenumber
+endfunction
+autocmd FileType nerdtree call s:nerdtree_init()
 " }}}
 
 " Devicons ======================================== {{{
