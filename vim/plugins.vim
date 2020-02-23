@@ -19,7 +19,7 @@ call plug#begin($PLUG_HOME)
 "" 主题
 Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 "" 目录图标
-Plug 'ryanoasis/vim-devicons'
+"" Plug 'ryanoasis/vim-devicons'
 " }}}
 
 Plug 'sheerun/vim-polyglot'
@@ -36,11 +36,11 @@ Plug 'itchyny/lightline.vim'
 " }}}
 
 " 文件导航 ========================================== {{{
-Plug 'preservim/nerdtree'
-"" 在 nerdtree 中显示文件图标颜色
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"" Plug 'preservim/nerdtree'
+"" "" 在 nerdtree 中显示文件图标颜色
+"" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "" 在 nerdtree 中集成 git
-Plug 'Xuyuanp/nerdtree-git-plugin'
+"" Plug 'Xuyuanp/nerdtree-git-plugin'
 " }}}
 
 " 搜索 ============================================== {{{
@@ -114,45 +114,30 @@ nnoremap <leader>st :Startify<CR>
 " }}}
 
 " NERDTree =========================================={{{
-nnoremap <leader>nf :NERDTreeFind<CR>
-nnoremap <leader>nt :NERDTreeToggle<CR>
-function! s:nerdtree_init()
-  setl signcolumn=no
-  setl relativenumber
-endfunction
-autocmd FileType nerdtree call s:nerdtree_init()
-" }}}
-
-" NERDTree Git ==================================== {{{
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ "Ignored"   : "☒",
-    \ "Unknown"   : "?"
-    \ }
+"" nnoremap <leader>nf :NERDTreeFind<CR>
+"" nnoremap <leader>nt :NERDTreeToggle<CR>
+"" function! s:nerdtree_init()
+""   setl signcolumn=no
+""   setl relativenumber
+"" endfunction
+"" autocmd FileType nerdtree call s:nerdtree_init()
 " }}}
 
 " Devicons ======================================== {{{
 "" 显示目录图标
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-"" 设置图标前的间距
-let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
-"" 启用文件目录打开、关闭时的图标状态效果
-let g:DevIconsEnableFoldersOpenClose = 1
+"" let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+"" "" 设置图标前的间距
+"" "" let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
+"" "" 启用文件目录打开、关闭时的图标状态效果
+"" let g:DevIconsEnableFoldersOpenClose = 1
 " }}}
 
 " IndentLine ===================================== {{{
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '·'
-"" 展开 NerdTree 时禁用掉 indentLine，因为启用 indentLine_leadingSpaceEnabled
-"" 参数时会导致 NerdTree 文件缩进出现问题
-let g:indentLine_bufNameExclude = ['NERD_tree.*']
+"" 因为启用 indentLine_leadingSpaceEnabled 参数导致部分插件冲突，故排除
+let g:indentLine_bufNameExclude = ['\[coc-explorer.*', 'NERD_tree.*']
+"" let g:indentLine_fileTypeExclude = ['coc-explorer', 'nerdtree']
 nnoremap <leader>it :IndentLinesToggle<CR>
 " }}}
 
@@ -170,8 +155,8 @@ endif
 
 " Coc =========================================================== {{{
 "" fix the most annoying bug that coc has
-silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
-let g:coc_global_extensions = ['coc-python', 'coc-vimlsp', 'coc-html', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-lists', 'coc-snippets']
+"" silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
+let g:coc_global_extensions = ['coc-python', 'coc-vimlsp', 'coc-html', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-lists', 'coc-snippets', 'coc-explorer']
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -202,6 +187,8 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+nnoremap <leader>e :CocCommand explorer<CR>
 
 " }}}
 
