@@ -3,4 +3,6 @@
     "suggest.enablePreview": true,
     "coc.preferences.extensionUpdateCheck": "weekly",
     "snippets.loadFromExtensions": false,
+    "diagnostic.errorSign": "",
+    "diagnostic.warningSign": "",
 }
