@@ -75,7 +75,10 @@ set laststatus=2
 set fillchars+=vert:\|
 " 设置真彩显示
 set termguicolors
+" 使滚动条移动得更快 {{{
 set lazyredraw
+set ttyfast
+" }}}
 " 设置colorcolumn来显示一条或多条垂直竖线(标尺)
 set cc=100
 " 向上或向下滚动时距离窗口顶部或底部 5 行的距离
