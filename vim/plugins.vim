@@ -156,7 +156,7 @@ endif
 " Coc =========================================================== {{{
 "" fix the most annoying bug that coc has
 "" silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
-let g:coc_global_extensions = ['coc-python', 'coc-vimlsp', 'coc-html', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-lists', 'coc-snippets', 'coc-explorer']
+let g:coc_global_extensions = ['coc-python', 'coc-vimlsp', 'coc-html', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-lists', 'coc-snippets', 'coc-explorer', 'coc-git']
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -190,6 +190,12 @@ endfunction
 
 nnoremap <leader>e :CocCommand explorer<CR>
 
+"" coc-git config {{{
+nmap <C-a>gn <Plug>(coc-git-nextchunk)
+nmap <C-a>gp <Plug>(coc-git-prevchunk)
+nmap <C-a>gi <Plug>(coc-git-chunkinfo)
+"" }}}
+
 " }}}
 
 " vim-cursorword ================================================ {{{
@@ -211,7 +217,29 @@ nnoremap <leader>b :Buffers<CR>
 "" 'colorscheme': 'wombat'
 let g:lightline = {
   \ 'colorscheme': 'gruvbox_material',
+  \ 'active': {
+  \   'left': [
+  \     ['mode', 'paste'],
+  \     ['git_global_status', 'readonly', 'filename', 'modified'],
+  \   ],
+  \   'right': [
+  \     ['lineinfo'],
+  \     ['percent'],
+  \     ['git_buffer_status', 'fileformat', 'fileencoding', 'filetype']
+  \   ]
+  \ },
+  \ 'component_function': {
+  \   'git_global_status': 'LightlineGitGlobalStatus',
+  \   'git_buffer_status': 'LightlineGitBufferStatus',
+  \ }
 \ }
+
+function! LightlineGitGlobalStatus() abort
+  return get(g:, 'coc_git_status', '')
+endfunction
+function! LightlineGitBufferStatus() abort
+  return get(b:, 'coc_git_status', '')
+endfunction
 " }}}
 
 " vim: set fdl=0 fdm=marker:
