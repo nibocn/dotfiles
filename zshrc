@@ -22,6 +22,8 @@ export GROOVY_HOME='/usr/local/opt/groovy/libexec'
 export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/mysql-client/lib -L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/mysql-client/include -I/usr/local/opt/openssl/include"
 # }}}
+# Bat 配置
+export BAT_CONFIG_PATH=$HOME/.local/dotfiles/bat.conf
 
 # ZSH default {{{
 ## Set name of the theme to load. Optionally, if you set this to "random"
