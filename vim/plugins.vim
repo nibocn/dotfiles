@@ -59,6 +59,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "" 常用代码片段
 Plug 'honza/vim-snippets'
+"" Tag list
+Plug 'liuchengxu/vista.vim'
 " }}}
 
 " 高亮当前光标单词
