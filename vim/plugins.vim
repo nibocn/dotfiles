@@ -142,7 +142,7 @@ let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '·'
 "" 因为启用 indentLine_leadingSpaceEnabled 参数导致部分插件冲突，故排除
 let g:indentLine_bufNameExclude = ['\[coc-explorer.*', 'NERD_tree.*']
-"" let g:indentLine_fileTypeExclude = ['coc-explorer', 'nerdtree']
+let g:indentLine_fileTypeExclude = ['markdown']
 nnoremap <leader>it :IndentLinesToggle<CR>
 " }}}
 
