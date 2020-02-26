@@ -17,7 +17,10 @@ call plug#begin($PLUG_HOME)
 
 " 美化 ============================================ {{{
 "" 主题
-Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
+"" Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
+"" Plug 'morhetz/gruvbox'
+"" Plug '/Users/richard/Workspace/Vim/themes/gruvbox-material.vim', {'as': 'gruvbox-material'}
+Plug 'nibocn/gruvbox-material.vim', {'as': 'gruvbox-material'}
 "" 目录图标
 "" Plug 'ryanoasis/vim-devicons'
 " }}}
@@ -90,12 +93,12 @@ set background=dark
 
 "" gruvbox_material config {{{
 "" let g:gruvbox_material_background='hard'
-colorscheme gruvbox-material
+"" let g:gruvbox_material_disable_italic_comment=1
 let g:gruvbox_material_enable_italic=1
-hi CursorLine ctermbg=237 guibg=#3c3836
-hi Search cterm=reverse ctermfg=172 ctermbg=235 gui=reverse guifg=#d78700 guibg=#282828
-hi IncSearch cterm=reverse ctermfg=166 ctermbg=235 gui=reverse guifg=#d75f00 guibg=#282828
-hi Visual cterm=reverse ctermbg=241 gui=reverse guibg=#665c54
+let g:gruvbox_material_enable_bold=1
+"" let g:gruvbox_material_visual='reverse'
+colorscheme gruvbox-material
+"" colorscheme gruvbox
 "" }}}
 
 " }}}
