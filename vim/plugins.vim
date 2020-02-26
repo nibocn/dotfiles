@@ -199,19 +199,35 @@ nmap <C-a>gi <Plug>(coc-git-chunkinfo)
 
 " }}}
 
-" vim-cursorword ================================================ {{{
-let g:cursorword_highlight='hl-CursoorLine'
-"" 关联单词样式
-hi CursorWord0 ctermbg=113 ctermfg=254 guibg=#448A30 guifg=#eeeeee
-"" 光标所在单词样式
-hi CursorWord1 ctermbg=130 ctermfg=254 guibg=#7C4E1B guifg=#eeeeee
+" Vista.vim ===================================================== {{{
+let g:vista_sidebar_width=50
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista_default_executive = 'ctags'
+let g:vista_fzf_preview = ['right:50%']
+let g:vista#renderer#enable_icon = 1
+let g:vista#renderer#icons = {
+  \   "function": "\uf794",
+  \   "variable": "\uf71b",
+  \ }
 " }}}
 
 " FZF =========================================================== {{{
-nnoremap <leader>p :FZF<CR>
+nnoremap <leader>p :Files<CR>
 nnoremap <leader>f :Ag<CR>
 nnoremap <leader>t :BTags<CR>
 nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>l :Lines<CR>
+
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(
+  \   <q-args>,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%', '?'),
+  \   <bang>0)
+
 " }}}
 
 " Lightline ===================================================== {{{
