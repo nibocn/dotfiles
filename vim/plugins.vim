@@ -189,6 +189,7 @@ function! s:show_documentation()
 endfunction
 
 nnoremap <leader>e :CocCommand explorer<CR>
+nnoremap <silent> <C-a>c :CocCommand<CR>
 
 "" coc-git config {{{
 nmap <C-a>gn <Plug>(coc-git-nextchunk)
