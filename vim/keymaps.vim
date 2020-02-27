@@ -16,6 +16,9 @@ nnoremap <right> :vertical resize+5<CR>
 nnoremap gn `^
 "" 设置行号和相对行号
 nnoremap <leader>nu :set nu! <bar> :set relativenumber!<CR>
+"" Buffer 切换
+nnoremap [b :bn<CR>
+nnoremap ]b :bp<CR>
 "" }}}
 
 " vim: set fdl=0 fdm=marker:
