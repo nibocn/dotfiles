@@ -63,6 +63,8 @@ endif
 
 " 设置字体及大小
 set guifont=JetbrainsMono\ Nerd\ Font\ +\ :h11
+set encoding=utf-8
+set fileencodings=utf-8,cp936,chinese,latin-1
 " 设置行号
 set number
 " 设置相对行号
