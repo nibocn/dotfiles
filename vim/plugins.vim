@@ -73,6 +73,7 @@ Plug 'google/vim-searchindex'
 Plug 'easymotion/vim-easymotion'
 "" 编辑历史回退
 Plug 'mbbill/undotree'
+Plug 'jiangmiao/auto-pairs'
 " }}}
 
 " Markdown ======================================================{{{
