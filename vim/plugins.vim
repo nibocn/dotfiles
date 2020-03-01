@@ -75,6 +75,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'mbbill/undotree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
+Plug 'preservim/nerdcommenter'
 " }}}
 
 " Markdown ======================================================{{{
@@ -235,6 +236,14 @@ command! -bang -nargs=* Ag
   \           : fzf#vim#with_preview('right:50%', '?'),
   \   <bang>0)
 
+" }}}
+
+" nerdcommenter ================================================= {{{
+let g:NERDSpaceDelims=1
+let g:NERDDefaultAlign='left'
+let g:NERDCustomDelimiters = {
+  \ 'python': { 'left': '#', 'right': '' }
+\ }
 " }}}
 
 " Lightline ===================================================== {{{
