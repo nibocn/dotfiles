@@ -49,7 +49,7 @@ endif
 
 " Neovim special config {{{
 if g:editor == 'neovim'
-  "" 设置 neovim 在不同模式下切换时光标的样式
+  " 设置 neovim 在不同模式下切换时光标的样式
   set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
     \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
     \,sm:block-blinkwait175-blinkoff150-blinkon175
@@ -94,19 +94,19 @@ set shortmess+=c
 set signcolumn=yes
 set updatetime=500
 
-" 制表符(设置所有的tab和缩进为4个空格) {
-"" 设置tab键的宽度
+" 制表符(设置所有的tab和缩进为4个空格) {{{
+" 设置tab键的宽度
 set tabstop=4
-"" 换行时行间交错使用4个空格
+" 换行时行间交错使用4个空格
 set shiftwidth=4
-"" 自动缩进4空格
+" 自动缩进4空格
 set cindent shiftwidth=4
 set softtabstop=4
-"" 使用空格来替换tab
+" 使用空格来替换tab
 set expandtab
-"" 开启新行时使用智能 tab 缩进
+" 开启新行时使用智能 tab 缩进
 set smarttab
-" }
+" }}}
 
 " 设置自动缩进
 set autoindent

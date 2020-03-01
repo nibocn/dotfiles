@@ -1,8 +1,8 @@
 " ********************************* 主题配置 ****************************
 set background=dark
 
-"" gruvbox_material config {{{
-"" let g:gruvbox_material_background='hard'
+" gruvbox_material config {{{
+" let g:gruvbox_material_background='hard'
 colorscheme gruvbox-material
 let g:gruvbox_material_enable_italic=1
 hi Search cterm=reverse ctermfg=172 ctermbg=235 gui=reverse guifg=#d78700 guibg=#282828

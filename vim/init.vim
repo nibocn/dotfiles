@@ -21,8 +21,8 @@ if !exists('g:system_os')
 endif
 " }}}
 
-"" let plugins_config_path = g:home_path.'/plugins'
-"" let plugins_config_file_list = split(globpath(plugins_config_path, '*.vim'), '\n')
+" let plugins_config_path = g:home_path.'/plugins'
+" let plugins_config_file_list = split(globpath(plugins_config_path, '*.vim'), '\n')
 " 定义加载文件命令
 command! -nargs=1 LoadScript exec 'source '.g:home_path.'/'.'<args>'
 
@@ -48,11 +48,11 @@ LoadScript plugins.vim
 LoadScript functions.vim
 
 " 加载主题
-"" LoadScript theme.vim
+" LoadScript theme.vim
 
-"" for plugins_config_file in plugins_config_file_list
-""   exec 'source' fnameescape(plugins_config_file)
-"" endfor
+" for plugins_config_file in plugins_config_file_list
+"   exec 'source' fnameescape(plugins_config_file)
+" endfor
 
 " 第一次创建本地机器特殊配置需要先检查编辑
 if has_machine_specific_file == 0

@@ -16,13 +16,13 @@ endif
 call plug#begin($PLUG_HOME)
 
 " 美化 ============================================ {{{
-"" 主题
-"" Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
-"" Plug 'morhetz/gruvbox'
-"" Plug '/Users/richard/Workspace/Vim/themes/gruvbox-material.vim', {'as': 'gruvbox-material'}
+" 主题
+" Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
+" Plug 'morhetz/gruvbox'
+" Plug '/Users/richard/Workspace/Vim/themes/gruvbox-material.vim', {'as': 'gruvbox-material'}
 Plug 'nibocn/gruvbox-material.vim', {'as': 'gruvbox-material'}
-"" 目录图标
-"" Plug 'ryanoasis/vim-devicons'
+" 目录图标
+" Plug 'ryanoasis/vim-devicons'
 " }}}
 
 Plug 'sheerun/vim-polyglot'
@@ -33,17 +33,17 @@ Plug 'mhinz/vim-startify'
 Plug 'ybian/smartim'
 
 " 状态栏 =============================== {{{
-"" Plug 'vim-airline/vim-airline'
-"" Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/lightline.vim'
 " }}}
 
 " 文件导航 ========================================== {{{
-"" Plug 'preservim/nerdtree'
-"" "" 在 nerdtree 中显示文件图标颜色
-"" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-"" 在 nerdtree 中集成 git
-"" Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'preservim/nerdtree'
+" 在 nerdtree 中显示文件图标颜色
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" 在 nerdtree 中集成 git
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 " }}}
 
 " 搜索 ============================================== {{{
@@ -51,15 +51,15 @@ Plug 'junegunn/fzf.vim'
 " }}}
 
 " 代码基础插件 ========================================{{{
-"" IndentLine 代码缩进显示
+" IndentLine 代码缩进显示
 Plug 'Yggdroot/indentLine'
-"" editorconfig
+" editorconfig
 Plug 'editorconfig/editorconfig-vim'
-"" 自动补全
+" 自动补全
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"" 常用代码片段
+" 常用代码片段
 Plug 'honza/vim-snippets'
-"" Tag list
+" Tag list
 Plug 'liuchengxu/vista.vim'
 " }}}
 
@@ -69,9 +69,9 @@ Plug 'itchyny/vim-cursorword'
 Plug 'google/vim-searchindex'
 
 " 基础编辑 =========================================== {{{
-"" 光标快速跳转
+" 光标快速跳转
 Plug 'easymotion/vim-easymotion'
-"" 编辑历史回退
+" 编辑历史回退
 Plug 'mbbill/undotree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
@@ -96,15 +96,15 @@ call plug#end()
 set termguicolors
 set background=dark
 
-"" gruvbox_material config {{{
-"" let g:gruvbox_material_background='hard'
-"" let g:gruvbox_material_disable_italic_comment=1
+" gruvbox_material config {{{
+" let g:gruvbox_material_background='hard'
+" let g:gruvbox_material_disable_italic_comment=1
 let g:gruvbox_material_enable_italic=1
 let g:gruvbox_material_enable_bold=1
-"" let g:gruvbox_material_visual='reverse'
+" let g:gruvbox_material_visual='reverse'
 colorscheme gruvbox-material
-"" colorscheme gruvbox
-"" }}}
+" colorscheme gruvbox
+" }}}
 
 " }}}
 
@@ -122,35 +122,35 @@ nnoremap <leader>st :Startify<CR>
 " }}}
 
 " NERDTree =========================================={{{
-"" nnoremap <leader>nf :NERDTreeFind<CR>
-"" nnoremap <leader>nt :NERDTreeToggle<CR>
-"" function! s:nerdtree_init()
-""   setl signcolumn=no
-""   setl relativenumber
-"" endfunction
-"" autocmd FileType nerdtree call s:nerdtree_init()
+" nnoremap <leader>nf :NERDTreeFind<CR>
+" nnoremap <leader>nt :NERDTreeToggle<CR>
+" function! s:nerdtree_init()
+"   setl signcolumn=no
+"   setl relativenumber
+" endfunction
+" autocmd FileType nerdtree call s:nerdtree_init()
 " }}}
 
 " Devicons ======================================== {{{
-"" 显示目录图标
-"" let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-"" "" 设置图标前的间距
-"" "" let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
-"" "" 启用文件目录打开、关闭时的图标状态效果
-"" let g:DevIconsEnableFoldersOpenClose = 1
+" 显示目录图标
+" let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+" 设置图标前的间距
+" let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
+" 启用文件目录打开、关闭时的图标状态效果
+" let g:DevIconsEnableFoldersOpenClose = 1
 " }}}
 
 " IndentLine ===================================== {{{
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '·'
-"" 因为启用 indentLine_leadingSpaceEnabled 参数导致部分插件冲突，故排除
+" 因为启用 indentLine_leadingSpaceEnabled 参数导致部分插件冲突，故排除
 let g:indentLine_bufNameExclude = ['\[coc-explorer.*', 'NERD_tree.*']
 let g:indentLine_fileTypeExclude = ['markdown']
 nnoremap <leader>it :IndentLinesToggle<CR>
 " }}}
 
 " EasyMotion ===================================== {{{
-"" 智能匹配大小写
+" 智能匹配大小写
 let g:EasyMotion_smartcase = 1
 " }}}
 
@@ -162,8 +162,8 @@ endif
 " }}}
 
 " Coc =========================================================== {{{
-"" fix the most annoying bug that coc has
-"" silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
+" fix the most annoying bug that coc has
+" silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
 let g:coc_global_extensions = ['coc-python', 'coc-vimlsp', 'coc-html', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-lists', 'coc-snippets', 'coc-explorer', 'coc-git']
 
 inoremap <silent><expr> <TAB>
@@ -185,7 +185,7 @@ else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
-"" Use K to show documentation in preview window
+" Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
@@ -199,11 +199,11 @@ endfunction
 nnoremap <leader>e :CocCommand explorer<CR>
 nnoremap <silent> <C-a>c :CocCommand<CR>
 
-"" coc-git config {{{
+" coc-git config {{{
 nmap <C-a>gn <Plug>(coc-git-nextchunk)
 nmap <C-a>gp <Plug>(coc-git-prevchunk)
 nmap <C-a>gi <Plug>(coc-git-chunkinfo)
-"" }}}
+"   }}}
 
 " }}}
 
@@ -247,7 +247,7 @@ let g:NERDCustomDelimiters = {
 " }}}
 
 " Lightline ===================================================== {{{
-"" 'colorscheme': 'wombat'
+" 'colorscheme': 'wombat'
 let g:lightline = {
   \ 'colorscheme': 'gruvbox_material',
   \ 'active': {
