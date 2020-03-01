@@ -17,12 +17,7 @@ call plug#begin($PLUG_HOME)
 
 " 美化 ============================================ {{{
 " 主题
-" Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
-" Plug 'morhetz/gruvbox'
-" Plug '/Users/richard/Workspace/Vim/themes/gruvbox-material.vim', {'as': 'gruvbox-material'}
 Plug 'nibocn/gruvbox-material.vim', {'as': 'gruvbox-material'}
-" 目录图标
-" Plug 'ryanoasis/vim-devicons'
 " }}}
 
 Plug 'sheerun/vim-polyglot'
@@ -33,17 +28,7 @@ Plug 'mhinz/vim-startify'
 Plug 'ybian/smartim'
 
 " 状态栏 =============================== {{{
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/lightline.vim'
-" }}}
-
-" 文件导航 ========================================== {{{
-" Plug 'preservim/nerdtree'
-" 在 nerdtree 中显示文件图标颜色
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-" 在 nerdtree 中集成 git
-" Plug 'Xuyuanp/nerdtree-git-plugin'
 " }}}
 
 " 搜索 ============================================== {{{
@@ -119,25 +104,6 @@ let g:startify_bookmarks = [
       \ ]
 autocmd User Startified setlocal cursorline
 nnoremap <leader>st :Startify<CR>
-" }}}
-
-" NERDTree =========================================={{{
-" nnoremap <leader>nf :NERDTreeFind<CR>
-" nnoremap <leader>nt :NERDTreeToggle<CR>
-" function! s:nerdtree_init()
-"   setl signcolumn=no
-"   setl relativenumber
-" endfunction
-" autocmd FileType nerdtree call s:nerdtree_init()
-" }}}
-
-" Devicons ======================================== {{{
-" 显示目录图标
-" let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-" 设置图标前的间距
-" let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
-" 启用文件目录打开、关闭时的图标状态效果
-" let g:DevIconsEnableFoldersOpenClose = 1
 " }}}
 
 " IndentLine ===================================== {{{
