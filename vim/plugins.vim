@@ -46,6 +46,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 " Tag list
 Plug 'liuchengxu/vista.vim'
+" 异步任务
+Plug 'skywind3000/asynctasks.vim'
+Plug 'skywind3000/asyncrun.vim'
 " }}}
 
 " 高亮当前光标单词
@@ -183,6 +186,19 @@ let g:vista#renderer#icons = {
   \   "function": "\uf794",
   \   "variable": "\uf71b",
   \ }
+" }}}
+
+" asynctasks ==================================================== {{{
+" asyncrun 运行时设置 quickfix 打开的高度
+let g:asyncrun_open = 8
+" 设置用来标记项目根目录的文件夹
+let g:asyncrun_rootmarks = [ '.git', '.svn', '.root', '.project', '.hg' ]
+" 在下方打开可复用内部终端
+let g:asynctasks_term_pos = 'bottom'
+" 显示分屏内置终端时不切换焦点
+let g:asynctasks_term_focus = 0
+nnoremap <silent><C-a>r :AsyncTask file-run<CR>
+nnoremap <silent><C-a>b :AsyncTask file-build<CR>
 " }}}
 
 " FZF =========================================================== {{{
