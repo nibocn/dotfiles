@@ -239,6 +239,8 @@ endfunction
 function! LightlineGitBufferStatus() abort
   return get(b:, 'coc_git_status', '')
 endfunction
+" 更新状态栏
+autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
 " }}}
 
 " vim: set fdl=0 fdm=marker:
