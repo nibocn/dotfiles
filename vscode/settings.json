@@ -2,7 +2,6 @@
     "editor.fontFamily": "'JetbrainsMono Nerd Font + ', Monaco, Menlo, 'Courier New', monospace",
     "editor.wordWrapColumn": 100,
     "editor.renderWhitespace": "all",
-    "workbench.colorTheme": "Gruvbox Dark (Medium)",
     "editor.fontSize": 12,
     "python.jediEnabled": false
 }
