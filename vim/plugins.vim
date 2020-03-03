@@ -132,8 +132,9 @@ endif
 
 " Coc =========================================================== {{{
 " fix the most annoying bug that coc has
-" silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
-let g:coc_global_extensions = ['coc-python', 'coc-vimlsp', 'coc-html', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-lists', 'coc-snippets', 'coc-explorer', 'coc-git']
+silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
+let g:coc_global_extensions = ['coc-python', 'coc-vimlsp', 'coc-html', 'coc-json', 'coc-css',
+  \ 'coc-tsserver', 'coc-lists', 'coc-snippets', 'coc-explorer', 'coc-git']
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
