@@ -133,8 +133,12 @@ endif
 " Coc =========================================================== {{{
 " fix the most annoying bug that coc has
 silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
-let g:coc_global_extensions = ['coc-python', 'coc-vimlsp', 'coc-html', 'coc-json', 'coc-css',
-  \ 'coc-tsserver', 'coc-lists', 'coc-snippets', 'coc-explorer', 'coc-git']
+let g:coc_global_extensions = [
+  \   'coc-lists', 'coc-json', 'coc-yank', 'coc-git', 'coc-snippets', 'coc-explorer',
+  \   'coc-vimlsp',
+  \   'coc-python',
+  \   'coc-html', 'coc-css', 'coc-tsserver'
+  \ ]
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
