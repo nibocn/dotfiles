@@ -19,6 +19,10 @@ nnoremap <leader>nu :set nu! <bar> :set relativenumber!<CR>
 " Buffer 切换
 nnoremap [b :bn<CR>
 nnoremap ]b :bp<CR>
+
+" 设置文件保存快捷键
+inoremap <silent> <C-s> <ESC>:w<CR>a
+nnoremap <silent> <C-s> :w<CR>
 " }}}
 
 " vim: set fdl=0 fdm=marker:
