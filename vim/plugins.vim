@@ -206,6 +206,9 @@ let g:asyncrun_rootmarks = [ '.git', '.svn', '.root', '.project', '.hg' ]
 let g:asynctasks_term_pos = 'bottom'
 " 显示分屏内置终端时不切换焦点
 let g:asynctasks_term_focus = 0
+" 将内置终端的 buffer 设置为 bufhidden
+let g:asynctasks_term_hideen = 1
+let g:asynctasks_term_listed = 0
 nnoremap <silent><C-a>r :AsyncTask file-run<CR>
 nnoremap <silent><C-a>b :AsyncTask file-build<CR>
 " }}}
