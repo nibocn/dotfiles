@@ -175,10 +175,13 @@ nnoremap <silent> <C-a>cc :CocCommand<CR>
 nnoremap <silent> <C-a>cl :CocList<CR>
 
 " coc-git config {{{
-nmap <C-a>gn <Plug>(coc-git-nextchunk)
-nmap <C-a>gp <Plug>(coc-git-prevchunk)
-nmap <C-a>gi <Plug>(coc-git-chunkinfo)
+nmap <silent> <C-a>cgn <Plug>(coc-git-nextchunk)
+nmap <silent> <C-a>cgp <Plug>(coc-git-prevchunk)
+nmap <silent> <C-a>cgi <Plug>(coc-git-chunkinfo)
 "   }}}
+
+nmap <silent> <C-a>cdn <Plug>(coc-diagnostic-next)
+nmap <silent> <C-a>cdp <Plug>(coc-diagnostic-prev)
 
 " }}}
 
