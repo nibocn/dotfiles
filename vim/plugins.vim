@@ -171,17 +171,17 @@ function! s:show_documentation()
 endfunction
 
 nnoremap <leader>e :CocCommand explorer<CR>
-nnoremap <silent> <C-a>cc :CocCommand<CR>
-nnoremap <silent> <C-a>cl :CocList<CR>
+nnoremap <silent> <C-\>cc :CocCommand<CR>
+nnoremap <silent> <C-\>cl :CocList<CR>
 
 " coc-git config {{{
-nmap <silent> <C-a>cgn <Plug>(coc-git-nextchunk)
-nmap <silent> <C-a>cgp <Plug>(coc-git-prevchunk)
-nmap <silent> <C-a>cgi <Plug>(coc-git-chunkinfo)
+nmap <silent> <C-\>cgn <Plug>(coc-git-nextchunk)
+nmap <silent> <C-\>cgp <Plug>(coc-git-prevchunk)
+nmap <silent> <C-\>cgi <Plug>(coc-git-chunkinfo)
 "   }}}
 
-nmap <silent> <C-a>cdn <Plug>(coc-diagnostic-next)
-nmap <silent> <C-a>cdp <Plug>(coc-diagnostic-prev)
+nmap <silent> <C-\>cdn <Plug>(coc-diagnostic-next)
+nmap <silent> <C-\>cdp <Plug>(coc-diagnostic-prev)
 
 " }}}
 
@@ -209,8 +209,8 @@ let g:asynctasks_term_focus = 0
 " 将内置终端的 buffer 设置为 bufhidden
 let g:asynctasks_term_hideen = 1
 let g:asynctasks_term_listed = 0
-nnoremap <silent><C-a>r :AsyncTask file-run<CR>
-nnoremap <silent><C-a>b :AsyncTask file-build<CR>
+nnoremap <silent><C-\>r :AsyncTask file-run<CR>
+nnoremap <silent><C-\>b :AsyncTask file-build<CR>
 " }}}
 
 " FZF =========================================================== {{{
