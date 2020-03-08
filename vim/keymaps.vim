@@ -21,8 +21,10 @@ nnoremap [b :bn<CR>
 nnoremap ]b :bp<CR>
 
 " 设置文件保存快捷键
-inoremap <silent> <C-\>s <ESC>:w<CR>a
-nnoremap <silent> <C-\>s :w<CR>
+inoremap <silent> <C-\>w <ESC>:w<CR>a
+nnoremap <silent> <C-\>w :w<CR>
+nnoremap <silent> <C-\>q :q<CR>
+nnoremap <silent> <C-\>wq :wq<CR>
 " }}}
 
 " vim: set fdl=0 fdm=marker:
