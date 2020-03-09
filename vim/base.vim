@@ -95,7 +95,7 @@ set signcolumn=yes
 set updatetime=500
 
 " 按键响应等待超时时间
-set timeoutlen=400
+set timeoutlen=350
 
 " 制表符(设置所有的tab和缩进为4个空格) {{{
 " 设置tab键的宽度
