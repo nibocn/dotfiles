@@ -77,6 +77,8 @@ Plug 'weirongxu/plantuml-previewer.vim', { 'for': 'plantuml' }
 Plug 'tyru/open-browser.vim', { 'for': 'plantuml' }
 " }}}
 
+Plug 'liuchengxu/vim-which-key'
+
 call plug#end()
 
 
@@ -106,7 +108,7 @@ let g:startify_bookmarks = [
       \ {'gf': '~/Library/Mobile Documents/iCloud~com~nssurge~inc/Documents/cordcloud.conf'}
       \ ]
 autocmd User Startified setlocal cursorline
-nnoremap <leader>st :Startify<CR>
+" nnoremap <leader>st :Startify<CR>
 " }}}
 
 " IndentLine ===================================== {{{
@@ -115,7 +117,6 @@ let g:indentLine_leadingSpaceChar = '·'
 " 因为启用 indentLine_leadingSpaceEnabled 参数导致部分插件冲突，故排除
 let g:indentLine_bufNameExclude = ['\[coc-explorer.*', 'NERD_tree.*']
 let g:indentLine_fileTypeExclude = ['markdown']
-nnoremap <leader>it :IndentLinesToggle<CR>
 " }}}
 
 " EasyMotion ===================================== {{{
@@ -170,18 +171,18 @@ function! s:show_documentation()
   endif
 endfunction
 
-nnoremap <leader>e :CocCommand explorer<CR>
+" nnoremap <leader>e :CocCommand explorer<CR>
 nnoremap <silent> <C-\>cc :CocCommand<CR>
 nnoremap <silent> <C-\>cl :CocList<CR>
 
 " coc-git config {{{
-nmap <silent> <C-\>cgn <Plug>(coc-git-nextchunk)
-nmap <silent> <C-\>cgp <Plug>(coc-git-prevchunk)
-nmap <silent> <C-\>cgi <Plug>(coc-git-chunkinfo)
+nmap <silent> <C-\>gn <Plug>(coc-git-nextchunk)
+nmap <silent> <C-\>gp <Plug>(coc-git-prevchunk)
+nmap <silent> <C-\>gi <Plug>(coc-git-chunkinfo)
 "   }}}
 
-nmap <silent> <C-\>cdn <Plug>(coc-diagnostic-next)
-nmap <silent> <C-\>cdp <Plug>(coc-diagnostic-prev)
+nmap <silent> <C-\>dn <Plug>(coc-diagnostic-next)
+nmap <silent> <C-\>dp <Plug>(coc-diagnostic-prev)
 
 " }}}
 
@@ -214,12 +215,6 @@ nnoremap <silent><C-\>b :AsyncTask file-build<CR>
 " }}}
 
 " FZF =========================================================== {{{
-nnoremap <leader>p :Files<CR>
-nnoremap <leader>f :Ag<CR>
-nnoremap <leader>t :BTags<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>l :Lines<CR>
-
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
@@ -233,11 +228,56 @@ command! -bang -nargs=* Ag
 " }}}
 
 " nerdcommenter ================================================= {{{
+let g:NERDCreateDefaultMappings = 0
 let g:NERDSpaceDelims=1
 let g:NERDDefaultAlign='left'
 let g:NERDCustomDelimiters = {
   \ 'python': { 'left': '#', 'right': '' }
 \ }
+" }}}
+
+" vim-which-key ================================================= {{{
+" nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+" nnoremap <silent> <localleader> :WhichKey ','<CR>
+let g:which_key_map = {}
+
+let g:which_key_map['?'] = ['Maps', 'show-deybindings']
+let g:which_key_map[';'] = ['<Plug>NERDCommenterToggle', 'commenter']
+let g:which_key_map['q'] = ['q', 'quit']
+let g:which_key_map['Q'] = [':qa!', 'quit-without-saving']
+
+let g:which_key_map.f = {
+  \ 'name': '+find/files/fold',
+  \ 's': ['update', 'save file'],
+  \ 'p': ['Files', 'fzf'],
+  \ 'e': [':CocCommand explorer', 'file folder']
+\ }
+let g:which_key_map.t = {
+  \ 'name': '+toggle/tag',
+  \ 't': ['Vista', 'vista tagbar'],
+  \ 'b': ['BTags', 'fzf buffer tag'],
+  \ 'T': ['Tags', 'fzf global tag'],
+  \ 'i': ['IndentLinesToggle', 'indentLine']
+\ }
+let g:which_key_map.b = {
+  \ 'name': '+buffer',
+  \ 'b': ['Buffers', 'fzf buffer'],
+  \ '?': ['Buffers', 'fzf buffer'],
+  \ 'd': ['bdelete', 'delete current buffer'],
+  \ 'n': ['bnext', 'next buffer'],
+  \ 'p': ['bprevious', 'previous buffer'],
+  \ 'f': ['bfirst', 'first buffer'],
+  \ 'l': ['blast', 'last buffer'],
+\ }
+let g:which_key_map.s = {
+  \ 'name': '+search/show',
+  \ 'a': ['Ag', 'fzf ag'],
+  \ 'l': ['Lines', 'fzf lines']
+\ }
+
+call which_key#register('<Space>', "g:which_key_map")
+nnoremap <silent> <leader> :<C-u>WhichKey '<Space>'<CR>
+vnoremap <silent> <leader> :<C-u>WhichKeyVisual '<Space>'<CR>
 " }}}
 
 " Lightline ===================================================== {{{

@@ -15,7 +15,7 @@ nnoremap <right> :vertical resize+5<CR>
 " 类似命令 gi 移动到文件最后一次编辑位置并进入 insert 模式
 nnoremap gn `^
 " 设置行号和相对行号
-nnoremap <leader>nu :set nu! <bar> :set relativenumber!<CR>
+" nnoremap <leader>nu :set nu! <bar> :set relativenumber!<CR>
 " Buffer 切换
 nnoremap [b :bn<CR>
 nnoremap ]b :bp<CR>
