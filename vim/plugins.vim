@@ -111,6 +111,10 @@ autocmd User Startified setlocal cursorline
 " nnoremap <leader>st :Startify<CR>
 " }}}
 
+" vim-polyglot =================================== {{{
+let g:polyglot_disabled = ['csv']
+" }}}
+
 " IndentLine ===================================== {{{
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '·'
