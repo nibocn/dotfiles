@@ -36,12 +36,12 @@
     default = simple
 
 [diff]
-    tool = bc
+    tool = bc3
     noprefix = true
 [difftool]
     prompt = false
 [merge]
-    tool = bc
+    tool = bc3
 [mergetool]
     prompt = false
 [filter "lfs"]
@@ -49,3 +49,7 @@
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
     required = true
+[difftool "bc3"]
+    trustExitCode = true
+[mergetool "bc3"]
+    trustExitCode = true
