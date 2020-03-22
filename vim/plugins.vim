@@ -29,6 +29,7 @@ Plug 'ybian/smartim'
 
 " 状态栏 =============================== {{{
 Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
 " }}}
 
 " 搜索 ============================================== {{{
@@ -315,6 +316,7 @@ let g:lightline.separator = { 'left': "\ue0b8", 'right': "\ue0be" }
 let g:lightline.subseparator = { 'left': "\ue0b9", 'right': "\ue0b9" }
 let g:lightline.tabline_separator = { 'left': "\ue0bc", 'right': "\ue0ba" }
 let g:lightline.tabline_subseparator = { 'left': "\ue0bb", 'right': "\ue0bb" }
+let g:lightline#bufferline#unicode_symbols = 1
 
 let g:lightline.active = {
   \ 'left': [
@@ -331,24 +333,11 @@ let g:lightline.inactive = {
   \ 'right': [ [ 'lineinfo' ] ]
 \ }
 let g:lightline.tabline = {
-  \ 'left': [ [ 'vim_logo', 'tabs' ] ],
+  \ 'left': [ [ 'vim_logo', 'buffers' ] ],
   \ 'right': [
   \   [ 'gitbranch' ],
   \   [ 'gitstatus' ],
   \ ]
-\ }
-let g:lightline.tab = {
-  \ 'active': [ 'tabnum', 'filename', 'modified' ],
-  \ 'inactive': [ 'tabnum', 'filename', 'modified' ]
-\ }
-
-let g:lightline.tab_component = {
-\ }
-let g:lightline.tab_component_function = {
-  \ 'filename': 'lightline#tab#filename',
-  \ 'modified': 'lightline#tab#modified',
-  \ 'readonly': 'lightline#tab#readonly',
-  \ 'tabnum': 'Tab_num'
 \ }
 let g:lightline.component = {
   \ 'bufinfo': '%{bufname("%")}:%{bufnr("%")}',
@@ -380,6 +369,12 @@ let g:lightline.component_function = {
   \ 'gitbranch': 'LightlineGitGlobalStatus',
   \ 'coc_status': 'coc#status',
   \ 'gitstatus': 'LightlineGitBufferStatus',
+\ }
+let g:lightline.component_expand = {
+  \ 'buffers': 'lightline#bufferline#buffers',
+\ }
+let g:lightline.component_type = {
+  \ 'buffers': 'tabsel',
 \ }
 
 " 更新状态栏
