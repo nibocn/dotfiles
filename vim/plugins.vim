@@ -302,6 +302,13 @@ function! LightlineGitBufferStatus() abort
   return get(b:, 'coc_git_status', '')
 endfunction
 
+function! LightlineFilename() abort
+  let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+  let modified = &modified ? ' ✎' : ''
+  let readonly = &readonly ? ' ' : ''
+  return filename . readonly . modified
+endfunction
+
 set laststatus=2
 set showtabline=2
 set noshowmode
@@ -321,7 +328,7 @@ let g:lightline#bufferline#unicode_symbols = 1
 let g:lightline.active = {
   \ 'left': [
   \   [ 'mode', 'paste' ],
-  \   [ 'readonly', 'filename', 'modified' ]
+  \   [ 'filename' ]
   \ ],
   \ 'right': [
   \   [ 'lineinfo' ],
@@ -369,6 +376,7 @@ let g:lightline.component_function = {
   \ 'gitbranch': 'LightlineGitGlobalStatus',
   \ 'coc_status': 'coc#status',
   \ 'gitstatus': 'LightlineGitBufferStatus',
+  \ 'filename': 'LightlineFilename',
 \ }
 let g:lightline.component_expand = {
   \ 'buffers': 'lightline#bufferline#buffers',
