@@ -17,8 +17,8 @@ nnoremap gn `^
 " 设置行号和相对行号
 " nnoremap <leader>nu :set nu! <bar> :set relativenumber!<CR>
 " Buffer 切换
-nnoremap [b :bn<CR>
-nnoremap ]b :bp<CR>
+nnoremap ]b :bn<CR>
+nnoremap [b :bp<CR>
 
 " 设置文件保存快捷键
 inoremap <silent> <C-\>w <ESC>:w<CR>a
