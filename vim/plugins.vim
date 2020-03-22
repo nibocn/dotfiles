@@ -286,24 +286,13 @@ vnoremap <silent> <leader> :<C-u>WhichKeyVisual '<Space>'<CR>
 
 " Lightline ===================================================== {{{
 " 'colorscheme': 'wombat'
-let g:lightline = {
-  \ 'colorscheme': 'gruvbox_material',
-  \ 'active': {
-  \   'left': [
-  \     ['mode', 'paste'],
-  \     ['git_global_status', 'readonly', 'filename', 'modified'],
-  \   ],
-  \   'right': [
-  \     ['lineinfo'],
-  \     ['percent'],
-  \     ['git_buffer_status', 'fileformat', 'fileencoding', 'filetype']
-  \   ]
-  \ },
-  \ 'component_function': {
-  \   'git_global_status': 'LightlineGitGlobalStatus',
-  \   'git_buffer_status': 'LightlineGitBufferStatus',
-  \ }
-\ }
+
+function! CocCurrentFunction()
+  return get(b:, 'coc_current_function', '')
+endfunction
+function! Tab_num(n) abort
+  return a:n." \ue0bb"
+endfunction
 
 function! LightlineGitGlobalStatus() abort
   return get(g:, 'coc_git_status', '')
@@ -311,8 +300,90 @@ endfunction
 function! LightlineGitBufferStatus() abort
   return get(b:, 'coc_git_status', '')
 endfunction
+
+set laststatus=2
+set showtabline=2
+set noshowmode
+augroup lightlineCustom
+  autocmd!
+  autocmd BufWritePost * call lightline#update()
+augroup END
+
+let g:lightline = {}
+let g:lightline.colorscheme = 'gruvbox_material'
+let g:lightline.separator = { 'left': "\ue0b8", 'right': "\ue0be" }
+let g:lightline.subseparator = { 'left': "\ue0b9", 'right': "\ue0b9" }
+let g:lightline.tabline_separator = { 'left': "\ue0bc", 'right': "\ue0ba" }
+let g:lightline.tabline_subseparator = { 'left': "\ue0bb", 'right': "\ue0bb" }
+
+let g:lightline.active = {
+  \ 'left': [
+  \   [ 'mode', 'paste' ],
+  \   [ 'readonly', 'filename', 'modified' ]
+  \ ],
+  \ 'right': [
+  \   [ 'lineinfo' ],
+  \   ['fileformat', 'filetype']
+  \ ]
+\ }
+let g:lightline.inactive = {
+  \ 'left': [ [ 'filename' , 'modified', 'fileformat' ] ],
+  \ 'right': [ [ 'lineinfo' ] ]
+\ }
+let g:lightline.tabline = {
+  \ 'left': [ [ 'vim_logo', 'tabs' ] ],
+  \ 'right': [
+  \   [ 'gitbranch' ],
+  \   [ 'gitstatus' ],
+  \ ]
+\ }
+let g:lightline.tab = {
+  \ 'active': [ 'tabnum', 'filename', 'modified' ],
+  \ 'inactive': [ 'tabnum', 'filename', 'modified' ]
+\ }
+
+let g:lightline.tab_component = {
+\ }
+let g:lightline.tab_component_function = {
+  \ 'filename': 'lightline#tab#filename',
+  \ 'modified': 'lightline#tab#modified',
+  \ 'readonly': 'lightline#tab#readonly',
+  \ 'tabnum': 'Tab_num'
+\ }
+let g:lightline.component = {
+  \ 'bufinfo': '%{bufname("%")}:%{bufnr("%")}',
+  \ 'vim_logo': "\ue7c5",
+  \ 'pomodoro': '%{PomodoroStatus()}',
+  \ 'mode': '%{lightline#mode()}',
+  \ 'absolutepath': '%F',
+  \ 'relativepath': '%f',
+  \ 'filename': '%t',
+  \ 'filesize': "%{HumanSize(line2byte('$') + len(getline('$')))}",
+  \ 'fileencoding': '%{&fenc!=#""?&fenc:&enc}',
+  \ 'fileformat': '%{&fenc!=#""?&fenc:&enc}[%{&ff}]',
+  \ 'filetype': '%{&ft!=#""?&ft:"no ft"}',
+  \ 'modified': '%M',
+  \ 'bufnum': '%n',
+  \ 'paste': '%{&paste?"PASTE":""}',
+  \ 'readonly': '%R',
+  \ 'charvalue': '%b',
+  \ 'charvaluehex': '%B',
+  \ 'percent': '%2p%%',
+  \ 'percentwin': '%P',
+  \ 'spell': '%{&spell?&spelllang:""}',
+  \ 'lineinfo': '%2p%% %3l:%-2v',
+  \ 'line': '%l',
+  \ 'column': '%c',
+  \ 'close': '%999X X ',
+\ }
+let g:lightline.component_function = {
+  \ 'gitbranch': 'LightlineGitGlobalStatus',
+  \ 'coc_status': 'coc#status',
+  \ 'gitstatus': 'LightlineGitBufferStatus',
+\ }
+
 " 更新状态栏
-autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
+" autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
 " }}}
 
 " vim: set fdl=0 fdm=marker:
