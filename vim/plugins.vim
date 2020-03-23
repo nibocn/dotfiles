@@ -279,6 +279,10 @@ let g:which_key_map.s = {
   \ 'a': ['Ag', 'fzf ag'],
   \ 'l': ['Lines', 'fzf lines']
 \ }
+let g:which_key_map.e = {
+  \ 'name': 'editor',
+  \ 'p': [':set paste!', 'paste mode']
+\ }
 
 call which_key#register('<Space>', "g:which_key_map")
 nnoremap <silent> <leader> :<C-u>WhichKey '<Space>'<CR>
