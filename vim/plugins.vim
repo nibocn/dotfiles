@@ -314,7 +314,7 @@ set showtabline=2
 set noshowmode
 augroup lightlineCustom
   autocmd!
-  autocmd BufWritePost * call lightline#update()
+  autocmd BufWritePost,BufRead * call lightline#update()
 augroup END
 
 let g:lightline = {}
@@ -386,7 +386,7 @@ let g:lightline.component_type = {
 \ }
 
 " 更新状态栏
-" autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
+" autocmd BufWritePost,BufRead * call lightline#update()
 " }}}
 
 " vim: set fdl=0 fdm=marker:
