@@ -301,6 +301,12 @@ endfunction
 function! LightlineGitBufferStatus() abort
   return get(b:, 'coc_git_status', '')
 endfunction
+function! LightlineRelateivePath() abort
+  let relativepath = expand('%:f') !=# '' ? expand('%:f') : '[No Name]'
+  let modified = &modified ? ' ✎' : ''
+  let readonly = &readonly ? ' ' : ''
+  return relativepath . readonly . modified
+endfunction
 
 function! LightlineFilename() abort
   let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
@@ -328,7 +334,7 @@ let g:lightline#bufferline#unicode_symbols = 1
 let g:lightline.active = {
   \ 'left': [
   \   [ 'mode', 'paste' ],
-  \   [ 'filename' ]
+  \   [ 'relativepath' ],
   \ ],
   \ 'right': [
   \   [ 'lineinfo' ],
@@ -376,6 +382,7 @@ let g:lightline.component_function = {
   \ 'gitbranch': 'LightlineGitGlobalStatus',
   \ 'coc_status': 'coc#status',
   \ 'gitstatus': 'LightlineGitBufferStatus',
+  \ 'relativepath': 'LightlineRelateivePath',
   \ 'filename': 'LightlineFilename',
 \ }
 let g:lightline.component_expand = {
