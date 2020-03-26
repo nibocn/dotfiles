@@ -242,8 +242,11 @@ let g:NERDCustomDelimiters = {
 " }}}
 
 " vim-which-key ================================================= {{{
-" nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
-" nnoremap <silent> <localleader> :WhichKey ','<CR>
+nnoremap <silent> <leader> :<C-u>WhichKey '<Space>'<CR>
+vnoremap <silent> <leader> :<C-u>WhichKeyVisual '<Space>'<CR>
+nnoremap <silent> <localleader> :<C-u>WhichKey ','<CR>
+call which_key#register('<Space>', "g:which_key_map")
+
 let g:which_key_map = {}
 
 let g:which_key_map['?'] = ['Maps', 'show-deybindings']
@@ -284,9 +287,6 @@ let g:which_key_map.e = {
   \ 'p': [':set paste!', 'paste mode']
 \ }
 
-call which_key#register('<Space>', "g:which_key_map")
-nnoremap <silent> <leader> :<C-u>WhichKey '<Space>'<CR>
-vnoremap <silent> <leader> :<C-u>WhichKeyVisual '<Space>'<CR>
 " }}}
 
 " Lightline ===================================================== {{{

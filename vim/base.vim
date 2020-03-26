@@ -133,6 +133,6 @@ set foldlevel=1
 
 
 let mapleader=' '
-let maplocalleader=';'
+let maplocalleader=','
 
 " vim: set fdl=0 fdm=marker:
