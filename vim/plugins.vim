@@ -181,9 +181,9 @@ nnoremap <silent> <C-\>cc :CocCommand<CR>
 nnoremap <silent> <C-\>cl :CocList<CR>
 
 " coc-git config {{{
-nmap <silent> <C-\>gn <Plug>(coc-git-nextchunk)
-nmap <silent> <C-\>gp <Plug>(coc-git-prevchunk)
-nmap <silent> <C-\>gi <Plug>(coc-git-chunkinfo)
+nmap <silent> <leader>gj <Plug>(coc-git-nextchunk)
+nmap <silent> <leader>gk <Plug>(coc-git-prevchunk)
+nmap <silent> <leader>gi <Plug>(coc-git-chunkinfo)
 "   }}}
 
 nmap <silent> <C-\>dn <Plug>(coc-diagnostic-next)
@@ -285,6 +285,13 @@ let g:which_key_map.s = {
 let g:which_key_map.e = {
   \ 'name': '+editor',
   \ 'p': [':set paste!', 'paste mode']
+\ }
+
+let g:which_key_map.g = {
+  \ 'name': '+git',
+  \ 'j': 'chunk next',
+  \ 'k': 'chunk prev',
+  \ 'i': 'chunk info',
 \ }
 
 " }}}
