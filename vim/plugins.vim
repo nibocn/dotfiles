@@ -249,7 +249,7 @@ call which_key#register('<Space>', "g:which_key_map")
 
 let g:which_key_map = {}
 
-let g:which_key_map['?'] = ['Maps', 'show-deybindings']
+let g:which_key_map['?'] = ['Maps', 'show-keybindings']
 let g:which_key_map[';'] = ['<Plug>NERDCommenterToggle', 'commenter']
 let g:which_key_map['q'] = ['q', 'quit']
 let g:which_key_map['Q'] = [':qa!', 'quit-without-saving']
@@ -283,7 +283,7 @@ let g:which_key_map.s = {
   \ 'l': ['Lines', 'fzf lines']
 \ }
 let g:which_key_map.e = {
-  \ 'name': 'editor',
+  \ 'name': '+editor',
   \ 'p': [':set paste!', 'paste mode']
 \ }
 
