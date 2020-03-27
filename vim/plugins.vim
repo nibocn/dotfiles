@@ -184,7 +184,14 @@ nnoremap <silent> <C-\>cl :CocList<CR>
 nmap <silent> <leader>gj <Plug>(coc-git-nextchunk)
 nmap <silent> <leader>gk <Plug>(coc-git-prevchunk)
 nmap <silent> <leader>gi <Plug>(coc-git-chunkinfo)
-"   }}}
+nmap <silent> <leader>gc <Plug>(coc-git-commit)
+nmap <silent> <leader>gu :<C-u>CocCommand git.chunkUndo<CR>
+nmap <silent> <leader>ga :<C-u>CocCommand git.chunkStage<CR>
+nmap <silent> <leader>gd :<C-u>CocCommand git.diffCached<CR>
+nmap <silent> <leader>gs :<C-u>CocList gstatus<CR>
+nmap <silent> <leader>glc :<C-u>CocList bcommits<CR>
+nmap <silent> <leader>gla :<C-u>CocList commits<CR>
+" }}}
 
 nmap <silent> <C-\>dn <Plug>(coc-diagnostic-next)
 nmap <silent> <C-\>dp <Plug>(coc-diagnostic-prev)
@@ -292,6 +299,12 @@ let g:which_key_map.g = {
   \ 'j': 'chunk next',
   \ 'k': 'chunk prev',
   \ 'i': 'chunk info',
+  \ 'c': 'commits of current chunk',
+  \ 'u': 'chunk undo',
+  \ 'a': 'chunk stage',
+  \ 's': 'status',
+  \ 'd': 'diff staged',
+  \ 'l': { 'name': '+logs', 'c': 'log(cur buf) fuzzy finder', 'a': 'log(all) fuzzy finder' },
 \ }
 
 " }}}
