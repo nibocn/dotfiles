@@ -176,10 +176,6 @@ function! s:show_documentation()
   endif
 endfunction
 
-" nnoremap <leader>e :CocCommand explorer<CR>
-nnoremap <silent> <C-\>cc :CocCommand<CR>
-nnoremap <silent> <C-\>cl :CocList<CR>
-
 " coc-git config {{{
 nmap <silent> <leader>gj <Plug>(coc-git-nextchunk)
 nmap <silent> <leader>gk <Plug>(coc-git-prevchunk)
@@ -193,8 +189,28 @@ nmap <silent> <leader>glc :<C-u>CocList bcommits<CR>
 nmap <silent> <leader>gla :<C-u>CocList commits<CR>
 " }}}
 
-nmap <silent> <C-\>dn <Plug>(coc-diagnostic-next)
-nmap <silent> <C-\>dp <Plug>(coc-diagnostic-prev)
+" coc-diagnostic config {{{
+nmap <silent> <leader>lj <Plug>(coc-diagnostic-next)
+nmap <silent> <leader>lk <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>li <Plug>(coc-diagnostic-info)
+" }}}
+nnoremap <silent> <leader>l<Space> :CocList<CR>
+nnoremap <silent> <leader>lc :CocCommand<CR>
+nmap <silent> <leader>ld <Plug>(coc-definition)
+nmap <silent> <leader>lD <Plug>(coc-declaration)
+nmap <silent> <leader>lt <Plug>(coc-type-definition)
+nmap <silent> <leader>lr <Plug>(coc-references)
+nmap <silent> <leader>lm <Plug>(coc-implementation)
+nmap <silent> <leader>lR <Plug>(coc-rename)
+nmap <silent> <leader>lf <Plug>(coc-format)
+vmap <silent> <leader>lf <Plug>(coc-format-selected)
+nmap <silent> <leader>lF <Plug>(coc-fix-current)
+nmap <silent> <leader>la <Plug>(coc-codeaction)
+vmap <silent> <leader>la <Plug>(coc-codeaction-selected)
+nmap <silent> <leader>lA <Plug>(coc-codelens-action)
+nmap <silent> <leader>le <Plug>(coc-refactor)
+nmap <silent> <leader>lv <Plug>(coc-range-select)
+vmap <silent> <leader>lv <Plug>(coc-range-select)
 
 " }}}
 
@@ -305,6 +321,27 @@ let g:which_key_map.g = {
   \ 's': 'status',
   \ 'd': 'diff staged',
   \ 'l': { 'name': '+logs', 'c': 'log(cur buf) fuzzy finder', 'a': 'log(all) fuzzy finder' },
+\ }
+
+let g:which_key_map.l = {
+  \ 'name': '+lsp',
+  \ "\<Space>": 'list',
+  \ 'c': 'command list',
+  \ 'j': 'diagnostic next(coc)',
+  \ 'k': 'diagnostic prev(coc)',
+  \ 'i': 'diagnostic info(coc)',
+  \ 'd': 'jump to definition',
+  \ 'D': 'jump to declaration',
+  \ 't': 'jump to type definition',
+  \ 'r': 'jump to reference',
+  \ 'm': 'jump to implementation',
+  \ 'R': 'rename symbol',
+  \ 'f': 'format',
+  \ 'F': 'fix code',
+  \ 'a': 'code action',
+  \ 'A': 'codelens action',
+  \ 'e': 'open refactor window',
+  \ 'v': 'range select',
 \ }
 
 " }}}
