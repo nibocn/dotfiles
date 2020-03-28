@@ -106,6 +106,7 @@ yabai -m rule --add app="^SaveWizard$" manage=off
 yabai -m rule --add app="^Reminders$" manage=off
 yabai -m rule --add app="^Keka$" manage=off
 yabai -m rule --add app="^Books$" manage=off
+yabai -m rule --add app="^Alfred Preferences$" manage=off
 
 
 echo "yabai configuration loaded.."
