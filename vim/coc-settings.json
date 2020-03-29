@@ -5,6 +5,7 @@
     "snippets.loadFromExtensions": false,
     "diagnostic.errorSign": "",
     "diagnostic.warningSign": "",
+    "diagnostic.enable": false,
     "explorer.width": 40,
     "explorer.quitOnOpen": true,
     "explorer.sources": [

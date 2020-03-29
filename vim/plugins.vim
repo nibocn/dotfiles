@@ -50,6 +50,8 @@ Plug 'liuchengxu/vista.vim'
 " 异步任务
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'dense-analysis/ale'
+Plug 'maximbaz/lightline-ale'
 " }}}
 
 " 高亮当前光标单词
@@ -190,11 +192,6 @@ nmap <silent> <leader>glc :<C-u>CocList bcommits<CR>
 nmap <silent> <leader>gla :<C-u>CocList commits<CR>
 " }}}
 
-" coc-diagnostic config {{{
-nmap <silent> <leader>lj <Plug>(coc-diagnostic-next)
-nmap <silent> <leader>lk <Plug>(coc-diagnostic-prev)
-nmap <silent> <leader>li <Plug>(coc-diagnostic-info)
-" }}}
 nnoremap <silent> <leader>l<Space> :CocList<CR>
 nnoremap <silent> <leader>lc :CocCommand<CR>
 nmap <silent> <leader>ld <Plug>(coc-definition)
@@ -327,10 +324,10 @@ let g:which_key_map.g = {
 let g:which_key_map.l = {
   \ 'name': '+lsp',
   \ "\<Space>": 'list',
+  \ 'j': 'diagnostic next(ale)',
+  \ 'k': 'diagnostic prev(ale)',
+  \ 'i': 'diagnostic info(ale)',
   \ 'c': 'command list',
-  \ 'j': 'diagnostic next(coc)',
-  \ 'k': 'diagnostic prev(coc)',
-  \ 'i': 'diagnostic info(coc)',
   \ 'd': 'jump to definition',
   \ 'D': 'jump to declaration',
   \ 't': 'jump to type definition',
@@ -393,6 +390,12 @@ let g:lightline.tabline_separator = { 'left': "\ue0bc", 'right': "\ue0ba " }
 let g:lightline.tabline_subseparator = { 'left': "\ue0bb", 'right': "\ue0bb" }
 let g:lightline#bufferline#unicode_symbols = 1
 
+let g:lightline#ale#indicator_checking = "\uf110"
+let g:lightline#ale#indicator_infos = "\uf129 "
+let g:lightline#ale#indicator_warnings = "\uf421 "
+let g:lightline#ale#indicator_errors = "\uf65b "
+let g:lightline#ale#indicator_ok = "\uf118"
+
 let g:lightline.active = {
   \ 'left': [
   \   [ 'mode', 'paste' ],
@@ -400,7 +403,8 @@ let g:lightline.active = {
   \ ],
   \ 'right': [
   \   [ 'lineinfo' ],
-  \   ['fileformat', 'filetype']
+  \   ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok',
+  \   'fileformat', 'filetype']
   \ ]
 \ }
 let g:lightline.inactive = {
@@ -449,13 +453,38 @@ let g:lightline.component_function = {
 \ }
 let g:lightline.component_expand = {
   \ 'buffers': 'lightline#bufferline#buffers',
+  \ 'linter_checking': 'lightline#ale#checking',
+  \ 'linter_infos': 'lightline#ale#infos',
+  \ 'linter_warnings': 'lightline#ale#warnings',
+  \ 'linter_errors': 'lightline#ale#errors',
+  \ 'linter_ok': 'lightline#ale#ok',
 \ }
 let g:lightline.component_type = {
   \ 'buffers': 'tabsel',
+  \ 'linter_errors': 'error',
+  \ 'linter_warnings': 'warning',
 \ }
 
 " 更新状态栏
 " autocmd BufWritePost,BufRead * call lightline#update()
+" }}}
+
+" ale config =============================================== {{{
+nnoremap <silent> <leader>lj :ALENext<CR>
+nnoremap <silent> <leader>lk :ALEPrevious<CR>
+nnoremap <silent> <leader>li :ALEDetail <CR>
+" 定义错误/警告标识
+let g:ale_sign_error = "\uf65b"
+let g:ale_sign_warning = "\uf421"
+" 定义代码检查信息输出格式
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_info_str = 'I'
+let g:ale_echo_msg_format = '[%linter%:%code%] %s [%severity%]'
+" virtual text
+let g:ale_virtualtext_cursor = 1
+let g:ale_virtualtext_delay = 10
+let g:ale_virtualtext_prefix = '▸'
 " }}}
 
 " vim: set fdl=0 fdm=marker:
