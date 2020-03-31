@@ -265,7 +265,7 @@ let g:NERDCustomDelimiters = {
 " vim-which-key ================================================= {{{
 nnoremap <silent> <leader> :<C-u>WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :<C-u>WhichKeyVisual '<Space>'<CR>
-nnoremap <silent> <localleader> :<C-u>WhichKey ','<CR>
+" nnoremap <silent> <localleader> :<C-u>WhichKey ','<CR>
 call which_key#register('<Space>', "g:which_key_map")
 
 let g:which_key_map = {}
