@@ -389,6 +389,8 @@ let g:lightline.subseparator = { 'left': "\ue0b9", 'right': "\ue0b9" }
 let g:lightline.tabline_separator = { 'left': "\ue0bc", 'right': "\ue0ba " }
 let g:lightline.tabline_subseparator = { 'left': "\ue0bb", 'right': "\ue0bb" }
 let g:lightline#bufferline#unicode_symbols = 1
+" 只显示 buffer 页签文件名不显示路径
+let g:lightline#bufferline#filename_modifier = ':t'
 
 let g:lightline#ale#indicator_checking = "\uf110"
 let g:lightline#ale#indicator_infos = "\uf129 "
@@ -399,7 +401,7 @@ let g:lightline#ale#indicator_ok = "\uf118"
 let g:lightline.active = {
   \ 'left': [
   \   [ 'mode', 'paste' ],
-  \   [ 'relativepath' ],
+  \   [ 'filename' ],
   \ ],
   \ 'right': [
   \   [ 'lineinfo' ],
