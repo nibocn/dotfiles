@@ -82,6 +82,8 @@ Plug 'tyru/open-browser.vim', { 'for': 'plantuml' }
 
 Plug 'liuchengxu/vim-which-key'
 
+Plug 'fatih/vim-go', { 'for': ['go'], 'do': ':GoUpdateBinarie' }
+
 call plug#end()
 
 
@@ -475,6 +477,9 @@ let g:lightline.component_type = {
 nnoremap <silent> <leader>lj :ALENext<CR>
 nnoremap <silent> <leader>lk :ALEPrevious<CR>
 nnoremap <silent> <leader>li :ALEDetail <CR>
+let g:ale_linters = {
+  \ 'go': [ 'gopls' ]
+\ }
 let g:ale_java_javac_executable = "javac -cp /usr/local/share/lombok/lombok.jar"
 " 定义错误/警告标识
 let g:ale_sign_error = "\uf65b"

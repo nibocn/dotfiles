@@ -1,7 +1,5 @@
 # Export {{{
 ## export MANPATH="/usr/local/man:$MANPATH"
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/opt/go/libexec/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/opt/gnu-tar/libexec/gnubin:/usr/local/opt/mysql-client/bin:/usr/local/opt/openssl@1.1/bin:$PATH
-
 ## Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -18,9 +16,16 @@ export PIPENV_PYPI_MIRROR=https://mirrors.aliyun.com/pypi/simple/
 export PIPENV_VENV_IN_PROJECT=true
 ## Groovy 配置
 export GROOVY_HOME='/usr/local/opt/groovy/libexec'
+## Go
+export GOPATH=$HOME/go
+export GO111MODULE=on
+export GOPROXY=https://goproxy.io
 ## zlib
 export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/mysql-client/lib -L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/mysql-client/include -I/usr/local/opt/openssl@1.1/include"
+
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/opt/go/libexec/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/opt/gnu-tar/libexec/gnubin:/usr/local/opt/mysql-client/bin:/usr/local/opt/openssl@1.1/bin:$GOPATH/bin:$PATH
+
 # }}}
 # Bat 配置
 export BAT_CONFIG_PATH=$HOME/.local/dotfiles/bat.conf
