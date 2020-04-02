@@ -37,7 +37,7 @@
 
 [diff]
     tool = bc3
-    noprefix = true
+    noprefix = false
 [difftool]
     prompt = false
 [merge]
