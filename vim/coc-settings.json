@@ -1,5 +1,5 @@
 {
-    "suggest.noselect": false,
+    "suggest.noselect": true,
     "suggest.enablePreview": true,
     "coc.preferences.extensionUpdateCheck": "weekly",
     "snippets.loadFromExtensions": false,
