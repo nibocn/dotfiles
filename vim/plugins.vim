@@ -495,4 +495,8 @@ let g:ale_virtualtext_delay = 10
 let g:ale_virtualtext_prefix = '▸'
 " }}}
 
+" vim-go ==================================================== {{{
+let g:go_fmt_command = "goimports"
+" }}}
+
 " vim: set fdl=0 fdm=marker:
