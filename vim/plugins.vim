@@ -238,8 +238,10 @@ let g:asynctasks_term_focus = 0
 " 将内置终端的 buffer 设置为 bufhidden
 let g:asynctasks_term_hideen = 1
 let g:asynctasks_term_listed = 0
-nnoremap <silent><C-\>r :AsyncTask file-run<CR>
-nnoremap <silent><C-\>b :AsyncTask file-build<CR>
+nnoremap <silent><leader>tb :AsyncTask file-build<CR>
+nnoremap <silent><leader>tr :AsyncTask file-run<CR>
+nnoremap <silent><leader>tl :AsyncTaskList<CR>
+nnoremap <silent><leader>te :AsyncTaskEdit<CR>
 " }}}
 
 " FZF =========================================================== {{{
@@ -284,11 +286,15 @@ let g:which_key_map.f = {
   \ 'e': [':CocCommand explorer', 'file folder']
 \ }
 let g:which_key_map.t = {
-  \ 'name': '+toggle/tag',
+  \ 'name': '+toggle/tag/task',
   \ 't': ['Vista', 'vista tagbar'],
-  \ 'b': ['BTags', 'fzf buffer tag'],
+  \ 'B': ['BTags', 'fzf buffer tag'],
   \ 'T': ['Tags', 'fzf global tag'],
-  \ 'i': ['IndentLinesToggle', 'indentLine']
+  \ 'i': ['IndentLinesToggle', 'indentLine'],
+  \ 'b': 'build task',
+  \ 'r': 'run task',
+  \ 'l': 'task list',
+  \ 'e': 'edit task',
 \ }
 let g:which_key_map.b = {
   \ 'name': '+buffer',
