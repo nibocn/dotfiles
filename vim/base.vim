@@ -18,6 +18,8 @@ if g:editor == 'vim'
   set ttimeoutlen=50
   " command 模式下使用 Tab 键时显示候选命令列表
   set wildmenu
+  " 将 vim 中的所有数字都当成十进制，默认以 0 开头的数字为八进制
+  set nrformats=
   if $TERM == 'tmux-256color'
     " 处理在 Tmux 中启用 true color
     set t_8f=[38;2;%lu;%lu;%lum
