@@ -17,7 +17,7 @@ call plug#begin($PLUG_HOME)
 
 " 美化 ============================================ {{{
 " 主题
-Plug 'nibocn/gruvbox-material.vim', {'as': 'gruvbox-material'}
+Plug 'sainnhe/gruvbox-material', {'as': 'gruvbox-material'}
 " }}}
 
 Plug 'sheerun/vim-polyglot'
