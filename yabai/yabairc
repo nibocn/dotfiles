@@ -20,7 +20,7 @@ yabai -m config window_opacity               off
 yabai -m config window_shadow                on
 ## 显示边框，default: off
 yabai -m config window_border                on
-yabai -m config window_border_width          4
+yabai -m config window_border_width          3
 yabai -m config active_window_border_color   0xff9c5054
 yabai -m config normal_window_border_color   0xff505050
 yabai -m config insert_window_border_color   0xffd75f5f
