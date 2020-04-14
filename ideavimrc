@@ -1,3 +1,5 @@
+" 启用行号
+set number
 " 启用相对行号
 set relativenumber
 " 自动切换输入法，依赖 IdeaVimExtension 插件
