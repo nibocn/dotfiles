@@ -22,3 +22,5 @@ ln -sf ~/.local/dotfiles/ranger/rc.conf ~/.config/ranger/rc.conf
 
 ln -sf ~/.local/dotfiles/yabai/yabairc ~/.yabairc
 ln -sf ~/.local/dotfiles/yabai/skhdrc ~/.skhdrc
+
+ln -sf ~/.local/dotfiles/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml

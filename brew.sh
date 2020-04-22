@@ -56,7 +56,7 @@ fi
 brewcaskPackages=("postman dbeaver-community mpv iina snipaste sublime-text
                    visual-studio-code flux xmind-zen calibre pomotodo
                    karabiner-elements gifrocket fliqlo virtualbox virtualbox-extension-pack
-                   vagrant xquartz beyond-compare clashx")
+                   vagrant xquartz beyond-compare clashx alacritty")
 
 for package in $brewcaskPackages
 do
