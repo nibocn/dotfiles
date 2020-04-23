@@ -156,6 +156,8 @@ zinit for \
   OMZ::lib/git.zsh \
   OMZ::lib/key-bindings.zsh
 
+zinit ice lucid wait="0"
+zinit snippet OMZ::plugins/fzf/fzf.plugin.zsh
 # Git
 zinit ice lucid wait="0"
 zinit snippet OMZ::plugins/git/git.plugin.zsh
