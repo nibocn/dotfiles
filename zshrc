@@ -1,7 +1,7 @@
+source ~/.zinit/bin/zinit.zsh
+
 # Export {{{
 ## export MANPATH="/usr/local/man:$MANPATH"
-## Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
 
 export EDITOR='nvim'
 ## You may need to manually set your language environment
@@ -23,61 +23,14 @@ export GOPROXY=https://goproxy.io
 ## zlib
 export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/mysql-client/lib -L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/mysql-client/include -I/usr/local/opt/openssl@1.1/include"
+# Bat 配置
+export BAT_CONFIG_PATH=$HOME/.local/dotfiles/bat.conf
+# z.lua 配置
+# 增强模式
+export _ZL_MATCH_MODE=1
 
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/opt/go/libexec/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/opt/gnu-tar/libexec/gnubin:/usr/local/opt/mysql-client/bin:/usr/local/opt/openssl@1.1/bin:$GOPATH/bin:$PATH
 
-# }}}
-# Bat 配置
-export BAT_CONFIG_PATH=$HOME/.local/dotfiles/bat.conf
-
-# ZSH default {{{
-## Set name of the theme to load. Optionally, if you set this to "random"
-## it'll load a random theme each time that oh-my-zsh is loaded.
-## See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-## ZSH_THEME="robbyrussell"
-## ZSH_THEME="agnoster"
-## ZSH_THEME="powerlevel10k/powerlevel10k"
-
-## Uncomment the following line to use case-sensitive completion.
-## CASE_SENSITIVE="true"
-
-## Uncomment the following line to use hyphen-insensitive completion. Case
-## sensitive completion must be off. _ and - will be interchangeable.
-## HYPHEN_INSENSITIVE="true"
-
-## Uncomment the following line to disable bi-weekly auto-update checks.
-## DISABLE_AUTO_UPDATE="true"
-
-## Uncomment the following line to change how often to auto-update (in days).
-## export UPDATE_ZSH_DAYS=13
-
-## Uncomment the following line to disable colors in ls.
-## DISABLE_LS_COLORS="true"
-
-## Uncomment the following line to disable auto-setting terminal title.
-## DISABLE_AUTO_TITLE="true"
-
-## Uncomment the following line to enable command auto-correction.
-## ENABLE_CORRECTION="true"
-
-## Uncomment the following line to display red dots whilst waiting for completion.
-## COMPLETION_WAITING_DOTS="true"
-
-## Uncomment the following line if you want to disable marking untracked files
-## under VCS as dirty. This makes repository status check for large repositories
-## much, much faster.
-## DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-## Uncomment the following line if you want to change the command execution time
-## stamp shown in the history command output.
-## The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-## HIST_STAMPS="mm/dd/yyyy"
-
-## Would you like to use another custom folder than $ZSH/custom?
-## ZSH_CUSTOM=/path/to/new-custom-folder
-
-ZSH_CUSTOM=$HOME/.local/dotfiles/zsh/custom
-source $ZSH/oh-my-zsh.sh
 # }}}
 
 # Powerlevel10k {{{
@@ -154,95 +107,16 @@ function unproxy() {
 }
 # }}}
 
-# Coreutils {{{
-## 需要安装 coreutils 来替换默认的 ls 命令，注释掉一些适配性检查的代码提高打开新 Shell 的速度
-## if brew list | grep coreutils > /dev/null ; then
-##    PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-## PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-## alias ls='ls -F --show-control-chars --color=auto'
-## eval `gdircolors -b $HOME/.dir_colors`
-## fi
-eval $(gdircolors -b ~/.dircolors/ls_colors)
-alias ls='gls --color=auto'
-# }}}
-
 # Other config {{{
-## redefine prompt_context for hiding user@hostname
 ## 不显示主机及账号相关上下文
-prompt_context () { }
-## added by travis gem
-[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
-## pyenv
-eval "$(pyenv init -)"
-## 增强命令搜索，支持正则，使用 fzf 代替
-## bindkey '^R' history-incremental-pattern-search-backward
+# prompt_context () { }
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 # }}}
 
 # SDKMAN {{{
 ## THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/richard/.sdkman"
-[[ -s "/Users/richard/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/richard/.sdkman/bin/sdkman-init.sh"
-# }}}
-
-# zplug {{{
-## install zplug, plugin manager for zsh, https://github.com/zplug/zplug
-## curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-## zplug configruation
-if [[ ! -d "${ZPLUG_HOME}" ]]; then
-  if [[ ! -d ~/.zplug ]]; then
-    git clone --depth=1 https://github.com/zplug/zplug ~/.zplug
-    # If we can't get zplug, it'll be a very sobering shell experience. To at
-    # least complete the sourcing of this file, we'll define an always-false
-    # returning zplug function.
-    if [[ $? != 0 ]]; then
-      function zplug() {
-        return 1
-      }
-    fi
-  fi
-  export ZPLUG_HOME=~/.zplug
-fi
-if [[ -d "${ZPLUG_HOME}" ]]; then
-  source "${ZPLUG_HOME}/init.zsh"
-fi
-
-## Plugins list {{{
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-zplug 'romkatv/powerlevel10k', as:theme
-zplug 'plugins/common-aliases', from:oh-my-zsh
-zplug 'plugins/osx', from:oh-my-zsh, if: "[[ $OSTYPE == *darwin* ]]"
-zplug 'plugins/git', from:oh-my-zsh
-zplug 'plugins/autojump', from:oh-my-zsh, if: 'which autojump'
-zplug 'plugins/gradle', from:oh-my-zsh
-zplug 'plugins/tmux', from:oh-my-zsh
-zplug 'plugins/docker', from:oh-my-zsh
-zplug 'plugins/docker-compose', from:oh-my-zsh
-zplug 'plugins/vagrant', from:oh-my-zsh
-zplug 'zsh-users/zsh-autosuggestions'
-zplug 'zsh-users/zsh-completions', defer:2
-zplug 'zsh-users/zsh-syntax-highlighting', defer:2
-## }}}
-
-## Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-## Then, source plugins and add commands to $PATH
-zplug load
-# }}}
-
-# autojump {{{
-j() {
-    if [[ "$#" -ne 0 ]]; then
-        cd "$(autojump $@)"
-        return
-    fi
-    cd "$(autojump -s | sort -k1gr | awk '$1 ~ /[0-9]:/ && $2 ~ /^\// { for (i=2; i<=NF; i++) { print $(i) } }' |  fzf --height 40% --reverse --inline-info)"
-}
+# [[ -s "/Users/richard/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/richard/.sdkman/bin/sdkman-init.sh"
 # }}}
 
 # FZF {{{
@@ -253,6 +127,45 @@ export FZF_COMPLETION_TRIGGER='\'
 ## export FZF_PREVIEW_COMMAND="bat --style=numbers,header --wrap never --color always {} || cat {} || tree -C {}"
 export FZF_PREVIEW_COMMAND='[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || bat --style=numbers,changes --color=always {}'
 ## export FZF_CTRL_T_OPTS="--min-height 30 --preview-window down:60% --preview-window noborder --preview '($FZF_PREVIEW_COMMAND) 2> /dev/null'"
+# }}}
+
+# Zinit {{{
+# 语法高亮
+zinit ice lucid wait="0"
+zinit light zdharma/fast-syntax-highlighting
+# 自动建议
+zinit ice lucid wait="0" atload='_zsh_autosuggest_start'
+zinit light zsh-users/zsh-autosuggestions
+# 目录、文件颜色
+zinit ice lucid wait="0" atclone="dircolors -b LS_COLORS > c.zsh" atpull='%atclone' pick='c.zsh'
+zinit light trapd00r/LS_COLORS
+
+# 快速路径切换
+zinit ice lucid wait="0"
+zinit light skywind3000/z.lua
+
+zinit for \
+  OMZ::lib/git.zsh \
+  OMZ::lib/key-bindings.zsh
+
+# Git
+zinit ice lucid wait="0"
+zinit snippet OMZ::plugins/git/git.plugin.zsh
+# 补全
+# zinit ice lucid wait="1" as="completion"
+# zinit snippet OMZ::plugins/docker/_docker
+# zinit as="completion" for \
+#     OMZ::plugins/docker/_docker \
+#     OMZ::plugins/gradle/_gradle
+
+zinit ice lucid wait="0" atload="zpcompinit; zpcdreplay"
+zinit snippet OMZ::lib/completion.zsh
+
+# 加载 pure 主题
+# zinit ice lucid wait="0" pick"async.zsh" src"pure.zsh"
+# zinit light sindresorhus/pure
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
 # }}}
 
 # vim: set fdl=0 fdm=marker:
