@@ -138,29 +138,20 @@ export FZF_PREVIEW_COMMAND='[[ $(file --mime {}) =~ binary ]] && echo {} is a bi
 # }}}
 
 # Zinit {{{
-# 语法高亮
-zinit ice lucid wait="0"
-zinit light zdharma/fast-syntax-highlighting
-# 自动建议
-zinit ice lucid wait="0" atload='_zsh_autosuggest_start'
-zinit light zsh-users/zsh-autosuggestions
-# 目录、文件颜色
-zinit ice lucid wait="0" atclone="dircolors -b LS_COLORS > c.zsh" atpull='%atclone' pick='c.zsh'
-zinit light trapd00r/LS_COLORS
+zinit wait="0" lucid for \
+  zdharma/fast-syntax-highlighting \
+  skywind3000/z.lua \
+  atload='_zsh_autosuggest_start' \
+  zsh-users/zsh-autosuggestions \
+  atclone="dircolors -b LS_COLORS > c.zsh" atpull='%atclone' pick='c.zsh' \
+  trapd00r/LS_COLORS
 
-# 快速路径切换
-zinit ice lucid wait="0"
-zinit light skywind3000/z.lua
-
-zinit for \
+zinit wait="0" lucid for \
   OMZ::lib/git.zsh \
-  OMZ::lib/key-bindings.zsh
+  OMZ::lib/key-bindings.zsh \
+  OMZ::plugins/fzf/fzf.plugin.zsh \
+  OMZ::plugins/git/git.plugin.zsh
 
-zinit ice lucid wait="0"
-zinit snippet OMZ::plugins/fzf/fzf.plugin.zsh
-# Git
-zinit ice lucid wait="0"
-zinit snippet OMZ::plugins/git/git.plugin.zsh
 # 补全
 # zinit ice lucid wait="1" as="completion"
 # zinit snippet OMZ::plugins/docker/_docker
@@ -172,7 +163,7 @@ zinit ice lucid wait="0" atload="zpcompinit; zpcdreplay"
 zinit snippet OMZ::lib/completion.zsh
 
 # 加载 pure 主题
-# zinit ice lucid wait="0" pick"async.zsh" src"pure.zsh"
+# zinit ice pick"async.zsh" src"pure.zsh"
 # zinit light sindresorhus/pure
 zinit ice depth=1
 zinit light romkatv/powerlevel10k
