@@ -65,6 +65,7 @@ key_bindings:
   - { key: Q,        mods: Control, chars: "\x11"                        }
   - { key: F,        mods: Alt,     chars: "\x1bf"                       }
   - { key: B,        mods: Alt,     chars: "\x1bb"                       }
+  - { key: D,        mods: Alt,     chars: "\x1bd"                       }
 # }}}
 
 # Any items in the `env` entry below will be added as
