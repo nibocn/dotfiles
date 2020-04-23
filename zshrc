@@ -39,6 +39,9 @@ export BAT_CONFIG_PATH=$HOME/.local/dotfiles/bat.conf
 # z.lua 配置
 # 增强模式
 export _ZL_MATCH_MODE=1
+# 处理 git log || git diff 等命令不一次性全部显示在屏幕上
+export PAGER=less
+export LESS=-R
 
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/opt/go/libexec/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/opt/gnu-tar/libexec/gnubin:/usr/local/opt/mysql-client/bin:/usr/local/opt/openssl@1.1/bin:$GOPATH/bin:$PATH
 
