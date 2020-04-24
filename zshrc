@@ -117,6 +117,13 @@ alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
 ## }}}
+## cd {{{
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+#}}}
 # }}}
 
 # Proxy {{{
