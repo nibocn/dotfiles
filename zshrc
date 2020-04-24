@@ -75,6 +75,7 @@ fi
 # Alias {{{
 # alias vvim='\vim'
 # alias vim=nvim
+alias ls='ls --color=auto'
 alias nvi=nvim
 alias vi=vim
 alias rg='ranger'
@@ -164,7 +165,8 @@ zinit wait="0" lucid for \
   OMZ::lib/git.zsh \
   OMZ::lib/key-bindings.zsh \
   OMZ::plugins/fzf/fzf.plugin.zsh \
-  OMZ::plugins/git/git.plugin.zsh
+  OMZ::plugins/git/git.plugin.zsh \
+  OMZ::plugins/common-aliases/common-aliases.plugin.zsh
 
 # 补全
 # zinit ice lucid wait="1" as="completion"
