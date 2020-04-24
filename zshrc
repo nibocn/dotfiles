@@ -136,12 +136,6 @@ function unproxy() {
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 # }}}
 
-# SDKMAN {{{
-## THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/richard/.sdkman"
-# [[ -s "/Users/richard/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/richard/.sdkman/bin/sdkman-init.sh"
-# }}}
-
 # FZF {{{
 ## export FZF_DEFAULT_OPTS='--preview "bat --style=numbers --color=always {} | head -500"'
 export FZF_DEFAULT_OPTS='--height 90% --preview-window "right:60%" --preview "[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers,changes,header --color=always {} || highlight -O ansi -l {} || cat {}) 2> /dev/null | head -500"'
@@ -160,6 +154,10 @@ zinit wait="0" lucid for \
   zsh-users/zsh-autosuggestions \
   atclone="dircolors -b LS_COLORS > c.zsh" atpull='%atclone' pick='c.zsh' \
   trapd00r/LS_COLORS
+
+# sdkman
+zplugin ice wait="1" lucid
+zplugin light matthieusb/zsh-sdkman
 
 zinit wait="0" lucid for \
   OMZ::lib/git.zsh \
