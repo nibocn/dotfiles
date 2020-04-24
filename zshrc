@@ -167,11 +167,11 @@ zinit wait="0" lucid for \
   OMZ::plugins/common-aliases/common-aliases.plugin.zsh
 
 # 补全
-# zinit ice lucid wait="1" as="completion"
-# zinit snippet OMZ::plugins/docker/_docker
-# zinit as="completion" for \
-#     OMZ::plugins/docker/_docker \
-#     OMZ::plugins/gradle/_gradle
+zinit wait="1" lucid as="completion" for \
+  OMZ::plugins/docker/_docker \
+  OMZ::plugins/docker-compose/_docker-compose \
+  OMZ::plugins/gradle/_gradle \
+  OMZ::plugins/vagrant/_vagrant
 
 zinit ice lucid wait="0" atload="zpcompinit; zpcdreplay"
 zinit snippet OMZ::lib/completion.zsh
