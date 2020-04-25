@@ -42,6 +42,8 @@ export _ZL_MATCH_MODE=1
 # 处理 git log || git diff 等命令不一次性全部显示在屏幕上
 export PAGER=less
 export LESS=-R
+# sdkman 默认为离线模式，加快 shell 第一次启动速度，避免发起网络请求
+export SDKMAN_OFFLINE_MODE=true
 
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/opt/go/libexec/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/opt/gnu-tar/libexec/gnubin:/usr/local/opt/mysql-client/bin:/usr/local/opt/openssl@1.1/bin:$GOPATH/bin:$PATH
 
