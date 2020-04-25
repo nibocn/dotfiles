@@ -32,8 +32,8 @@ export GOPATH=$HOME/go
 export GO111MODULE=on
 export GOPROXY=https://goproxy.io
 ## zlib
-export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/mysql-client/lib -L/usr/local/opt/openssl@1.1/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/mysql-client/include -I/usr/local/opt/openssl@1.1/include"
+export LDFLAGS="-L/usr/local/opt/llvm/lib -L/usr/local/opt/zlib/lib -L/usr/local/opt/mysql-client/lib -L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include -I/usr/local/opt/zlib/include -I/usr/local/opt/mysql-client/include -I/usr/local/opt/openssl@1.1/include"
 # Bat 配置
 export BAT_CONFIG_PATH=$HOME/.local/dotfiles/bat.conf
 # z.lua 配置
@@ -45,7 +45,7 @@ export LESS=-R
 # sdkman 默认为离线模式，加快 shell 第一次启动速度，避免发起网络请求
 export SDKMAN_OFFLINE_MODE=true
 
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/opt/go/libexec/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/opt/gnu-tar/libexec/gnubin:/usr/local/opt/mysql-client/bin:/usr/local/opt/openssl@1.1/bin:$GOPATH/bin:$PATH
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/opt/go/libexec/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/opt/gnu-tar/libexec/gnubin:/usr/local/opt/mysql-client/bin:/usr/local/opt/openssl@1.1/bin:$GOPATH/bin:/usr/local/opt/llvm/bin:$PATH
 
 # }}}
 
