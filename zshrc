@@ -165,8 +165,8 @@ zinit wait="0" lucid for \
   trapd00r/LS_COLORS
 
 # sdkman
-zplugin ice wait="1" lucid
-zplugin light matthieusb/zsh-sdkman
+zinit ice wait="1" lucid
+zinit light matthieusb/zsh-sdkman
 
 zinit wait="0" lucid for \
   OMZ::lib/git.zsh \
