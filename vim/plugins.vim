@@ -484,7 +484,8 @@ nnoremap <silent> <leader>lj :ALENext<CR>
 nnoremap <silent> <leader>lk :ALEPrevious<CR>
 nnoremap <silent> <leader>li :ALEDetail <CR>
 let g:ale_linters = {
-  \ 'go': [ 'gopls' ]
+  \ 'go': [ 'gopls' ],
+  \ 'c': [ 'gcc', 'clang', 'cppcheck' ]
 \ }
 let g:ale_java_javac_executable = "javac -cp /usr/local/share/lombok/lombok.jar"
 " 定义错误/警告标识
