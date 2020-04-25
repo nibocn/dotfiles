@@ -82,7 +82,7 @@ Plug 'tyru/open-browser.vim', { 'for': 'plantuml' }
 
 Plug 'liuchengxu/vim-which-key'
 
-Plug 'fatih/vim-go', { 'for': ['go'], 'do': ':GoUpdateBinarie' }
+Plug 'fatih/vim-go', { 'for': ['go'], 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
