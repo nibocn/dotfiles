@@ -134,10 +134,8 @@ let g:EasyMotion_smartcase = 1
 " }}}
 
 " undo =========================================================={{{
-if has("persistent_undo")
-  set undodir=~/.undodir
-  set undofile
-endif
+set undodir=~/.undodir
+set undofile
 " }}}
 
 " Coc =========================================================== {{{
@@ -163,12 +161,7 @@ endfunction
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
-if has('patch8.1.1068')
-  " Use `complete_info` if your (Neo)Vim version supports it.
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
+inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>

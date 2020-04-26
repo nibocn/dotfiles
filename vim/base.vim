@@ -1,7 +1,5 @@
 " 记住退出位置
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " Vim special config {{{
 if g:editor == 'vim'
@@ -55,11 +53,6 @@ if g:editor == 'neovim'
   set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
     \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
     \,sm:block-blinkwait175-blinkoff150-blinkon175
-  if has('python')
-    set pyx=2
-  elseif has('python3')
-    set pyx=3
-  endif
 endif
 " }}}
 

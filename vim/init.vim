@@ -2,18 +2,16 @@
 let g:home_path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
 " 定义使用的编辑器 {{{
-if !exists('g:editor')
-  if has('nvim')
-    let g:editor = 'neovim'
-  else
-    let g:editor = 'vim'
-  endif
+if has('nvim')
+  let g:editor = 'neovim'
+else
+  let g:editor = 'vim'
 endif
 " }}}
 
 " 定义使用的操作系统 {{{
 if !exists('g:system_os')
-  if has('win64') || has('win32') || has('win16')
+  if has('win64') || has('win32')
     let g:system_os = 'Windows'
   else
     let g:system_os = substitute(system('uname'), '\n', '', '')
