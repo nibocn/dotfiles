@@ -94,7 +94,7 @@ schemes:
       cyan: "0x5dbbc1"
       white: "0xc5cdd9"
     bright:
-      black: "0x3e4249"
+      black: "0x616976"
       red: "0xec7279"
       green: "0xa0c980"
       yellow: "0xdeb974"
@@ -118,7 +118,7 @@ schemes:
       cyan: "0x5dbbc1"
       white: "0xc5cdd9"
     bright:
-      black: "0x363a49"
+      black: "0x656c87"
       red: "0xec7279"
       green: "0xa0c980"
       yellow: "0xdeb974"
@@ -142,7 +142,7 @@ schemes:
       cyan: "0x5dbbc1"
       white: "0xc5cdd9"
     bright:
-      black: "0x363a4e"
+      black: "0x627183"
       red: "0xec7279"
       green: "0xa0c980"
       yellow: "0xdeb974"
