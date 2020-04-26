@@ -132,10 +132,12 @@ alias ......='cd ../../../../..'
 function proxy() {
     export {HTTP,HTTPS,FTP}_PROXY="http://127.0.0.1:6152"
     export ALL_PROXY="socks5://127.0.0.1:6153"
+    echo '代理已启用...'
 }
 function unproxy() {
-    unset {HTTP,HTTPS,FTP}_PROXY
+    unset {HTTP,HTTPS,TP}_PROXY
     unset ALL_PROXY
+    echo '代理已停用...'
 }
 # }}}
 
