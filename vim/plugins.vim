@@ -106,6 +106,7 @@ colorscheme gruvbox-material
 " let g:edge_enable_italic=1
 " " 当 terminal 背景透明时启用
 " let g:edge_transparent_background=1
+" let g:edge_current_word='underline'
 " colorscheme edge
 " }}}
 
