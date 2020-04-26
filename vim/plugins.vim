@@ -18,6 +18,8 @@ call plug#begin($PLUG_HOME)
 " 美化 ============================================ {{{
 " 主题
 Plug 'sainnhe/gruvbox-material', {'as': 'gruvbox-material'}
+Plug 'sainnhe/edge'
+Plug 'sainnhe/forest-night'
 " }}}
 
 Plug 'sheerun/vim-polyglot'
@@ -92,13 +94,25 @@ set termguicolors
 set background=dark
 
 " gruvbox_material config {{{
-" let g:gruvbox_material_background='hard'
-" let g:gruvbox_material_disable_italic_comment=1
 let g:gruvbox_material_enable_italic=1
 let g:gruvbox_material_enable_bold=1
-" let g:gruvbox_material_visual='reverse'
+" 当 terminal 背景透明时启用
+let g:gruvbox_material_transparent_background=1
 colorscheme gruvbox-material
-" colorscheme gruvbox
+" }}}
+
+" edge config {{{
+" let g:edge_style='neon'
+" let g:edge_enable_italic=1
+" " 当 terminal 背景透明时启用
+" let g:edge_transparent_background=1
+" colorscheme edge
+" }}}
+
+" forest-night {{{
+" let g:forest_night_enable_italic=1
+" let g:forest_night_transparent_background=1
+" colorscheme forest-night
 " }}}
 
 " }}}
@@ -385,6 +399,8 @@ augroup END
 
 let g:lightline = {}
 let g:lightline.colorscheme = 'gruvbox_material'
+" let g:lightline.colorscheme = 'edge'
+" let g:lightline.colorscheme = 'forest_night'
 let g:lightline.separator = { 'left': "\ue0b8", 'right': "\ue0be " }
 let g:lightline.subseparator = { 'left': "\ue0b9", 'right': "\ue0b9" }
 let g:lightline.tabline_separator = { 'left': "\ue0bc", 'right': "\ue0ba " }
@@ -478,7 +494,6 @@ nnoremap <silent> <leader>lk :ALEPrevious<CR>
 nnoremap <silent> <leader>li :ALEDetail <CR>
 let g:ale_linters = {
   \ 'go': [ 'gopls' ],
-  \ 'c': [ 'gcc', 'clang', 'cppcheck' ]
 \ }
 let g:ale_java_javac_executable = "javac -cp /usr/local/share/lombok/lombok.jar"
 " 定义错误/警告标识
