@@ -178,7 +178,7 @@ schemes:
     #   cursor: '#ebdab4'
 # }}}
 colors: *edge_dark_neon
-background_opacity: 0.94
+# background_opacity: 0.94
 
 # Font {{{
 font:
