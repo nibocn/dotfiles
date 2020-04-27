@@ -66,7 +66,8 @@ schemes:
       cyan: "0x3a8b84"
       white: "0xfafafa"
     bright:
-      black: "0x4b505b"
+      # black: "0x4b505b"
+      black: "0x727478"
       red: "0xd05858"
       green: "0x608e32"
       yellow: "0xbe7e05"
