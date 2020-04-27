@@ -19,7 +19,6 @@ call plug#begin($PLUG_HOME)
 " 主题
 Plug 'sainnhe/gruvbox-material', {'as': 'gruvbox-material'}
 Plug 'sainnhe/edge'
-Plug 'sainnhe/forest-night'
 " }}}
 
 Plug 'sheerun/vim-polyglot'
@@ -108,12 +107,6 @@ let g:edge_enable_italic=1
 " let g:edge_transparent_background=1
 let g:edge_current_word='underline'
 colorscheme edge
-" }}}
-
-" forest-night {{{
-" let g:forest_night_enable_italic=1
-" " let g:forest_night_transparent_background=1
-" colorscheme forest-night
 " }}}
 
 " }}}
@@ -401,7 +394,6 @@ augroup END
 let g:lightline = {}
 " let g:lightline.colorscheme = 'gruvbox_material'
 let g:lightline.colorscheme = 'edge'
-" let g:lightline.colorscheme = 'forest_night'
 let g:lightline.separator = { 'left': "\ue0b8", 'right': "\ue0be " }
 let g:lightline.subseparator = { 'left': "\ue0b9", 'right': "\ue0b9" }
 let g:lightline.tabline_separator = { 'left': "\ue0bc", 'right': "\ue0ba " }
