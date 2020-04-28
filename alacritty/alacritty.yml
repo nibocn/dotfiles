@@ -26,6 +26,9 @@ schemes:
       magenta: '0xd3869b'
       cyan:    '0x8ec07c'
       white:   '0xebdbb2'
+    cursor:
+      text: '0x282828'
+      cursor: '0xebdbb2'
 
   gruvbox_light: &gruvbox_light
     primary:
@@ -51,6 +54,9 @@ schemes:
       magenta: '0x8f3f71'
       cyan:    '0x427b58'
       white:   '0x3c3836'
+    cursor:
+      text: '0xfbf1c7'
+      cursor: '0x3c3836'
   ### Edge (Light variant)
   edge_light: &edge_light
     primary:
@@ -75,6 +81,9 @@ schemes:
       magenta: "0xb05ccc"
       cyan: "0x3a8b84"
       white: "0xfafafa"
+    cursor:
+      text: '0xfafafa'
+      cursor: '0x4b505b'
 
   ### Edge (Dark Default variant)
   edge_dark_def: &edge_dark_default
@@ -99,6 +108,9 @@ schemes:
       magenta: "0xd38aea"
       cyan: "0x5dbbc1"
       white: "0xc5cdd9"
+    cursor:
+      text: '0x2c2e34'
+      cursor: '0xc5cdd9'
 
   ### Edge (Dark Aura variant)
   edge_dark_aura: &edge_dark_aura
@@ -123,6 +135,9 @@ schemes:
       magenta: "0xd38aea"
       cyan: "0x5dbbc1"
       white: "0xc5cdd9"
+    cursor:
+      text: '0x2b2d37'
+      cursor: '0xc5ccd9'
 
   ### Edge (Dark Neon variant)
   edge_dark_neon: &edge_dark_neon
@@ -147,11 +162,11 @@ schemes:
       magenta: "0xd38aea"
       cyan: "0x5dbbc1"
       white: "0xc5cdd9"
-    # cursor:
-    #   text: '#000000'
-    #   cursor: '#ebdab4'
+    cursor:
+      text: '0x2b2d3a'
+      cursor: '0xc5cdd9'
 # }}}
-colors: *edge_dark_neon
+colors: *edge_dark_aura
 # background_opacity: 0.94
 
 # Font {{{
