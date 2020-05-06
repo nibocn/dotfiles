@@ -87,6 +87,7 @@ yabai -m rule --add app="^Keka$" manage=off
 yabai -m rule --add app="^Books$" manage=off
 yabai -m rule --add app="^Alfred Preferences$" manage=off
 
+yabai -m rule --add app="^JetBrains Toolbox$" manage=off
 jetbrain_apps="^(IntelliJ IDEA|WebStorm|PyCharm|CLion|GoLand)$"
 yabai -m rule --add app="${jetbrain_apps}" title="^(Preferences|Project Structure|Plugins|Run/Debug Configurations|Edit configuration settings)$" manage=off
 
