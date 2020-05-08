@@ -19,6 +19,7 @@ call plug#begin($PLUG_HOME)
 " 主题
 Plug 'sainnhe/gruvbox-material', {'as': 'gruvbox-material'}
 Plug 'sainnhe/edge'
+Plug 'sainnhe/forest-night'
 " }}}
 
 Plug 'sheerun/vim-polyglot'
@@ -221,6 +222,14 @@ set termguicolors
 
 " colorscheme ====================== {{{
 let g:colorSchemeList = {}
+let g:colorSchemeList['Forest Night'] = [
+      \   'set background=dark',
+      \   'let g:forest_night_enable_italic = 1',
+      \   'let g:forest_night_disable_italic_comment = 0',
+      \   "let g:forest_night_current_word = 'underline'",
+      \   'colorscheme forest-night',
+      \   'call SwitchLightlineColorScheme("forest_night")'
+      \   ]
 let g:colorSchemeList['Gruvbox Material Dark'] = [
       \   'set background=dark',
       \   'let g:gruvbox_material_enable_italic = 1',
