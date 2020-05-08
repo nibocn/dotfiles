@@ -60,6 +60,8 @@ endif
 set guifont=JetbrainsMono\ Nerd\ Font\ +\ :h12
 set encoding=utf-8
 set fileencodings=utf-8,cp936,chinese,latin-1
+" buffer 修改后互相切换时对于未保存的 buffer 不强制要求必须保存才能进行切换
+set hidden
 " 设置行号
 set number
 " 设置相对行号
@@ -70,8 +72,6 @@ set cmdheight=2
 set laststatus=2
 " 设置分屏线
 set fillchars+=vert:\|
-" 设置真彩显示
-set termguicolors
 " 使滚动条移动得更快 {{{
 set lazyredraw
 set ttyfast
