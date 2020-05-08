@@ -1,5 +1,6 @@
 " 获取当前文件所在目录
 let g:home_path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+let g:vimColorScheme = 'Edge Dark'
 
 " 定义使用的编辑器 {{{
 if has('nvim')

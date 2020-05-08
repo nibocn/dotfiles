@@ -88,25 +88,192 @@ Plug 'fatih/vim-go', { 'for': ['go'], 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 
-" Theme ============================================={{{
-set termguicolors
-set background=dark
+" Lightline ===================================================== {{{
+" 'colorscheme': 'wombat'
 
-" gruvbox_material config {{{
-" let g:gruvbox_material_enable_italic=1
-" let g:gruvbox_material_enable_bold=1
-" " 当 terminal 背景透明时启用
-" " let g:gruvbox_material_transparent_background=1
-" colorscheme gruvbox-material
+function! CocCurrentFunction()
+  return get(b:, 'coc_current_function', '')
+endfunction
+function! Tab_num(n) abort
+  return a:n." \ue0bb"
+endfunction
+
+function! LightlineGitGlobalStatus() abort
+  return get(g:, 'coc_git_status', '')
+endfunction
+function! LightlineGitBufferStatus() abort
+  return get(b:, 'coc_git_status', '')
+endfunction
+function! LightlineRelateivePath() abort
+  let relativepath = expand('%:f') !=# '' ? expand('%:f') : '[No Name]'
+  let modified = &modified ? ' ✎' : ''
+  let readonly = &readonly ? ' ' : ''
+  return relativepath . readonly . modified
+endfunction
+
+function! LightlineFilename() abort
+  let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+  let modified = &modified ? ' ✎' : ''
+  let readonly = &readonly ? ' ' : ''
+  return filename . readonly . modified
+endfunction
+
+set laststatus=2
+set showtabline=2
+set noshowmode
+augroup lightlineCustom
+  autocmd!
+  autocmd BufWritePost,BufRead * call lightline#update()
+augroup END
+
+let g:lightline = {}
+" let g:lightline.colorscheme = 'gruvbox_material'
+" let g:lightline.colorscheme = 'edge'
+let g:lightline.separator = { 'left': "\ue0b8", 'right': "\ue0be " }
+let g:lightline.subseparator = { 'left': "\ue0b9", 'right': "\ue0b9" }
+let g:lightline.tabline_separator = { 'left': "\ue0bc", 'right': "\ue0ba " }
+let g:lightline.tabline_subseparator = { 'left': "\ue0bb", 'right': "\ue0bb" }
+let g:lightline#bufferline#unicode_symbols = 1
+" 只显示 buffer 页签文件名不显示路径
+let g:lightline#bufferline#filename_modifier = ':t'
+
+let g:lightline#ale#indicator_checking = "\uf110"
+let g:lightline#ale#indicator_infos = "\uf129 "
+let g:lightline#ale#indicator_warnings = "\uf421 "
+let g:lightline#ale#indicator_errors = "\uf65b "
+let g:lightline#ale#indicator_ok = "\uf118"
+
+let g:lightline.active = {
+  \ 'left': [
+  \   [ 'mode', 'paste' ],
+  \   [ 'filename' ],
+  \ ],
+  \ 'right': [
+  \   [ 'lineinfo' ],
+  \   ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok',
+  \   'fileformat', 'filetype']
+  \ ]
+\ }
+let g:lightline.inactive = {
+  \ 'left': [ [ 'filename' , 'modified', 'fileformat' ] ],
+  \ 'right': [ [ 'lineinfo' ] ]
+\ }
+let g:lightline.tabline = {
+  \ 'left': [ [ 'vim_logo', 'buffers' ] ],
+  \ 'right': [
+  \   [ 'gitbranch' ],
+  \   [ 'gitstatus' ],
+  \ ]
+\ }
+let g:lightline.component = {
+  \ 'bufinfo': '%{bufname("%")}:%{bufnr("%")}',
+  \ 'vim_logo': "\ue7c5",
+  \ 'pomodoro': '%{PomodoroStatus()}',
+  \ 'mode': '%{lightline#mode()}',
+  \ 'absolutepath': '%F',
+  \ 'relativepath': '%f',
+  \ 'filename': '%t',
+  \ 'filesize': "%{HumanSize(line2byte('$') + len(getline('$')))}",
+  \ 'fileencoding': '%{&fenc!=#""?&fenc:&enc}',
+  \ 'fileformat': '%{&fenc!=#""?&fenc:&enc}[%{&ff}]',
+  \ 'filetype': '%{&ft!=#""?&ft:"no ft"}',
+  \ 'modified': '%M',
+  \ 'bufnum': '%n',
+  \ 'paste': '%{&paste?"PASTE":""}',
+  \ 'readonly': '%R',
+  \ 'charvalue': '%b',
+  \ 'charvaluehex': '%B',
+  \ 'percent': '%2p%%',
+  \ 'percentwin': '%P',
+  \ 'spell': '%{&spell?&spelllang:""}',
+  \ 'lineinfo': '%2p%% %3l:%-2v',
+  \ 'line': '%l',
+  \ 'column': '%c',
+  \ 'close': '%999X X ',
+\ }
+let g:lightline.component_function = {
+  \ 'gitbranch': 'LightlineGitGlobalStatus',
+  \ 'coc_status': 'coc#status',
+  \ 'gitstatus': 'LightlineGitBufferStatus',
+  \ 'relativepath': 'LightlineRelateivePath',
+  \ 'filename': 'LightlineFilename',
+\ }
+let g:lightline.component_expand = {
+  \ 'buffers': 'lightline#bufferline#buffers',
+  \ 'linter_checking': 'lightline#ale#checking',
+  \ 'linter_infos': 'lightline#ale#infos',
+  \ 'linter_warnings': 'lightline#ale#warnings',
+  \ 'linter_errors': 'lightline#ale#errors',
+  \ 'linter_ok': 'lightline#ale#ok',
+\ }
+let g:lightline.component_type = {
+  \ 'buffers': 'tabsel',
+  \ 'linter_errors': 'error',
+  \ 'linter_warnings': 'warning',
+\ }
+
+" 更新状态栏
+" autocmd BufWritePost,BufRead * call lightline#update()
 " }}}
 
-" edge config {{{
-let g:edge_style='neon'
-let g:edge_enable_italic=1
-" 当 terminal 背景透明时启用
-" let g:edge_transparent_background=1
-let g:edge_current_word='underline'
-colorscheme edge
+" Theme ============================================={{{
+set termguicolors
+
+" colorscheme ====================== {{{
+let g:colorSchemeList = {}
+let g:colorSchemeList['Gruvbox Material Dark'] = [
+      \   'set background=dark',
+      \   'let g:gruvbox_material_enable_italic = 1',
+      \   '"let g:gruvbox_material_disable_italic_comment = 1',
+      \   'let g:gruvbox_material_enable_bold=1',
+      \   "let g:gruvbox_material_current_word='underline'",
+      \   'colorscheme gruvbox-material',
+      \   'call SwitchLightlineColorScheme("gruvbox_material")'
+      \   ]
+let g:colorSchemeList['Gruvbox Material Light'] = [
+      \   'set background=light',
+      \   'let g:gruvbox_material_enable_italic = 1',
+      \   '"let g:gruvbox_material_disable_italic_comment = 1',
+      \   'let g:gruvbox_material_enable_bold=1',
+      \   "let g:gruvbox_material_current_word='underline'",
+      \   'colorscheme gruvbox-material',
+      \   'call SwitchLightlineColorScheme("gruvbox_material")'
+      \   ]
+let g:colorSchemeList['Edge Dark'] = [
+      \   'set background=dark',
+      \   '"let g:edge_disable_italic_comment = 1',
+      \   'let g:edge_enable_italic = 1',
+      \   "let g:edge_current_word='underline'",
+      \   'colorscheme edge',
+      \   'call SwitchLightlineColorScheme("edge")'
+      \   ]
+let g:colorSchemeList['Edge Light'] = [
+      \   'set background=light',
+      \   '"let g:edge_disable_italic_comment = 1',
+      \   'let g:edge_enable_italic = 1',
+      \   "let g:edge_current_word='underline'",
+      \   'colorscheme edge',
+      \   'call SwitchLightlineColorScheme("edge")'
+      \   ]
+" Functions ====================== {{{
+function SwitchLightlineColorScheme(lightlineName) abort
+  execute join(['source', globpath(&runtimepath, join(['autoload/lightline/colorscheme/', a:lightlineName, '.vim'], ''), 0, 1)[0]], ' ')
+  let g:lightline.colorscheme = a:lightlineName
+  call lightline#init()
+  call lightline#colorscheme()
+  call lightline#update()
+endfunction
+function SwitchColorScheme(name) abort
+  for l:item in g:colorSchemeList[a:name]
+    execute l:item
+  endfor
+endfunction
+function! s:Colo(a, l, p)
+  return keys(g:colorSchemeList)
+endfunction
+command! -bar -nargs=? -complete=customlist,<sid>Colo Colo call SwitchColorScheme(<f-args>)
+call SwitchColorScheme(g:vimColorScheme)
+" }}}
 " }}}
 
 " }}}
@@ -352,134 +519,6 @@ let g:which_key_map.l = {
   \ 'v': 'range select',
 \ }
 
-" }}}
-
-" Lightline ===================================================== {{{
-" 'colorscheme': 'wombat'
-
-function! CocCurrentFunction()
-  return get(b:, 'coc_current_function', '')
-endfunction
-function! Tab_num(n) abort
-  return a:n." \ue0bb"
-endfunction
-
-function! LightlineGitGlobalStatus() abort
-  return get(g:, 'coc_git_status', '')
-endfunction
-function! LightlineGitBufferStatus() abort
-  return get(b:, 'coc_git_status', '')
-endfunction
-function! LightlineRelateivePath() abort
-  let relativepath = expand('%:f') !=# '' ? expand('%:f') : '[No Name]'
-  let modified = &modified ? ' ✎' : ''
-  let readonly = &readonly ? ' ' : ''
-  return relativepath . readonly . modified
-endfunction
-
-function! LightlineFilename() abort
-  let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
-  let modified = &modified ? ' ✎' : ''
-  let readonly = &readonly ? ' ' : ''
-  return filename . readonly . modified
-endfunction
-
-set laststatus=2
-set showtabline=2
-set noshowmode
-augroup lightlineCustom
-  autocmd!
-  autocmd BufWritePost,BufRead * call lightline#update()
-augroup END
-
-let g:lightline = {}
-" let g:lightline.colorscheme = 'gruvbox_material'
-let g:lightline.colorscheme = 'edge'
-let g:lightline.separator = { 'left': "\ue0b8", 'right': "\ue0be " }
-let g:lightline.subseparator = { 'left': "\ue0b9", 'right': "\ue0b9" }
-let g:lightline.tabline_separator = { 'left': "\ue0bc", 'right': "\ue0ba " }
-let g:lightline.tabline_subseparator = { 'left': "\ue0bb", 'right': "\ue0bb" }
-let g:lightline#bufferline#unicode_symbols = 1
-" 只显示 buffer 页签文件名不显示路径
-let g:lightline#bufferline#filename_modifier = ':t'
-
-let g:lightline#ale#indicator_checking = "\uf110"
-let g:lightline#ale#indicator_infos = "\uf129 "
-let g:lightline#ale#indicator_warnings = "\uf421 "
-let g:lightline#ale#indicator_errors = "\uf65b "
-let g:lightline#ale#indicator_ok = "\uf118"
-
-let g:lightline.active = {
-  \ 'left': [
-  \   [ 'mode', 'paste' ],
-  \   [ 'filename' ],
-  \ ],
-  \ 'right': [
-  \   [ 'lineinfo' ],
-  \   ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok',
-  \   'fileformat', 'filetype']
-  \ ]
-\ }
-let g:lightline.inactive = {
-  \ 'left': [ [ 'filename' , 'modified', 'fileformat' ] ],
-  \ 'right': [ [ 'lineinfo' ] ]
-\ }
-let g:lightline.tabline = {
-  \ 'left': [ [ 'vim_logo', 'buffers' ] ],
-  \ 'right': [
-  \   [ 'gitbranch' ],
-  \   [ 'gitstatus' ],
-  \ ]
-\ }
-let g:lightline.component = {
-  \ 'bufinfo': '%{bufname("%")}:%{bufnr("%")}',
-  \ 'vim_logo': "\ue7c5",
-  \ 'pomodoro': '%{PomodoroStatus()}',
-  \ 'mode': '%{lightline#mode()}',
-  \ 'absolutepath': '%F',
-  \ 'relativepath': '%f',
-  \ 'filename': '%t',
-  \ 'filesize': "%{HumanSize(line2byte('$') + len(getline('$')))}",
-  \ 'fileencoding': '%{&fenc!=#""?&fenc:&enc}',
-  \ 'fileformat': '%{&fenc!=#""?&fenc:&enc}[%{&ff}]',
-  \ 'filetype': '%{&ft!=#""?&ft:"no ft"}',
-  \ 'modified': '%M',
-  \ 'bufnum': '%n',
-  \ 'paste': '%{&paste?"PASTE":""}',
-  \ 'readonly': '%R',
-  \ 'charvalue': '%b',
-  \ 'charvaluehex': '%B',
-  \ 'percent': '%2p%%',
-  \ 'percentwin': '%P',
-  \ 'spell': '%{&spell?&spelllang:""}',
-  \ 'lineinfo': '%2p%% %3l:%-2v',
-  \ 'line': '%l',
-  \ 'column': '%c',
-  \ 'close': '%999X X ',
-\ }
-let g:lightline.component_function = {
-  \ 'gitbranch': 'LightlineGitGlobalStatus',
-  \ 'coc_status': 'coc#status',
-  \ 'gitstatus': 'LightlineGitBufferStatus',
-  \ 'relativepath': 'LightlineRelateivePath',
-  \ 'filename': 'LightlineFilename',
-\ }
-let g:lightline.component_expand = {
-  \ 'buffers': 'lightline#bufferline#buffers',
-  \ 'linter_checking': 'lightline#ale#checking',
-  \ 'linter_infos': 'lightline#ale#infos',
-  \ 'linter_warnings': 'lightline#ale#warnings',
-  \ 'linter_errors': 'lightline#ale#errors',
-  \ 'linter_ok': 'lightline#ale#ok',
-\ }
-let g:lightline.component_type = {
-  \ 'buffers': 'tabsel',
-  \ 'linter_errors': 'error',
-  \ 'linter_warnings': 'warning',
-\ }
-
-" 更新状态栏
-" autocmd BufWritePost,BufRead * call lightline#update()
 " }}}
 
 " ale config =============================================== {{{
