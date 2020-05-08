@@ -278,11 +278,12 @@ let g:which_key_map = {}
 let g:which_key_map['?'] = ['Maps', 'show-keybindings']
 let g:which_key_map[';'] = ['<Plug>NERDCommenterToggle', 'commenter']
 let g:which_key_map['q'] = ['q', 'quit']
-let g:which_key_map['Q'] = [':qa!', 'quit-without-saving']
+let g:which_key_map['Q'] = [':qa!', 'quit all without saving']
 
 let g:which_key_map.f = {
   \ 'name': '+find/files/fold',
   \ 's': ['update', 'save file'],
+  \ 'S': ['wall', 'save all file'],
   \ 'p': ['Files', 'fzf'],
   \ 'e': [':CocCommand explorer', 'file folder']
 \ }
