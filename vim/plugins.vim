@@ -256,6 +256,24 @@ let g:colorSchemeList['Edge Dark'] = [
       \   'colorscheme edge',
       \   'call SwitchLightlineColorScheme("edge")'
       \   ]
+let g:colorSchemeList['Edge Dark Aura'] = [
+      \   'set background=dark',
+      \   "let g:edge_style='aura'",
+      \   '"let g:edge_disable_italic_comment = 1',
+      \   'let g:edge_enable_italic = 1',
+      \   "let g:edge_current_word='underline'",
+      \   'colorscheme edge',
+      \   'call SwitchLightlineColorScheme("edge")'
+      \   ]
+let g:colorSchemeList['Edge Dark Neon'] = [
+      \   'set background=dark',
+      \   "let g:edge_style='neon'",
+      \   '"let g:edge_disable_italic_comment = 1',
+      \   'let g:edge_enable_italic = 1',
+      \   "let g:edge_current_word='underline'",
+      \   'colorscheme edge',
+      \   'call SwitchLightlineColorScheme("edge")'
+      \   ]
 let g:colorSchemeList['Edge Light'] = [
       \   'set background=light',
       \   '"let g:edge_disable_italic_comment = 1',
