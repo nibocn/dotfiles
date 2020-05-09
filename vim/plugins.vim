@@ -326,7 +326,7 @@ set undofile
 " fix the most annoying bug that coc has
 silent! au BufEnter,BufRead,BufNewFile * silent! unmap if
 let g:coc_global_extensions = [
-  \   'coc-lists', 'coc-json', 'coc-git', 'coc-snippets', 'coc-explorer',
+  \   'coc-lists', 'coc-json', 'coc-git', 'coc-snippets', 'coc-explorer', 'coc-yank',
   \   'coc-vimlsp',
   \   'coc-python',
   \   'coc-html', 'coc-css', 'coc-tsserver', 'coc-tailwindcss', 'coc-stylelint', 'coc-tslint',
