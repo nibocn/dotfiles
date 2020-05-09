@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-bg_color="#3c474d"
-fg_color="#586268"
+bg_color="#30323a"
+fg_color="#414550"
 
 set() {
   local option=$1
@@ -34,34 +34,35 @@ set "status-style" "bg=$bg_color, fg=$fg_color"
 #+-------+
 #+ Panes +
 #+-------+
-set "pane-border-style" "fg=black"
-set "pane-active-border-style" "fg=cyan"
+set "pane-border-style" "fg=white"
+set "pane-active-border-style" "fg=brightgreen"
 set "display-panes-colour" "blue"
 set "display-panes-active-colour" "brightblack"
 
 #+------------+
 #+ Clock Mode +
 #+------------+
-setw "clock-mode-colour" "blue"
+setw "clock-mode-colour" "cyan"
 
 # bell
-# set-window-option -g window-status-bell-style bg=black,fg=cyan
+setw "window-status-bell-style" "bg=black,fg=cyan"
 
 #+----------+
 #+ Messages +
 #+---------+
-set "message-style" "bg=$bg_color, fg=blue"
-set "message-command-style" "bg=$bg_color, fg=blue"
+set "message-style" "bg=$bg_color,fg=cyan"
+set "message-command-style" "bg=$bg_color,fg=cyan"
 
 #+--------+
 #+ Status +
 #+--------+
 #+--- Bars ---+
-set "status-left" "#{?client_prefix,#[fg=$bg_color]#[bg=magenta] #S#[fg=magenta]#[bg=$bg_color],#[fg=$bg_color,bg=green] #S#[fg=green,bg=$bg_color]}"
+set "status-left" "#{?client_prefix,#[fg=black]#[bg=magenta] #S#[fg=magenta]#[bg=$bg_color],#[fg=black,bg=green] #S#[fg=green,bg=$bg_color]}"
 
 set "status-right" "#[fg=$fg_color,bg=$bg_color]#[fg=white,bg=$fg_color] %a %m-%d %H:%M "
 
-# #+--- Windows ---+
+#+--- Windows ---+
 set "window-status-format" "#[fg=$bg_color,bg=$fg_color,nobold,noitalics,nounderscore] #[fg=white,bg=$fg_color]#I #[fg=white,bg=$fg_color,nobold,noitalics,nounderscore] #[fg=white,bg=$fg_color]#W #F #[fg=$fg_color,bg=$bg_color,nobold,noitalics,nounderscore]"
-set "window-status-current-format" "#[fg=$bg_color,bg=blue,nobold,noitalics,nounderscore] #[fg=$bg_color,bg=blue]#I #[fg=$bg_color,bg=blue,nobold,noitalics,nounderscore] #[fg=$bg_color,bg=blue]#W #F #[fg=blue,bg=$bg_color,nobold,noitalics,nounderscore]"
-# set -g window-status-separator ""
+
+set "window-status-current-format" "#[fg=$bg_color,bg=cyan,nobold,noitalics,nounderscore] #[fg=black,bg=cyan]#I #[fg=black,bg=cyan,nobold,noitalics,nounderscore] #[fg=black,bg=cyan]#W #F #[fg=cyan,bg=$bg_color,nobold,noitalics,nounderscore]"
+set "window-status-separator" ""

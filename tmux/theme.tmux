@@ -29,10 +29,10 @@ main() {
 
   theme="$(get_tmux_option "$theme_option" "$default_theme")"
   background="$(get_tmux_option "$background_option" "$default_background")"
-  file="$CURRENT_DIR/theme/$theme-$background.conf"
+  file="$CURRENT_DIR/theme/$theme-$background.tmux"
 
   if [[ -f "$file" ]]; then
-    tmux source-file "$file"
+    tmux run-shell "$file"
   else
     echo "Error! Theme not found"
   fi
