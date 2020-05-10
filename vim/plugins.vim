@@ -20,6 +20,7 @@ call plug#begin($PLUG_HOME)
 Plug 'sainnhe/gruvbox-material', {'as': 'gruvbox-material'}
 Plug 'sainnhe/edge'
 Plug 'sainnhe/forest-night'
+Plug 'sainnhe/sonokai'
 " }}}
 
 Plug 'sheerun/vim-polyglot'
