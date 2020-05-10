@@ -240,11 +240,51 @@ let g:colorSchemeList['Gruvbox Material Dark'] = [
       \   'colorscheme gruvbox-material',
       \   'call SwitchLightlineColorScheme("gruvbox_material")'
       \   ]
+let g:colorSchemeList['Gruvbox Material Dark Soft'] = [
+      \   'set background=dark',
+      \   'let g:gruvbox_material_enable_italic = 1',
+      \   '"let g:gruvbox_material_disable_italic_comment = 1',
+      \   'let g:gruvbox_material_enable_bold=1',
+      \   "let g:gruvbox_material_background = 'soft'",
+      \   "let g:gruvbox_material_current_word='underline'",
+      \   'colorscheme gruvbox-material',
+      \   'call SwitchLightlineColorScheme("gruvbox_material")'
+      \   ]
+let g:colorSchemeList['Gruvbox Material Dark Hard'] = [
+      \   'set background=dark',
+      \   'let g:gruvbox_material_enable_italic = 1',
+      \   '"let g:gruvbox_material_disable_italic_comment = 1',
+      \   'let g:gruvbox_material_enable_bold=1',
+      \   "let g:gruvbox_material_background = 'hard'",
+      \   "let g:gruvbox_material_current_word='underline'",
+      \   'colorscheme gruvbox-material',
+      \   'call SwitchLightlineColorScheme("gruvbox_material")'
+      \   ]
 let g:colorSchemeList['Gruvbox Material Light'] = [
       \   'set background=light',
       \   'let g:gruvbox_material_enable_italic = 1',
       \   '"let g:gruvbox_material_disable_italic_comment = 1',
       \   'let g:gruvbox_material_enable_bold=1',
+      \   "let g:gruvbox_material_current_word='underline'",
+      \   'colorscheme gruvbox-material',
+      \   'call SwitchLightlineColorScheme("gruvbox_material")'
+      \   ]
+let g:colorSchemeList['Gruvbox Material Light Soft'] = [
+      \   'set background=light',
+      \   'let g:gruvbox_material_enable_italic = 1',
+      \   '"let g:gruvbox_material_disable_italic_comment = 1',
+      \   'let g:gruvbox_material_enable_bold=1',
+      \   "let g:gruvbox_material_background = 'soft'",
+      \   "let g:gruvbox_material_current_word='underline'",
+      \   'colorscheme gruvbox-material',
+      \   'call SwitchLightlineColorScheme("gruvbox_material")'
+      \   ]
+let g:colorSchemeList['Gruvbox Material Light Hard'] = [
+      \   'set background=light',
+      \   'let g:gruvbox_material_enable_italic = 1',
+      \   '"let g:gruvbox_material_disable_italic_comment = 1',
+      \   'let g:gruvbox_material_enable_bold=1',
+      \   "let g:gruvbox_material_background = 'hard'",
       \   "let g:gruvbox_material_current_word='underline'",
       \   'colorscheme gruvbox-material',
       \   'call SwitchLightlineColorScheme("gruvbox_material")'
