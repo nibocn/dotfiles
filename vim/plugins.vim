@@ -323,6 +323,34 @@ let g:colorSchemeList['Edge Light'] = [
       \   'colorscheme edge',
       \   'call SwitchLightlineColorScheme("edge")'
       \   ]
+let g:colorSchemeList['Sonokai Shusia'] = [
+      \   "let g:sonokai_style = 'shusia'",
+      \   '"let g:sonokai_disable_italic_comment = 1',
+      \   'let g:sonokai_enable_italic = 1',
+      \   'colorscheme sonokai',
+      \   'call SwitchLightlineColorScheme("sonokai")'
+      \   ]
+let g:colorSchemeList['Sonokai Andromeda'] = [
+      \   "let g:sonokai_style = 'andromeda'",
+      \   '"let g:sonokai_disable_italic_comment = 1',
+      \   'let g:sonokai_enable_italic = 1',
+      \   'colorscheme sonokai',
+      \   'call SwitchLightlineColorScheme("sonokai")'
+      \   ]
+let g:colorSchemeList['Sonokai Atlantis'] = [
+      \   "let g:sonokai_style = 'atlantis'",
+      \   '"let g:sonokai_disable_italic_comment = 1',
+      \   'let g:sonokai_enable_italic = 1',
+      \   'colorscheme sonokai',
+      \   'call SwitchLightlineColorScheme("sonokai")'
+      \   ]
+let g:colorSchemeList['Sonokai Maia'] = [
+      \   "let g:sonokai_style = 'maia'",
+      \   '"let g:sonokai_disable_italic_comment = 1',
+      \   'let g:sonokai_enable_italic = 1',
+      \   'colorscheme sonokai',
+      \   'call SwitchLightlineColorScheme("sonokai")'
+      \   ]
 " Functions ====================== {{{
 function SwitchLightlineColorScheme(lightlineName) abort
   execute join(['source', globpath(&runtimepath, join(['autoload/lightline/colorscheme/', a:lightlineName, '.vim'], ''), 0, 1)[0]], ' ')
