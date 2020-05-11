@@ -17,7 +17,7 @@ call plug#begin($PLUG_HOME)
 
 " 美化 ============================================ {{{
 " 主题
-Plug 'sainnhe/gruvbox-material', {'as': 'gruvbox-material'}
+Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/edge'
 Plug 'sainnhe/forest-night'
 Plug 'sainnhe/sonokai'
