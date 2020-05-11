@@ -148,12 +148,11 @@ let g:lightline#ale#indicator_ok = "\uf118"
 let g:lightline.active = {
   \ 'left': [
   \   [ 'mode', 'paste' ],
-  \   [ 'filename' ],
+  \   [ 'filename', 'fileformat', 'filetype' ],
   \ ],
   \ 'right': [
   \   [ 'lineinfo' ],
-  \   ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok',
-  \   'fileformat', 'filetype']
+  \   [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ]
   \ ]
 \ }
 let g:lightline.inactive = {
