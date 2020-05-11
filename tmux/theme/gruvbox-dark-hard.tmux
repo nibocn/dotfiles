@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-bg_color="#32302f"
+bg_color="#282828"
 fg_color="#504945"
 
 set() {

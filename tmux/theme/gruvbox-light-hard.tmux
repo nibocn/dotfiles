@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-bg_color="#32302f"
-fg_color="#504945"
+bg_color="#f3eac9"
+fg_color="#eee0b9"
 
 set() {
   local option=$1
@@ -35,7 +35,7 @@ set "status-style" "bg=$bg_color,fg=$fg_color"
 #+ Panes +
 #+-------+
 set "pane-border-style" "bg=black,fg=white"
-set "pane-active-border-style" "bg=black,fg=brightgreen"
+set "pane-active-border-style" "bg=black,fg=cyan"
 set "display-panes-colour" "blue"
 set "display-panes-active-colour" "brightblack"
 
@@ -45,7 +45,7 @@ set "display-panes-active-colour" "brightblack"
 setw "clock-mode-colour" "cyan"
 
 # bell
-setw "window-status-bell-style" "bg=$bg_color,fg=cyan"
+setw "window-status-bell-style" "bg=black,fg=cyan"
 
 #+----------+
 #+ Messages +
@@ -62,7 +62,7 @@ set "status-left" "#{?client_prefix,#[fg=black]#[bg=green] #S#[fg=green]#[bg=$bg
 set "status-right" "#[fg=$fg_color,bg=$bg_color]#[fg=white,bg=$fg_color] %a %m-%d %H:%M "
 
 #+--- Windows ---+
-set "window-status-format" "#[fg=$bg_color,bg=$fg_color] #[fg=white,bg=$fg_color]#I #[fg=white,bg=$fg_color] #[fg=white,bg=$fg_color]#W #F #[fg=$fg_color,bg=$bg_color]"
+set "window-status-format" "#[fg=$bg_color,bg=$fg_color] #[fg=brightwhite,bg=$fg_color]#I #[fg=brightwhite,bg=$fg_color] #[fg=brightwhite,bg=$fg_color]#W #F #[fg=$fg_color,bg=$bg_color]"
 
 set "window-status-current-format" "#[fg=$bg_color,bg=yellow] #[fg=black,bg=yellow]#I #[fg=black,bg=yellow] #[fg=black,bg=yellow]#W #F #[fg=yellow,bg=$bg_color]"
 

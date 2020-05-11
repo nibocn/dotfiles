@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-bg_color="#32302f"
-fg_color="#504945"
+bg_color="#3c3836"
+fg_color="#5b534d"
 
 set() {
   local option=$1
