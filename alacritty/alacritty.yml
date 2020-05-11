@@ -2,11 +2,9 @@
 
 # Colors define {{{
 schemes:
-  gruvbox_dark: &gruvbox_dark
+  gruvbox_dark_def: &gruvbox_dark_def
     primary:
-      # hard contrast: background = '0x1d2021'
       background: '0x282828'
-      # soft contrast: background = '0x32302f'
       foreground: '0xebdbb2'
     normal:
       black:   '0x282828'
@@ -29,12 +27,60 @@ schemes:
     cursor:
       text: '0x282828'
       cursor: '0xebdbb2'
-
-  gruvbox_light: &gruvbox_light
+  gruvbox_dark_soft: &gruvbox_dark_soft
     primary:
-      # hard contrast: background = '0xf9f5d7'
+      background: '0x32302f'
+      foreground: '0xebdbb2'
+    normal:
+      black:   '0x32302f'
+      red:     '0xce332d'
+      green:   '0x98971a'
+      yellow:  '0xd79921'
+      blue:    '0x458588'
+      magenta: '0xb16286'
+      cyan:    '0x689d6a'
+      white:   '0xa89984'
+    bright:
+      black:   '0x928374'
+      red:     '0xfb4934'
+      green:   '0xb8bb26'
+      yellow:  '0xfabd2f'
+      blue:    '0x83a598'
+      magenta: '0xd3869b'
+      cyan:    '0x8ec07c'
+      white:   '0xebdbb2'
+    cursor:
+      text: '0x32302f'
+      cursor: '0xebdbb2'
+  gruvbox_dark_hard: &gruvbox_dark_hard
+    primary:
+      background: '0x1d2021'
+      foreground: '0xebdbb2'
+    normal:
+      black:   '0x1d2021'
+      red:     '0xce332d'
+      green:   '0x98971a'
+      yellow:  '0xd79921'
+      blue:    '0x458588'
+      magenta: '0xb16286'
+      cyan:    '0x689d6a'
+      white:   '0xa89984'
+    bright:
+      black:   '0x928374'
+      red:     '0xfb4934'
+      green:   '0xb8bb26'
+      yellow:  '0xfabd2f'
+      blue:    '0x83a598'
+      magenta: '0xd3869b'
+      cyan:    '0x8ec07c'
+      white:   '0xebdbb2'
+    cursor:
+      text: '0x1d2021'
+      cursor: '0xebdbb2'
+
+  gruvbox_light_def: &gruvbox_light_def
+    primary:
       background: '0xfbf1c7'
-      # soft contrast: background = '0xf2e5bc'
       foreground: '0x3c3836'
     normal:
       black:   '0xfbf1c7'
@@ -57,6 +103,58 @@ schemes:
     cursor:
       text: '0xfbf1c7'
       cursor: '0x3c3836'
+  gruvbox_light_soft: &gruvbox_light_soft
+    primary:
+      background: '0xf2e5bc'
+      foreground: '0x3c3836'
+    normal:
+      black:   '0xf2e5bc'
+      red:     '0xce332d'
+      green:   '0x98971a'
+      yellow:  '0xd79921'
+      blue:    '0x458588'
+      magenta: '0xb16286'
+      cyan:    '0x689d6a'
+      white:   '0x7c6f64'
+    bright:
+      black:   '0x928374'
+      red:     '0x9d0006'
+      green:   '0x79740e'
+      yellow:  '0xb57614'
+      blue:    '0x076678'
+      magenta: '0x8f3f71'
+      cyan:    '0x427b58'
+      white:   '0x3c3836'
+    cursor:
+      text: '0xf2e5bc'
+      cursor: '0x3c3836'
+  gruvbox_light_hard: &gruvbox_light_hard
+    primary:
+      background: '0xf9f5d7'
+      foreground: '0x3c3836'
+    normal:
+      black:   '0xf9f5d7'
+      red:     '0xce332d'
+      green:   '0x98971a'
+      yellow:  '0xd79921'
+      blue:    '0x458588'
+      magenta: '0xb16286'
+      cyan:    '0x689d6a'
+      white:   '0x7c6f64'
+    bright:
+      black:   '0x928374'
+      red:     '0x9d0006'
+      green:   '0x79740e'
+      yellow:  '0xb57614'
+      blue:    '0x076678'
+      magenta: '0x8f3f71'
+      cyan:    '0x427b58'
+      white:   '0x3c3836'
+    cursor:
+      text: '0xf9f5d7'
+      cursor: '0x3c3836'
+
+
   ### Edge (Light variant)
   edge_light: &edge_light
     primary:
@@ -84,9 +182,8 @@ schemes:
     cursor:
       text: '0xfafafa'
       cursor: '0x4b505b'
-
   ### Edge (Dark Default variant)
-  edge_dark_def: &edge_dark_default
+  edge_dark_def: &edge_dark_def
     primary:
       background: "0x2c2e34"
       foreground: "0xc5cdd9"
@@ -138,7 +235,6 @@ schemes:
     cursor:
       text: '0x2b2d37'
       cursor: '0xc5ccd9'
-
   ### Edge (Dark Neon variant)
   edge_dark_neon: &edge_dark_neon
     primary:
@@ -166,6 +262,7 @@ schemes:
       text: '0x2b2d3a'
       cursor: '0xc5cdd9'
 
+
   forest_night: &forest_night
     primary:
       background: '0x323d43'
@@ -179,7 +276,6 @@ schemes:
       magenta: '0xd3a0bc'
       cyan:    '0x87c095'
       white:   '0xd8caac'
-
     bright:
       black:   '0x868d80'
       red:     '0xe68183'
@@ -192,8 +288,135 @@ schemes:
     cursor:
       text: '0x323d43'
       cursor: '0xd8caac'
+
+
+  sonokai_shusia: &sonokai_shusia
+    primary:
+      background: "0x2d2a2e"
+      foreground: "0xe3e1e4"
+    normal:
+      black: "0x1a181a"
+      red: "0xf85e84"
+      green: "0x9ecd6f"
+      yellow: "0xe5c463"
+      blue: "0x7accd7"
+      magenta: "0xab9df2"
+      cyan: "0xef9062"
+      white: "0xe3e1e4"
+    bright:
+      black: "0x7a767a"
+      red: "0xf85e84"
+      green: "0x9ecd6f"
+      yellow: "0xe5c463"
+      blue: "0x7accd7"
+      magenta: "0xab9df2"
+      cyan: "0xef9062"
+      white: "0xe3e1e4"
+    cursor:
+      text: '0x2d2a2e'
+      cursor: '0xe3e1e4'
+  sonokai_andromeda: &sonokai_andromeda
+    primary:
+      background: "0x2b2d37"
+      foreground: "0xe1e3e4"
+    normal:
+      black: "0x181a1c"
+      red: "0xfb617e"
+      green: "0x9ed06c"
+      yellow: "0xf0c362"
+      blue: "0x6dcae8"
+      magenta: "0xbb97ee"
+      cyan: "0xf89860"
+      white: "0xe1e3e4"
+    bright:
+      black: "0x7a767a"
+      red: "0xfb617e"
+      green: "0x9ed06c"
+      yellow: "0xf0c362"
+      blue: "0x6dcae8"
+      magenta: "0xbb97ee"
+      cyan: "0xf89860"
+      white: "0xe1e3e4"
+    cursor:
+      text: '0x2b2d37'
+      cursor: '0xe1e3e4'
+  sonokai_andromeda: &sonokai_andromeda
+    primary:
+      background: "0x2a2f38"
+      foreground: "0xe1e3e4"
+    normal:
+      black: "0x181a1c"
+      red: "0xff6578"
+      green: "0x9dd274"
+      yellow: "0xeacb64"
+      blue: "0x72cce8"
+      magenta: "0xba9cf3"
+      cyan: "0xf69c5e"
+      white: "0xe1e3e4"
+    bright:
+      black: "0x7a767a"
+      red: "0xff6578"
+      green: "0x9dd274"
+      yellow: "0xeacb64"
+      blue: "0x72cce8"
+      magenta: "0xba9cf3"
+      cyan: "0xf69c5e"
+      white: "0xe1e3e4"
+    cursor:
+      text: '0x2a2f38'
+      cursor: '0xe1e3e4'
+  sonokai_atlantis: &sonokai_atlantis
+    primary:
+      background: "0x2a2f38"
+      foreground: "0xe1e3e4"
+    normal:
+      black: "0x181a1c"
+      red: "0xff6578"
+      green: "0x9dd274"
+      yellow: "0xeacb64"
+      blue: "0x72cce8"
+      magenta: "0xba9cf3"
+      cyan: "0xf69c5e"
+      white: "0xe1e3e4"
+    bright:
+      black: "0x7a767a"
+      red: "0xff6578"
+      green: "0x9dd274"
+      yellow: "0xeacb64"
+      blue: "0x72cce8"
+      magenta: "0xba9cf3"
+      cyan: "0xf69c5e"
+      white: "0xe1e3e4"
+    cursor:
+      text: '0x2a2f38'
+      cursor: '0xe1e3e4'
+  sonokai_maia: &sonokai_maia
+    primary:
+      background: "0x273136"
+      foreground: "0xe1e2e3"
+    normal:
+      black: "0x1c1e1f"
+      red: "0xf76c7c"
+      green: "0x9cd57b"
+      yellow: "0xe3d367"
+      blue: "0x78cee9"
+      magenta: "0xbaa0f8"
+      cyan: "0xf3a96a"
+      white: "0xe1e2e3"
+    bright:
+      black: "0x7a767a"
+      red: "0xf76c7c"
+      green: "0x9cd57b"
+      yellow: "0xe3d367"
+      blue: "0x78cee9"
+      magenta: "0xbaa0f8"
+      cyan: "0xf3a96a"
+      white: "0xe1e2e3"
+    cursor:
+      text: '0x273136'
+      cursor: '0xe1e2e3'
 # }}}
-colors: *forest_night
+colors: *sonokai_atlantis
 # background_opacity: 0.94
 
 # Font {{{
