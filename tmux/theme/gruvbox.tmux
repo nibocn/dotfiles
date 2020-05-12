@@ -1,7 +1,32 @@
 #!/usr/bin/env bash
 
-bg_color="#3c3836"
-fg_color="#5b534d"
+theme_option="@theme"
+default_theme="gruvbox"
+
+background_option="@theme-background"
+default_background="dark"
+
+style_option="@theme-style"
+default_style="default"
+
+# dark default
+bg_color="#32302f"
+fg_color="#5a524d"
+
+
+get_tmux_option() {
+  local option_name="$1"
+  local default_value="$2"
+
+  local option_value
+  option_value="$(tmux show-option -gqv "$option_name")"
+
+  if [[ -z "$option_value" ]]; then
+    echo "$default_value"
+  else
+    echo "$option_value"
+  fi
+}
 
 set() {
   local option=$1
@@ -16,6 +41,39 @@ setw() {
 
   tmux set-window-option -gq "$option" "$value"
 }
+
+diff_custom() {
+  local background
+  local style
+  background="$(get_tmux_option "$background_option" "$default_background")"
+  style="$(get_tmux_option "$style_option" "$default_style")"
+  if [[ $background == "dark" ]]; then
+    if [[ $style == "default" ]]; then
+      bg_color="#32302f"
+      fg_color="#5a524d"
+    elif [[ $style == "soft" ]]; then
+      bg_color="#3c3836"
+      fg_color="#665c55"
+    elif [[ $style == "hard" ]]; then
+      bg_color="#282828"
+      fg_color="#504945"
+    fi
+  else
+    if [[ $style == "default" ]]; then
+      bg_color="#f2e5be"
+      fg_color="#e5d5af"
+    elif [[ $style == "soft" ]]; then
+      bg_color="#ebdbb4"
+      fg_color="#dac9a7"
+    elif [[ $style == "hard" ]]; then
+      bg_color="#f3eac9"
+      fg_color="#eee0b9"
+    fi
+
+  fi
+}
+
+diff_custom
 
 #+---------+
 #+ Options +
@@ -34,8 +92,8 @@ set "status-style" "bg=$bg_color,fg=$fg_color"
 #+-------+
 #+ Panes +
 #+-------+
-set "pane-border-style" "bg=black,fg=white"
-set "pane-active-border-style" "bg=black,fg=brightgreen"
+set "pane-border-style" "fg=$fg_color"
+set "pane-active-border-style" "fg=cyan"
 set "display-panes-colour" "blue"
 set "display-panes-active-colour" "brightblack"
 

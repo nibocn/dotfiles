@@ -28,8 +28,7 @@ main() {
   local file
 
   theme="$(get_tmux_option "$theme_option" "$default_theme")"
-  background="$(get_tmux_option "$background_option" "$default_background")"
-  file="$CURRENT_DIR/theme/$theme-$background.tmux"
+  file="$CURRENT_DIR/theme/$theme.tmux"
 
   if [[ -f "$file" ]]; then
     tmux run-shell "$file"

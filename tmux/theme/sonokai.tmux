@@ -1,7 +1,25 @@
 #!/usr/bin/env bash
 
-bg_color="#2f3242"
-fg_color="#3f455a"
+style_option="@theme-style"
+default_style="atlantis"
+
+# shusia
+bg_color="#343136"
+fg_color="#49464e"
+
+get_tmux_option() {
+  local option_name="$1"
+  local default_value="$2"
+
+  local option_value
+  option_value="$(tmux show-option -gqv "$option_name")"
+
+  if [[ -z "$option_value" ]]; then
+    echo "$default_value"
+  else
+    echo "$option_value"
+  fi
+}
 
 set() {
   local option=$1
@@ -16,6 +34,26 @@ setw() {
 
   tmux set-window-option -gq "$option" "$value"
 }
+
+diff_custom() {
+  local style
+  style="$(get_tmux_option "$style_option" "$default_style")"
+  if [[ $style == "shusia" ]]; then
+    bg_color="#343136"
+    fg_color="#49464e"
+  elif [[ $style == "andromeda" ]]; then
+    bg_color="#2f323e"
+    fg_color="#404555"
+  elif [[ $style == "atlantis" ]]; then
+    bg_color="#303541"
+    fg_color="#434c5b"
+  elif [[ $style == "maia" ]]; then
+    bg_color="#2e383e"
+    fg_color="#424b53"
+  fi
+}
+
+diff_custom
 
 #+---------+
 #+ Options +
@@ -34,8 +72,8 @@ set "status-style" "bg=$bg_color, fg=$fg_color"
 #+-------+
 #+ Panes +
 #+-------+
-set "pane-border-style" "fg=white"
-set "pane-active-border-style" "fg=brightgreen"
+set "pane-border-style" "fg=$fg_color"
+set "pane-active-border-style" "fg=blue"
 set "display-panes-colour" "blue"
 set "display-panes-active-colour" "brightblack"
 
@@ -45,7 +83,7 @@ set "display-panes-active-colour" "brightblack"
 setw "clock-mode-colour" "cyan"
 
 # bell
-setw "window-status-bell-style" "bg=black,fg=cyan"
+setw "window-status-bell-style" "bg=$bg_color,fg=cyan"
 
 #+----------+
 #+ Messages +
