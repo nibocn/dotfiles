@@ -115,7 +115,7 @@ set "message-command-style" "bg=$bg_color,fg=cyan"
 #+ Status +
 #+--------+
 #+--- Bars ---+
-set "status-left" "#{?client_prefix,#[fg=black]#[bg=green] #S#[fg=green]#[bg=$bg_color],#[fg=black,bg=blue] #S#[fg=blue,bg=$bg_color]}"
+set "status-left" "#{?client_prefix,#[fg=black]#[bg=green] #S #[fg=green]#[bg=$bg_color],#[fg=black,bg=blue] #S #[fg=blue,bg=$bg_color]}"
 
 set "status-right" "#[fg=$fg_color,bg=$bg_color]#[fg=white,bg=$fg_color] %a %m-%d %H:%M "
 
