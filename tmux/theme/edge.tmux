@@ -113,11 +113,11 @@ set "message-command-style" "bg=$bg_color,fg=cyan"
 #+--- Bars ---+
 set "status-left" "#{?client_prefix,#[fg=$bg_color]#[bg=magenta] #S #[fg=magenta]#[bg=$bg_color],#[fg=$bg_color,bg=green] #S #[fg=green,bg=$bg_color]}"
 
-set "status-right" "#[fg=$fg_color,bg=$bg_color]#[fg=$font_fg_color,bg=$fg_color] %a %m-%d %H:%M "
+set "status-right" "#{?pane_in_mode,#[fg=cyan]#[bg=$bg_color]#[fg=$bg_color]#[bg=cyan] Copy #[fg=$bg_color]#[bg=cyan],}#[fg=$fg_color,bg=$bg_color]#[fg=$font_fg_color,bg=$fg_color] %a %m-%d %H:%M "
 
 #+--- Windows ---+
 set "window-status-format" "#[fg=$bg_color,bg=$fg_color] #[fg=$font_fg_color,bg=$fg_color]#I #[fg=$font_fg_color,bg=$fg_color] #[fg=$font_fg_color,bg=$fg_color]#W #F #[fg=$fg_color,bg=$bg_color]"
 
-set "window-status-current-format" "#[fg=$bg_color,bg=brightblue] #[fg=$fg_color,bg=brightblue]#I #[fg=$fg_color,bg=brightblue] #[fg=$fg_color,bg=brightblue]#W #F #[fg=brightblue,bg=$bg_color]"
+set "window-status-current-format" "#[fg=$bg_color,bg=brightblue] #[fg=$bg_color,bg=brightblue]#I #[fg=$bg_color,bg=brightblue] #[fg=$bg_color,bg=brightblue]#W #F #[fg=brightblue,bg=$bg_color]"
 
 set "window-status-separator" ""

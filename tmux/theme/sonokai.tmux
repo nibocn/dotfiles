@@ -97,7 +97,7 @@ set "message-command-style" "bg=$bg_color,fg=cyan"
 #+--- Bars ---+
 set "status-left" "#{?client_prefix,#[fg=black]#[bg=magenta] #S #[fg=magenta]#[bg=$bg_color],#[fg=black,bg=green] #S #[fg=green,bg=$bg_color]}"
 
-set "status-right" "#[fg=$fg_color,bg=$bg_color]#[fg=white,bg=$fg_color] %a %m-%d %H:%M "
+set "status-right" "#{?pane_in_mode,#[fg=blue]#[bg=$bg_color]#[fg=black]#[bg=blue] Copy #[fg=$bg_color]#[bg=blue],}#[fg=$fg_color,bg=$bg_color]#[fg=white,bg=$fg_color] %a %m-%d %H:%M "
 
 #+--- Windows ---+
 set "window-status-format" "#[fg=$bg_color,bg=$fg_color] #[fg=white,bg=$fg_color]#I #[fg=white,bg=$fg_color] #[fg=white,bg=$fg_color]#W #F #[fg=$fg_color,bg=$bg_color]"
