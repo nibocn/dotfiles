@@ -100,7 +100,7 @@ set "status-left" "#{?client_prefix,#[fg=black]#[bg=magenta] #S#[fg=magenta]#[bg
 set "status-right" "#[fg=$fg_color,bg=$bg_color]#[fg=white,bg=$fg_color] %a %m-%d %H:%M "
 
 #+--- Windows ---+
-set "window-status-format" "#[fg=$bg_color,bg=$fg_color,nobold,noitalics,nounderscore] #[fg=white,bg=$fg_color]#I #[fg=white,bg=$fg_color,nobold,noitalics,nounderscore] #[fg=white,bg=$fg_color]#W #F #[fg=$fg_color,bg=$bg_color,nobold,noitalics,nounderscore]"
+set "window-status-format" "#[fg=$bg_color,bg=$fg_color] #[fg=white,bg=$fg_color]#I #[fg=white,bg=$fg_color] #[fg=white,bg=$fg_color]#W #F #[fg=$fg_color,bg=$bg_color]"
 
-set "window-status-current-format" "#[fg=$bg_color,bg=cyan,nobold,noitalics,nounderscore] #[fg=black,bg=cyan]#I #[fg=black,bg=cyan,nobold,noitalics,nounderscore] #[fg=black,bg=cyan]#W #F #[fg=cyan,bg=$bg_color,nobold,noitalics,nounderscore]"
+set "window-status-current-format" "#[fg=$bg_color,bg=cyan] #[fg=black,bg=cyan]#I #[fg=black,bg=cyan] #[fg=black,bg=cyan]#W #F #[fg=cyan,bg=$bg_color]"
 set "window-status-separator" ""

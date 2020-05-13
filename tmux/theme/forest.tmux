@@ -62,6 +62,6 @@ set "status-left" "#{?client_prefix,#[fg=$bg_color]#[bg=magenta] #S#[fg=magenta]
 set "status-right" "#[fg=$fg_color,bg=$bg_color]#[fg=white,bg=$fg_color] %a %m-%d %H:%M "
 
 # #+--- Windows ---+
-set "window-status-format" "#[fg=$bg_color,bg=$fg_color,nobold,noitalics,nounderscore] #[fg=white,bg=$fg_color]#I #[fg=white,bg=$fg_color,nobold,noitalics,nounderscore] #[fg=white,bg=$fg_color]#W #F #[fg=$fg_color,bg=$bg_color,nobold,noitalics,nounderscore]"
-set "window-status-current-format" "#[fg=$bg_color,bg=blue,nobold,noitalics,nounderscore] #[fg=$bg_color,bg=blue]#I #[fg=$bg_color,bg=blue,nobold,noitalics,nounderscore] #[fg=$bg_color,bg=blue]#W #F #[fg=blue,bg=$bg_color,nobold,noitalics,nounderscore]"
+set "window-status-format" "#[fg=$bg_color,bg=$fg_color] #[fg=white,bg=$fg_color]#I #[fg=white,bg=$fg_color] #[fg=white,bg=$fg_color]#W #F #[fg=$fg_color,bg=$bg_color]"
+set "window-status-current-format" "#[fg=$bg_color,bg=blue] #[fg=$bg_color,bg=blue]#I #[fg=$bg_color,bg=blue,nobold] #[fg=$bg_color,bg=blue]#W #F #[fg=blue,bg=$bg_color]"
 # set -g window-status-separator ""
