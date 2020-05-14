@@ -508,6 +508,7 @@ nnoremap <silent><leader>te :AsyncTaskEdit<CR>
 " }}}
 
 " FZF =========================================================== {{{
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
