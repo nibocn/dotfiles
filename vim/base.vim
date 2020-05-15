@@ -1,9 +1,11 @@
 " 记住退出位置
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+augroup history
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+augroup end
 
 " Vim special config {{{
-if g:editor == 'vim'
-  set nocompatible
+if g:editor ==# 'vim'
+  " set nocompatible
   syntax on
   " 高亮显示匹配结果
   set hlsearch
@@ -18,12 +20,12 @@ if g:editor == 'vim'
   set wildmenu
   " 将 vim 中的所有数字都当成十进制，默认以 0 开头的数字为八进制
   set nrformats=
-  if $TERM == 'tmux-256color'
+  if $TERM ==# 'tmux-256color'
     " 处理在 Tmux 中启用 true color
     set t_8f=[38;2;%lu;%lu;%lum
     set t_8b=[48;2;%lu;%lu;%lum
   endif
-  if g:system_os == 'Darwin'
+  if g:system_os ==# 'Darwin'
     " 设置 vim 下不同模式切换时光标的样式
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_SR = "\<Esc>]50;CursorShape=2\x7"
@@ -34,7 +36,7 @@ if g:editor == 'vim'
       let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
       let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
     endif
-  elseif g:system_os == 'Linux'
+  elseif g:system_os ==# 'Linux'
     let &t_SI = "\<Esc>[6 q"
     let &t_SR = "\<Esc>[4 q"
     let &t_EI = "\<Esc>[2 q"
@@ -48,7 +50,7 @@ endif
 " }}}
 
 " Neovim special config {{{
-if g:editor == 'neovim'
+if g:editor ==# 'neovim'
   " 设置 neovim 在不同模式下切换时光标的样式
   set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
     \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
@@ -60,6 +62,7 @@ endif
 set guifont=JetbrainsMono\ Nerd\ Font\ +\ :h12
 set encoding=utf-8
 set fileencodings=utf-8,cp936,chinese,latin-1
+scriptencoding utf-8
 " buffer 修改后互相切换时对于未保存的 buffer 不强制要求必须保存才能进行切换
 set hidden
 " 设置行号
@@ -77,7 +80,7 @@ set lazyredraw
 set ttyfast
 " }}}
 " 设置colorcolumn来显示一条或多条垂直竖线(标尺)
-set cc=100
+set colorcolumn=100
 " 向上或向下滚动时距离窗口顶部或底部 5 行的距离
 set scrolloff=5
 " 搜索智能区分大小写

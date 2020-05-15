@@ -1,5 +1,7 @@
+scriptencoding utf-8
+
 " ************************************* 插件定义 *****************************************
-if g:editor == 'neovim'
+if g:editor ==# 'neovim'
   let $PLUG_VIM_FILE = '$HOME/.local/share/nvim/site/autoload/plug.vim'
   let $PLUG_HOME = '$HOME/.local/share/nvim/plugged'
 else
@@ -10,7 +12,9 @@ endif
 if empty(glob($PLUG_VIM_FILE))
   silent! exec ':!curl -fLo '.$PLUG_VIM_FILE.' --create-dirs '
     \ 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  augroup plug
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  augroup end
 endif
 
 call plug#begin($PLUG_HOME)
@@ -382,7 +386,9 @@ let g:startify_bookmarks = [
       \ {'c': '~/.local/dotfiles'},
       \ {'gf': '~/Library/Mobile Documents/iCloud~com~nssurge~inc/Documents/cordcloud.conf'}
       \ ]
-autocmd User Startified setlocal cursorline
+augroup startify
+  autocmd User Startified setlocal cursorline
+augroup end
 " nnoremap <leader>st :Startify<CR>
 " }}}
 
@@ -479,13 +485,13 @@ vmap <silent> <leader>lv <Plug>(coc-range-select)
 
 " Vista.vim ===================================================== {{{
 let g:vista_sidebar_width=50
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista_icon_indent = ['╰─▸ ', '├─▸ ']
 let g:vista_default_executive = 'ctags'
 let g:vista_fzf_preview = ['right:50%']
 let g:vista#renderer#enable_icon = 1
 let g:vista#renderer#icons = {
-  \   "function": "\uf794",
-  \   "variable": "\uf71b",
+  \   'function': '\uf794',
+  \   'variable': '\uf71b',
   \ }
 " }}}
 
@@ -519,8 +525,10 @@ command! -bang -nargs=* Ag
   \           : fzf#vim#with_preview('right:50%', '?'),
   \   <bang>0)
 " Hide statusline
-autocmd! FileType fzf set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+augroup fzf
+  autocmd! FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+augroup end
 " }}}
 
 " nerdcommenter ================================================= {{{
@@ -536,7 +544,7 @@ let g:NERDCustomDelimiters = {
 nnoremap <silent> <leader> :<C-u>WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :<C-u>WhichKeyVisual '<Space>'<CR>
 " nnoremap <silent> <localleader> :<C-u>WhichKey ','<CR>
-call which_key#register('<Space>', "g:which_key_map")
+call which_key#register('<Space>', 'g:which_key_map')
 
 let g:which_key_map = {}
 
@@ -642,7 +650,7 @@ let g:ale_virtualtext_prefix = '▸'
 " }}}
 
 " vim-go ==================================================== {{{
-let g:go_fmt_command = "goimports"
+let g:go_fmt_command = 'goimports'
 " }}}
 
 " vim: set fdl=0 fdm=marker:
