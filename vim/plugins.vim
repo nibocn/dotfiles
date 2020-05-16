@@ -547,6 +547,8 @@ vnoremap <silent> <leader> :<C-u>WhichKeyVisual '<Space>'<CR>
 " nnoremap <silent> <localleader> :<C-u>WhichKey ','<CR>
 call which_key#register('<Space>', 'g:which_key_map')
 
+nnoremap <silent> <leader>fP :call ShowFilePath()<CR>
+
 let g:which_key_map = {}
 
 let g:which_key_map['?'] = ['Maps', 'show-keybindings']
@@ -559,7 +561,8 @@ let g:which_key_map.f = {
   \ 's': ['update', 'save file'],
   \ 'S': ['wall', 'save all file'],
   \ 'p': ['Files', 'fzf'],
-  \ 'e': [':CocCommand explorer', 'file folder']
+  \ 'e': [':CocCommand explorer', 'file folder'],
+  \ 'P': 'show file path'
 \ }
 let g:which_key_map.t = {
   \ 'name': '+toggle/tag/task',

@@ -23,4 +23,11 @@ endfunction
 command! -register SynStack call <SID>SynStack()
 " }}}
 
+function ShowFilePath() abort
+  let l:path = expand('%:f')
+  " echo l:path
+  execute 'redir @+ | echo "' . l:path . '" | redir end'
+endfunction
+command! -register ShowFilePath call ShowFilePath()
+
 " vim: set fdl=0 fdm=marker:
