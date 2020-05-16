@@ -397,8 +397,9 @@ let g:polyglot_disabled = ['csv']
 " }}}
 
 " IndentLine ===================================== {{{
-let g:indentLine_leadingSpaceEnabled = 1
-let g:indentLine_leadingSpaceChar = '·'
+" 禁用 leadingSpace 因为当单行内容过长时会造成明显的移动和输入延迟
+" let g:indentLine_leadingSpaceEnabled = 1
+" let g:indentLine_leadingSpaceChar = '·'
 " 因为启用 indentLine_leadingSpaceEnabled 参数导致部分插件冲突，故排除
 let g:indentLine_bufNameExclude = ['\[coc-explorer.*', 'NERD_tree.*']
 let g:indentLine_fileTypeExclude = ['markdown']
