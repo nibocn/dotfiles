@@ -640,10 +640,12 @@ nnoremap <silent> <leader>lk :ALEPreviousWrap<CR>
 nnoremap <silent> <leader>li :ALEDetail <CR>
 let g:ale_linters = {
   \ 'go': [ 'gopls' ],
-  \ 'java': [ 'eclipselsp' ],
+  \ 'java': [ 'eclipselsp', 'checkstyle', 'pmd' ],
 \ }
 let g:ale_java_eclipselsp_path = '/usr/local/share/eclipse/jdt-language-server'
 let g:ale_java_eclipselsp_javaagent = '/usr/local/share/lombok/lombok.jar'
+let g:ale_java_checkstyle_config = '$HOME/Documents/Java/java-code-quality/checkstyle/checkstyle.xml'
+let g:ale_java_pmd_options = 'pmd -cache /tmp/pmd.cache -R $HOME/Documents/Java/java-code-quality/pmd/pmd-ruleset_6.0.xml'
 " 显示 ale 检查的错误列表
 let g:ale_open_list = 1
 " 定义错误/警告标识
