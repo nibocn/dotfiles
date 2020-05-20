@@ -635,8 +635,8 @@ let g:which_key_map.l = {
 " }}}
 
 " ale config =============================================== {{{
-nnoremap <silent> <leader>lj :ALENext<CR>
-nnoremap <silent> <leader>lk :ALEPrevious<CR>
+nnoremap <silent> <leader>lj :ALENextWrap<CR>
+nnoremap <silent> <leader>lk :ALEPreviousWrap<CR>
 nnoremap <silent> <leader>li :ALEDetail <CR>
 let g:ale_linters = {
   \ 'go': [ 'gopls' ],
