@@ -644,6 +644,8 @@ let g:ale_linters = {
 \ }
 let g:ale_java_eclipselsp_path = '/usr/local/share/eclipse/jdt-language-server'
 let g:ale_java_eclipselsp_javaagent = '/usr/local/share/lombok/lombok.jar'
+" 显示 ale 检查的错误列表
+let g:ale_open_list = 1
 " 定义错误/警告标识
 let g:ale_sign_error = "\uf65b"
 let g:ale_sign_warning = "\uf421"
