@@ -617,6 +617,7 @@ let g:which_key_map.l = {
   \ 'j': 'diagnostic next(ale)',
   \ 'k': 'diagnostic prev(ale)',
   \ 'i': 'diagnostic info(ale)',
+  \ 'l': 'diagnostic list(ale)',
   \ 'c': 'command list',
   \ 'd': 'jump to definition',
   \ 'D': 'jump to declaration',
@@ -646,8 +647,6 @@ let g:ale_java_eclipselsp_path = '/usr/local/share/eclipse/jdt-language-server'
 let g:ale_java_eclipselsp_javaagent = '/usr/local/share/lombok/lombok.jar'
 let g:ale_java_checkstyle_config = '$HOME/Documents/Java/java-code-quality/checkstyle/checkstyle.xml'
 let g:ale_java_pmd_options = 'pmd -cache /tmp/pmd.cache -R $HOME/Documents/Java/java-code-quality/pmd/pmd-ruleset_6.0.xml'
-" 显示 ale 检查的错误列表
-let g:ale_open_list = 1
 " 定义错误/警告标识
 let g:ale_sign_error = "\uf65b"
 let g:ale_sign_warning = "\uf421"
@@ -660,6 +659,20 @@ let g:ale_echo_msg_format = '[%linter%%:code%] %s [%severity%]'
 let g:ale_virtualtext_cursor = 1
 let g:ale_virtualtext_delay = 10
 let g:ale_virtualtext_prefix = '▸'
+
+" 显示 ale 错误列表 {{{
+function! s:ale_list() abort
+  let g:ale_open_list = 1
+  call ale#Queue(0, 'lint_file')
+endfunction
+command! ALEList call s:ale_list()
+nnoremap <silent> <leader>ll :ALEList<CR>
+augroup ale
+  autocmd FileType qf
+    \ nnoremap <silent><buffer> q :let g:ale_open_list = 0<CR>:q!<CR>
+augroup END
+" }}}
+
 " }}}
 
 " vim-go ==================================================== {{{
