@@ -91,6 +91,9 @@ Plug 'liuchengxu/vim-which-key'
 
 Plug 'fatih/vim-go', { 'for': ['go'], 'do': ':GoUpdateBinaries' }
 
+" Vimscript test
+Plug 'junegunn/vader.vim', { 'for': 'vader' }
+
 call plug#end()
 
 
@@ -637,8 +640,10 @@ nnoremap <silent> <leader>lk :ALEPrevious<CR>
 nnoremap <silent> <leader>li :ALEDetail <CR>
 let g:ale_linters = {
   \ 'go': [ 'gopls' ],
+  \ 'java': [ 'eclipselsp' ],
 \ }
-let g:ale_java_javac_executable = "javac -cp /usr/local/share/lombok/lombok.jar"
+let g:ale_java_eclipselsp_path = '/usr/local/share/eclipse/jdt-language-server'
+let g:ale_java_eclipselsp_javaagent = '/usr/local/share/lombok/lombok.jar'
 " 定义错误/警告标识
 let g:ale_sign_error = "\uf65b"
 let g:ale_sign_warning = "\uf421"
