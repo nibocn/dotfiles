@@ -504,8 +504,10 @@ let g:vista#renderer#icons = {
 let g:asyncrun_open = 8
 " 设置用来标记项目根目录的文件夹
 let g:asyncrun_rootmarks = [ '.git', '.svn', '.root', '.project', '.hg' ]
-" 在下方打开可复用内部终端
+" 在下方打开内部终端
 let g:asynctasks_term_pos = 'bottom'
+" 终端可复用
+let g:asynctasks_term_reuse = 1
 " 显示分屏内置终端时不切换焦点
 let g:asynctasks_term_focus = 0
 " 将内置终端的 buffer 设置为 bufhidden
