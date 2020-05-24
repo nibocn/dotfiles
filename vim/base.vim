@@ -129,6 +129,7 @@ set foldnestmax=3
 set foldlevel=1
 " }}}
 
+set tags=./.tags;,.tags
 
 let mapleader=' '
 let maplocalleader=','
