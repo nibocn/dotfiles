@@ -135,7 +135,7 @@ function proxy() {
     echo '代理已启用...'
 }
 function unproxy() {
-    unset {HTTP,HTTPS,TP}_PROXY
+    unset {HTTP,HTTPS,FTP}_PROXY
     unset ALL_PROXY
     echo '代理已停用...'
 }
