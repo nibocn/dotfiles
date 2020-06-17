@@ -1,0 +1,66 @@
+snippet gs! "Description" b
+plugins {
+	id 'java'
+	id 'idea'
+	id 'eclipse'
+}
+
+group = '$1'
+version = '${2:0.0.1-SNAPSHOT}'
+
+sourceCompatibility = ${3:JavaVersion.VERSION_1_8}
+targetCompatibility = ${3:JavaVersion.VERSION_1_8}
+
+ext {
+	junitVersion = '${4:4.13}'
+}
+
+compileJava {
+	options.encoding 'utf-8'
+}
+
+sourceSets {
+	test.compileClasspath += configurations.compileOnly
+	test.runtimeClasspath += configurations.compileOnly
+}
+
+repositories {
+	mavenLocal()
+	maven { url ALIYUN_MAVEN_REPO_URL }
+	mavenCentral()
+	jcenter()
+}
+
+configurations {
+	all {
+		resolutionStrategy {
+			// 对于 SNAPSHOT 的包不进行缓存
+			cacheChangingModulesFor 0, 'seconds'
+		}
+	}
+}
+
+dependencies {
+	testImplementation "junit:junit:$junitVersion"
+}
+
+tasks.withType(Test) {
+	testLogging {
+		exceptionFormat 'full'
+		showStandardStreams = true
+	}
+}
+
+idea {
+	module {
+		downloadSources = false
+		downloadJavadoc = false
+	}
+}
+
+eclipse {
+	classpath {
+		downloadSources = false
+	}
+}
+endsnippet
