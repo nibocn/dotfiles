@@ -1,14 +1,13 @@
 #
 # Modes
 
-# yabai v3.0.0 版本已不支持修改 window border
-# :: default : yabai -m config active_window_border_color 0xff9c5054
-# :: resize : yabai -m config active_window_border_color 0x99ff0000
-# :: warp : yabai -m config active_window_border_color 0x990000ff
+:: default : yabai -m config active_window_border_color 0xff9c5054
+:: resize : yabai -m config active_window_border_color 0x99ff0000
+:: warp : yabai -m config active_window_border_color 0x990000ff
 
-:: default : osascript -e 'display notification "Normal mode" with title "skhd"'
-:: resize : osascript -e 'display notification "Resize mode" with title "skhd"'
-:: warp : osascript -e 'display notification "Warp mode" with title "skhd"'
+# :: default : osascript -e 'display notification "Normal mode" with title "skhd"'
+# :: resize : osascript -e 'display notification "Resize mode" with title "skhd"'
+# :: warp : osascript -e 'display notification "Warp mode" with title "skhd"'
 
 #
 # Switches
