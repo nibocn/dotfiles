@@ -84,7 +84,6 @@ yabai -m rule --add app="^zoom.us$" manage=off
 yabai -m rule --add app="^QuickTime Player$" manage=off
 yabai -m rule --add app="^DingTalk$" manage=off
 yabai -m rule --add app="^VirtualBox$" manage=off
-yabai -m rule --add app="^PDF Expert$" manage=off
 yabai -m rule --add app="^百度网盘$" manage=off
 yabai -m rule --add app="^SaveWizard$" manage=off
 yabai -m rule --add app="^Reminders$" manage=off
