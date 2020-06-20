@@ -25,6 +25,7 @@ export GIT_LFS_SKIP_SMUDGE=1
 # export PIPENV_PYPI_MIRROR=https://mirrors.aliyun.com/pypi/simple
 export PIPENV_PYPI_MIRROR=https://mirrors.aliyun.com/pypi/simple/
 export PIPENV_VENV_IN_PROJECT=true
+export PIPENV_IGNORE_VIRTUALENVS=1
 ## Groovy 配置
 export GROOVY_HOME='/usr/local/opt/groovy/libexec'
 ## Go
