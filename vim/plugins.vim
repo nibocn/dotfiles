@@ -1,12 +1,11 @@
 scriptencoding utf-8
 
 " ************************************* 插件定义 *****************************************
+let $PLUG_HOME = '$HOME/.local/share/nvim/plugged'
 if g:editor ==# 'neovim'
   let $PLUG_VIM_FILE = '$HOME/.local/share/nvim/site/autoload/plug.vim'
-  let $PLUG_HOME = '$HOME/.local/share/nvim/plugged'
 else
   let $PLUG_VIM_FILE = '$HOME/.vim/autoload/plug.vim'
-  let $PLUG_HOME = '$HOME/.vim/plugged'
 endif
 
 if empty(glob($PLUG_VIM_FILE))
