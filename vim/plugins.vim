@@ -428,7 +428,7 @@ let g:coc_global_extensions = [
   \   'coc-vimlsp',
   \   'coc-python',
   \   'coc-html', 'coc-css', 'coc-tsserver', 'coc-tailwindcss', 'coc-stylelint', 'coc-tslint',
-  \   'coc-java'
+  \   'coc-java', 'coc-groovy'
   \ ]
 
 inoremap <silent><expr> <TAB>

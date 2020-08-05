@@ -43,6 +43,10 @@
         "initializationOptions": {
           "gocodeCompletionEnabled": true
         }
+      },
+      "kotlin": {
+        "command": "/usr/local/share/kotlin/server/bin/kotlin-language-server",
+        "filetypes": ["kotlin"]
       }
     }
 }
