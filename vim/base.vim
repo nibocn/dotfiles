@@ -50,12 +50,12 @@ endif
 " }}}
 
 " Neovim special config {{{
-if g:editor ==# 'neovim'
-  " 设置 neovim 在不同模式下切换时光标的样式
-  set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
-    \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
-    \,sm:block-blinkwait175-blinkoff150-blinkon175
-endif
+" if g:editor ==# 'neovim'
+"   " 设置 neovim 在不同模式下切换时光标的样式
+"   set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+"     \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+"     \,sm:block-blinkwait175-blinkoff150-blinkon175
+" endif
 " }}}
 
 " 设置字体及大小
