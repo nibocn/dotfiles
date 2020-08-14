@@ -176,6 +176,7 @@ zinit light matthieusb/zsh-sdkman
 zinit wait="0" lucid for \
   OMZ::lib/git.zsh \
   OMZ::lib/key-bindings.zsh \
+  OMZ::lib/history.zsh \
   OMZ::plugins/fzf/fzf.plugin.zsh \
   OMZ::plugins/git/git.plugin.zsh \
   OMZ::plugins/common-aliases/common-aliases.plugin.zsh
