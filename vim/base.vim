@@ -71,7 +71,7 @@ set number
 set relativenumber
 " 高亮显示当前行
 set cursorline
-set cmdheight=2
+" set cmdheight=2
 set laststatus=2
 " 设置分屏线
 set fillchars+=vert:\|
@@ -90,7 +90,8 @@ set shortmess+=c
 " 总是显示行号最左侧的符号标记列，默认为：自动
 " 这样会造成代码语法错误时标识提示信息时屏幕经常抖动
 set signcolumn=yes
-set updatetime=500
+
+set updatetime=100
 
 " 按键响应等待超时时间
 set timeoutlen=350
