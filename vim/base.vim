@@ -71,7 +71,7 @@ set number
 set relativenumber
 " 高亮显示当前行
 set cursorline
-" set cmdheight=2
+set cmdheight=2
 set laststatus=2
 " 设置分屏线
 set fillchars+=vert:\|
