@@ -696,6 +696,9 @@ let g:ale_java_pmd_options = 'pmd -cache /tmp/pmd.cache -R $HOME/Documents/Java/
 " 定义错误/警告标识
 let g:ale_sign_error = "\uf65b"
 let g:ale_sign_warning = "\uf421"
+" 文件保存时才进行检查
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
 " 定义代码检查信息输出格式
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
