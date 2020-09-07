@@ -2,31 +2,31 @@
     "suggest.noselect": true,
     "suggest.enablePreview": true,
     "suggest.completionItemKindLabels": {
-        "class": "\uf0e8",
-        "color": "\ue22b",
-        "constant": "\uf8fe",
-        "default": "\uf29c",
-        "enum": "\uf435",
-        "enumMember": "\uf02b",
-        "event": "\ufacd",
-        "field": "\uf93d",
-        "file": "\uf723",
-        "folder": "\uf115",
-        "function": "\u0192",
-        "interface": "\uf417",
-        "keyword": "\uf1de",
-        "method": "\uf6a6",
-        "module": "\uf40d",
-        "operator": "\uf915",
-        "property": "\ue624",
-        "reference": "\ufa46",
-        "snippet": "\ue60b",
-        "struct": "\ufb44",
-        "text": "\ue612",
-        "typeParameter": "\uf728",
-        "unit": "\uf475",
-        "value": "\uf89f",
-        "variable": "\ue71b"
+        "class": "\uf0e8", // 
+        "color": "\ue22b", // 
+        "constant": "\uf8fe", // 
+        "default": "\uf29c", // 
+        "enum": "\ufcc5", // ﳅ
+        "enumMember": "\uf02b", // 
+        "event": "\ufacd", // 鬒
+        "field": "\uf93d", // 綠
+        "file": "\uf723", // 
+        "folder": "\uf115", // 
+        "function": "\uf794", // 
+        "interface": "\uf417", // 
+        "keyword": "\uf1de", // 
+        "method": "\uf6a6", // 
+        "module": "\uf40d", // 
+        "operator": "\uf915", // 洛
+        "property": "\ue624", // 
+        "reference": "\ufa46", // 渚
+        "snippet": "\ue60b", // 
+        "struct": "\ufb44", // פּ
+        "text": "\ue612", // 
+        "typeParameter": "\uf728", // 
+        "unit": "\uf475", // 
+        "value": "\uf89f", // 
+        "variable": "\uf9be", // 料
     },
     "coc.preferences.extensionUpdateCheck": "weekly",
     "snippets.loadFromExtensions": false,
