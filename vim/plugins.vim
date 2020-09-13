@@ -1,5 +1,9 @@
 scriptencoding utf-8
 
+" vim-polyglot =================================== {{{
+let g:polyglot_disabled = ['csv']
+" }}}
+
 " ************************************* 插件定义 *****************************************
 let $PLUG_HOME = '$HOME/.local/share/nvim/plugged'
 if g:editor ==# 'neovim'
@@ -394,10 +398,6 @@ augroup startify
   autocmd User Startified setlocal cursorline
 augroup end
 " nnoremap <leader>st :Startify<CR>
-" }}}
-
-" vim-polyglot =================================== {{{
-let g:polyglot_disabled = ['csv']
 " }}}
 
 " IndentLine ===================================== {{{
