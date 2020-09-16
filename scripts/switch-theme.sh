@@ -18,10 +18,10 @@ elif [[ $BACKGROUND == "dark" ]]; then
   sed -i "s/^set/# set/g" ~/.tmux.conf
   sed -i "s/# set -g @theme \"edge\"/set -g @theme \"edge\"/g" ~/.tmux.conf
   sed -i "s/# set -g @theme-background \"dark\"/set -g @theme-background \"dark\"/g" ~/.tmux.conf
-  sed -i "s/# set -g @theme-style \"default\"/set -g @theme-style \"default\"/g" ~/.tmux.conf
+  sed -i "s/# set -g @theme-style \"neon\"/set -g @theme-style \"neon\"/g" ~/.tmux.conf
   # Vim
   sed -i "s/^let g:vimColorScheme/\" let g:vimColorScheme/g" ~/.local/dotfiles/vim/_machine_specific.vim
-  sed -i "s/\" let g:vimColorScheme = 'Edge Dark'/let g:vimColorScheme = 'Edge Dark'/g" ~/.local/dotfiles/vim/_machine_specific.vim
+  sed -i "s/\" let g:vimColorScheme = 'Edge Dark Neon'/let g:vimColorScheme = 'Edge Dark Neon'/g" ~/.local/dotfiles/vim/_machine_specific.vim
 else
   echo "参数错误，只能是 light | dark"
   exit 1
