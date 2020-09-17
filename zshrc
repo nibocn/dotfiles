@@ -179,7 +179,8 @@ zinit wait="0" lucid for \
   OMZ::lib/history.zsh \
   OMZ::plugins/fzf/fzf.plugin.zsh \
   OMZ::plugins/git/git.plugin.zsh \
-  OMZ::plugins/common-aliases/common-aliases.plugin.zsh
+  OMZ::plugins/common-aliases/common-aliases.plugin.zsh \
+  OMZ::plugins/mvn/mvn.plugin.zsh
 
 # 补全
 zinit wait="1" lucid as="completion" for \
