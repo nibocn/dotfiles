@@ -56,3 +56,6 @@
 [pull]
     rebase = false
     ff = only
+# 通过 gitdir 指定单独的 git 配置（git >= v2.13.0）
+[includeIf "gitdir:~/Work/hand/"]
+  path = ~/Work/hand/.gitconfig
