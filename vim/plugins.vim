@@ -761,6 +761,7 @@ let g:gutentags_ctags_exclude = [
 \  '*.bmp', '*.gif', '*.ico', '*.jpg', '*.png', '*.svg',
 \  '*.rar', '*.zip', '*.tar', '*.tar.gz', '*.tar.xz', '*.tar.bz2',
 \  '*.pdf', '*.doc', '*.docx', '*.ppt', '*.pptx', '*.xls',
+\  '*.data', '*.tasks', '*.idea',
 \]
 " 配置 ctags 的参数
 let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
