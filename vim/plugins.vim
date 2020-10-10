@@ -564,6 +564,9 @@ nnoremap <silent><leader>te :AsyncTaskEdit<CR>
 
 " FZF =========================================================== {{{
 let g:fzf_history_dir = '~/.local/share/fzf-history'
+" float 模式
+" let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
+let g:fzf_layout = { 'down': '50%' }
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
