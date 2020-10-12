@@ -1,9 +1,5 @@
 scriptencoding utf-8
 
-" vim-polyglot =================================== {{{
-let g:polyglot_disabled = ['csv']
-" }}}
-
 " ************************************* 插件定义 *****************************************
 let $PLUG_HOME = '$HOME/.local/share/nvim/plugged'
 if g:editor ==# 'neovim'
@@ -29,8 +25,6 @@ Plug 'sainnhe/edge'
 Plug 'sainnhe/forest-night'
 Plug 'sainnhe/sonokai'
 " }}}
-
-Plug 'sheerun/vim-polyglot'
 
 " 启动页面
 Plug 'mhinz/vim-startify'
