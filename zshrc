@@ -160,6 +160,12 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 ## export FZF_CTRL_T_OPTS="--min-height 30 --preview-window down:60% --preview-window noborder --preview '($FZF_PREVIEW_COMMAND) 2> /dev/null'"
 # }}}
 
+# History {{{
+HIST_STAMPS="yyyy-mm-dd"
+HISTSIZE=80000
+SAVEHIST=60000
+# }}}
+
 # Zinit {{{
 zinit wait="0" lucid for \
   zdharma/fast-syntax-highlighting \
