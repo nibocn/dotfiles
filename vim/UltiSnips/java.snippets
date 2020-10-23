@@ -3,3 +3,19 @@ snippet cf "Checkstyle off" b
 $0
 // CSON: $1
 endsnippet
+
+snippet sw "SuppressWarnings" b
+@SuppressWarnings({ "${1:name}" })
+endsnippet
+
+snippet puu "Suppress PMD UseUtilityClass" w
+PMD.UseUtilityClass
+endsnippet
+
+snippet pcc "Suppress PMD ClassNamingConventions" w
+PMD.ClassNamingConventions
+endsnippet
+
+snippet puc "Suppress PMD UseUtilityClass&ClassNamingConventions" b
+@SuppressWarnings({ "PMD.UseUtilityClass", "PMD.ClassNamingConventions" })
+endsnippet
