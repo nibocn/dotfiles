@@ -420,7 +420,7 @@ let g:coc_global_extensions = [
   \   'coc-vimlsp',
   \   'coc-python',
   \   'coc-html', 'coc-css', 'coc-emmet', 'coc-tsserver', 'coc-tailwindcss', 'coc-prettier',
-  \   'coc-stylelint', 'coc-tslint',
+  \   'coc-stylelint', 'coc-tslint', 'coc-eslint',
   \   'coc-java', 'coc-groovy'
   \ ]
 " Tab 补全
