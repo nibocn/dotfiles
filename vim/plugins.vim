@@ -92,6 +92,11 @@ Plug 'fatih/vim-go', { 'for': ['go'], 'do': ':GoUpdateBinaries' }
 " Vimscript test
 Plug 'junegunn/vader.vim', { 'for': 'vader' }
 
+" TypeScript & JSX TypeScript
+Plug 'leafgarland/typescript-vim', { 'for': ['typescript', 'typescript.tsx'] }
+Plug 'peitalin/vim-jsx-typescript', { 'for': 'typescript.tsx' }
+" JSX React
+Plug 'chemzqm/vim-jsx-improve', { 'for': 'javascriptreact' }
 
 call plug#end()
 
@@ -770,5 +775,10 @@ if !isdirectory(s:vim_tags)
    silent! call mkdir(s:vim_tags, 'p')
 endif
 " }}}
+
+augroup javascriptFileType
+  autocmd!
+  autocmd BufNewFile,BufRead *.js set filetype=javascriptreact
+augroup end
 
 " vim: set fdl=0 fdm=marker:
