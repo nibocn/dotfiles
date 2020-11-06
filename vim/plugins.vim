@@ -74,11 +74,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdcommenter'
 " }}}
 
-" Markdown ======================================================{{{
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
-Plug 'dhruvasagar/vim-table-mode', { 'for': 'markdown' }
-" }}}
-
 " PlantUML ======================================================{{{
 Plug 'aklt/plantuml-syntax', { 'for': 'plantuml' }
 Plug 'weirongxu/plantuml-previewer.vim', { 'for': 'plantuml' }
@@ -97,6 +92,11 @@ Plug 'leafgarland/typescript-vim', { 'for': ['typescript', 'typescript.tsx'] }
 Plug 'peitalin/vim-jsx-typescript', { 'for': 'typescript.tsx' }
 " JSX React
 Plug 'chemzqm/vim-jsx-improve', { 'for': 'javascriptreact' }
+
+" Markdown ======================================================{{{
+Plug 'dhruvasagar/vim-table-mode', { 'for': 'markdown' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
+" }}}
 
 call plug#end()
 
