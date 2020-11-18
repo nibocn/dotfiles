@@ -73,6 +73,7 @@ Plug 'mbbill/undotree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'gcmt/wildfire.vim'
+Plug 'mg979/vim-visual-multi'
 Plug 'preservim/nerdcommenter'
 " }}}
 
@@ -776,6 +777,12 @@ let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 if !isdirectory(s:vim_tags)
    silent! call mkdir(s:vim_tags, 'p')
 endif
+" }}}
+
+" vim-visual-multi config {{{
+let g:VM_maps = {}
+let g:VM_maps['Find Under'] = '<C-s>'
+let g:VM_maps['Find Subword Under'] = '<C-s>'
 " }}}
 
 augroup javascriptFileType
