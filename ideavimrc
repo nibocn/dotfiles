@@ -24,3 +24,46 @@ nnoremap gn `^
 " 启用 Easymotion 插件
 set easymotion
 
+
+" Keymapping
+nnoremap <C-o> :action Back<CR>
+nnoremap <C-i> :action Forward<CR>
+nnoremap [b gT
+nnoremap ]b gt
+nnoremap <leader>q :wq<CR>
+nnoremap <leader>h <ESC>:action HideAllWindows<CR>
+
+" Find/Files/Fold {{{
+nnoremap <leader>fs <ESC>:action SaveAll<CR>
+" 搜索文件
+nnoremap <leader>fp <ESC>:action GotoFile<CR>
+" 显示项目视图（文件目录树）
+nnoremap <leader>fe <ESC>:action SelectInProjectView<CR>
+" }}}
+
+" LSP {{{
+" 跳转到下一个警告
+nnoremap <leader>lj <ESC>:action GotoNextError<CR>
+" 跳转到上一个警告
+nnoremap <leader>lk <ESC>:action GotoPreviousError<CR>
+" 显示引用
+nnoremap <leader>lr <ESC>:action FindUsages<CR>
+" 跳转到定义
+nnoremap <leader>ld <ESC>:action GotoDeclaration<CR>
+" 跳转到实现
+nnoremap <leader>lm <ESC>:action GotoImplementation<CR>
+" 重命名
+nnoremap <leader>lR <ESC>:action RenameElement<CR>
+" }}}
+
+" 搜索内容（全局）
+nnoremap <leader>sa <ESC>:action FindInPath<CR>
+
+" 显示文件结构（类似 tags）
+nnoremap <leader>tt <ESC>:action FileStructurePopup<CR>
+
+" 显示最近使用的文件（类似 buffer）
+nnoremap <leader>bb <ESC>:action RecentFiles<CR>
+
+
+" vim: set fdl=0 fdm=marker:
