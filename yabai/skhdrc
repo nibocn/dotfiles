@@ -1,9 +1,9 @@
 #
 # Modes
 
-:: default : yabai -m config active_window_border_color 0xff9c5054
-:: resize : yabai -m config active_window_border_color 0x99ff0000
-:: warp : yabai -m config active_window_border_color 0x990000ff
+:: default : yabai -m config active_window_border_color 0xff8b5d5f
+:: resize : yabai -m config active_window_border_color 0xff93c47d
+:: warp : yabai -m config active_window_border_color 0xff3d85c6
 
 # :: default : osascript -e 'display notification "Normal mode" with title "skhd"'
 # :: resize : osascript -e 'display notification "Resize mode" with title "skhd"'
