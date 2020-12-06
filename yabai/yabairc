@@ -109,6 +109,7 @@ yabai -m rule --add app="^OneDrive$" manage=off
 yabai -m rule --add app="^EasyConnect$" manage=off
 yabai -m rule --add app="^Hidden Bar$" manage=off
 yabai -m rule --add app="^System Information$" manage=off
+yabai -m rule --add app="^Xnip$" manage=off
 
 yabai -m rule --add app="^JetBrains Toolbox$" manage=off
 jetbrain_apps="^(IntelliJ IDEA|WebStorm|PyCharm|CLion|GoLand)$"
