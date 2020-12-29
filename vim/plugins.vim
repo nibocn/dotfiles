@@ -601,6 +601,7 @@ vnoremap <silent> <leader> :<C-u>WhichKeyVisual '<Space>'<CR>
 call which_key#register('<Space>', 'g:which_key_map')
 
 nnoremap <silent> <leader>fP :call ShowFilePath()<CR>
+nnoremap <silent> <leader>tn :set number! <bar> :set relativenumber!<CR>
 
 let g:which_key_map = {}
 
@@ -628,6 +629,7 @@ let g:which_key_map.t = {
   \ 'r': 'run task',
   \ 'l': 'task list',
   \ 'e': 'edit task',
+  \ 'n': 'toggle number line',
 \ }
 let g:which_key_map.b = {
   \ 'name': '+buffer',
