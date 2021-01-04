@@ -426,7 +426,7 @@ set undofile
 let g:coc_global_extensions = [
   \   'coc-lists', 'coc-json', 'coc-git', 'coc-snippets', 'coc-explorer', 'coc-yank',
   \   'coc-vimlsp',
-  \   'coc-python',
+  \   'coc-pyright',
   \   'coc-html', 'coc-css', 'coc-emmet', 'coc-tsserver', 'coc-tailwindcss', 'coc-prettier',
   \   'coc-stylelint', 'coc-tslint', 'coc-eslint',
   \   'coc-java', 'coc-groovy'

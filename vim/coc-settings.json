@@ -49,7 +49,7 @@
     "explorer.file.showHiddenFiles": true,
     "explorer.icon.enableNerdfont": true,
     "explorer.previewAction.onHover": false,
-    "python.jediEnabled": false,
+    // "python.jediEnabled": false,
     "java.jdt.ls.home": "/usr/local/share/eclipse/jdt-language-server",
     "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar -Xbootclasspath/a:/usr/local/share/lombok/lombok.jar",
     "languageserver": {
