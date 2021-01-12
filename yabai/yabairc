@@ -32,7 +32,10 @@ yabai -m config window_border_width 5
 # yabai -m config active_window_border_color 0xff9c5054
 # yabai -m config active_window_border_color 0xff8b5d5f
 yabai -m config active_window_border_color 0xffA98175
-yabai -m config normal_window_border_color 0xff555555
+# yabai -m config normal_window_border_color 0xff555555
+# 设置为完全透明，解决在 idea 里面代码提示框快速闪动
+# 造成的边框线错位
+yabai -m config normal_window_border_color 0x00555555
 
 # general space settings
 yabai -m config layout                       bsp
