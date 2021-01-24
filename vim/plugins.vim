@@ -429,7 +429,8 @@ let g:coc_global_extensions = [
   \   'coc-pyright',
   \   'coc-html', 'coc-css', 'coc-emmet', 'coc-tsserver', 'coc-tailwindcss', 'coc-prettier',
   \   'coc-stylelint', 'coc-tslint', 'coc-eslint',
-  \   'coc-java', 'coc-groovy'
+  \   'coc-java', 'coc-groovy',
+  \   'coc-rls',
   \ ]
 " Tab 补全
 inoremap <silent><expr> <TAB>
