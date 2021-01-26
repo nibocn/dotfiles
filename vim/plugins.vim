@@ -96,6 +96,8 @@ Plug 'peitalin/vim-jsx-typescript', { 'for': 'typescript.tsx' }
 " JSX React
 Plug 'chemzqm/vim-jsx-improve', { 'for': 'javascriptreact' }
 
+Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
+
 " Markdown ======================================================{{{
 Plug 'dhruvasagar/vim-table-mode', { 'for': 'markdown' }
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
@@ -429,7 +431,7 @@ let g:coc_global_extensions = [
   \   'coc-pyright',
   \   'coc-html', 'coc-css', 'coc-emmet', 'coc-tsserver', 'coc-tailwindcss', 'coc-prettier',
   \   'coc-stylelint', 'coc-tslint', 'coc-eslint',
-  \   'coc-java', 'coc-groovy',
+  \   'coc-java', 'coc-groovy', 'coc-kotlin',
   \   'coc-rls',
   \ ]
 " Tab 补全
@@ -697,10 +699,15 @@ let g:ale_linters = {
   \ 'go': [ 'gopls' ],
   \ 'java': [ 'eclipselsp', 'checkstyle', 'pmd' ],
 \ }
+let g:ale_pattern_options = {
+  \ '\.gradle.kts$': { 'ale_enabled': 0 }
+\ }
+
 let g:ale_java_eclipselsp_path = '/usr/local/share/eclipse/jdt-language-server'
 let g:ale_java_eclipselsp_javaagent = '/usr/local/share/lombok/lombok.jar'
 let g:ale_java_checkstyle_config = '$HOME/Documents/Java/java-code-quality/checkstyle/checkstyle.xml'
 let g:ale_java_pmd_options = 'pmd -cache /tmp/pmd.cache -R $HOME/Documents/Java/java-code-quality/pmd/pmd-ruleset_6.0.xml'
+let g:ale_kotlin_languageserver_executable = '/usr/local/share/kotlin/server/bin/kotlin-language-server'
 " 定义错误/警告标识
 let g:ale_sign_error = "\uf65b"
 let g:ale_sign_warning = "\uf421"

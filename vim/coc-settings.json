@@ -52,6 +52,7 @@
     // "python.jediEnabled": false,
     "java.jdt.ls.home": "/usr/local/share/eclipse/jdt-language-server",
     "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar -Xbootclasspath/a:/usr/local/share/lombok/lombok.jar",
+    "kotlin.languageServer.path": "/usr/local/share/kotlin/server/bin/kotlin-language-server",
     "languageserver": {
         "ccls": {
             "command": "ccls",
@@ -79,11 +80,5 @@
                 "gocodeCompletionEnabled": true
             }
         },
-        "kotlin": {
-            "command": "/usr/local/share/kotlin/server/bin/kotlin-language-server",
-            "filetypes": [
-                "kotlin"
-            ]
-        }
     }
 }
