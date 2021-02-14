@@ -100,7 +100,6 @@ Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 
 " Markdown ======================================================{{{
 Plug 'dhruvasagar/vim-table-mode', { 'for': 'markdown' }
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
 " }}}
 
 call plug#end()
