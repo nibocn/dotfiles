@@ -740,6 +740,7 @@ augroup END
 
 " vim-go ==================================================== {{{
 let g:go_fmt_command = 'goimports'
+let g:go_doc_popup_window = 1
 " }}}
 
 " gutentags ================================================= {{{
