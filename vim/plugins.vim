@@ -705,7 +705,6 @@ nnoremap <silent> <leader>lj :ALENextWrap<CR>
 nnoremap <silent> <leader>lk :ALEPreviousWrap<CR>
 nnoremap <silent> <leader>li :ALEDetail <CR>
 let g:ale_linters = {
-  \ 'go': [ 'gopls' ],
   \ 'java': [ 'eclipselsp', 'checkstyle', 'pmd' ],
 \ }
 let g:ale_pattern_options = {
