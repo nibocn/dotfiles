@@ -121,6 +121,10 @@ endfunction
 function! LightlineGitBufferStatus() abort
   return get(b:, 'coc_git_status', '')
 endfunction
+function! LightlineGitStatus() abort
+  let status = LightlineGitGlobalStatus() . LightlineGitBufferStatus()
+  return status ==# '' ? ' ' : status
+endfunction
 function! LightlineRelateivePath() abort
   let relativepath = expand('%:f') !=# '' ? expand('%:f') : '[No Name]'
   let modified = &modified ? ' ✎' : ''
@@ -164,6 +168,7 @@ let g:lightline.active = {
   \ 'left': [
   \   [ 'mode', 'paste' ],
   \   [ 'filename', 'fileformat', 'filetype' ],
+  \   [ 'gitstatus' ]
   \ ],
   \ 'right': [
   \   [ 'lineinfo' ],
@@ -176,10 +181,7 @@ let g:lightline.inactive = {
 \ }
 let g:lightline.tabline = {
   \ 'left': [ [ 'vim_logo', 'buffers' ] ],
-  \ 'right': [
-  \   [ 'gitbranch' ],
-  \   [ 'gitstatus' ],
-  \ ]
+  \ 'right': []
 \ }
 let g:lightline.component = {
   \ 'bufinfo': '%{bufname("%")}:%{bufnr("%")}',
@@ -210,7 +212,7 @@ let g:lightline.component = {
 let g:lightline.component_function = {
   \ 'gitbranch': 'LightlineGitGlobalStatus',
   \ 'coc_status': 'coc#status',
-  \ 'gitstatus': 'LightlineGitBufferStatus',
+  \ 'gitstatus': 'LightlineGitStatus',
   \ 'relativepath': 'LightlineRelateivePath',
   \ 'filename': 'LightlineFilename',
 \ }
