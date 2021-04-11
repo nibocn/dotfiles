@@ -145,7 +145,7 @@ function unproxy() {
 # Other config {{{
 ## 不显示主机及账号相关上下文
 # prompt_context () { }
-function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+function gi() { curl -L -s https://www.toptal.com/developers/gitignore/api/$@ ;}
 # }}}
 
 # FZF {{{
