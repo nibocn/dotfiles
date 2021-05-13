@@ -130,6 +130,14 @@ set foldnestmax=3
 set foldlevel=1
 " }}}
 
+" buffer 切换时不将光标移动到当前行的起始位置
+set nostartofline
+
+" 自动更新文件的变化
+augroup filechange
+  autocmd FocusGained * checktime
+augroup end
+
 set tags=./.tags;,.tags
 
 let mapleader=' '
