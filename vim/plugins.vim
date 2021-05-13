@@ -411,7 +411,7 @@ augroup end
 " let g:indentLine_leadingSpaceChar = '·'
 " 因为启用 indentLine_leadingSpaceEnabled 参数导致部分插件冲突，故排除
 let g:indentLine_bufNameExclude = ['\[coc-explorer.*', 'NERD_tree.*']
-let g:indentLine_fileTypeExclude = ['json', 'markdown']
+let g:indentLine_fileTypeExclude = ['json', 'markdown', 'help']
 
 " }}}
 
