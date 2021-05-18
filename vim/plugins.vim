@@ -662,7 +662,8 @@ let g:which_key_map.s = {
 \ }
 let g:which_key_map.e = {
   \ 'name': '+editor',
-  \ 'p': [':set paste!', 'paste mode']
+  \ 'p': [':set paste!', 'paste mode'],
+  \ 'w': [':set wrap!', 'wrap line'],
 \ }
 
 let g:which_key_map.g = {
