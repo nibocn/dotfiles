@@ -1,6 +1,7 @@
 [user]
     name = NiBo
     email = nibocn@gmail.com
+    signingKey = 7F43D91716C96738
 
 [core]
     # 显示中文路径不进行转换
@@ -58,4 +59,6 @@
     ff = only
 # 通过 gitdir 指定单独的 git 配置（git >= v2.13.0）
 [includeIf "gitdir:~/Work/hand/"]
-  path = ~/Work/hand/.gitconfig
+    path = ~/Work/hand/.gitconfig
+[commit]
+    gpgSign = true
