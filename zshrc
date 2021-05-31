@@ -45,6 +45,8 @@ export PAGER=less
 export LESS=-R
 # sdkman 默认为离线模式，加快 shell 第一次启动速度，避免发起网络请求
 export SDKMAN_OFFLINE_MODE=true
+# GPG 密钥密码弹框提示
+export GPG_TTY=$(tty)
 
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/local/opt/go/libexec/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/opt/gnu-tar/libexec/gnubin:/usr/local/opt/mysql-client/bin:/usr/local/opt/openssl@1.1/bin:$GOPATH/bin:/usr/local/opt/llvm/bin:/usr/local/opt/node@14/bin:$PATH
 
