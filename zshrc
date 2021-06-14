@@ -110,10 +110,6 @@ alias -s rar='unrar l'
 alias -s tar='tar tf'
 alias -s tar.gz='echo '
 alias -s jar='java -jar'
-## Docker alias {{{
-alias dpid="docker inspect --format '{{.State.Pid}}'"
-alias dip="docker inspect --format '{{ .NetworkSettings.Networks.public.IPAddress }}'"
-## }}}
 ## Tmux {{{
 alias ta='tmux attach -t'
 alias tad='tmux attach -d -t'
