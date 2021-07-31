@@ -28,4 +28,40 @@ nnoremap <silent> <C-\>q :q<CR>
 nnoremap <silent> <C-\>wq :wq<CR>
 " }}}
 
+nnoremap Y y$
+
+" Keeping it centered
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Undo break points
+inoremap ,  ,<C-g>u
+inoremap .  .<C-g>u
+inoremap !  !<C-g>u
+inoremap ?  ?<C-g>u
+inoremap :  :<C-g>u
+inoremap ;  ;<C-g>u
+
+" 出现自动换行时可按实际换行进行移动
+" nnoremap <expr> j v:count ? 'j' : 'gj'
+" nnoremap <expr> k v:count ? 'k' : 'gk'
+" 将大于 5 行的移动保存到跳转列表中，使用 Ctrl-o/Ctrl-i 可切换跳转
+" nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+" nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
+" 将大于 5 行的移动保存到跳转列表中，使用 Ctrl-o/Ctrl-i 可切换跳转
+" 并且出现自动换行时可按实际换行进行移动
+nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
+nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
+
+nnoremap <expr> 0 col('.') == 1 ? '^' : '0'
+
+" Moving text
+vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv=gv
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
+
+
 " vim: set fdl=0 fdm=marker:

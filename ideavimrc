@@ -65,5 +65,17 @@ nnoremap <leader>tt <ESC>:action FileStructurePopup<CR>
 " 显示最近使用的文件（类似 buffer）
 nnoremap <leader>bb <ESC>:action RecentFiles<CR>
 
+nnoremap Y y$
+
+" Keeping it centered
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Moving text
+vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv=gv
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
 
 " vim: set fdl=0 fdm=marker:
