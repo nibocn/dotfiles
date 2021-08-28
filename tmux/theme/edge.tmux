@@ -74,6 +74,7 @@ diff_custom
 #+ Options +
 #+---------+
 set "status" "on"
+# set "status-right-length" 100
 
 #+--------+
 #+ Status +
@@ -114,6 +115,9 @@ set "message-command-style" "bg=$bg_color,fg=cyan"
 set "status-left" "#{?client_prefix,#[fg=$bg_color]#[bg=magenta] #S #[fg=magenta]#[bg=$bg_color],#[fg=$bg_color,bg=green] #S #[fg=green,bg=$bg_color]}"
 
 set "status-right" "#{?pane_in_mode,#[fg=cyan]#[bg=$bg_color]#[fg=$bg_color]#[bg=cyan] Copy #[fg=$bg_color]#[bg=cyan],}#[fg=$fg_color,bg=$bg_color]#[fg=$font_fg_color,bg=$fg_color] %a %m-%d %H:%M "
+
+# Add weather
+# set "status-right" "#{?pane_in_mode,#[fg=cyan]#[bg=$bg_color]#[fg=$bg_color]#[bg=cyan] Copy #[fg=$bg_color]#[bg=cyan],}#[fg=$fg_color,bg=$bg_color]#[fg=$font_fg_color,bg=$fg_color]#(curl -m 3 wttr.in?format=4 2>/dev/null; sleep 900)#[fg=$bg_color,bg=$fg_color]#[fg=$fg_color,bg=$bg_color]#[fg=$font_fg_color,bg=$fg_color] %a %m-%d %H:%M "
 
 #+--- Windows ---+
 set "window-status-format" "#[fg=$bg_color,bg=$fg_color] #[fg=$font_fg_color,bg=$fg_color]#I #[fg=$font_fg_color,bg=$fg_color] #[fg=$font_fg_color,bg=$fg_color]#W #F #[fg=$fg_color,bg=$bg_color]"
