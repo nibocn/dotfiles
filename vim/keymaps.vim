@@ -31,8 +31,8 @@ nnoremap <silent> <C-\>wq :wq<CR>
 nnoremap Y y$
 
 " Keeping it centered
-nnoremap n nzzzv
-nnoremap N Nzzzv
+" nnoremap n nzzzv
+" nnoremap N Nzzzv
 nnoremap J mzJ`z
 
 " Undo break points
