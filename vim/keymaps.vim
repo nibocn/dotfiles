@@ -58,8 +58,8 @@ nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 nnoremap <expr> 0 col('.') == 1 ? '^' : '0'
 
 " Moving text
-vnoremap K :m '<-2<CR>gv=gv
-vnoremap J :m '>+1<CR>gv=gv
+vnoremap <leader>k :m '<-2<CR>gv=gv
+vnoremap <leader>j :m '>+1<CR>gv=gv
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
