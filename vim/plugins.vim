@@ -101,6 +101,7 @@ Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 " Markdown ======================================================{{{
 Plug 'dhruvasagar/vim-table-mode', { 'for': 'markdown' }
 " }}}
+Plug 'nathangrigg/vim-beancount', { 'for': 'beancount' }
 
 call plug#end()
 
@@ -805,6 +806,12 @@ endif
 let g:VM_maps = {}
 let g:VM_maps['Find Under'] = '<C-s>'
 let g:VM_maps['Find Subword Under'] = '<C-s>'
+" }}}
+
+" vim-beancount config {{{
+" let g:beancount_account_completion = 'chunks'
+" 列对齐的间距，默认：50
+let g:beancount_separator_col = 45
 " }}}
 
 augroup javascriptFileType
