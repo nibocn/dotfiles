@@ -33,6 +33,8 @@ endif
 
 " FZF 执行文件路径指定
 set runtimepath+=/usr/local/opt/fzf
+" vim-beancount 配置
+let b:beancount_root = '/Users/richard/OneDrive/Note/beancount/main.bean'
 
 
 " vim: set fdl=0 fdm=marker:
