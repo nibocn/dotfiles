@@ -812,7 +812,9 @@ let g:VM_maps['Find Subword Under'] = '<C-s>'
 " let g:beancount_account_completion = 'chunks'
 " 列对齐的间距，默认：50
 let g:beancount_separator_col = 45
-augroup beancount
+
+augroup ag_beancount
+  au!
   autocmd FileType beancount inoremap . .<C-O>:AlignCommodity<CR>
   autocmd FileType beancount nnoremap <leader>lf :AlignCommodity<CR>
   autocmd FileType beancount vnoremap <leader>lf :AlignCommodity<CR>
