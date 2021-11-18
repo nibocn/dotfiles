@@ -117,6 +117,7 @@ yabai -m rule --add app="^Xnip$" manage=off
 yabai -m rule --add app="^VMware Fusion$" manage=off
 yabai -m rule --add app="^Logi Options$" manage=off
 yabai -m rule --add app="^PasteNow$" manage=off
+yabai -m rule --add app="^Music$" manage=off
 
 yabai -m rule --add app="^JetBrains Toolbox$" manage=off
 jetbrain_apps="^(IntelliJ IDEA|WebStorm|PyCharm|CLion|GoLand)$"
