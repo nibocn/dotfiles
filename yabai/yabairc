@@ -50,6 +50,7 @@ yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^系统偏好设置$" manage=off
 yabai -m rule --add app="^WeChat$" manage=off
 yabai -m rule --add app="^WeCom$" manage=off
+yabai -m rule --add app="^企业微信$" manage=off
 yabai -m rule --add app="^Docker Desktop$" manage=off
 yabai -m rule --add app="^TencentMeeting$" manage=off
 yabai -m rule --add app="^微信$" manage=off
