@@ -184,6 +184,7 @@ zinit wait="0" lucid for \
   OMZ::plugins/fzf/fzf.plugin.zsh \
   OMZ::plugins/git/git.plugin.zsh \
   OMZ::plugins/common-aliases/common-aliases.plugin.zsh \
+  OMZ::plugins/rust/rust.plugin.zsh \
   OMZ::plugins/mvn/mvn.plugin.zsh
 
 # 补全
@@ -192,9 +193,9 @@ zinit wait="1" lucid as="completion" for \
   OMZ::plugins/docker-compose/_docker-compose \
   OMZ::plugins/gradle/_gradle \
   OMZ::plugins/vagrant/_vagrant \
-  OMZ::plugins/rust/_rust \
-  OMZ::plugins/rustup/_rustup \
-  OMZ::plugins/cargo/_cargo
+  OMZ::plugins/rust/_rustc
+  # OMZ::plugins/rustup/_rustup \
+  # OMZ::plugins/cargo/_cargo
 
 zinit ice lucid wait="0" atload="zpcompinit; zpcdreplay"
 zinit snippet OMZ::lib/completion.zsh
