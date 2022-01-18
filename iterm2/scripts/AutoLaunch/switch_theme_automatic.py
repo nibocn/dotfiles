@@ -13,10 +13,12 @@ async def update(connection, theme):
     logging.info('Theme info: %s', theme)
     parts = theme.split(" ")
     if "dark" in parts:
-        preset = await iterm2.ColorPreset.async_get(connection, "edge-dark-neon")
+        # preset = await iterm2.ColorPreset.async_get(connection, "edge-dark-neon")
+        preset = await iterm2.ColorPreset.async_get(connection, "everforest-dark")
         logging.info('切换到 Dark 主题')
     else:
-        preset = await iterm2.ColorPreset.async_get(connection, "edge-light")
+        # preset = await iterm2.ColorPreset.async_get(connection, "edge-light")
+        preset = await iterm2.ColorPreset.async_get(connection, "everforest-light")
         logging.info('切换到 Light 主题')
 
     # Update the list of all profiles and iterate over them.

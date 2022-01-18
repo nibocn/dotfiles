@@ -22,7 +22,7 @@ call plug#begin($PLUG_HOME)
 " 主题
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/edge'
-Plug 'sainnhe/forest-night'
+Plug 'sainnhe/everforest'
 Plug 'sainnhe/sonokai'
 " }}}
 
@@ -240,19 +240,66 @@ set termguicolors
 
 " colorscheme ====================== {{{
 let g:colorSchemeList = {}
-let g:colorSchemeList['Forest Night'] = [
+let g:colorSchemeList['Everforest Dark'] = [
       \   'set background=dark',
-      \   'let g:forest_night_enable_italic = 1',
-      \   'let g:forest_night_disable_italic_comment = 0',
-      \   "let g:forest_night_current_word = 'underline'",
-      \   'colorscheme forest-night',
-      \   'call SwitchLightlineColorScheme("forest_night")'
+      \   'let g:everforest_enable_italic = 1',
+      \   'let g:everforest_disable_italic_comment = 0',
+      \   "let g:everforest_current_word = 'underline'",
+      \   "let g:everforest_background = 'medium'",
+      \   'colorscheme everforest',
+      \   'call SwitchLightlineColorScheme("everforest")'
+      \   ]
+let g:colorSchemeList['Everforest Dark Soft'] = [
+      \   'set background=dark',
+      \   'let g:everforest_enable_italic = 1',
+      \   'let g:everforest_disable_italic_comment = 0',
+      \   "let g:everforest_current_word = 'underline'",
+      \   "let g:everforest_background = 'soft'",
+      \   'colorscheme everforest',
+      \   'call SwitchLightlineColorScheme("everforest")'
+      \   ]
+let g:colorSchemeList['Everforest Dark Hard'] = [
+      \   'set background=dark',
+      \   'let g:everforest_enable_italic = 1',
+      \   'let g:everforest_disable_italic_comment = 0',
+      \   "let g:everforest_current_word = 'underline'",
+      \   "let g:everforest_background = 'hard'",
+      \   'colorscheme everforest',
+      \   'call SwitchLightlineColorScheme("everforest")'
+      \   ]
+let g:colorSchemeList['Everforest Light'] = [
+      \   'set background=light',
+      \   'let g:everforest_enable_italic = 1',
+      \   'let g:everforest_disable_italic_comment = 0',
+      \   "let g:everforest_current_word = 'underline'",
+      \   "let g:everforest_background = 'medium'",
+      \   'colorscheme everforest',
+      \   'call SwitchLightlineColorScheme("everforest")'
+      \   ]
+let g:colorSchemeList['Everforest Light Soft'] = [
+      \   'set background=light',
+      \   'let g:everforest_enable_italic = 1',
+      \   'let g:everforest_disable_italic_comment = 0',
+      \   "let g:everforest_current_word = 'underline'",
+      \   "let g:everforest_background = 'soft'",
+      \   'colorscheme everforest',
+      \   'call SwitchLightlineColorScheme("everforest")'
+      \   ]
+let g:colorSchemeList['Everforest Light Hard'] = [
+      \   'set background=light',
+      \   'let g:everforest_enable_italic = 1',
+      \   'let g:everforest_disable_italic_comment = 0',
+      \   "let g:everforest_current_word = 'underline'",
+      \   "let g:everforest_background = 'hard'",
+      \   'colorscheme everforest',
+      \   'call SwitchLightlineColorScheme("everforest")'
       \   ]
 let g:colorSchemeList['Gruvbox Material Dark'] = [
       \   'set background=dark',
       \   'let g:gruvbox_material_enable_italic = 1',
       \   '"let g:gruvbox_material_disable_italic_comment = 1',
       \   'let g:gruvbox_material_enable_bold=1',
+      \   "let g:gruvbox_material_background = 'medium'",
       \   "let g:gruvbox_material_current_word='underline'",
       \   'colorscheme gruvbox-material',
       \   'call SwitchLightlineColorScheme("gruvbox_material")'
@@ -282,6 +329,7 @@ let g:colorSchemeList['Gruvbox Material Light'] = [
       \   'let g:gruvbox_material_enable_italic = 1',
       \   '"let g:gruvbox_material_disable_italic_comment = 1',
       \   'let g:gruvbox_material_enable_bold=1',
+      \   "let g:gruvbox_material_background = 'medium'",
       \   "let g:gruvbox_material_current_word='underline'",
       \   'colorscheme gruvbox-material',
       \   'call SwitchLightlineColorScheme("gruvbox_material")'
@@ -412,7 +460,7 @@ augroup end
 " let g:indentLine_leadingSpaceChar = '·'
 " 因为启用 indentLine_leadingSpaceEnabled 参数导致部分插件冲突，故排除
 let g:indentLine_bufNameExclude = ['\[coc-explorer.*', 'NERD_tree.*']
-let g:indentLine_fileTypeExclude = ['json', 'markdown', 'help']
+let g:indentLine_fileTypeExclude = ['json', 'markdown', 'dockerfile', 'help']
 
 " }}}
 
