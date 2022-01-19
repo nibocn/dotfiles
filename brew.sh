@@ -32,7 +32,7 @@ fi
 brewPackages=("coreutils zsh python@2 python@3 pyenv pipenv thefuck git git-lfs
                tmux macvim tldr you-get the_silver_searcher
                exa highlight nodeenv zlib yarn figlet toilet ranger lsd pandoc gnu-sed gnu-tar
-               go bat ccls screenfetch jadx deno checkstyle pmd jq neofetch beancount fava")
+               go bat ccls screenfetch jadx deno checkstyle pmd jq neofetch beancount fava yq")
 
 for package in $brewPackages
 do
