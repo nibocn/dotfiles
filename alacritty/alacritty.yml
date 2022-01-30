@@ -262,33 +262,161 @@ schemes:
       text: '0x2b2d3a'
       cursor: '0xc5cdd9'
 
+  everforest_dark: &everforest_dark
+    primary:
+      background: '0x2f383e'
+      foreground: '0xd3c6aa'
+    normal:
+      black:   '0x3b444a'
+      red:     '0xe67e80'
+      green:   '0xa7c080'
+      yellow:  '0xdbbc7f'
+      blue:    '0x7fbbb3'
+      magenta: '0xd699b6'
+      cyan:    '0x9da9a0'
+      white:   '0xacb3bd'
+    bright:
+      black:   '0x627183'
+      red:     '0xe67e80'
+      green:   '0xa7c080'
+      yellow:  '0xdbbc7f'
+      blue:    '0x7fbbb3'
+      magenta: '0xd699b6'
+      cyan:    '0x9da9a0'
+      white:   '0xacb3bd'
+    cursor:
+      text: '0x2b2d3a'
+      cursor: '0xd3c6aa'
 
-  forest_night: &forest_night
+  everforest_dark_hard: &everforest_dark_hard
+    primary:
+      background: '0x2b3339'
+      foreground: '0xd3c6aa'
+    normal:
+      black:   '0x3b444a'
+      red:     '0xe67e80'
+      green:   '0xa7c080'
+      yellow:  '0xdbbc7f'
+      blue:    '0x7fbbb3'
+      magenta: '0xd699b6'
+      cyan:    '0x9da9a0'
+      white:   '0xacb3bd'
+    bright:
+      black:   '0x627183'
+      red:     '0xe67e80'
+      green:   '0xa7c080'
+      yellow:  '0xdbbc7f'
+      blue:    '0x7fbbb3'
+      magenta: '0xd699b6'
+      cyan:    '0x9da9a0'
+      white:   '0xacb3bd'
+    cursor:
+      text: '0x2b2d3a'
+      cursor: '0xd3c6aa'
+
+  everforest_dark_soft: &everforest_dark_soft
     primary:
       background: '0x323d43'
-      foreground: '0xd8caac'
+      foreground: '0xd3c6aa'
     normal:
-      black:   '0x5e625b'
-      red:     '0xe68183'
+      black:   '0x3b444a'
+      red:     '0xe67e80'
       green:   '0xa7c080'
-      yellow:  '0xd9bb80'
-      blue:    '0x89beba'
-      magenta: '0xd3a0bc'
-      cyan:    '0x87c095'
-      white:   '0xd8caac'
+      yellow:  '0xdbbc7f'
+      blue:    '0x7fbbb3'
+      magenta: '0xd699b6'
+      cyan:    '0x9da9a0'
+      white:   '0xacb3bd'
     bright:
-      black:   '0x868d80'
-      red:     '0xe68183'
+      black:   '0x627183'
+      red:     '0xe67e80'
       green:   '0xa7c080'
-      yellow:  '0xd9bb80'
-      blue:    '0x89beba'
-      magenta: '0xd3a0bc'
-      cyan:    '0x87c095'
-      white:   '0xd8caac'
+      yellow:  '0xdbbc7f'
+      blue:    '0x7fbbb3'
+      magenta: '0xd699b6'
+      cyan:    '0x9da9a0'
+      white:   '0xacb3bd'
     cursor:
-      text: '0x323d43'
-      cursor: '0xd8caac'
+      text: '0x2b2d3a'
+      cursor: '0xd3c6aa'
 
+  everforest_light: &everforest_light
+    primary:
+      background: '0xfdf6e3'
+      foreground: '0x5c6a72'
+    normal:
+      black:   '0x333d42'
+      red:     '0xf85552'
+      green:   '0x8da101'
+      yellow:  '0xdfa000'
+      blue:    '0x3a94c5'
+      magenta: '0xd699b6'
+      cyan:    '0x829181'
+      white:   '0xacb3bd'
+    bright:
+      black:   '0x98a3a9'
+      red:     '0xf85552'
+      green:   '0x8da101'
+      yellow:  '0xdfa000'
+      blue:    '0x3a94c5'
+      magenta: '0xd699b6'
+      cyan:    '0x829181'
+      white:   '0xacb3bd'
+    cursor:
+      text: '0x81b28b'
+      cursor: '0x5c6a72'
+
+  everforest_light_hard: &everforest_light_hard
+    primary:
+      background: '0xfff9e8'
+      foreground: '0x5c6a72'
+    normal:
+      black:   '0x333d42'
+      red:     '0xf85552'
+      green:   '0x8da101'
+      yellow:  '0xdfa000'
+      blue:    '0x3a94c5'
+      magenta: '0xd699b6'
+      cyan:    '0x829181'
+      white:   '0xacb3bd'
+    bright:
+      black:   '0x98a3a9'
+      red:     '0xf85552'
+      green:   '0x8da101'
+      yellow:  '0xdfa000'
+      blue:    '0x3a94c5'
+      magenta: '0xd699b6'
+      cyan:    '0x829181'
+      white:   '0xacb3bd'
+    cursor:
+      text: '0x81b28b'
+      cursor: '0x5c6a72'
+
+  everforest_light_soft: &everforest_light_soft
+    primary:
+      background: '0xf8f0dc'
+      foreground: '0x5c6a72'
+    normal:
+      black:   '0x333d42'
+      red:     '0xf85552'
+      green:   '0x8da101'
+      yellow:  '0xdfa000'
+      blue:    '0x3a94c5'
+      magenta: '0xd699b6'
+      cyan:    '0x829181'
+      white:   '0xacb3bd'
+    bright:
+      black:   '0x98a3a9'
+      red:     '0xf85552'
+      green:   '0x8da101'
+      yellow:  '0xdfa000'
+      blue:    '0x3a94c5'
+      magenta: '0xd699b6'
+      cyan:    '0x829181'
+      white:   '0xacb3bd'
+    cursor:
+      text: '0x81b28b'
+      cursor: '0x5c6a72'
 
   sonokai_shusia: &sonokai_shusia
     primary:
@@ -416,19 +544,19 @@ schemes:
       text: '0x273136'
       cursor: '0xe1e2e3'
 # }}}
-colors: *sonokai_atlantis
+colors: *everforest_light
 # background_opacity: 0.94
 
 # Font {{{
 font:
   normal:
-    family: 'JetbrainsMono Nerd Font + '
+    family: 'mononoki Nerd Font + '
   bold:
-    family: 'JetbrainsMono Nerd Font + '
+    family: 'mononoki Nerd Font + '
   italic:
-    family: 'JetbrainsMono Nerd Font + '
+    family: 'mononoki Nerd Font + '
   bold_italic:
-    family: 'JetbrainsMono Nerd Font + '
+    family: 'mononoki Nerd Font + '
   size: 12.0
 # }}}
 
@@ -436,8 +564,8 @@ font:
 window:
   decorations: none
   padding:
-    x: 3
-    y: 3
+    x: 4
+    y: 1
 # }}}
 
 # Shell {{{
@@ -754,12 +882,16 @@ key_bindings:
   #   - | Beam
   #style: Block
 
+cursor:
+  thickness: 0.30
+
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
   #unfocused_hollow: true
 
 # Live config reload (changes require restart)
 #live_config_reload: true
+live_config_reload: true
 
 # Shell
 #
