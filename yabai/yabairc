@@ -28,7 +28,7 @@ yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
 ## border config
 yabai -m config window_border on
-yabai -m config window_border_width 5
+yabai -m config window_border_width 4
 # yabai -m config active_window_border_color 0xff9c5054
 # yabai -m config active_window_border_color 0xff8b5d5f
 yabai -m config active_window_border_color 0xffA98175
