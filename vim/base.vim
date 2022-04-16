@@ -59,7 +59,9 @@ endif
 " }}}
 
 " 设置字体及大小
-set guifont=JetbrainsMono\ Nerd\ Font\ +\ :h12
+"mononoki Nerd Font +
+" set guifont=JetbrainsMono\ Nerd\ Font\ +\ :h12
+" set guifont=mononoki\ Nerd\ Font\ +\ :h12
 set encoding=utf-8
 set fileencodings=utf-8,cp936,chinese,latin-1
 scriptencoding utf-8
