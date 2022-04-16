@@ -242,8 +242,8 @@ set termguicolors
 let g:colorSchemeList = {}
 let g:colorSchemeList['Everforest Dark'] = [
       \   'set background=dark',
-      \   'let g:everforest_enable_italic = 1',
-      \   'let g:everforest_disable_italic_comment = 0',
+      \   'let g:everforest_enable_italic = 0',
+      \   'let g:everforest_disable_italic_comment = 1',
       \   "let g:everforest_current_word = 'underline'",
       \   "let g:everforest_background = 'medium'",
       \   'colorscheme everforest',
@@ -251,8 +251,8 @@ let g:colorSchemeList['Everforest Dark'] = [
       \   ]
 let g:colorSchemeList['Everforest Dark Soft'] = [
       \   'set background=dark',
-      \   'let g:everforest_enable_italic = 1',
-      \   'let g:everforest_disable_italic_comment = 0',
+      \   'let g:everforest_enable_italic = 0',
+      \   'let g:everforest_disable_italic_comment = 1',
       \   "let g:everforest_current_word = 'underline'",
       \   "let g:everforest_background = 'soft'",
       \   'colorscheme everforest',
@@ -260,8 +260,8 @@ let g:colorSchemeList['Everforest Dark Soft'] = [
       \   ]
 let g:colorSchemeList['Everforest Dark Hard'] = [
       \   'set background=dark',
-      \   'let g:everforest_enable_italic = 1',
-      \   'let g:everforest_disable_italic_comment = 0',
+      \   'let g:everforest_enable_italic = 0',
+      \   'let g:everforest_disable_italic_comment = 1',
       \   "let g:everforest_current_word = 'underline'",
       \   "let g:everforest_background = 'hard'",
       \   'colorscheme everforest',
@@ -269,8 +269,8 @@ let g:colorSchemeList['Everforest Dark Hard'] = [
       \   ]
 let g:colorSchemeList['Everforest Light'] = [
       \   'set background=light',
-      \   'let g:everforest_enable_italic = 1',
-      \   'let g:everforest_disable_italic_comment = 0',
+      \   'let g:everforest_enable_italic = 0',
+      \   'let g:everforest_disable_italic_comment = 1',
       \   "let g:everforest_current_word = 'underline'",
       \   "let g:everforest_background = 'medium'",
       \   'colorscheme everforest',
@@ -278,8 +278,8 @@ let g:colorSchemeList['Everforest Light'] = [
       \   ]
 let g:colorSchemeList['Everforest Light Soft'] = [
       \   'set background=light',
-      \   'let g:everforest_enable_italic = 1',
-      \   'let g:everforest_disable_italic_comment = 0',
+      \   'let g:everforest_enable_italic = 0',
+      \   'let g:everforest_disable_italic_comment = 1',
       \   "let g:everforest_current_word = 'underline'",
       \   "let g:everforest_background = 'soft'",
       \   'colorscheme everforest',
@@ -287,8 +287,8 @@ let g:colorSchemeList['Everforest Light Soft'] = [
       \   ]
 let g:colorSchemeList['Everforest Light Hard'] = [
       \   'set background=light',
-      \   'let g:everforest_enable_italic = 1',
-      \   'let g:everforest_disable_italic_comment = 0',
+      \   'let g:everforest_enable_italic = 0',
+      \   'let g:everforest_disable_italic_comment = 1',
       \   "let g:everforest_current_word = 'underline'",
       \   "let g:everforest_background = 'hard'",
       \   'colorscheme everforest',
@@ -296,7 +296,7 @@ let g:colorSchemeList['Everforest Light Hard'] = [
       \   ]
 let g:colorSchemeList['Gruvbox Material Dark'] = [
       \   'set background=dark',
-      \   'let g:gruvbox_material_enable_italic = 1',
+      \   'let g:gruvbox_material_enable_italic = 0',
       \   '"let g:gruvbox_material_disable_italic_comment = 1',
       \   'let g:gruvbox_material_enable_bold=1',
       \   "let g:gruvbox_material_background = 'medium'",
@@ -306,7 +306,7 @@ let g:colorSchemeList['Gruvbox Material Dark'] = [
       \   ]
 let g:colorSchemeList['Gruvbox Material Dark Soft'] = [
       \   'set background=dark',
-      \   'let g:gruvbox_material_enable_italic = 1',
+      \   'let g:gruvbox_material_enable_italic = 0',
       \   '"let g:gruvbox_material_disable_italic_comment = 1',
       \   'let g:gruvbox_material_enable_bold=1',
       \   "let g:gruvbox_material_background = 'soft'",
@@ -316,7 +316,7 @@ let g:colorSchemeList['Gruvbox Material Dark Soft'] = [
       \   ]
 let g:colorSchemeList['Gruvbox Material Dark Hard'] = [
       \   'set background=dark',
-      \   'let g:gruvbox_material_enable_italic = 1',
+      \   'let g:gruvbox_material_enable_italic = 0',
       \   '"let g:gruvbox_material_disable_italic_comment = 1',
       \   'let g:gruvbox_material_enable_bold=1',
       \   "let g:gruvbox_material_background = 'hard'",
@@ -326,7 +326,7 @@ let g:colorSchemeList['Gruvbox Material Dark Hard'] = [
       \   ]
 let g:colorSchemeList['Gruvbox Material Light'] = [
       \   'set background=light',
-      \   'let g:gruvbox_material_enable_italic = 1',
+      \   'let g:gruvbox_material_enable_italic = 0',
       \   '"let g:gruvbox_material_disable_italic_comment = 1',
       \   'let g:gruvbox_material_enable_bold=1',
       \   "let g:gruvbox_material_background = 'medium'",
@@ -336,7 +336,7 @@ let g:colorSchemeList['Gruvbox Material Light'] = [
       \   ]
 let g:colorSchemeList['Gruvbox Material Light Soft'] = [
       \   'set background=light',
-      \   'let g:gruvbox_material_enable_italic = 1',
+      \   'let g:gruvbox_material_enable_italic = 0',
       \   '"let g:gruvbox_material_disable_italic_comment = 1',
       \   'let g:gruvbox_material_enable_bold=1',
       \   "let g:gruvbox_material_background = 'soft'",
@@ -346,7 +346,7 @@ let g:colorSchemeList['Gruvbox Material Light Soft'] = [
       \   ]
 let g:colorSchemeList['Gruvbox Material Light Hard'] = [
       \   'set background=light',
-      \   'let g:gruvbox_material_enable_italic = 1',
+      \   'let g:gruvbox_material_enable_italic = 0',
       \   '"let g:gruvbox_material_disable_italic_comment = 1',
       \   'let g:gruvbox_material_enable_bold=1',
       \   "let g:gruvbox_material_background = 'hard'",
@@ -357,7 +357,7 @@ let g:colorSchemeList['Gruvbox Material Light Hard'] = [
 let g:colorSchemeList['Edge Dark'] = [
       \   'set background=dark',
       \   '"let g:edge_disable_italic_comment = 1',
-      \   'let g:edge_enable_italic = 1',
+      \   'let g:edge_enable_italic = 0',
       \   "let g:edge_current_word='underline'",
       \   'colorscheme edge',
       \   'call SwitchLightlineColorScheme("edge")'
@@ -366,7 +366,7 @@ let g:colorSchemeList['Edge Dark Aura'] = [
       \   'set background=dark',
       \   "let g:edge_style='aura'",
       \   '"let g:edge_disable_italic_comment = 1',
-      \   'let g:edge_enable_italic = 1',
+      \   'let g:edge_enable_italic = 0',
       \   "let g:edge_current_word='underline'",
       \   'colorscheme edge',
       \   'call SwitchLightlineColorScheme("edge")'
@@ -375,7 +375,7 @@ let g:colorSchemeList['Edge Dark Neon'] = [
       \   'set background=dark',
       \   "let g:edge_style='neon'",
       \   '"let g:edge_disable_italic_comment = 1',
-      \   'let g:edge_enable_italic = 1',
+      \   'let g:edge_enable_italic = 0',
       \   "let g:edge_current_word='underline'",
       \   'colorscheme edge',
       \   'call SwitchLightlineColorScheme("edge")'
@@ -383,7 +383,7 @@ let g:colorSchemeList['Edge Dark Neon'] = [
 let g:colorSchemeList['Edge Light'] = [
       \   'set background=light',
       \   '"let g:edge_disable_italic_comment = 1',
-      \   'let g:edge_enable_italic = 1',
+      \   'let g:edge_enable_italic = 0',
       \   "let g:edge_current_word='underline'",
       \   'colorscheme edge',
       \   'call SwitchLightlineColorScheme("edge")'
@@ -391,28 +391,28 @@ let g:colorSchemeList['Edge Light'] = [
 let g:colorSchemeList['Sonokai Shusia'] = [
       \   "let g:sonokai_style = 'shusia'",
       \   '"let g:sonokai_disable_italic_comment = 1',
-      \   'let g:sonokai_enable_italic = 1',
+      \   'let g:sonokai_enable_italic = 0',
       \   'colorscheme sonokai',
       \   'call SwitchLightlineColorScheme("sonokai")'
       \   ]
 let g:colorSchemeList['Sonokai Andromeda'] = [
       \   "let g:sonokai_style = 'andromeda'",
       \   '"let g:sonokai_disable_italic_comment = 1',
-      \   'let g:sonokai_enable_italic = 1',
+      \   'let g:sonokai_enable_italic = 0',
       \   'colorscheme sonokai',
       \   'call SwitchLightlineColorScheme("sonokai")'
       \   ]
 let g:colorSchemeList['Sonokai Atlantis'] = [
       \   "let g:sonokai_style = 'atlantis'",
       \   '"let g:sonokai_disable_italic_comment = 1',
-      \   'let g:sonokai_enable_italic = 1',
+      \   'let g:sonokai_enable_italic = 0',
       \   'colorscheme sonokai',
       \   'call SwitchLightlineColorScheme("sonokai")'
       \   ]
 let g:colorSchemeList['Sonokai Maia'] = [
       \   "let g:sonokai_style = 'maia'",
       \   '"let g:sonokai_disable_italic_comment = 1',
-      \   'let g:sonokai_enable_italic = 1',
+      \   'let g:sonokai_enable_italic = 0',
       \   'colorscheme sonokai',
       \   'call SwitchLightlineColorScheme("sonokai")'
       \   ]
