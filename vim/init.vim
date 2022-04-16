@@ -12,13 +12,13 @@ endif
 " }}}
 
 " 定义使用的操作系统 {{{
-if !exists('g:system_os')
-  if has('win64') || has('win32')
-    let g:system_os = 'Windows'
-  else
-    let g:system_os = substitute(system('uname'), '\n', '', '')
-  endif
-endif
+" if !exists('g:system_os')
+"   if has('win64') || has('win32')
+"     let g:system_os = 'Windows'
+"   else
+"     let g:system_os = substitute(system('uname'), '\n', '', '')
+"   endif
+" endif
 " }}}
 
 " let plugins_config_path = g:home_path.'/plugins'
