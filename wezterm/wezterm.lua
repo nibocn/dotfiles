@@ -6,7 +6,7 @@ return {
     -- front_end = "OpenGL",
     font = wezterm.font_with_fallback({
         "mononoki Nerd Font + ",
-        -- "mononoki Nerd Font",
+        "mononoki Nerd Font + ",
     }),
     font_size = 12.0,
     -- 当只有一个 tab 页签时隐藏
