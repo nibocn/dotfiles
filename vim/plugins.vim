@@ -870,9 +870,9 @@ augroup ag_beancount
 augroup end
 " }}}
 
-augroup javascriptFileType
-  autocmd!
-  autocmd BufNewFile,BufRead *.js set filetype=javascriptreact
-augroup end
+" augroup javascriptFileType
+"   autocmd!
+"   autocmd BufNewFile,BufRead *.js set filetype=javascriptreact
+" augroup end
 
 " vim: set fdl=0 fdm=marker:
