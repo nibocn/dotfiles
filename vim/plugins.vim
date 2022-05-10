@@ -480,7 +480,7 @@ let g:coc_global_extensions = [
   \   'coc-vimlsp',
   \   'coc-pyright',
   \   'coc-html', 'coc-css', 'coc-emmet', 'coc-tsserver', 'coc-tailwindcss', 'coc-prettier',
-  \   'coc-stylelint', 'coc-tslint', 'coc-eslint',
+  \   'coc-stylelint', 'coc-eslint',
   \   'coc-java', 'coc-groovy', 'coc-kotlin', 'coc-xml',
   \   'coc-rls',
   \ ]
@@ -758,6 +758,10 @@ nnoremap <silent> <leader>lk :ALEPreviousWrap<CR>
 nnoremap <silent> <leader>li :ALEDetail <CR>
 let g:ale_linters = {
   \ 'java': [ 'eclipselsp', 'checkstyle', 'pmd' ],
+\ }
+let g:ale_linters_ignore = {
+  \ 'typescriptreact': [ 'deno' ],
+  \ 'javascriptreact': [ 'deno' ]
 \ }
 let g:ale_pattern_options = {
   \ '\.gradle.kts$': { 'ale_enabled': 0 }
