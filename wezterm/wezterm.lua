@@ -13,8 +13,13 @@ return {
     hide_tab_bar_if_only_one_tab = true,
     -- 隐藏 window 窗体相关关闭、最小化等按钮，并可调整大小
     window_decorations = "RESIZE",
-    -- color_scheme = 'everforest-dark',
-    color_scheme = 'everforest-light',
+    color_scheme = 'everforest-dark',
+    -- color_scheme = 'everforest-light',
+
+    keys = {
+	-- 解决 tmux ctrl+q 要按两次才能生效生效的问题
+        { mods = "CTRL", key = "q", action=wezterm.action{ SendString="\x11" } },
+    },
 
     color_schemes = {
         ["everforest-light"] = {
