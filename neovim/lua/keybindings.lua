@@ -57,5 +57,32 @@ map('n', '<leader>bh', ':BufferLineCloseLeft<CR>', opt)
 map('n', '<leader>bc', ':BufferLinePickClose<CR>', opt)
 --- }}
 
+--- Telescope {{
+-- 全局查找文件
+map('n', '<leader>fp', ':Telescope find_files<CR>', opt)
+-- 全局查找内容
+map('n', '<leader>sa', '::Telescope live_grep<CR>', opt)
+-- 查找 buffer
+map('n', '<leader>bb', '::Telescope buffers<CR>', opt)
+-- Telescope 列表中 插入模式快捷键
+pluginKeys.telescopeKeyList = {
+  i = {
+    -- 上下移动
+    ["<C-j>"] = "move_selection_next",
+    ["<C-k>"] = "move_selection_previous",
+    ["<Down>"] = "move_selection_next",
+    ["<Up>"] = "move_selection_previous",
+    -- 历史记录
+    ["<C-n>"] = "cycle_history_next",
+    ["<C-p>"] = "cycle_history_prev",
+    -- 关闭窗口
+    ["<C-c>"] = "close",
+    -- 预览窗口上下滚动
+    ["<C-u>"] = "preview_scrolling_up",
+    ["<C-d>"] = "preview_scrolling_down",
+  },
+}
+--- }}
+
 return pluginKeys
 -- }

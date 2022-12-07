@@ -17,5 +17,8 @@ packer.startup({
     use("nvim-lualine/lualine.nvim")
     use("arkav/lualine-lsp-progress")
     -- }}}
+    -- telescope {{{
+    use { 'nvim-telescope/telescope.nvim', requires = { "nvim-lua/plenary.nvim" } }
+    -- }}}
   end,
 })
