@@ -19,6 +19,11 @@ packer.startup({
     -- }}}
     -- telescope {{{
     use { 'nvim-telescope/telescope.nvim', requires = { "nvim-lua/plenary.nvim" } }
+    -- telescope project extensions
+    use('ahmedkhalf/project.nvim')
+    -- }}}
+    -- dashboard {{{
+    use {'glepnir/dashboard-nvim'}
     -- }}}
   end,
 })
