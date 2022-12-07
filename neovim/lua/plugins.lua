@@ -13,5 +13,9 @@ packer.startup({
     -- bufferline {{{
     use({ "akinsho/bufferline.nvim", requires = { "moll/vim-bbye" }})
     -- }}}
+    -- lualine {{{
+    use("nvim-lualine/lualine.nvim")
+    use("arkav/lualine-lsp-progress")
+    -- }}}
   end,
 })
