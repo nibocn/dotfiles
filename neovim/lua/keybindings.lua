@@ -7,6 +7,9 @@ vim.g.maplocalleader = ","
 -- 文件保存
 map('n', '<leader>fs', ':update<CR>', opt)
 map('n', '<leader>fS', ':wall<CR>', opt)
+-- 退出
+map('n', '<leader>q', ':q<CR>', opt)
+map('n', '<leader>Q', ':qa!<CR>', opt)
 -- 消除高亮显示匹配结果
 map("n", "<C-n>", ":nohl<CR>", opt)
 -- 窗口切换
