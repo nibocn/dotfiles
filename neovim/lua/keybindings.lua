@@ -22,9 +22,6 @@ map("n", "<right>", ":vertical resize+5<CR>", opt)
 -- 移动到文件最后一次编辑的位置
 -- 类似命令 gi 移动到文件最后一次编辑位置并进入 insert 模式
 map("n", "gn", "`^", opt)
--- Buffer 切换
-map("n", "]b", ":bp<CR>", opt)
-map("n", "[b", ":bp<CR>", opt)
 -- 复制当前行不带回车换行
 map("n", "Y", "y$", opt)
 -- 合并下一行并将光标保持不动
@@ -47,6 +44,17 @@ pluginKeys.nvimTreeKeyList = {
   -- 对应 filters 中的 dotfiles 属性
   { key = '.', action = 'toggle_dotfiles' },
 }
+--- }}
+
+--- bufferline {{
+-- buffer 切换
+map("n", "]b", ":BufferLineCycleNext<CR>", opt)
+map("n", "[b", ":BufferLineCyclePrev<CR>", opt)
+-- buffer 关闭
+map('n', '<leader>bd', ':Bdelete!<CR>', opt)
+map('n', '<leader>bl', ':BufferLineCloseRight<CR>', opt)
+map('n', '<leader>bh', ':BufferLineCloseLeft<CR>', opt)
+map('n', '<leader>bc', ':BufferLinePickClose<CR>', opt)
 --- }}
 
 return pluginKeys

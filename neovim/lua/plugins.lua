@@ -10,5 +10,8 @@ packer.startup({
     -- 文件导航 {{{
     use("nvim-tree/nvim-tree.lua")
     -- }}}
+    -- bufferline {{{
+    use({ "akinsho/bufferline.nvim", requires = { "moll/vim-bbye" }})
+    -- }}}
   end,
 })
