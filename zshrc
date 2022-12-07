@@ -83,7 +83,7 @@ fi
 alias ls='ls --color=auto'
 alias nvi=nvim
 alias vi=vim
-alias rg='ranger'
+# alias rg='ranger'
 alias grep='grep --color'
 alias egrep='egrep --color'
 alias fgrep='fgrep --color'
