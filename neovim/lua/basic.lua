@@ -38,7 +38,7 @@ vim.o.wrap = false
 -- 允许隐藏被修改过的 buffer
 vim.o.hidden = true
 -- 不自动折叠
-vim.o.foldenable = false
+vim.o.foldlevel = 99
 
 vim.o.updatetime = 300
 -- 按键响应等待超时时间
