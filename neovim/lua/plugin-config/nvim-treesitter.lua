@@ -7,7 +7,7 @@ end
 treesitter.setup({
   -- 安装 language parser
   -- :TSInstallInfo 命令查看支持的语言
-  ensure_installed = { 'java', 'go', 'rust', 'c', 'python', 'json', 'sql', 'bash', 'html', 'css', 'vim', 'lua', 'javascript', 'typescript', 'tsx' },
+  ensure_installed = { 'java', 'go', 'rust', 'c', 'python', 'json', 'sql', 'bash', 'html', 'css', 'vim', 'lua', 'javascript', 'typescript', 'tsx', 'help' },
   -- 缺少解析器的时候自动安装
   -- auto_install = true,
   -- 启用代码高亮模块
