@@ -31,3 +31,10 @@ autocmd("InsertEnter", {
   group = imSwitchGroup,
   callback = require("utils.im-select").insertEnter,
 })
+
+local historyPositionGroup = vim.api.nvim_create_augroup('historyPositionGroup', { clear = true, })
+-- 文件打开时跳转到上次光标所在位置
+autocmd('BufReadPost', {
+  group = historyPositionGroup,
+  command = "normal! g'\"",
+})
