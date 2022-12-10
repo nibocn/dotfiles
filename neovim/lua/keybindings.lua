@@ -114,5 +114,58 @@ pluginKeys.mapLSP = function(mapbuf)
 end
 --- }}
 
+--- nvim-cmp 自动补全 {{
+pluginKeys.cmp = function(cmp)
+  local feedkey = function(key, mode)
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
+  end
+
+  return cmp.mapping.preset.insert({
+      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-e>'] = cmp.mapping.abort(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      -- 自定义代码段跳转到下一个参数
+      ['<C-l>'] = cmp.mapping(function(fallback)
+        if vim.fn['vsnip#available'](1) == 1 then
+          feedkey('<Plug>(vsnip-expand-or-jump)', '')
+        else
+          fallback()
+        end
+      end, {'i', 's'}),
+      -- 自定义代码段跳转到上一个参数
+      ['<C-h>'] = cmp.mapping(function(fallback)
+        if vim.fn['vsnip#jumpable'](-1) == 1 then
+          feedkey('<Plug>(vsnip-jump-prev)', '')
+        else
+          fallback()
+        end
+      end, {'i', 's'}),
+    })
+  -- return {
+  --   -- 出现补全
+  --   ["<A-.>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}),
+  --   -- 取消
+  --   ["<A-,>"] = cmp.mapping({
+  --       i = cmp.mapping.abort(),
+  --       c = cmp.mapping.close()
+  --   }),
+  --   -- 上一个
+  --   ["<C-k>"] = cmp.mapping.select_prev_item(),
+  --   -- 下一个
+  --   ["<C-j>"] = cmp.mapping.select_next_item(),
+  --   -- 确认
+  --   ["<CR>"] = cmp.mapping.confirm({
+  --       select = true,
+  --       behavior = cmp.ConfirmBehavior.Replace
+  --   }),
+  --   -- 如果窗口内容太多，可以滚动
+  --   ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), {"i", "c"}),
+  --   ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), {"i", "c"}),
+  -- }
+end
+--- }}
+
 return pluginKeys
 -- }

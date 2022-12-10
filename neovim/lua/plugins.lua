@@ -40,5 +40,19 @@ packer.startup({
     -- Lspconfig
     use({ 'neovim/nvim-lspconfig' })
     -- }}}
+    -- 代码补全相关 {{{
+    --- 补全引擎
+    use({ 'hrsh7th/nvim-cmp' })
+    -- 代码片段 snippet 引擎
+    use({ 'hrsh7th/vim-vsnip' })
+    -- 补全源
+    use({ 'hrsh7th/cmp-vsnip' })
+    use({ 'hrsh7th/cmp-nvim-lsp' }) -- { name = nvim_lsp }
+    use({ 'hrsh7th/cmp-buffer' }) -- { name = 'buffer' },
+    use({ 'hrsh7th/cmp-path' }) -- { name = 'path' }
+    use({ 'hrsh7th/cmp-cmdline' }) -- { name = 'cmdline' }
+    -- 常见编程语言代码片段
+    use({ 'rafamadriz/friendly-snippets' })
+    -- }}}
   end,
 })
