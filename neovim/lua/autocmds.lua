@@ -19,3 +19,15 @@ autocmd("BufEnter", {
       + "r" -- But do continue when pressing enter.
   end,
 })
+
+local imSwitchGroup = vim.api.nvim_create_augroup('imSwitchGroup', { clear = true, })
+-- 自动切换输入法，需要安装 im-select
+-- https://github.com/daipeihust/im-select
+autocmd("InsertLeave", {
+  group = imSwitchGroup,
+  callback = require("utils.im-select").insertLeave,
+})
+autocmd("InsertEnter", {
+  group = imSwitchGroup,
+  callback = require("utils.im-select").insertEnter,
+})
