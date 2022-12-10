@@ -38,7 +38,7 @@ vim.o.wrap = false
 -- 允许隐藏被修改过的 buffer
 vim.o.hidden = true
 -- 不自动折叠
-vim.o.foldlevel = 99
+-- vim.o.foldlevel = 99
 
 vim.o.updatetime = 300
 -- 按键响应等待超时时间
@@ -59,3 +59,6 @@ vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.showtabline = 2
 -- 使用相关状态栏插件后不需要 vim 模式提示
 vim.o.showmode = false
+
+-- 自定义代码折叠文本样式
+vim.opt.foldtext = "v:lua.require('utils.simple_fold').simple_fold()"
