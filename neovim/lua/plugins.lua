@@ -59,5 +59,9 @@ packer.startup({
     -- 代码补全类型提示图标
     use({ 'onsails/lspkind-nvim' })
     -- }}}
+    -- 其它常用工具 {{{
+    -- 代码缩进线
+    use({ 'lukas-reineke/indent-blankline.nvim' })
+    -- }}}
   end,
 })

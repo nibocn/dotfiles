@@ -49,7 +49,7 @@ vim.o.background = "dark"
 vim.o.termguicolors = true
 -- 不可见字符的显示
 vim.o.list = true
-vim.o.listchars = "tab:» ,trail:·"
+vim.o.listchars = "tab:» ,trail:⋅,space:⋅"
 -- 补全增强
 vim.o.wildmenu = true
 

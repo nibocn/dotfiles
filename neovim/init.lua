@@ -16,6 +16,7 @@ require('plugin-config.telescope')
 require('plugin-config.project')
 require('plugin-config.dashboard')
 require('plugin-config.nvim-treesitter')
+require('plugin-config.indent-blankline')
 
 -- lsp
 require('lsp.setup')
