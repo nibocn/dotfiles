@@ -20,6 +20,7 @@ require('plugin-config.nvim-treesitter')
 -- lsp
 require('lsp.setup')
 require('lsp.cmp')
+require('lsp.ui')
 
 
 require('autocmds')

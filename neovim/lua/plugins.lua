@@ -56,6 +56,8 @@ packer.startup({
     use({ 'hrsh7th/cmp-cmdline' }) -- { name = 'cmdline' }
     -- 常见编程语言代码片段
     use({ 'rafamadriz/friendly-snippets' })
+    -- 代码补全类型提示图标
+    use({ 'onsails/lspkind-nvim' })
     -- }}}
   end,
 })

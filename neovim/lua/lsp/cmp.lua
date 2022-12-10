@@ -25,7 +25,10 @@ cmp.setup({
     -- completion = cmp.config.window.bordered(),
     -- documentation = cmp.config.window.bordered(),
   },
+  -- 快捷键映射
   mapping = keybindings.cmp(cmp),
+  -- 使用 lspkind-nvim 显示类型图标
+  formatting = require('lsp.lspkind').formatting,
   -- 补全源
   sources = cmp.config.sources({
     {
