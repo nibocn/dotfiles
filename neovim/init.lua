@@ -2,6 +2,8 @@
 require('basic')
 -- Packer 插件管理
 require('plugins')
+-- 缓存lua模块
+require('impatient')
 -- 快捷键映射
 require('keybindings')
 -- 主题设置

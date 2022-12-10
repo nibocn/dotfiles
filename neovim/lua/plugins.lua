@@ -2,6 +2,9 @@ local packer = require("packer")
 packer.startup({
   function(use)
     use ("wbthomason/packer.nvim")
+    -- 缓存lua模块（加快 neovim 启动效率）{{{
+    use ('lewis6991/impatient.nvim')
+    -- }}}
     -- 主题 {{{
     use("sainnhe/edge")
     use("sainnhe/sonokai")
