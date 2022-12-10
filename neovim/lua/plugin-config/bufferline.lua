@@ -26,7 +26,7 @@ bufferline.setup({
     diagnostics_indicator = function(count, level, diagnostics_dict, context)
       local s = " "
       for e, n in pairs(diagnostics_dict) do
-        local sym = e == "error" and " " or (e == "warning" and " " or "")
+        local sym = e == 'error' and ' ' or (e == 'warning' and ' ') or (e == 'info' and '') or (e == 'hint' and '')
         s = s .. n .. sym
       end
       return s
