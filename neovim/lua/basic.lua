@@ -60,5 +60,7 @@ vim.o.showtabline = 2
 -- 使用相关状态栏插件后不需要 vim 模式提示
 vim.o.showmode = false
 
+-- 代码折叠
+vim.o.foldlevel = 99
 -- 自定义代码折叠文本样式
-vim.opt.foldtext = "v:lua.require('utils.simple_fold').simple_fold()"
+vim.o.foldtext = "v:lua.require('utils.simple_fold').simple_fold()"
