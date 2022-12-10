@@ -22,8 +22,8 @@ cmp.setup({
   },
   window = {
     -- 弹出窗体显示边框
-    -- completion = cmp.config.window.bordered(),
-    -- documentation = cmp.config.window.bordered(),
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   },
   -- 快捷键映射
   mapping = keybindings.cmp(cmp),
