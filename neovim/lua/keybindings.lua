@@ -103,7 +103,10 @@ pluginKeys.mapLSP = function(mapbuf)
   mapbuf("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>")
   mapbuf("n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
   mapbuf("n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>")
-  mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.format { async = true }<CR>")
+  mapbuf('n', '<leader>f', '<cmd>lua vim.lsp.buf.format { async = true }<CR>')
+  -- VISUAL 模式下选中代码格式化配置
+  -- https://github.com/neovim/neovim/pull/19998#pullrequestreview-1156316179
+  mapbuf('v', '<leader>f', vim.lsp.buf.format)
   -- 没用到
   -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
   -- mapbuf("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opt)
