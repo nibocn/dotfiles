@@ -1,3 +1,4 @@
+-- vim: set fdl=0 fdm=marker:
 local packer = require("packer")
 packer.startup({
   function(use)
@@ -42,6 +43,8 @@ packer.startup({
     use({ 'williamboman/mason-lspconfig.nvim' })
     -- Lspconfig
     use({ 'neovim/nvim-lspconfig' })
+    -- TypeScript 增加
+    use("jose-elias-alvarez/typescript.nvim")
     -- }}}
     -- 代码补全相关 {{{
     --- 补全引擎
