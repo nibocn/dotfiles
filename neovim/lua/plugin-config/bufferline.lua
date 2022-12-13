@@ -34,8 +34,8 @@ bufferline.setup({
   },
   highlights = {
     -- 当前 buffer 不使用斜体，避免中文展示错乱
-    buffer_selected = {
-      italic = false,
-    },
+    -- buffer_selected = {
+    --   italic = false,
+    -- },
   },
 })
