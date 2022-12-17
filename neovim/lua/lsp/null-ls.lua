@@ -14,6 +14,8 @@ null_ls.setup({
   sources = {
     -- brew install stylua
     formatting.stylua,
+    -- rustfmt
+    formatting.rustfmt,
     -- frontend
     formatting.prettier.with({
       filetypes = {
