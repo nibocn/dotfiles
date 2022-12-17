@@ -90,12 +90,15 @@ pluginKeys.telescopeKeyList = {
 --- lsp 回调函数快捷键设置 {{
 pluginKeys.mapLSP = function(mapbuf)
   -- rename
-  mapbuf("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
+  -- mapbuf("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
+  mapbuf("n", "<leader>rn", "<cmd>Lspsaga rename<CR>")
   -- code action
-  mapbuf("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+  -- mapbuf("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+  mapbuf({'n', 'v'}, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
   -- go xx
   mapbuf("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-  mapbuf("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>")
+  -- mapbuf("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>")
+  mapbuf("n", "gh", "<cmd>Lspsaga hover_doc<CR>")
   mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
   mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
   mapbuf("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
