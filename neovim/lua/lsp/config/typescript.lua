@@ -9,7 +9,7 @@ local opts = {
   capabilities = common_config.capabilities,
   flags = common_config.flags,
   on_attach = function(client, bufnr)
-    -- common.disableFormat(client)
+    common_config.disableFormat(client)
     common_config.keyAttach(bufnr)
 
     --[[ 
