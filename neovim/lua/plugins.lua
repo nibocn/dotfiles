@@ -78,6 +78,8 @@ packer.startup({
         require('plugin-config.nvim-autopairs')
       end,
     })
+    -- editorconfig
+    use({ 'gpanders/editorconfig.nvim' })
     -- }}}
   end,
 })
