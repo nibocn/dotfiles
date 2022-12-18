@@ -71,7 +71,15 @@ packer.startup({
       'mfussenegger/nvim-jdtls',
       ft = {'java'},
       config = function()
-        require('plugin-config.nvim-jdtls')
+        local config = require('plugin-config.nvim-jdtls')
+        local autocmd = vim.api.nvim_create_autocmd
+        local jdtlsGroup = vim.api.nvim_create_augroup('jdtlsGroup', { clear = true })
+        vim.api.nvim_create_user_command('JdtStart', config, { nargs = 0 })
+        autocmd('FileType', {
+          group = jdtlsGroup,
+          pattern = 'java',
+          callback = config,
+        })
       end,
     }
     -- }}}
