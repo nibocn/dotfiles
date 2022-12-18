@@ -63,4 +63,4 @@ vim.o.showmode = false
 -- 代码折叠
 vim.o.foldlevel = 99
 -- 自定义代码折叠文本样式
-vim.o.foldtext = "v:lua.require('utils.simple_fold').simple_fold()"
+-- vim.o.foldtext = "v:lua.require('utils.simple_fold').simple_fold()"
