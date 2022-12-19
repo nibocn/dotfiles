@@ -67,9 +67,9 @@ packer.startup({
     use({ 'glepnir/lspsaga.nvim' })
     -- }}}
     -- Java
-    use {
+    use({
       'mfussenegger/nvim-jdtls',
-      ft = {'java'},
+      ft = { 'java' },
       config = function()
         local config = require('plugin-config.nvim-jdtls')
         local autocmd = vim.api.nvim_create_autocmd
@@ -81,7 +81,7 @@ packer.startup({
           callback = config,
         })
       end,
-    }
+    })
     -- }}}
     -- 其它常用工具 {{{
     -- 代码缩进线
@@ -94,6 +94,7 @@ packer.startup({
       config = function()
         require('plugin-config.nvim-autopairs')
       end,
+      event = 'InsertEnter',
     })
     -- editorconfig
     use({ 'gpanders/editorconfig.nvim' })
