@@ -133,7 +133,7 @@ pluginKeys.cmp = function(cmp)
       ['<C-e>'] = cmp.mapping.abort(),
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
       -- 自定义代码段跳转到下一个参数
-      ['<C-l>'] = cmp.mapping(function(fallback)
+      ['<C-j>'] = cmp.mapping(function(fallback)
         if vim.fn['vsnip#available'](1) == 1 then
           feedkey('<Plug>(vsnip-expand-or-jump)', '')
         else
@@ -141,7 +141,7 @@ pluginKeys.cmp = function(cmp)
         end
       end, {'i', 's'}),
       -- 自定义代码段跳转到上一个参数
-      ['<C-h>'] = cmp.mapping(function(fallback)
+      ['<C-k>'] = cmp.mapping(function(fallback)
         if vim.fn['vsnip#jumpable'](-1) == 1 then
           feedkey('<Plug>(vsnip-jump-prev)', '')
         else
