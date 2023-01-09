@@ -44,8 +44,18 @@ packer.startup({
     use({ 'williamboman/mason-lspconfig.nvim' })
     -- Lspconfig
     use({ 'neovim/nvim-lspconfig' })
-    -- TypeScript 增加
-    use('jose-elias-alvarez/typescript.nvim')
+    -- TypeScript 增强
+    use({
+      'jose-elias-alvarez/typescript.nvim',
+      ft = {
+        'javascript',
+        'javascriptreact',
+        'javascript.jsx',
+        'typescript',
+        'typescriptreact',
+        'typescript.tsx',
+      },
+    })
     -- }}}
     -- 代码补全相关 {{{
     --- 补全引擎
