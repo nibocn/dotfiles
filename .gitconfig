@@ -62,5 +62,5 @@
     path = ~/Work/hand/.gitconfig
 [commit]
     gpgSign = true
-[credential]
-	helper = store
+# [credential]
+# 	helper = store
