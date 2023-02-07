@@ -47,14 +47,14 @@ packer.startup({
     -- TypeScript 增强
     use({
       'jose-elias-alvarez/typescript.nvim',
-      ft = {
-        'javascript',
-        'javascriptreact',
-        'javascript.jsx',
-        'typescript',
-        'typescriptreact',
-        'typescript.tsx',
-      },
+      -- ft = {
+      --   'javascript',
+      --   'javascriptreact',
+      --   'javascript.jsx',
+      --   'typescript',
+      --   'typescriptreact',
+      --   'typescript.tsx',
+      -- },
     })
     -- }}}
     -- 代码补全相关 {{{
@@ -107,7 +107,7 @@ packer.startup({
       event = 'InsertEnter',
     })
     -- editorconfig
-    use({ 'gpanders/editorconfig.nvim' })
+    use({ 'gpanders/editorconfig.nvim', event = { 'BufReadPost', 'BufNewFile' } })
     -- }}}
   end,
 })
