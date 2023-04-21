@@ -46,7 +46,7 @@ Plug 'Yggdroot/indentLine'
 " editorconfig
 Plug 'editorconfig/editorconfig-vim'
 " 自动补全
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " 常用代码片段
 Plug 'honza/vim-snippets'
 " Tag list
