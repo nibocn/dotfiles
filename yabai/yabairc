@@ -47,6 +47,7 @@ yabai -m config window_gap                   4
 
 # float apps
 yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^系统偏好设置$" manage=off
 yabai -m rule --add app="^WeChat$" manage=off
 yabai -m rule --add app="^WeCom$" manage=off
