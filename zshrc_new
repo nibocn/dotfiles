@@ -1,0 +1,173 @@
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+## Go
+export GO111MODULE=on
+export GOPROXY=https://proxy.golang.com.cn,direct
+
+# sdkman 默认为离线模式，加快 shell 第一次启动速度，避免发起网络请求
+export SDKMAN_OFFLINE_MODE=true
+
+## Pipenv 配置
+# export PIPENV_PYPI_MIRROR=https://mirrors.aliyun.com/pypi/simple
+export PIPENV_PYPI_MIRROR=https://mirrors.aliyun.com/pypi/simple/
+export PIPENV_VENV_IN_PROJECT=true
+export PIPENV_IGNORE_VIRTUALENVS=1
+
+export EDITOR='nvim'
+## You may need to manually set your language environment
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export SSH_KEY_PATH=/Users/richard/.ssh/id_rsa
+## Git LFS
+export GIT_LFS_SKIP_SMUDGE=1
+## 让 git diff 分页显示并且退出后不将
+## 差异信息显示到屏幕上
+export LESS=-R
+
+export PATH=$HOME/go/bin:$PATH
+
+
+# Powerlevel10k {{{
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable virtualenv nodeenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time background_jobs)
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+## 调整当前显示目录层级不显示完整路径，只显示当前目录
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+## 设置起始行提示字符
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{014}\u256D\u2500%f"
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{cyan}\uF460%F{073}\uF460%F{109}\uF460%f "
+## POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{blue}\u256D\u2500%f"
+## POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{blue}\u2570\uf460%f "
+# }}}
+
+# TERM config {{{
+if [ "$TMUX" = "" ]; then
+    export TERM="xterm-256color-italic";
+    alias ssh='TERM=xterm-256color ssh'
+    alias vssh='TERM=xterm-256color vagrant ssh'
+else
+    alias ssh='TERM=screen-256color ssh'
+    alias vssh='TERM=screen-256color vagrant ssh'
+fi
+# }}}
+
+alias ls='ls --color=auto'
+alias nvi=nvim
+alias vi=vim
+
+## exa alias {{{
+alias xs=exa
+alias xl='xs -l'
+alias xa='xl -a'
+alias ll='xs -l'
+alias la='xs -la'
+alias xx='xl --sort=Extension' # Lists sorted by extension (GNU only).
+alias xk='xl --sort=size -r' # Lists sorted by size, largest last.
+alias xt='xl --sort=modified -r' # Lists sorted by date, most recent last.
+alias xc='xt -m' # Lists sorted by date, most recent last, shows change time.
+alias xu='xt -u' # Lists sorted by date, most recent last, shows access time.
+alias xtree='xl --tree '
+## }}}
+alias -s md=nvim
+alias -s txt=nvim
+alias -s rst=nvim
+alias -s zip='unzip -l'
+alias -s rar='unrar l'
+alias -s tar='tar tf'
+alias -s tar.gz='echo '
+alias -s jar='java -jar'
+## Tmux {{{
+alias ta='tmux attach -t'
+alias tad='tmux attach -d -t'
+alias ts='tmux new-session -s'
+alias tl='tmux list-sessions'
+alias tksv='tmux kill-server'
+alias tkss='tmux kill-session -t'
+## }}}
+## cd {{{
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+#}}}
+# }}}
+
+# Proxy {{{
+function proxy() {
+    export {HTTP,HTTPS,FTP}_PROXY="http://127.0.0.1:3490"
+    export ALL_PROXY="socks5://127.0.0.1:3489"
+    echo '代理已启用...'
+}
+function unproxy() {
+    unset {HTTP,HTTPS,FTP}_PROXY
+    unset ALL_PROXY
+    echo '代理已停用...'
+}
+# }}}
+# History {{{
+HIST_STAMPS="yyyy-mm-dd"
+HISTSIZE=80000
+SAVEHIST=60000
+# }}}
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+  zdharma-continuum/zinit-annex-as-monitor \
+  zdharma-continuum/zinit-annex-bin-gem-node \
+  zdharma-continuum/zinit-annex-patch-dl \
+  zdharma-continuum/zinit-annex-rust
+
+
+zinit wait lucid for \
+ atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting \
+ blockf \
+    zsh-users/zsh-completions \
+ atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions
+
+zinit wait="0" lucid for \
+  OMZ::lib/completion.zsh \
+  OMZ::lib/git.zsh \
+  OMZ::lib/key-bindings.zsh \
+  OMZ::lib/history.zsh \
+  OMZ::plugins/git/git.plugin.zsh
+
+
+zinit wait="1" lucid for \
+  zdharma-continuum/history-search-multi-word \
+  skywind3000/z.lua
+
+# sdkman
+zinit ice wait"1" lucid as"program" pick"$HOME/.sdkman/bin/sdk" id-as'sdkman' run-atpull \
+  atclone"curl https://get.sdkman.io/ | SDKMAN_DIR=$HOME/.sdkman bash" \
+  atpull"SDKMAN_DIR=$HOME/.sdkman sdk selfupdate" \
+  atinit"export SDKMAN_DIR=$HOME/.sdkman; source $HOME/.sdkman/bin/sdkman-init.sh"
+zinit light zdharma-continuum/null
+
+# Powerlevel10k 主题
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
+
+### End of Zinit's installer chunk
+
+# vim: set fdl=0 fdm=marker:
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# export SDKMAN_DIR="$HOME/.sdkman"
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
