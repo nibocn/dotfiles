@@ -1,0 +1,163 @@
+#
+# Modes
+
+:: default : yabai -m config active_window_border_color 0xffA98175
+:: resize : yabai -m config active_window_border_color 0xff789262
+:: warp : yabai -m config active_window_border_color 0xff065279
+# :: default : yabai -m config active_window_border_color 0xffB36D61
+# :: default : yabai -m config active_window_border_color 0xff8b5d5f
+# :: resize : yabai -m config active_window_border_color 0xff93c47d
+# :: warp : yabai -m config active_window_border_color 0xff3d85c6
+
+# :: default : osascript -e 'display notification "Normal mode" with title "skhd"'
+# :: resize : osascript -e 'display notification "Resize mode" with title "skhd"'
+# :: warp : osascript -e 'display notification "Warp mode" with title "skhd"'
+
+#
+# Switches
+#
+alt - r ; resize
+alt - w ; warp
+
+resize < alt - w; warp
+warp < alt - r; resize
+
+resize, warp < escape; default
+
+# focus window
+warp < h : yabai -m window --focus west
+warp < j : yabai -m window --focus south
+warp < k : yabai -m window --focus north
+warp < l : yabai -m window --focus east
+
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+
+
+# swap window
+warp < shift + alt - h : yabai -m window --swap west
+warp < shift + alt - j : yabai -m window --swap south
+warp < shift + alt - k : yabai -m window --swap north
+warp < shift + alt - l : yabai -m window --swap east
+
+shift + alt - h : yabai -m window --swap west
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - l : yabai -m window --swap east
+
+
+# move window
+warp < ctrl + alt - h : yabai -m window --warp west
+warp < ctrl + alt - j : yabai -m window --warp south
+warp < ctrl + alt - k : yabai -m window --warp north
+warp < ctrl + alt - l : yabai -m window --warp east
+
+ctrl + alt - h : yabai -m window --warp west
+ctrl + alt - j : yabai -m window --warp south
+ctrl + alt - k : yabai -m window --warp north
+ctrl + alt - l : yabai -m window --warp east
+
+# balance size of windows
+shift + alt - 0 : yabai -m space --balance
+resize < shift + alt - 0 : yabai -m space --balance
+
+# fast focus desktop
+warp < shift + alt - x : yabai -m space --focus last
+warp < shift + alt - z : yabai -m space --focus prev
+warp < shift + alt - c : yabai -m space --focus next
+warp < shift + alt - 1 : yabai -m space --focus 1
+warp < shift + alt - 2 : yabai -m space --focus 2
+warp < shift + alt - 3 : yabai -m space --focus 3
+warp < shift + alt - 4 : yabai -m space --focus 4
+warp < shift + alt - 5 : yabai -m space --focus 5
+warp < shift + alt - 6 : yabai -m space --focus 6
+warp < shift + alt - 7 : yabai -m space --focus 7
+warp < shift + alt - 8 : yabai -m space --focus 8
+warp < shift + alt - 9 : yabai -m space --focus 9
+warp < shift + alt - 0 : yabai -m space --focus 10
+
+shift + alt - x : yabai -m space --focus last
+shift + alt - z : yabai -m space --focus prev
+shift + alt - c : yabai -m space --focus next
+shift + alt - 1 : yabai -m space --focus 1
+shift + alt - 2 : yabai -m space --focus 2
+shift + alt - 3 : yabai -m space --focus 3
+shift + alt - 4 : yabai -m space --focus 4
+shift + alt - 5 : yabai -m space --focus 5
+shift + alt - 6 : yabai -m space --focus 6
+shift + alt - 7 : yabai -m space --focus 7
+shift + alt - 8 : yabai -m space --focus 8
+shift + alt - 9 : yabai -m space --focus 9
+shift + alt - 0 : yabai -m space --focus 10
+
+
+# send window to desktop and follow focus
+warp < cmd - x : yabai -m window --space last; yabai -m space --focus last
+warp < cmd - z : yabai -m window --space prev; yabai -m space --focus prev
+warp < cmd - c : yabai -m window --space next; yabai -m space --focus next
+warp < cmd - 1 : yabai -m window --space  1; yabai -m space --focus 1
+warp < cmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
+warp < cmd - 3 : yabai -m window --space  3; yabai -m space --focus 3
+warp < cmd - 4 : yabai -m window --space  4; yabai -m space --focus 4
+warp < cmd - 5 : yabai -m window --space  5; yabai -m space --focus 5
+warp < cmd - 6 : yabai -m window --space  6; yabai -m space --focus 6
+warp < cmd - 7 : yabai -m window --space  7; yabai -m space --focus 7
+warp < cmd - 8 : yabai -m window --space  8; yabai -m space --focus 8
+warp < cmd - 9 : yabai -m window --space  9; yabai -m space --focus 9
+warp < cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
+
+# set insertion point in focused container
+warp < cmd - h : yabai -m window --insert west
+warp < cmd - j : yabai -m window --insert south
+warp < cmd - k : yabai -m window --insert north
+warp < cmd - l : yabai -m window --insert east
+
+# focus monitor
+warp < alt - x  : yabai -m display --focus last
+warp < alt - z  : yabai -m display --focus prev
+warp < alt - c  : yabai -m display --focus next
+warp < alt - 1  : yabai -m display --focus 1
+warp < alt - 2  : yabai -m display --focus 2
+# alt - x  : yabai -m display --focus last
+# alt - z  : yabai -m display --focus prev
+# alt - c  : yabai -m display --focus next
+alt - 1  : yabai -m display --focus 1
+alt - 2  : yabai -m display --focus 2
+alt - 3  : yabai -m display --focus 3
+
+# move window(float)
+resize < ctrl - h : yabai -m window --move rel:-20:0
+resize < ctrl - j : yabai -m window --move rel:0:20
+resize < ctrl - k : yabai -m window --move rel:0:-20
+resize < ctrl - l : yabai -m window --move rel:20:0
+
+# window size
+resize < h : yabai -m window --resize left:-20:0 | yabai -m window --resize right:-20:0
+resize < j : yabai -m window --resize bottom:0:20 | yabai -m window --resize top:0:20
+resize < k : yabai -m window --resize top:0:-20 | yabai -m window --resize bottom:0:-20
+resize < l : yabai -m window --resize right:20:0 | yabai -m window --resize left:20:0
+
+# rotate tree
+warp < ctrl - r : yabai -m space --rotate 90
+# mirror tree y-axis
+warp < ctrl - y : yabai -m space --mirror y-axis
+# mirror tree x-axis
+warp < ctrl - x : yabai -m space --mirror x-axis
+
+# change layout of desktop
+warp < alt - a : yabai -m space --layout bsp
+warp < alt - d : yabai -m space --layout float
+# 当前聚焦的窗口启用/停用 float 模式
+warp < shift + alt - space : yabai -m window --toggle float
+
+# toggle window parent zoom
+ralt - return : yabai -m window --toggle zoom-parent
+
+# toggle window fullscreen zoom
+ralt - f : yabai -m window --toggle zoom-fullscreen
+
+# make floating window fill screen
+resize < ctrl - f : yabai -m window --grid 1:1:0:0:1:1
+
