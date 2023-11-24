@@ -14,7 +14,7 @@ sudo yabai --load-sa
 yabai -m config mouse_follows_focus          off
 yabai -m config focus_follows_mouse          off
 yabai -m config window_placement             second_child
-yabai -m config window_topmost               off
+# yabai -m config window_topmost               off
 yabai -m config window_opacity               off
 yabai -m config window_opacity_duration      2000.0
 yabai -m config window_shadow                on
@@ -48,90 +48,90 @@ yabai -m config right_padding                2
 yabai -m config window_gap                   8
 
 # float apps
-yabai -m rule --add app="^System Preferences$" manage=off
-yabai -m rule --add app="^System Settings$" manage=off
-yabai -m rule --add app="^系统偏好设置$" manage=off
-yabai -m rule --add app="^WeChat$" manage=off
-yabai -m rule --add app="^WeCom$" manage=off
-yabai -m rule --add app="^企业微信$" manage=off
-yabai -m rule --add app="^Docker Desktop$" manage=off
-yabai -m rule --add app="^TencentMeeting$" manage=off
-yabai -m rule --add app="^微信$" manage=off
-yabai -m rule --add app="^QQ$" manage=off
-yabai -m rule --add app="^Activity Monitor$" manage=off
-yabai -m rule --add app="^活动监视器$" manage=off
-yabai -m rule --add app="^EuDic$" manage=off
-yabai -m rule --add app="^欧路词典$" manage=off
-yabai -m rule --add app="^Surge$" manage=off
-yabai -m rule --add app="^Surge 3$" manage=off
-yabai -m rule --add app="^Surge$" manage=off
-yabai -m rule --add app="^Surge Dashboard$" manage=off
-yabai -m rule --add app="^OmniFocus$" manage=off
-yabai -m rule --add app="^1Password 7$" manage=off
-yabai -m rule --add app="^1Password Updater$" manage=off
-yabai -m rule --add app="^Spark$" manage=off
-yabai -m rule --add app="^网易云音乐$" manage=off
-yabai -m rule --add app="^NeteaseMusic$" manage=off
-yabai -m rule --add app="^IINA$" manage=off
-yabai -m rule --add app="^访达$" manage=off
-yabai -m rule --add app="^Finder$" manage=off
-yabai -m rule --add app="^预览$" manage=off
-yabai -m rule --add app="^Preview$" manage=off
-yabai -m rule --add app="^App Store$" manage=off
-yabai -m rule --add app="^Setapp$" manage=off
-yabai -m rule --add app="^Timing$" manage=off
-yabai -m rule --add app="^Karabiner-Elements$" manage=off
-yabai -m rule --add app="^Microsoft AutoUpdate$" manage=off
-yabai -m rule --add app="^字体册$" manage=off
-yabai -m rule --add app="^Font Book$" manage=off
-yabai -m rule --add app="^TeamViewer$" manage=off
-yabai -m rule --add app="^日历$" manage=off
-yabai -m rule --add app="^Calendar$" manage=off
-yabai -m rule --add app="^印象笔记$" manage=off
-yabai -m rule --add app="^calibre$" manage=off
-yabai -m rule --add app="^E-book Viewer$" manage=off
-yabai -m rule --add app="^PhotoBulk$" manage=off
-yabai -m rule --add app="^Squash$" manage=off
-yabai -m rule --add app="^Beyond Compare$" manage=off
-yabai -m rule --add app="^Dash$" manage=off
-# yabai -m rule --add app="^Microsoft Excel$" manage=off
-# yabai -m rule --add app="^Microsoft Word$" manage=off
-# yabai -m rule --add app="^Microsoft PowerPoint$" manage=off
-yabai -m rule --add app="^KeyKey Typing Tutor$" manage=off
-yabai -m rule --add app="^KeyKey$" manage=off
-yabai -m rule --add app="^相册$" manage=off
-yabai -m rule --add app="^Phontos$" manage=off
-yabai -m rule --add app="^Zoom$" manage=off
-yabai -m rule --add app="^zoom.us$" manage=off
-yabai -m rule --add app="^QuickTime Player$" manage=off
-yabai -m rule --add app="^DingTalk$" manage=off
-yabai -m rule --add app="^VirtualBox$" manage=off
-yabai -m rule --add app="^百度网盘$" manage=off
-yabai -m rule --add app="^BaiduNetdisk$" manage=off
-yabai -m rule --add app="^SaveWizard$" manage=off
-yabai -m rule --add app="^Reminders$" manage=off
-yabai -m rule --add app="^Keka$" manage=off
-yabai -m rule --add app="^Books$" manage=off
-yabai -m rule --add app="^Alfred Preferences$" manage=off
-yabai -m rule --add app="^OneDrive$" manage=off
-yabai -m rule --add app="^EasyConnect$" manage=off
-yabai -m rule --add app="^Hidden Bar$" manage=off
-yabai -m rule --add app="^System Information$" manage=off
-yabai -m rule --add app="^Xnip$" manage=off
-# yabai -m rule --add app="^VMware Fusion$" manage=off
-yabai -m rule --add app="^Logi Options$" manage=off
-yabai -m rule --add app="^PasteNow$" manage=off
-yabai -m rule --add app="^Music$" manage=off
-yabai -m rule --add app="^MotionPro$" manage=off
-yabai -m rule --add app="^Shottr$" manage=off
-yabai -m rule --add app="^Raycast$" manage=off
-yabai -m rule --add app="^115$" manage=off
-yabai -m rule --add app="^Cisco AnyConnect Secure Mobility Client$" manage=off
+yabai -m rule --add app="^System Preferences$" manage=off layer=below
+yabai -m rule --add app="^System Settings$" manage=off layer=below
+yabai -m rule --add app="^系统偏好设置$" manage=off layer=below
+yabai -m rule --add app="^WeChat$" manage=off layer=below
+yabai -m rule --add app="^WeCom$" manage=off layer=below
+yabai -m rule --add app="^企业微信$" manage=off layer=below
+yabai -m rule --add app="^Docker Desktop$" manage=off layer=below
+yabai -m rule --add app="^TencentMeeting$" manage=off layer=below
+yabai -m rule --add app="^微信$" manage=off layer=below
+yabai -m rule --add app="^QQ$" manage=off layer=below
+yabai -m rule --add app="^Activity Monitor$" manage=off layer=below
+yabai -m rule --add app="^活动监视器$" manage=off layer=below
+yabai -m rule --add app="^EuDic$" manage=off layer=below
+yabai -m rule --add app="^欧路词典$" manage=off layer=below
+yabai -m rule --add app="^Surge$" manage=off layer=below
+yabai -m rule --add app="^Surge 3$" manage=off layer=below
+yabai -m rule --add app="^Surge$" manage=off layer=below
+yabai -m rule --add app="^Surge Dashboard$" manage=off layer=below
+yabai -m rule --add app="^OmniFocus$" manage=off layer=below
+yabai -m rule --add app="^1Password 7$" manage=off layer=below
+yabai -m rule --add app="^1Password Updater$" manage=off layer=below
+yabai -m rule --add app="^Spark$" manage=off layer=below
+yabai -m rule --add app="^网易云音乐$" manage=off layer=below
+yabai -m rule --add app="^NeteaseMusic$" manage=off layer=below
+yabai -m rule --add app="^IINA$" manage=off layer=below
+yabai -m rule --add app="^访达$" manage=off layer=below
+yabai -m rule --add app="^Finder$" manage=off layer=below
+yabai -m rule --add app="^预览$" manage=off layer=below
+yabai -m rule --add app="^Preview$" manage=off layer=below
+yabai -m rule --add app="^App Store$" manage=off layer=below
+yabai -m rule --add app="^Setapp$" manage=off layer=below
+yabai -m rule --add app="^Timing$" manage=off layer=below
+yabai -m rule --add app="^Karabiner-Elements$" manage=off layer=below
+yabai -m rule --add app="^Microsoft AutoUpdate$" manage=off layer=below
+yabai -m rule --add app="^字体册$" manage=off layer=below
+yabai -m rule --add app="^Font Book$" manage=off layer=below
+yabai -m rule --add app="^TeamViewer$" manage=off layer=below
+yabai -m rule --add app="^日历$" manage=off layer=below
+yabai -m rule --add app="^Calendar$" manage=off layer=below
+yabai -m rule --add app="^印象笔记$" manage=off layer=below
+yabai -m rule --add app="^calibre$" manage=off layer=below
+yabai -m rule --add app="^E-book Viewer$" manage=off layer=below
+yabai -m rule --add app="^PhotoBulk$" manage=off layer=below
+yabai -m rule --add app="^Squash$" manage=off layer=below
+yabai -m rule --add app="^Beyond Compare$" manage=off layer=below
+yabai -m rule --add app="^Dash$" manage=off layer=below
+# yabai -m rule --add app="^Microsoft Excel$" manage=off layer=below
+# yabai -m rule --add app="^Microsoft Word$" manage=off layer=below
+# yabai -m rule --add app="^Microsoft PowerPoint$" manage=off layer=below
+yabai -m rule --add app="^KeyKey Typing Tutor$" manage=off layer=below
+yabai -m rule --add app="^KeyKey$" manage=off layer=below
+yabai -m rule --add app="^相册$" manage=off layer=below
+yabai -m rule --add app="^Phontos$" manage=off layer=below
+yabai -m rule --add app="^Zoom$" manage=off layer=below
+yabai -m rule --add app="^zoom.us$" manage=off layer=below
+yabai -m rule --add app="^QuickTime Player$" manage=off layer=below
+yabai -m rule --add app="^DingTalk$" manage=off layer=below
+yabai -m rule --add app="^VirtualBox$" manage=off layer=below
+yabai -m rule --add app="^百度网盘$" manage=off layer=below
+yabai -m rule --add app="^BaiduNetdisk$" manage=off layer=below
+yabai -m rule --add app="^SaveWizard$" manage=off layer=below
+yabai -m rule --add app="^Reminders$" manage=off layer=below
+yabai -m rule --add app="^Keka$" manage=off layer=below
+yabai -m rule --add app="^Books$" manage=off layer=below
+yabai -m rule --add app="^Alfred Preferences$" manage=off layer=below
+yabai -m rule --add app="^OneDrive$" manage=off layer=below
+yabai -m rule --add app="^EasyConnect$" manage=off layer=below
+yabai -m rule --add app="^Hidden Bar$" manage=off layer=below
+yabai -m rule --add app="^System Information$" manage=off layer=below
+yabai -m rule --add app="^Xnip$" manage=off layer=below
+# yabai -m rule --add app="^VMware Fusion$" manage=off layer=below
+yabai -m rule --add app="^Logi Options$" manage=off layer=below
+yabai -m rule --add app="^PasteNow$" manage=off layer=below
+yabai -m rule --add app="^Music$" manage=off layer=below
+yabai -m rule --add app="^MotionPro$" manage=off layer=below
+yabai -m rule --add app="^Shottr$" manage=off layer=below
+yabai -m rule --add app="^Raycast$" manage=off layer=below
+yabai -m rule --add app="^115$" manage=off layer=below
+yabai -m rule --add app="^Cisco AnyConnect Secure Mobility Client$" manage=off layer=below
 
 yabai -m rule --add app="^JetBrains Toolbox$" manage=off
 jetbrain_apps="^(IntelliJ IDEA|WebStorm|PyCharm|CLion|GoLand)$"
 yabai -m rule --add app="${jetbrain_apps}" title="^(Preferences|Project Structure|Plugins|Run/Debug Configurations|Edit configuration settings)$" manage=off
 
-yabai -m rule --add title="(Copy|Bin|About This Mac|Info)" manage=off
+yabai -m rule --add title="(Copy|Bin|About This Mac|Info)" manage=off layer=below
 
 echo "yabai configuration loaded.."
