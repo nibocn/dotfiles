@@ -52,9 +52,9 @@ alt - 0 : yabai -m window --space 10; yabai -m space --focus 10
 # focus monitor
 # alt - f  : yabai -m display --focus next
 # alt - b  : yabai -m display --focus prev
-cmd - 1  : yabai -m display --focus 1
-cmd - 2  : yabai -m display --focus 2
-cmd - 3  : yabai -m display --focus 3
+ctrl - 1  : yabai -m display --focus 1
+ctrl - 2  : yabai -m display --focus 2
+ctrl - 3  : yabai -m display --focus 3
 # alt - x  : yabai -m display --focus last
 
 # 当前聚焦的窗口启用/停用 float 模式
