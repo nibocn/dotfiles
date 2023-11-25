@@ -1,7 +1,7 @@
 [user]
     name = NiBo
     email = nibocn@gmail.com
-    signingKey = 8A6EEE10CA898EFC
+    signingKey = 7004ADA858C26E0C
 
 [core]
     # 显示中文路径不进行转换
