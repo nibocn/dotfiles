@@ -71,6 +71,7 @@ alias vi=vim
 
 ## exa alias {{{
 alias xs=exa
+alias ls=xs
 alias xl='xs -l'
 alias xa='xl -a'
 alias ll='xs -l'
