@@ -65,3 +65,6 @@ ralt - return : yabai -m window --toggle zoom-parent
 
 # toggle window fullscreen zoom
 ralt - f : yabai -m window --toggle zoom-fullscreen
+
+# 旋转窗口布局
+ralt - r : yabai -m space --rotate 90
