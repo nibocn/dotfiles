@@ -130,7 +130,7 @@ yabai -m rule --add app="^Cisco AnyConnect Secure Mobility Client$" manage=off
 
 yabai -m rule --add app="^JetBrains Toolbox$" manage=off
 jetbrain_apps="^(IntelliJ IDEA|WebStorm|PyCharm|CLion|GoLand)$"
-yabai -m rule --add app="${jetbrain_apps}" title="^(Preferences|Project Structure|Plugins|Run/Debug Configurations|Edit configuration settings)$" manage=off
+yabai -m rule --add app="${jetbrain_apps}" title="^(Preferences|Settings|Project Structure|Plugins|Run/Debug Configurations|Edit Configuration Settings|Import Module )$" manage=off
 
 yabai -m rule --add title="(Copy|Bin|About This Mac|Info)" manage=off
 
