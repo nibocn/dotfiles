@@ -49,6 +49,16 @@ alt - 8 : yabai -m window --space  8; yabai -m space --focus 8
 alt - 9 : yabai -m window --space  9; yabai -m space --focus 9
 alt - 0 : yabai -m window --space 10; yabai -m space --focus 10
 
+# alt - 1 : yabai -m window --space  1; skhd -k "shift + alt - 1"
+# alt - 2 : yabai -m window --space  2; skhd -k "shift + alt - 2"
+# alt - 3 : yabai -m window --space  3; skhd -k "shift + alt - 3"
+# alt - 4 : yabai -m window --space  4; skhd -k "shift + alt - 4"
+# alt - 5 : yabai -m window --space  5; skhd -k "shift + alt - 5"
+# alt - 6 : yabai -m window --space  6; skhd -k "shift + alt - 6"
+# alt - 7 : yabai -m window --space  7; skhd -k "shift + alt - 7"
+# alt - 8 : yabai -m window --space  8; skhd -k "shift + alt - 8"
+# alt - 9 : yabai -m window --space  9; skhd -k "shift + alt - 9"
+
 # focus monitor
 # alt - f  : yabai -m display --focus next
 # alt - b  : yabai -m display --focus prev
