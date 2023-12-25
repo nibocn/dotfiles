@@ -36,8 +36,11 @@ export GIT_LFS_SKIP_SMUDGE=1
 export LESS=-R
 # GPG 密钥密码弹框提示
 export GPG_TTY=$(tty)
+export LDFLAGS="-L/usr/local/opt/llvm/lib -L/usr/local/opt/zlib/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include -I/usr/local/opt/zlib/include"
+export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
 
-export PATH=$HOME/go/bin:$PATH
+export PATH=$HOME/go/bin:/usr/local/opt/llvm/bin:$PATH
 
 
 # Powerlevel10k {{{
@@ -165,7 +168,7 @@ zinit wait="0" lucid for \
   OMZ::plugins/git/git.plugin.zsh
 
 
-zinit wait="1" lucid for \
+zinit wait="0" lucid for \
   zdharma-continuum/history-search-multi-word \
   skywind3000/z.lua
 
@@ -175,6 +178,17 @@ zinit ice wait"1" lucid as"program" pick"$HOME/.sdkman/bin/sdk" id-as'sdkman' ru
   atpull"SDKMAN_DIR=$HOME/.sdkman sdk selfupdate" \
   atinit"export SDKMAN_DIR=$HOME/.sdkman; source $HOME/.sdkman/bin/sdkman-init.sh"
 zinit light zdharma-continuum/null
+
+# zinit ice wait"1" lucid as'command' pick'bin/pyenv' atinit'export PYENV_ROOT="$PWD"' \
+#     atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
+#     atpull"%atclone" src"zpyenv.zsh" nocompile'!' for \
+#         pyenv/pyenv
+# zinit light zdharma-continuum/null
+
+# zinit ice wait"1" lucid atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
+#     atinit'export PYENV_ROOT="$PWD"' atpull"%atclone" \
+#     as'command' pick'bin/pyenv' src"zpyenv.zsh" nocompile'!'
+# zinit light pyenv/pyenv
 
 # Powerlevel10k 主题
 zinit ice depth=1
