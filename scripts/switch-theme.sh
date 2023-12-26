@@ -13,6 +13,11 @@ if [[ $BACKGROUND == "light" ]]; then
   sed -i '' 's/^set -g @theme-style "night"/# set -g @theme-style "night"/g' ~/.tmux.conf
   sed -i '' 's/^# set -g @theme-style "day"/set -g @theme-style "day"/g' ~/.tmux.conf
 
+  # neovim
+  sed -i '' 's/^export NVIM_TOKYONIGHT_VARIANT=night/# export NVIM_TOKYONIGHT_VARIANT=night/g' ~/.zshrc
+  sed -i '' 's/^# export NVIM_TOKYONIGHT_VARIANT=day/export NVIM_TOKYONIGHT_VARIANT=day/g' ~/.zshrc
+
+
   # sed -i "s/^set/# set/g" ~/.tmux.conf
   # sed -i "s/# set -g @theme \"edge\"/set -g @theme \"edge\"/g" ~/.tmux.conf
   # sed -i "s/# set -g @theme-background \"light\"/set -g @theme-background \"light\"/g" ~/.tmux.conf
@@ -27,7 +32,7 @@ if [[ $BACKGROUND == "light" ]]; then
   # # sed -i "s/\" let g:vimColorScheme = 'Edge Light'/let g:vimColorScheme = 'Edge Light'/g" ~/.local/dotfiles/vim/_machine_specific.vim
   # sed -i "s/\" let g:vimColorScheme = 'Everforest Light'/let g:vimColorScheme = 'Everforest Light'/g" ~/.local/dotfiles/vim/_machine_specific.vim
 
-  # nvim theme
+  # 更新已打开的 tmux 相关窗口面板参数
   tmux list-panes -a -F '#{pane_id}' | while read pane_id; do
     tmux send-keys -t "$pane_id" 'export NVIM_TOKYONIGHT_VARIANT=day' C-m
   done
@@ -43,6 +48,11 @@ elif [[ $BACKGROUND == "dark" ]]; then
   # Tmux
   sed -i '' 's/^set -g @theme-style "day"/# set -g @theme-style "day"/g' ~/.tmux.conf
   sed -i '' 's/^# set -g @theme-style "night"/set -g @theme-style "night"/g' ~/.tmux.conf
+
+  # neovim
+  sed -i '' 's/^export NVIM_TOKYONIGHT_VARIANT=day/# export NVIM_TOKYONIGHT_VARIANT=day/g' ~/.zshrc
+  sed -i '' 's/^# export NVIM_TOKYONIGHT_VARIANT=night/export NVIM_TOKYONIGHT_VARIANT=night/g' ~/.zshrc
+
   # sed -i "s/^set/# set/g" ~/.tmux.conf
   # sed -i "s/^set -g @theme-style \"night\"/# set -g @theme-style \"night\"/g" ~/.tmux.conf
   # sed -i "s/# set -g @theme-style \"day\"/set -g @theme-style \"day\"/g" ~/.tmux.conf
@@ -58,7 +68,7 @@ elif [[ $BACKGROUND == "dark" ]]; then
   # # sed -i "s/\" let g:vimColorScheme = 'Edge Dark Neon'/let g:vimColorScheme = 'Edge Dark Neon'/g" ~/.local/dotfiles/vim/_machine_specific.vim
   # sed -i "s/\" let g:vimColorScheme = 'Everforest Dark'/let g:vimColorScheme = 'Everforest Dark'/g" ~/.local/dotfiles/vim/_machine_specific.vim
 
-  # nvim theme
+  # 更新已打开的 tmux 相关窗口面板参数
   tmux list-panes -a -F '#{pane_id}' | while read pane_id; do
     tmux send-keys -t "$pane_id" 'export NVIM_TOKYONIGHT_VARIANT=night' C-m
   done
