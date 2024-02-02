@@ -127,10 +127,12 @@ yabai -m rule --add app="^Shottr$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
 yabai -m rule --add app="^115$" manage=off
 yabai -m rule --add app="^Cisco AnyConnect Secure Mobility Client$" manage=off
+yabai -m rule --add app="^Tunnelblick$" manage=off
+yabai -m rule --add app="^DACS$" manage=off
 
 yabai -m rule --add app="^JetBrains Toolbox$" manage=off
-jetbrain_apps="^(IntelliJ IDEA|WebStorm|PyCharm|CLion|GoLand)$"
-yabai -m rule --add app="${jetbrain_apps}" title="^(Preferences|Settings|Project Structure|Plugins|Run/Debug Configurations|Edit Configuration Settings|Import Module |Select Methods to Implement|Breakpoints)$" manage=off
+jetbrain_apps="^(IntelliJ IDEA|WebStorm|PyCharm|CLion|GoLand|DataGrip)$"
+yabai -m rule --add app="${jetbrain_apps}" title="^(Preferences|Settings|Project Structure|Plugins|Run/Debug Configurations|Edit Configuration Settings|Import Module |Select Methods to Implement|Breakpoints|IDE Internal Errors)$" manage=off
 
 yabai -m rule --add title="(Copy|Bin|About This Mac|Info)" manage=off
 
