@@ -2,3 +2,4 @@
 *.swp
 *.log
 _machine_specific.vim
+nohup.out
