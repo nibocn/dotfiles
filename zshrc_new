@@ -172,6 +172,10 @@ zinit wait="0" lucid for \
   zdharma-continuum/history-search-multi-word \
   skywind3000/z.lua
 
+# 补全
+zinit wait="1" lucid as="completion" for \
+  OMZ::plugins/vagrant/_vagrant
+
 # sdkman
 zinit ice wait"1" lucid as"program" pick"$HOME/.sdkman/bin/sdk" id-as'sdkman' run-atpull \
   atclone"curl https://get.sdkman.io/ | SDKMAN_DIR=$HOME/.sdkman bash" \
