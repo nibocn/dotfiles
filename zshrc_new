@@ -132,9 +132,15 @@ alias gfw='cd "/Users/richard/Library/Mobile Documents/com~apple~CloudDocs/sing-
 
 # Proxy {{{
 function proxy() {
-    export {HTTP,HTTPS,FTP}_PROXY="http://127.0.0.1:3490"
-    export ALL_PROXY="socks5://127.0.0.1:3489"
-    echo '代理已启用...'
+    if [ -z "$1" ]; then
+        echo "请提供一个 IP 地址作为参数。"
+        echo "用法: proxy <IP_ADDRESS>"
+        return 1
+    fi
+    local ip="$1"
+    export {HTTP,HTTPS,FTP}_PROXY="http://$ip:3590"
+    export ALL_PROXY="socks5://$ip:3589"
+    echo "代理已启用，使用 IP: $ip"
 }
 function unproxy() {
     unset {HTTP,HTTPS,FTP}_PROXY
