@@ -90,8 +90,8 @@ alias ls='ls --color=auto'
 alias nvi=nvim
 alias vi=vim
 
-## exa alias {{{
-alias xs=exa
+## eza alias {{{
+alias xs=eza
 alias ls=xs
 alias xl='xs -l'
 alias xa='xl -a'
