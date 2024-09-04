@@ -70,11 +70,6 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 ## export FZF_CTRL_T_OPTS="--min-height 30 --preview-window down:60% --preview-window noborder --preview '($FZF_PREVIEW_COMMAND) 2> /dev/null'"
 # }}}
 
-# z.lua config {{{
-## 设置集成 fzf 标识
-export _ZL_ZSH_NO_FZF='fzf'
-# }}}
-
 # TERM config {{{
 if [ "$TMUX" = "" ]; then
     export TERM="xterm-256color-italic";
@@ -179,9 +174,10 @@ zinit wait="0" lucid for \
   OMZ::plugins/git/git.plugin.zsh
 
 
-zinit wait="0" lucid for \
-  zdharma-continuum/history-search-multi-word \
-  skywind3000/z.lua
+zinit wait="1" lucid for \
+    zdharma-continuum/history-search-multi-word \
+  atload='eval "$(lua ${ZINIT[PLUGINS_DIR]}/skywind3000---z.lua/z.lua --init zsh enhanced once fzf)"' \
+    skywind3000/z.lua
 
 # 补全
 zinit wait="1" lucid as="completion" for \
