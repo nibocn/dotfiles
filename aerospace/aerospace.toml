@@ -50,10 +50,10 @@ automatically-unhide-macos-hidden-apps = false
 preset = 'qwerty'
 
 [workspace-to-monitor-force-assignment]
-1='Built-in Display'
-2='Built-in Display'
-3='Built-in Display'
-4='Built-in Display'
+1='Built-in Retina Display'
+2='Built-in Retina Display'
+3='Built-in Retina Display'
+4='Built-in Retina Display'
 5='LG HDR 4K'
 6='LG ULTRAGEAR'
 7='LG ULTRAGEAR'
@@ -196,9 +196,9 @@ alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
 alt-tab = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
-ctrl-1 = 'focus-monitor 1'
-ctrl-2 = 'focus-monitor 2'
-ctrl-3 = 'focus-monitor 3'
+ctrl-1 = 'focus-monitor "Built-in Retina Display"'
+ctrl-2 = 'focus-monitor "LG ULTRAGEAR"'
+ctrl-3 = 'focus-monitor "LG HDR 4K"'
 alt-enter = 'fullscreen'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
