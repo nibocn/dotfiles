@@ -200,7 +200,7 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 ctrl-1 = 'focus-monitor "Built-in Retina Display"'
 ctrl-2 = 'focus-monitor "LG ULTRAGEAR"'
 ctrl-3 = 'focus-monitor "LG HDR 4K"'
-alt-enter = 'fullscreen'
+alt-f = 'fullscreen'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
@@ -232,5 +232,29 @@ run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.ActivityMonitor'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.tencent.WeWorkMac'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'cc.ffitch.shottr'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Music'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.readdle.smartemail-Mac'
 run = 'layout floating'
 # endregion
