@@ -200,7 +200,7 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 ctrl-1 = 'focus-monitor "Built-in Retina Display"'
 ctrl-2 = 'focus-monitor "LG ULTRAGEAR"'
 ctrl-3 = 'focus-monitor "LG HDR 4K"'
-alt-f = 'fullscreen'
+ctrl-enter = 'fullscreen'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
