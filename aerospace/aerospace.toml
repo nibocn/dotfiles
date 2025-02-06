@@ -257,4 +257,8 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.readdle.smartemail-Mac'
 run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.tencent.meeting'
+run = 'layout floating'
 # endregion
