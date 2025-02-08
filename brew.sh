@@ -30,9 +30,9 @@ fi
 
 # brew package lists
 brewPackages=("coreutils zsh python@2 python@3 pyenv pipenv thefuck git git-lfs
-               tmux macvim tldr you-get the_silver_searcher
-               exa highlight nodeenv zlib yarn figlet toilet ranger lsd pandoc gnu-sed gnu-tar
-               go bat ccls screenfetch jadx deno checkstyle pmd jq neofetch beancount fava yq")
+               tmux macvim tldr you-get eza highlight nodeenv zlib yarn figlet
+               toilet ranger lsd pandoc gnu-sed gnu-tar go bat fd ripgrep ccls
+               screenfetch jadx deno checkstyle pmd jq neofetch beancount fava yq gnupg")
 
 for package in $brewPackages
 do
@@ -56,7 +56,7 @@ fi
 brewcaskPackages=("postman dbeaver-community mpv iina snipaste sublime-text
                    visual-studio-code flux xmind-zen calibre pomotodo
                    karabiner-elements gifrocket fliqlo virtualbox virtualbox-extension-pack
-                   vagrant xquartz beyond-compare clashx alacritty keycastr hiddenbar picgo")
+                   vagrant xquartz beyond-compare clashx alacritty keycastr hiddenbar picgo jordanbaird-ice")
 
 for package in $brewcaskPackages
 do
