@@ -30,7 +30,7 @@ fi
 
 # brew package lists
 brewPackages=("coreutils zsh python@2 python@3 pyenv pipenv thefuck git git-lfs
-               tmux macvim tldr you-get eza highlight nodeenv zlib yarn figlet
+               tmux macvim tldr you-get eza highlight nodeenv zlib yarn figlet ncdu
                toilet ranger lsd pandoc gnu-sed gnu-tar go bat fd ripgrep ccls
                screenfetch jadx deno checkstyle pmd jq neofetch beancount fava yq gnupg")
 

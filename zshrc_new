@@ -181,7 +181,8 @@ zinit wait="1" lucid for \
 
 # 补全
 zinit wait="1" lucid as="completion" for \
-  OMZ::plugins/vagrant/_vagrant
+  OMZ::plugins/vagrant/_vagrant \
+  gradle/gradle-completion
 
 # sdkman
 zinit ice wait"1" lucid as"program" pick"$HOME/.sdkman/bin/sdk" id-as'sdkman' run-atpull \
