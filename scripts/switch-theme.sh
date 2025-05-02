@@ -6,8 +6,8 @@ if [[ $BACKGROUND == "light" ]]; then
   # Light Theme
   echo '切换主题配置...'
   # Kitty
-  sed -i '' 's|^include ~/.config/kitty/tokyonight-theme/extras/kitty/tokyonight_night.conf|# include ~/.config/kitty/tokyonight-theme/extras/kitty/tokyonight_night.conf|g' ~/.config/kitty/kitty.conf
-  sed -i '' 's|^# include ~/.config/kitty/tokyonight-theme/extras/kitty/tokyonight_day.conf|include ~/.config/kitty/tokyonight-theme/extras/kitty/tokyonight_day.conf|g' ~/.config/kitty/kitty.conf
+  sed -i '' 's|^include ~/.config/kitty/kitty-themes/themes/tokyo_night_night.conf|# include ~/.config/kitty/kitty-themes/themes/tokyo_night_night.conf|g' ~/.config/kitty/kitty.conf
+  sed -i '' 's|^# include ~/.config/kitty/kitty-themes/themes/tokyo_night_day.conf|include ~/.config/kitty/kitty-themes/themes/tokyo_night_day.conf|g' ~/.config/kitty/kitty.conf
 
   # Tmux
   sed -i '' 's/^set -g @theme-style "night"/# set -g @theme-style "night"/g' ~/.tmux.conf
@@ -43,8 +43,8 @@ elif [[ $BACKGROUND == "dark" ]]; then
   # Dark Theme
   echo '切换主题配置...'
   # Kitty
-  sed -i '' 's|^include ~/.config/kitty/tokyonight-theme/extras/kitty/tokyonight_day.conf|# include ~/.config/kitty/tokyonight-theme/extras/kitty/tokyonight_day.conf|g' ~/.config/kitty/kitty.conf
-  sed -i '' 's|^# include ~/.config/kitty/tokyonight-theme/extras/kitty/tokyonight_night.conf|include ~/.config/kitty/tokyonight-theme/extras/kitty/tokyonight_night.conf|g' ~/.config/kitty/kitty.conf
+  sed -i '' 's|^include ~/.config/kitty/kitty-themes/themes/tokyo_night_day.conf|# include ~/.config/kitty/kitty-themes/themes/tokyo_night_day.conf|g' ~/.config/kitty/kitty.conf
+  sed -i '' 's|^# include ~/.config/kitty/kitty-themes/themes/tokyo_night_night.conf|include ~/.config/kitty/kitty-themes/themes/tokyo_night_night.conf|g' ~/.config/kitty/kitty.conf
   # Tmux
   sed -i '' 's/^set -g @theme-style "day"/# set -g @theme-style "day"/g' ~/.tmux.conf
   sed -i '' 's/^# set -g @theme-style "night"/set -g @theme-style "night"/g' ~/.tmux.conf
