@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
 theme_option="@theme"
-default_theme="edge"
+default_theme="tokyonight"
 
-background_option="@theme-background"
-default_background="dark"
+# background_option="@theme-background"
+# default_background="dark"
+
+style_option="@theme-style"
+default_style="night"
 
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
