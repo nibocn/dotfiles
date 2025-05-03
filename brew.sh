@@ -34,7 +34,7 @@ fi
 #                toilet ranger lsd pandoc gnu-sed gnu-tar go bat fd ripgrep ccls
 #                screenfetch jadx deno checkstyle pmd jq neofetch beancount fava yq gnupg")
 brewPackages=("coreutils zsh tmux lua python@3 node git git-lfs eza nodeenv zlib yarn ncdu
-gnu-sed gnu-tar go bat fd ripgrep ccls gnupg yq fzf neovim pipx qingg im-select go cmake")
+gnu-sed gnu-tar go bat fd ripgrep ccls gnupg yq fzf neovim pipx qingg im-select go cmake neofetch")
 
 for package in $brewPackages
 do

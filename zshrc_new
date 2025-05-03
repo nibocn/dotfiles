@@ -11,6 +11,8 @@ source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
+## 指定 zsh cache 目录
+export ZSH_CACHE_DIR=$HOME/.local/share/zinit
 ## Go
 export GO111MODULE=on
 export GOPROXY=https://proxy.golang.com.cn,direct
@@ -173,16 +175,19 @@ zinit wait="0" lucid for \
   OMZ::lib/history.zsh \
   OMZ::plugins/git/git.plugin.zsh
 
-
 zinit wait="1" lucid for \
     zdharma-continuum/history-search-multi-word \
+    OMZ::plugins/rust/rust.plugin.zsh \
   atload='eval "$(lua ${ZINIT[PLUGINS_DIR]}/skywind3000---z.lua/z.lua --init zsh enhanced once fzf)"' \
     skywind3000/z.lua
 
 # 补全
 zinit wait="1" lucid as="completion" for \
   OMZ::plugins/vagrant/_vagrant \
-  gradle/gradle-completion
+  gradle/gradle-completion \
+  https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker \
+  OMZ::plugins/docker-compose/_docker-compose \
+  OMZ::plugins/rust/_rustc
 
 # sdkman
 zinit ice wait"1" lucid as"program" pick"$HOME/.sdkman/bin/sdk" id-as'sdkman' run-atpull \
