@@ -50,15 +50,15 @@ automatically-unhide-macos-hidden-apps = false
 preset = 'qwerty'
 
 [workspace-to-monitor-force-assignment]
-1='Built-in Retina Display'
-2='Built-in Retina Display'
-3='Built-in Retina Display'
-4='Built-in Retina Display'
+1='LG ULTRAGEAR'
+2='LG ULTRAGEAR'
+3='LG ULTRAGEAR'
+4='LG ULTRAGEAR'
 5='LG HDR 4K'
-6='LG ULTRAGEAR'
-7='LG ULTRAGEAR'
-8='LG ULTRAGEAR'
-9='LG ULTRAGEAR'
+6='Built-in Retina Display'
+7='Built-in Retina Display'
+8='Built-in Retina Display'
+9='Built-in Retina Display'
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
