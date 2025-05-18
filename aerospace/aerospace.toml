@@ -269,4 +269,8 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = '5ZSL2CJU2T.com.dingtalk.mac'
 run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.eusoft.eudic'
+run = 'layout floating'
 # endregion
