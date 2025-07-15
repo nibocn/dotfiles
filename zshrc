@@ -196,6 +196,13 @@ zinit ice wait"1" lucid as"program" pick"$HOME/.sdkman/bin/sdk" id-as'sdkman' ru
   atinit"export SDKMAN_DIR=$HOME/.sdkman; source $HOME/.sdkman/bin/sdkman-init.sh"
 zinit light zdharma-continuum/null
 
+# nvm
+zinit ice wait"1" lucid as"program" pick"$HOME/.nvm/nvm.sh" id-as'nvm' run-atpull \
+  atclone"curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | NVM_DIR=$HOME/.nvm bash" \
+  atpull"curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | NVM_DIR=$HOME/.nvm bash" \
+  atinit"export NVM_DIR=$HOME/.nvm; [ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\"; [ -s \"$NVM_DIR/bash_completion\" ] && \. \"$NVM_DIR/bash_completion\""
+zinit light zdharma-continuum/null
+
 # zinit ice wait"1" lucid as'command' pick'bin/pyenv' atinit'export PYENV_ROOT="$PWD"' \
 #     atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
 #     atpull"%atclone" src"zpyenv.zsh" nocompile'!' for \
