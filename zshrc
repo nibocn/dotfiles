@@ -89,7 +89,6 @@ alias vi=vim
 
 ## eza alias {{{
 alias xs=eza
-alias ls=xs
 alias xl='xs -l'
 alias xa='xl -a'
 alias ll='xs -l'
