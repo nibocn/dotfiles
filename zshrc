@@ -42,7 +42,7 @@ export LDFLAGS="-L/usr/local/opt/llvm/lib -L/usr/local/opt/zlib/lib -L/opt/homeb
 export CPPFLAGS="-I/usr/local/opt/llvm/include -I/usr/local/opt/zlib/include -I/opt/homebrew/opt/llvm/include -I/opt/homebrew/opt/zlib/include"
 export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig:/opt/homebrew/opt/zlib/lib/pkgconfig"
 
-export PATH=/opt/homebrew/bin:$HOME/go/bin:/usr/local/opt/llvm/bin:/opt/homebrew/opt/llvm/bin:$HOME/opt/bin:$PATH
+export PATH=/opt/homebrew/bin:$HOME/go/bin:/usr/local/opt/llvm/bin:/opt/homebrew/opt/llvm/bin:/opt/homebrew/opt/libpq/bin:$HOME/opt/bin:$PATH
 
 
 # Powerlevel10k {{{
