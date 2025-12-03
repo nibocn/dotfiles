@@ -43,6 +43,10 @@ export LDFLAGS="-L/usr/local/opt/llvm/lib -L/usr/local/opt/zlib/lib -L/opt/homeb
 export CPPFLAGS="-I/usr/local/opt/llvm/include -I/usr/local/opt/zlib/include -I/opt/homebrew/opt/llvm/include -I/opt/homebrew/opt/zlib/include"
 export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig:/opt/homebrew/opt/zlib/lib/pkgconfig"
 
+# 处理白色主题背景时 fd 搜索时相关结果文件路径不是太清晰的问题
+# di=1;36  -> 1代表粗体，36代表青色 (Cyan)
+export LS_COLORS="$LS_COLORS:di=1;36:"
+
 export PATH=/opt/homebrew/bin:$HOME/go/bin:/usr/local/opt/llvm/bin:/opt/homebrew/opt/llvm/bin:/opt/homebrew/opt/libpq/bin:$HOME/opt/bin:$PATH
 
 
