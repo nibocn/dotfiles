@@ -26,7 +26,8 @@ export PIPENV_PYPI_MIRROR=https://mirrors.aliyun.com/pypi/simple/
 export PIPENV_VENV_IN_PROJECT=true
 export PIPENV_IGNORE_VIRTUALENVS=1
 
-export EDITOR='nvim'
+export EDITOR=nvim
+export SUDO_EDITOR=nvim
 ## You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -124,6 +125,8 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 #}}}
 alias gfw='cd "/Users/richard/Library/Mobile Documents/com~apple~CloudDocs/sing-box"'
+# 这里我们直接用 sudo -e 替代 sudoedit
+alias sn='sudo -e'
 # }}}
 
 # Proxy {{{
