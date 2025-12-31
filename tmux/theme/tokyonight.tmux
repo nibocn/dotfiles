@@ -30,7 +30,7 @@ get_tmux_option() {
     echo "$option_value"
   fi
 }
-set() {
+tmux_set() {
   local option=$1
   local value=$2
 
@@ -59,9 +59,9 @@ diff_custom() {
     fg_color="#82aaff"
   elif [[ $style == "day" ]]; then
     bg_color="#e9e9ec"
-    fg_color="#2e7de9"
+    fg_color="#4f97f5"
     bg2_color="#a8aecb"
-    fg2_color="#2e7de9"
+    fg2_color="#5981b5"
   fi
 }
 
@@ -70,32 +70,43 @@ diff_custom
 #+---------+
 #+ Options +
 #+---------+
-set "status" "on"
+tmux_set "status" "on"
 
 #+--------+
 #+ Status +
 #+--------+
 #+--- Layout ---+
-set "status-justify" "left"
+tmux_set "status-justify" "left"
 
 #+--- Colors ---+
-set "status-style" "bg=$bg_color, fg=$fg_color"
+tmux_set "status-style" "bg=$bg_color, fg=$fg_color"
+
+#+------------+
+#+ Clock Mode +
+#+------------+
+setw "clock-mode-colour" "cyan"
+
+# bell
+setw "window-status-bell-style" "bg=$bg_color,fg=cyan"
 
 #+----------+
 #+ Messages +
 #+---------+
-set "message-style" "bg=$bg2_color,fg=$fg_color"
-set "message-command-style" "bg=$bg2_color,fg=$fg_color"
+tmux_set "message-style" "bg=$bg2_color,fg=$fg_color"
+tmux_set "message-command-style" "bg=$bg2_color,fg=$fg_color"
 
 
-set "pane-border-style" "fg=$fg2_color"
-set "pane-active-border-style" "fg=$fg_color"
+#+-------+
+#+ Panes +
+#+-------+
+tmux_set "pane-border-style" "fg=$fg2_color"
+tmux_set "pane-active-border-style" "fg=$fg_color"
 
 #+--- Bars ---+
-set "status-left" "#{?client_prefix,#[fg=$bg_color]#[bg=magenta] #S #[fg=magenta]#[bg=$bg_color],#[fg=$bg_color,bg=$fg_color,bold] #S #[fg=$fg_color,bg=$bg_color]}"
-set "status-right" "#{?pane_in_mode,#[fg=cyan]#[bg=$bg_color]#[fg=$bg_color]#[bg=cyan] Copy #[fg=$bg_color]#[bg=cyan],}#[fg=$bg2_color,bg=$bg_color]#[fg=$fg_color,bg=$bg2_color] %a %m-%d %H:%M "
+tmux_set "status-left" "#{?client_prefix,#[fg=$bg_color]#[bg=magenta] #S #[fg=magenta]#[bg=$bg_color],#[fg=$bg_color]#[bg=$fg_color]#[bold] #S #[fg=$fg_color]#[bg=$bg_color]}"
+tmux_set "status-right" "#{?pane_in_mode,#[fg=cyan]#[bg=$bg_color]#[fg=$bg_color]#[bg=cyan] Copy #[fg=$bg_color]#[bg=cyan],}#[fg=$bg2_color,bg=$bg_color]#[fg=$fg_color,bg=$bg2_color] %a %m-%d %H:%M "
 
 #+--- Windows ---+
-set "window-status-format" "#[fg=$bg_color,bg=$bg_color]#[fg=default,bg=$bg_color] #I  #W #F #[fg=$bg_color,bg=$bg_color]"
-set "window-status-current-format" "#[fg=$bg_color,bg=$bg2_color]#[fg=$fg_color,bg=$bg2_color,bold] #I  #W #F #[fg=$bg2_color,bg=$bg_color]"
-set "window-status-separator" ""
+tmux_set "window-status-format" "#[fg=$bg_color,bg=$bg2_color] #[fg=LightSlateGray,bg=$bg2_color]#I #[fg=LightSlateGray,bg=$bg2_color] #[fg=LightSlateGray,bg=$bg2_color]#W #F #[fg=$bg2_color,bg=$bg_color]"
+tmux_set "window-status-current-format" "#[fg=$bg_color,bg=$bg2_color]#[fg=$fg_color,bg=$bg2_color,bold] #I  #W #F #[fg=$bg2_color,bg=$bg_color]"
+tmux_set "window-status-separator" ""
