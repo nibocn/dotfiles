@@ -78,7 +78,7 @@ elif [[ $BACKGROUND == "dark" ]]; then
 
   # neovim
   # 发送给 Neovim 的指令：切换到暗色
-  NVIM_CMD="<Esc>:lau vim.cmd('colorscheme tokyonight-night')<CR>"
+  NVIM_CMD="<Esc>:lua vim.cmd('colorscheme tokyonight-night')<CR>"
   sed -i '' 's/^export NVIM_TOKYONIGHT_VARIANT=day/# export NVIM_TOKYONIGHT_VARIANT=day/g' ~/.zshrc
   sed -i '' 's/^# export NVIM_TOKYONIGHT_VARIANT=night/export NVIM_TOKYONIGHT_VARIANT=night/g' ~/.zshrc
 
