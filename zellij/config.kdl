@@ -89,7 +89,7 @@ keybinds clear-defaults=true {
         bind "tab" { MovePane; }
     }
     scroll {
-        bind "e" { EditScrollback; SwitchToMode "normal"; }
+        bind "e" { EditScrollback; SwitchToMode "locked"; }
         bind "s" { SwitchToMode "entersearch"; SearchInput 0; }
     }
     search {
@@ -154,10 +154,17 @@ keybinds clear-defaults=true {
         bind "Alt j" { MoveFocus "down"; }
         bind "Alt k" { MoveFocus "up"; }
         bind "Alt l" { MoveFocusOrTab "right"; }
-        bind "Alt n" { NewPane; }
+        // bind "Alt n" { NewPane; }
+        bind "-" { NewPane "down"; }
+        bind "|" { NewPane "right"; }
         bind "Alt o" { MoveTab "right"; }
         bind "Alt p" { TogglePaneInGroup; }
         bind "Alt Shift p" { ToggleGroupMarking; }
+        bind "f" { ToggleFocusFullscreen; }
+        bind "x" { CloseFocus; }
+        bind "&" { CloseTab; }
+        bind "Alt p" { GoToPreviousTab; }
+        bind "Alt n" { GoToNextTab; }
         bind "Ctrl q" { Quit; }
     }
     shared_except "locked" "move" {
@@ -273,7 +280,7 @@ plugins {
 load_plugins {
 }
 web_client {
-    font "mononokiLXGWBrightGBNerd"
+    font "Maple Mono Normal NL NF CN"
 }
 
 // Use a simplified UI without special fonts (arrow glyphs)
