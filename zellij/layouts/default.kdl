@@ -1,9 +1,69 @@
 layout {
-    pane size=1 borderless=true {
-        plugin location="tab-bar"
-    }
-    pane
-    pane size=1 borderless=true {
-        plugin location="status-bar"
+    default_tab_template {
+        children
+        pane size=1 borderless=true {
+            plugin location="https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm" {
+                // ---------------------------------------------------------
+                // 核心逻辑：使用 bg, fg, red, green, blue, yellow, cyan, orange, black
+                // 这些变量会自动从当前加载的 Zellij 主题中读取颜色值
+                // ---------------------------------------------------------
+                format_left   "{mode}#[bg=bg] {tabs}"
+                format_center ""
+                format_right  "{swap_layout}#[bg=bg,fg=fg]  #[bg=bg,fg=fg]{session}  {datetime}"
+                format_space  "#[bg=bg]"
+                format_hide_on_overlength "true"
+                format_precedence "crl"
+
+                border_enabled  "false"
+                border_char     "─"
+                border_format   "#[fg=fg]{char}"
+                border_position "top"
+
+                // --- 模式颜色 (高对比度微调) ---
+                // 对于亮色背景(green/orange/yellow)，强制使用 black 文字
+                // 对于深色背景(red/blue)，使用 bg 或 white 文字
+
+                mode_normal        "#[bg=green,fg=black,bold] NORMAL#[bg=bg,fg=green]"
+                mode_locked        "#[bg=red,fg=black,bold] LOCKED  #[bg=bg,fg=red]"
+                mode_resize        "#[bg=blue,fg=black,bold] RESIZE#[bg=bg,fg=blue]"
+                mode_pane          "#[bg=blue,fg=black,bold] PANE#[bg=bg,fg=blue]"
+                mode_tab           "#[bg=blue,fg=black,bold] TAB#[bg=bg,fg=blue]"
+                mode_scroll        "#[bg=blue,fg=black,bold] SCROLL#[bg=bg,fg=blue]"
+                mode_enter_search  "#[bg=blue,fg=black,bold] ENT-SEARCH#[bg=bg,fg=blue]"
+                mode_search        "#[bg=blue,fg=black,bold] SEARCH#[bg=bg,fg=blue]"
+                mode_rename_tab    "#[bg=blue,fg=black,bold] RENAME-TAB#[bg=bg,fg=blue]"
+                mode_rename_pane   "#[bg=blue,fg=black,bold] RENAME-PANE#[bg=bg,fg=blue]"
+                mode_session       "#[bg=blue,fg=black,bold] SESSION#[bg=bg,fg=blue]"
+                mode_move          "#[bg=blue,fg=black,bold] MOVE#[bg=bg,fg=blue]"
+                mode_prompt        "#[bg=blue,fg=black,bold] PROMPT#[bg=bg,fg=blue]"
+                mode_tmux          "#[bg=blue,fg=black,bold] TMUX#[bg=bg,fg=blue]"
+
+                // 未激活 (Inactive):
+                // 使用 'black' 作为背景色 (在大多数主题中这是一个中性灰)，
+                // 使用 'cyan' (青色) 作为文字，青色在深浅背景下通常都比蓝色更清晰。
+                tab_normal              "#[bg=bg,fg=black]#[bg=black,fg=cyan,bold]{index} #[bg=black,fg=cyan,bold] {name}#[bg=bg,fg=black,bold]"
+                tab_normal_fullscreen   "#[bg=bg,fg=black]#[bg=black,fg=cyan,bold]{index} #[bg=black,fg=cyan,bold] {name} {fullscreen_indicator}#[bg=bg,fg=black,bold]"
+                tab_normal_sync         "#[bg=bg,fg=black]#[bg=black,fg=cyan,bold]{index} #[bg=black,fg=cyan,bold] {name} {sync_indicator}#[bg=bg,fg=black,bold]"
+
+                // 选中 (Active):
+                // 使用明亮的 'yellow' 作为背景，并强制使用 'black' (纯黑) 文字，确保最强对比度。
+                tab_active              "#[bg=bg,fg=yellow]#[bg=yellow,fg=black,bold]{index} #[bg=yellow,fg=black,bold] {name}#[bg=bg,fg=yellow,bold]"
+                tab_active_fullscreen   "#[bg=bg,fg=yellow]#[bg=yellow,fg=black,bold]{index} #[bg=yellow,fg=black,bold] {name} {fullscreen_indicator}#[bg=bg,fg=yellow,bold]"
+                tab_active_sync         "#[bg=bg,fg=yellow]#[bg=yellow,fg=black,bold]{index} #[bg=yellow,fg=black,bold] {name} {sync_indicator}#[bg=bg,fg=yellow,bold]"
+
+                // 分隔符
+                tab_separator           "#[bg=bg] "
+
+                // 指示器图标
+                tab_sync_indicator       " "
+                tab_fullscreen_indicator " 󰊓"
+                tab_floating_indicator   " 󰹙"
+
+                // 时间
+                datetime          "#[fg=fg,bold] {format} "
+                datetime_format   "%a %m-%d %H:%M"
+                datetime_timezone "Asia/Shanghai"
+            }
+        }
     }
 }
