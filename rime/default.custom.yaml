@@ -1,0 +1,10 @@
+patch:
+  schema_list:
+    - schema: wubi86          # 启用 86 五笔
+    - schema: pinyin_simp     # 备用拼音
+  menu:
+    page_size: 4 # 只输出 4 个候选词
+
+  # 菜单呼出快捷键 (默认是 F4 或 Ctrl+~，这里可以精简)
+  "switcher/hotkeys":
+    - "Control+grave"

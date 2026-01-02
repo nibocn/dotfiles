@@ -1,0 +1,26 @@
+patch:
+  style:
+    # --- 1. 强制横向排版的核心三要素 ---
+    # 必须同时设置这三项，缺一不可，以防被默认值覆盖
+    horizontal: true
+    candidate_list_layout: linear   # 关键：强制设为线性 (linear)，绝对不能是 stack
+
+    # --- 2. 你的个性化设置 ---
+    font_face: "Maple Mono NL NR NF CN"
+    font_point: 14
+    corner_radius: 8
+    inline_preedit: true
+    color_scheme: clean_white
+
+  # --- 3. 皮肤定义 ---
+  "preset_color_schemes/clean_white":
+    name: "简洁白"
+    author: "Richard"
+    horizontal: true              # 皮肤里也再次声明横向
+    back_color: 0xFFFFFF
+    border_color: 0xE0E0E0
+    text_color: 0x424242
+    hilited_text_color: 0x000000
+    hilited_back_color: 0xD3D3D3
+    candidate_text_color: 0x424242
+    comment_text_color: 0x999999
