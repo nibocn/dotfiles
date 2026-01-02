@@ -274,7 +274,7 @@ plugins {
 load_plugins {
 }
 web_client {
-    font "Maple Mono Normal NL NF CN"
+    font "Maple Mono NL SL NF CN"
 }
 
 // Use a simplified UI without special fonts (arrow glyphs)
