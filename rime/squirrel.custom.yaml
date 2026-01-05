@@ -6,7 +6,7 @@ patch:
     candidate_list_layout: linear   # 关键：强制设为线性 (linear)，绝对不能是 stack
 
     # --- 2. 你的个性化设置 ---
-    font_face: "Maple Mono Normal NL NR NF CN"
+    font_face: "Maple Mono Normal NL SL NF CN"
     font_point: 14
     corner_radius: 8
     inline_preedit: true
