@@ -7,6 +7,13 @@ if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
         print -P "%F{160} The clone has failed.%f%b"
 fi
 
+# 1. 自动初始化 Homebrew 环境（处理 PATH, FPATH, MANPATH 等）
+if [[ -f /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ -f /usr/local/bin/brew ]]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
+
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
@@ -47,7 +54,7 @@ export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig:/opt/homebrew/opt/zlib
 # di=1;36  -> 1代表粗体，36代表青色 (Cyan)
 export LS_COLORS="$LS_COLORS:di=1;36:"
 
-export PATH=/opt/homebrew/bin:$HOME/go/bin:/usr/local/opt/llvm/bin:/opt/homebrew/opt/llvm/bin:/opt/homebrew/opt/libpq/bin:$HOME/opt/bin:$PATH
+export PATH=$HOME/go/bin:/usr/local/opt/llvm/bin:/opt/homebrew/opt/llvm/bin:/opt/homebrew/opt/libpq/bin:$HOME/opt/bin:$PATH
 
 
 # Powerlevel10k {{{
@@ -77,15 +84,18 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 ## export FZF_CTRL_T_OPTS="--min-height 30 --preview-window down:60% --preview-window noborder --preview '($FZF_PREVIEW_COMMAND) 2> /dev/null'"
 # }}}
 
+alias ssh='TERM=xterm-256color ssh'
+alias vssh='TERM=xterm-256color vagrant ssh'
+
 # TERM config {{{
-if [ "$TMUX" = "" ]; then
-    export TERM="xterm-256color-italic";
-    alias ssh='TERM=xterm-256color ssh'
-    alias vssh='TERM=xterm-256color vagrant ssh'
-else
-    alias ssh='TERM=screen-256color ssh'
-    alias vssh='TERM=screen-256color vagrant ssh'
-fi
+# if [ "$TMUX" = "" ]; then
+#     export TERM="xterm-256color-italic";
+#     alias ssh='TERM=xterm-256color ssh'
+#     alias vssh='TERM=xterm-256color vagrant ssh'
+# else
+#     alias ssh='TERM=screen-256color ssh'
+#     alias vssh='TERM=screen-256color vagrant ssh'
+# fi
 # }}}
 
 alias ls='ls --color=auto'
