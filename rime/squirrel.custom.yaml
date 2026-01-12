@@ -10,7 +10,7 @@ patch:
     font_point: 14
     corner_radius: 8
     inline_preedit: true
-    color_scheme: clean_white
+    color_scheme: native
 
   # --- 3. 皮肤定义 ---
   "preset_color_schemes/clean_white":
