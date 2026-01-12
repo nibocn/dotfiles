@@ -30,11 +30,12 @@ nnoremap <C-o> :action Back<CR>
 nnoremap <C-i> :action Forward<CR>
 nnoremap [b gT
 nnoremap ]b gt
+nnoremap <leader>w :w<CR>
 nnoremap <leader>q :wq<CR>
 nnoremap <leader>h <ESC>:action HideAllWindows<CR>
 
 " Find/Files/Fold {{{
-nnoremap <leader>fs <ESC>:action SaveAll<CR>
+nnoremap <leader>wa <ESC>:action SaveAll<CR>
 " 搜索文件
 nnoremap <leader>fp <ESC>:action GotoFile<CR>
 " 显示项目视图（文件目录树）
@@ -57,13 +58,42 @@ nnoremap <leader>lR <ESC>:action RenameElement<CR>
 " }}}
 
 " 搜索内容（全局）
-nnoremap <leader>sa <ESC>:action FindInPath<CR>
+nnoremap <leader>fs <ESC>:action FindInPath<CR>
 
 " 显示文件结构（类似 tags）
 nnoremap <leader>tt <ESC>:action FileStructurePopup<CR>
 
 " 显示最近使用的文件（类似 buffer）
 nnoremap <leader>bb <ESC>:action RecentFiles<CR>
+
+" --- Tool Windows Mappings (Toggle) ---
+" 前缀统一使用 t，意为 Toggle Tool Window
+
+" 1. 构建工具
+nmap <leader>tm <Action>(ActivateMavenToolWindow)
+nmap <leader>tg <Action>(ActivateGradleToolWindow)
+
+" 2. 运行与调试
+" Run 面板
+nmap <leader>tr <Action>(ActivateRunToolWindow)
+" Debug 面板 (这里用了 u，因为 d 留给了数据库，且 u 在 debug 单词中重音)
+nmap <leader>td <Action>(ActivateDebugToolWindow)
+" Services (微服务/SpringBoot大盘)
+nmap <leader>ts <Action>(ActivateServicesToolWindow)
+
+" 3. 代码质量与数据
+" Problems (代码问题/报错)
+nmap <leader>tp <Action>(ActivateProblemsViewToolWindow)
+" Database (数据库)
+nmap <leader>tb <Action>(ActivateDatabaseToolWindow)
+
+" 4. 补充推荐
+" Terminal (终端) - 非常常用
+nmap <leader>tt <Action>(ActivateTerminalToolWindow)
+" Project (左侧工程目录)
+nmap <leader>fe <Action>(ActivateProjectToolWindow)
+" Structure (当前类大纲)
+nmap <leader>to <Action>(ActivateStructureToolWindow)
 
 nnoremap Y y$
 
