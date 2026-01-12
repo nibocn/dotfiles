@@ -27,6 +27,7 @@ if [[ $BACKGROUND == "light" ]]; then
   NVIM_CMD="<Esc>:lua vim.cmd('colorscheme tokyonight-day')<CR>"
   sed -i '' 's/^export NVIM_TOKYONIGHT_VARIANT=night/# export NVIM_TOKYONIGHT_VARIANT=night/g' ~/.zshrc
   sed -i '' 's/^# export NVIM_TOKYONIGHT_VARIANT=day/export NVIM_TOKYONIGHT_VARIANT=day/g' ~/.zshrc
+  echo "day" > /tmp/nvim_variant
 
   # zellij
   # cp ~/.config/zellij/layouts/template_light.kdl ~/.config/zellij/layouts/default.kdl
@@ -81,6 +82,7 @@ elif [[ $BACKGROUND == "dark" ]]; then
   NVIM_CMD="<Esc>:lua vim.cmd('colorscheme tokyonight-night')<CR>"
   sed -i '' 's/^export NVIM_TOKYONIGHT_VARIANT=day/# export NVIM_TOKYONIGHT_VARIANT=day/g' ~/.zshrc
   sed -i '' 's/^# export NVIM_TOKYONIGHT_VARIANT=night/export NVIM_TOKYONIGHT_VARIANT=night/g' ~/.zshrc
+  echo "night" > /tmp/nvim_variant
 
   # zellij
   # cp ~/.config/zellij/layouts/template_dark.kdl ~/.config/zellij/layouts/default.kdl
