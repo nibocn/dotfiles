@@ -1,0 +1,118 @@
+{
+    "description": "Z-Mode: Caps=Ctrl/Esc, Z键=方向模式, 强制Ctrl+[=Esc",
+    "manipulators": [
+        {
+            "description": "1. 强制 Ctrl + [ 等于 Esc (全局通用)",
+            "from": {
+                "key_code": "open_bracket",
+                "modifiers": {
+                    "mandatory": ["left_control"],
+                    "optional": ["any"]
+                }
+            },
+            "to": [{ "key_code": "escape" }],
+            "type": "basic"
+        },
+        {
+            "description": "2. Caps Lock: 单按 Esc, 按住 Left Control",
+            "from": {
+                "key_code": "caps_lock",
+                "modifiers": { "optional": ["any"] }
+            },
+            "to": [
+                {
+                    "key_code": "left_control",
+                    "lazy": true
+                }
+            ],
+            "to_if_alone": [{ "key_code": "escape" }],
+            "type": "basic"
+        },
+        {
+            "description": "3. Z-Mode: 按住 Z 键进入方向模式 (替换了原来的空格)",
+            "from": {
+                "key_code": "z",
+                "modifiers": { "optional": ["any"] }
+            },
+            "to": [
+                {
+                    "set_variable": {
+                        "name": "arrow_mode",
+                        "value": 1
+                    }
+                }
+            ],
+            "to_after_key_up": [
+                {
+                    "set_variable": {
+                        "name": "arrow_mode",
+                        "value": 0
+                    }
+                }
+            ],
+            "to_if_alone": [{ "key_code": "z" }],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "name": "arrow_mode",
+                    "type": "variable_if",
+                    "value": 1
+                }
+            ],
+            "description": "4. (Z按下时) H/J/K/L -> 方向键",
+            "from": {
+                "key_code": "h",
+                "modifiers": { "optional": ["any"] }
+            },
+            "to": [{ "key_code": "left_arrow" }],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "name": "arrow_mode",
+                    "type": "variable_if",
+                    "value": 1
+                }
+            ],
+            "from": {
+                "key_code": "j",
+                "modifiers": { "optional": ["any"] }
+            },
+            "to": [{ "key_code": "down_arrow" }],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "name": "arrow_mode",
+                    "type": "variable_if",
+                    "value": 1
+                }
+            ],
+            "from": {
+                "key_code": "k",
+                "modifiers": { "optional": ["any"] }
+            },
+            "to": [{ "key_code": "up_arrow" }],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "name": "arrow_mode",
+                    "type": "variable_if",
+                    "value": 1
+                }
+            ],
+            "from": {
+                "key_code": "l",
+                "modifiers": { "optional": ["any"] }
+            },
+            "to": [{ "key_code": "right_arrow" }],
+            "type": "basic"
+        }
+    ]
+}
