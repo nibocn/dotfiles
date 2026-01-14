@@ -18,10 +18,6 @@ if [[ $BACKGROUND == "light" ]]; then
   # 让 Kitty 自动重载配置 (发送 USR1 信号给所有 kitty 进程)
   kill -SIGUSR1 $(pgrep -a kitty | awk '{print $1}') 2>/dev/null
 
-  # Tmux
-  # sed -i '' 's/^set -g @theme-style "night"/# set -g @theme-style "night"/g' ~/.tmux.conf
-  # sed -i '' 's/^# set -g @theme-style "day"/set -g @theme-style "day"/g' ~/.tmux.conf
-
   # neovim
   # 发送给 Neovim 的指令：切换到亮色
   NVIM_CMD="<Esc>:lua vim.cmd('colorscheme tokyonight-day')<CR>"
@@ -31,7 +27,7 @@ if [[ $BACKGROUND == "light" ]]; then
 
   # zellij
   # cp ~/.config/zellij/layouts/template_light.kdl ~/.config/zellij/layouts/default.kdl
-  sed -i '' 's/theme ".*"/theme "pencil-light"/' ~/.config/zellij/config.kdl
+  # sed -i '' 's/theme ".*"/theme "pencil-light"/' ~/.config/zellij/config.kdl
 
   # sed -i "s/^set/# set/g" ~/.tmux.conf
   # sed -i "s/# set -g @theme \"edge\"/set -g @theme \"edge\"/g" ~/.tmux.conf
@@ -61,6 +57,11 @@ if [[ $BACKGROUND == "light" ]]; then
       nvim --server "$socket" --remote-send "$NVIM_CMD" 2>/dev/null &
   done
 
+  # Tmux
+  sed -i '' 's/^set -g @theme-style "night"/# set -g @theme-style "night"/g' ~/.tmux.conf
+  sed -i '' 's/^# set -g @theme-style "day"/set -g @theme-style "day"/g' ~/.tmux.conf
+  tmux source-file ~/.tmux.conf \; display-message "Config reloaded..."
+
   echo '完成.'
   # 发送系统通知
   send_notification "主题切换完成" "已切换到 Light 模式 ☀️"
@@ -73,9 +74,6 @@ elif [[ $BACKGROUND == "dark" ]]; then
   sed -i '' 's|^# include ~/.config/kitty/kitty-themes/themes/tokyo_night_night.conf|include ~/.config/kitty/kitty-themes/themes/tokyo_night_night.conf|g' ~/.config/kitty/kitty.conf
   # 让 Kitty 自动重载配置
   kill -SIGUSR1 $(pgrep -a kitty | awk '{print $1}') 2>/dev/null
-  # Tmux
-  # sed -i '' 's/^set -g @theme-style "day"/# set -g @theme-style "day"/g' ~/.tmux.conf
-  # sed -i '' 's/^# set -g @theme-style "night"/set -g @theme-style "night"/g' ~/.tmux.conf
 
   # neovim
   # 发送给 Neovim 的指令：切换到暗色
@@ -86,7 +84,7 @@ elif [[ $BACKGROUND == "dark" ]]; then
 
   # zellij
   # cp ~/.config/zellij/layouts/template_dark.kdl ~/.config/zellij/layouts/default.kdl
-  sed -i '' 's/theme ".*"/theme "tokyo-night"/' ~/.config/zellij/config.kdl
+  # sed -i '' 's/theme ".*"/theme "tokyo-night"/' ~/.config/zellij/config.kdl
 
   # sed -i "s/^set/# set/g" ~/.tmux.conf
   # sed -i "s/^set -g @theme-style \"night\"/# set -g @theme-style \"night\"/g" ~/.tmux.conf
@@ -117,6 +115,11 @@ elif [[ $BACKGROUND == "dark" ]]; then
       nvim --server "$socket" --remote-send "$NVIM_CMD" 2>/dev/null &
   done
 
+  # Tmux
+  sed -i '' 's/^set -g @theme-style "day"/# set -g @theme-style "day"/g' ~/.tmux.conf
+  sed -i '' 's/^# set -g @theme-style "night"/set -g @theme-style "night"/g' ~/.tmux.conf
+  tmux source-file ~/.tmux.conf \; display-message "Config reloaded..."
+
   echo '完成.'
   # 发送系统通知
   send_notification "主题切换完成" "已切换到 Dark 模式 🌙"
@@ -125,4 +128,3 @@ else
   exit 1
 fi
 
-# tmux source-file ~/.tmux.conf \; display-message "Config reloaded..."
