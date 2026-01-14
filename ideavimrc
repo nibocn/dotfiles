@@ -35,7 +35,7 @@ nnoremap <leader>q :wq<CR>
 nnoremap <leader>h <ESC>:action HideAllWindows<CR>
 
 " Find/Files/Fold {{{
-nnoremap <leader>wa <ESC>:action SaveAll<CR>
+" nnoremap <leader>wa <ESC>:action SaveAll<CR>
 " 搜索文件
 nnoremap <leader>fp <ESC>:action GotoFile<CR>
 " 显示项目视图（文件目录树）
