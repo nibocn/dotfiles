@@ -219,6 +219,15 @@ zinit ice wait"1" lucid as"program" pick"$HOME/.nvm/nvm.sh" id-as'nvm' run-atpul
   atinit"export NVM_DIR=$HOME/.nvm; [ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\"; [ -s \"$NVM_DIR/bash_completion\" ] && \. \"$NVM_DIR/bash_completion\""
 zinit light zdharma-continuum/null
 
+# Bun
+# 使用官方脚本安装，安装位置默认为 $HOME/.bun
+zinit ice wait"1" lucid as"program" pick"$HOME/.bun/bin/bun" id-as'bun' run-atpull \
+  atclone"curl -fsSL https://bun.com/install | bash" \
+  atpull"$HOME/.bun/bin/bun upgrade" \
+  atinit"export BUN_INSTALL=$HOME/.bun; export PATH=$BUN_INSTALL/bin:$PATH" \
+  atload"source <($HOME/.bun/bin/bun completions)"
+zinit light zdharma-continuum/null
+
 # zinit ice wait"1" lucid as'command' pick'bin/pyenv' atinit'export PYENV_ROOT="$PWD"' \
 #     atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
 #     atpull"%atclone" src"zpyenv.zsh" nocompile'!' for \
