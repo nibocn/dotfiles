@@ -198,27 +198,34 @@ zinit wait="1" lucid as="completion" for \
   OMZ::plugins/docker-compose/_docker-compose \
   OMZ::plugins/rust/_rustc
 
-# sdkman
-zinit ice wait"1" lucid as"program" pick"$HOME/.sdkman/bin/sdk" id-as'sdkman' run-atpull \
-  atclone"curl https://get.sdkman.io/ | SDKMAN_DIR=$HOME/.sdkman bash" \
-  atpull"SDKMAN_DIR=$HOME/.sdkman sdk selfupdate" \
-  atinit"export SDKMAN_DIR=$HOME/.sdkman; source $HOME/.sdkman/bin/sdkman-init.sh"
-zinit light zdharma-continuum/null
-
-# nvm
-zinit ice wait"1" lucid as"program" pick"$HOME/.nvm/nvm.sh" id-as'nvm' run-atpull \
-  atclone"curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | NVM_DIR=$HOME/.nvm bash" \
-  atpull"curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | NVM_DIR=$HOME/.nvm bash" \
-  atinit"export NVM_DIR=$HOME/.nvm; [ -s \"$NVM_DIR/nvm.sh\" ] && \. \"$NVM_DIR/nvm.sh\"; [ -s \"$NVM_DIR/bash_completion\" ] && \. \"$NVM_DIR/bash_completion\""
-zinit light zdharma-continuum/null
-
-# Bun
-# 使用官方脚本安装，安装位置默认为 $HOME/.bun
-zinit ice wait"1" lucid as"program" pick"$HOME/.bun/bin/bun" id-as'bun' run-atpull \
+# Bun: 稍微晚一点加载，避免和 SDKMAN 撞车
+zinit ice wait"0" lucid as"program" pick"$HOME/.bun/bin/bun" id-as'bun' run-atpull \
   atclone"curl -fsSL https://bun.com/install | bash" \
   atpull"$HOME/.bun/bin/bun upgrade" \
-  atinit"export BUN_INSTALL=$HOME/.bun; export PATH=$BUN_INSTALL/bin:$PATH" \
+  atinit"export BUN_INSTALL=$HOME/.bun; path=($BUN_INSTALL/bin $path)" \
   atload"source <($HOME/.bun/bin/bun completions)"
+zinit light zdharma-continuum/null
+
+# NVM: 安排在第 2 秒加载，避开 SDKMAN 和 Bun
+# 修改点：
+# 1. wait"2" -> 错峰
+# 2. 去掉了 pick 和 as"program" -> 避免作为子进程运行
+# 3. 将 source 动作放在 atload 中 -> 确保加载时才生效
+zinit ice wait"1" lucid id-as"nvm" run-atpull \
+  atclone"mkdir -p $HOME/.nvm && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | NVM_DIR=$HOME/.nvm bash" \
+  atpull"%atclone" \
+  atinit"export NVM_DIR=$HOME/.nvm" \
+  atload"source $HOME/.nvm/nvm.sh; [ -s \"$HOME/.nvm/bash_completion\" ] && source \"$HOME/.nvm/bash_completion\""
+zinit light zdharma-continuum/null
+
+# sdkman
+# 注意：把 source init.sh 放在 atload 中，确保加载时才执行
+zinit ice wait"2" lucid as"null" id-as"sdkman" run-atpull \
+  atclone"curl -s https://get.sdkman.io | bash" \
+  atpull"sdk selfupdate" \
+  atinit"export SDKMAN_DIR=$HOME/.sdkman" \
+  atload"source $HOME/.sdkman/bin/sdkman-init.sh" \
+  pick"/dev/null"
 zinit light zdharma-continuum/null
 
 # zinit ice wait"1" lucid as'command' pick'bin/pyenv' atinit'export PYENV_ROOT="$PWD"' \
