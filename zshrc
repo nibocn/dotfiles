@@ -31,7 +31,7 @@ export SUDO_EDITOR=nvim
 ## You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export SSH_KEY_PATH=/Users/richard/.ssh/id_rsa
+export SSH_KEY_PATH=/Users/richard/.ssh/id_ed25519
 ## Git LFS
 export GIT_LFS_SKIP_SMUDGE=1
 ## 让 git diff 分页显示并且退出后不将
@@ -135,6 +135,8 @@ alias gfw='cd "/Users/richard/Library/Mobile Documents/com~apple~CloudDocs/sing-
 # 这里我们直接用 sudo -e 替代 sudoedit
 alias sn='sudo -e'
 # }}}
+# auth: 解锁 SSH key，有效期 1 天 (1d) 或 12 小时 (12h)
+alias ssh-auth="ssh-add -t 1d ~/.ssh/id_ed25519"
 
 # Proxy {{{
 function proxy() {
