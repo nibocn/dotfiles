@@ -13,17 +13,25 @@ if [[ $BACKGROUND == "light" ]]; then
   # Light Theme
   echo '切换主题配置...'
   # Kitty
-  sed -i '' 's|^include ~/.config/kitty/kitty-themes/themes/tokyo_night_night.conf|# include ~/.config/kitty/kitty-themes/themes/tokyo_night_night.conf|g' ~/.config/kitty/kitty.conf
-  sed -i '' 's|^# include ~/.config/kitty/kitty-themes/themes/tokyo_night_day.conf|include ~/.config/kitty/kitty-themes/themes/tokyo_night_day.conf|g' ~/.config/kitty/kitty.conf
+  # sed -i '' 's|^include ~/.config/kitty/kitty-tokyo-theme/themes/tokyo_night_night.conf|# include ~/.config/kitty/kitty-tokyo-theme/themes/tokyo_night_night.conf|g' ~/.config/kitty/kitty.conf
+  # sed -i '' 's|^# include ~/.config/kitty/kitty-tokyo-theme/themes/tokyo_night_day.conf|include ~/.config/kitty/kitty-tokyo-theme/themes/tokyo_night_day.conf|g' ~/.config/kitty/kitty.conf
+
+  sed -i '' 's|^include ~/.config/kitty/kitty-themes/themes/gruvbox_dark.conf|# include ~/.config/kitty/kitty-themes/themes/gruvbox_dark.conf|g' ~/.config/kitty/kitty.conf
+  sed -i '' 's|^# include ~/.config/kitty/kitty-themes/themes/gruvbox_light.conf|include ~/.config/kitty/kitty-themes/themes/gruvbox_light.conf|g' ~/.config/kitty/kitty.conf
   # 让 Kitty 自动重载配置 (发送 USR1 信号给所有 kitty 进程)
   kill -SIGUSR1 $(pgrep -a kitty | awk '{print $1}') 2>/dev/null
 
   # neovim
   # 发送给 Neovim 的指令：切换到亮色
-  NVIM_CMD="<Esc>:lua vim.cmd('colorscheme tokyonight-day')<CR>"
-  sed -i '' 's/^export NVIM_TOKYONIGHT_VARIANT=night/# export NVIM_TOKYONIGHT_VARIANT=night/g' ~/.zshrc
-  sed -i '' 's/^# export NVIM_TOKYONIGHT_VARIANT=day/export NVIM_TOKYONIGHT_VARIANT=day/g' ~/.zshrc
-  echo "day" > /tmp/nvim_variant
+  # NVIM_CMD="<Esc>:lua vim.cmd('colorscheme tokyonight-day')<CR>"
+  # sed -i '' 's/^export NVIM_TOKYONIGHT_VARIANT=night/# export NVIM_TOKYONIGHT_VARIANT=night/g' ~/.zshrc
+  # sed -i '' 's/^# export NVIM_TOKYONIGHT_VARIANT=light/export NVIM_TOKYONIGHT_VARIANT=light/g' ~/.zshrc
+  # echo "day" > /tmp/nvim_variant
+
+  NVIM_CMD="<Esc>:set background=light<CR>"
+  sed -i '' 's/^export NVIM_GRUVBOX_VARIANT=dark/# export NVIM_GRUVBOX_VARIANT=dark/g' ~/.zshrc
+  sed -i '' 's/^# export NVIM_GRUVBOX_VARIANT=light/export NVIM_GRUVBOX_VARIANT=light/g' ~/.zshrc
+  echo "light" > /tmp/nvim_variant
 
   # zellij
   # cp ~/.config/zellij/layouts/template_light.kdl ~/.config/zellij/layouts/default.kdl
@@ -58,8 +66,11 @@ if [[ $BACKGROUND == "light" ]]; then
   done
 
   # Tmux
-  sed -i '' 's/^set -g @theme-style "night"/# set -g @theme-style "night"/g' ~/.tmux.conf
-  sed -i '' 's/^# set -g @theme-style "day"/set -g @theme-style "day"/g' ~/.tmux.conf
+  # sed -i '' 's/^set -g @theme-style "night"/# set -g @theme-style "night"/g' ~/.tmux.conf
+  # sed -i '' 's/^# set -g @theme-style "day"/set -g @theme-style "day"/g' ~/.tmux.conf
+
+  sed -i '' 's/^set -g @theme-background "dark"/# set -g @theme-background "dark"/g' ~/.tmux.conf
+  sed -i '' 's/^# set -g @theme-background "light"/set -g @theme-background "light"/g' ~/.tmux.conf
   tmux source-file ~/.tmux.conf \; display-message "Config reloaded..."
 
   echo '完成.'
@@ -70,17 +81,26 @@ elif [[ $BACKGROUND == "dark" ]]; then
   # Dark Theme
   echo '切换主题配置...'
   # Kitty
-  sed -i '' 's|^include ~/.config/kitty/kitty-themes/themes/tokyo_night_day.conf|# include ~/.config/kitty/kitty-themes/themes/tokyo_night_day.conf|g' ~/.config/kitty/kitty.conf
-  sed -i '' 's|^# include ~/.config/kitty/kitty-themes/themes/tokyo_night_night.conf|include ~/.config/kitty/kitty-themes/themes/tokyo_night_night.conf|g' ~/.config/kitty/kitty.conf
+  # sed -i '' 's|^include ~/.config/kitty/kitty-tokyo-theme/themes/tokyo_night_day.conf|# include ~/.config/kitty/kitty-tokyo-theme/themes/tokyo_night_day.conf|g' ~/.config/kitty/kitty.conf
+  # sed -i '' 's|^# include ~/.config/kitty/kitty-tokyo-theme/themes/tokyo_night_night.conf|include ~/.config/kitty/kitty-tokyo-theme/themes/tokyo_night_night.conf|g' ~/.config/kitty/kitty.conf
+
+  sed -i '' 's|^include ~/.config/kitty/kitty-themes/themes/gruvbox_light.conf|# include ~/.config/kitty/kitty-themes/themes/gruvbox_light.conf|g' ~/.config/kitty/kitty.conf
+  sed -i '' 's|^# include ~/.config/kitty/kitty-themes/themes/gruvbox_dark.conf|include ~/.config/kitty/kitty-themes/themes/gruvbox_dark.conf|g' ~/.config/kitty/kitty.conf
+
   # 让 Kitty 自动重载配置
   kill -SIGUSR1 $(pgrep -a kitty | awk '{print $1}') 2>/dev/null
 
   # neovim
   # 发送给 Neovim 的指令：切换到暗色
-  NVIM_CMD="<Esc>:lua vim.cmd('colorscheme tokyonight-night')<CR>"
-  sed -i '' 's/^export NVIM_TOKYONIGHT_VARIANT=day/# export NVIM_TOKYONIGHT_VARIANT=day/g' ~/.zshrc
-  sed -i '' 's/^# export NVIM_TOKYONIGHT_VARIANT=night/export NVIM_TOKYONIGHT_VARIANT=night/g' ~/.zshrc
-  echo "night" > /tmp/nvim_variant
+  # NVIM_CMD="<Esc>:lua vim.cmd('colorscheme tokyonight-night')<CR>"
+  # sed -i '' 's/^export NVIM_TOKYONIGHT_VARIANT=day/# export NVIM_TOKYONIGHT_VARIANT=day/g' ~/.zshrc
+  # sed -i '' 's/^# export NVIM_TOKYONIGHT_VARIANT=night/export NVIM_TOKYONIGHT_VARIANT=night/g' ~/.zshrc
+  # echo "night" > /tmp/nvim_variant
+
+  NVIM_CMD="<Esc>:set background=dark<CR>"
+  sed -i '' 's/^export NVIM_GRUVBOX_VARIANT=light/# export NVIM_GRUVBOX_VARIANT=light/g' ~/.zshrc
+  sed -i '' 's/^# export NVIM_GRUVBOX_VARIANT=dark/export NVIM_GRUVBOX_VARIANT=dark/g' ~/.zshrc
+  echo "dark" > /tmp/nvim_variant
 
   # zellij
   # cp ~/.config/zellij/layouts/template_dark.kdl ~/.config/zellij/layouts/default.kdl
@@ -116,8 +136,12 @@ elif [[ $BACKGROUND == "dark" ]]; then
   done
 
   # Tmux
-  sed -i '' 's/^set -g @theme-style "day"/# set -g @theme-style "day"/g' ~/.tmux.conf
-  sed -i '' 's/^# set -g @theme-style "night"/set -g @theme-style "night"/g' ~/.tmux.conf
+  # sed -i '' 's/^set -g @theme-style "day"/# set -g @theme-style "day"/g' ~/.tmux.conf
+  # sed -i '' 's/^# set -g @theme-style "night"/set -g @theme-style "night"/g' ~/.tmux.conf
+
+  sed -i '' 's/^set -g @theme-background "light"/# set -g @theme-background "light"/g' ~/.tmux.conf
+  sed -i '' 's/^# set -g @theme-background "dark"/set -g @theme-background "dark"/g' ~/.tmux.conf
+
   tmux source-file ~/.tmux.conf \; display-message "Config reloaded..."
 
   echo '完成.'
