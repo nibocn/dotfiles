@@ -16,8 +16,8 @@ if [[ $BACKGROUND == "light" ]]; then
   # sed -i '' 's|^include ~/.config/kitty/kitty-tokyo-theme/themes/tokyo_night_night.conf|# include ~/.config/kitty/kitty-tokyo-theme/themes/tokyo_night_night.conf|g' ~/.config/kitty/kitty.conf
   # sed -i '' 's|^# include ~/.config/kitty/kitty-tokyo-theme/themes/tokyo_night_day.conf|include ~/.config/kitty/kitty-tokyo-theme/themes/tokyo_night_day.conf|g' ~/.config/kitty/kitty.conf
 
-  sed -i '' 's|^include ~/.config/kitty/kitty-themes/themes/gruvbox_dark.conf|# include ~/.config/kitty/kitty-themes/themes/gruvbox_dark.conf|g' ~/.config/kitty/kitty.conf
-  sed -i '' 's|^# include ~/.config/kitty/kitty-themes/themes/gruvbox_light.conf|include ~/.config/kitty/kitty-themes/themes/gruvbox_light.conf|g' ~/.config/kitty/kitty.conf
+  sed -i '' 's|^include ~/.config/kitty/kitty-themes/themes/gruvbox-dark.conf|# include ~/.config/kitty/kitty-themes/themes/gruvbox-dark.conf|g' ~/.config/kitty/kitty.conf
+  sed -i '' 's|^# include ~/.config/kitty/kitty-themes/themes/gruvbox-light.conf|include ~/.config/kitty/kitty-themes/themes/gruvbox-light.conf|g' ~/.config/kitty/kitty.conf
   # 让 Kitty 自动重载配置 (发送 USR1 信号给所有 kitty 进程)
   kill -SIGUSR1 $(pgrep -a kitty | awk '{print $1}') 2>/dev/null
 
@@ -84,8 +84,8 @@ elif [[ $BACKGROUND == "dark" ]]; then
   # sed -i '' 's|^include ~/.config/kitty/kitty-tokyo-theme/themes/tokyo_night_day.conf|# include ~/.config/kitty/kitty-tokyo-theme/themes/tokyo_night_day.conf|g' ~/.config/kitty/kitty.conf
   # sed -i '' 's|^# include ~/.config/kitty/kitty-tokyo-theme/themes/tokyo_night_night.conf|include ~/.config/kitty/kitty-tokyo-theme/themes/tokyo_night_night.conf|g' ~/.config/kitty/kitty.conf
 
-  sed -i '' 's|^include ~/.config/kitty/kitty-themes/themes/gruvbox_light.conf|# include ~/.config/kitty/kitty-themes/themes/gruvbox_light.conf|g' ~/.config/kitty/kitty.conf
-  sed -i '' 's|^# include ~/.config/kitty/kitty-themes/themes/gruvbox_dark.conf|include ~/.config/kitty/kitty-themes/themes/gruvbox_dark.conf|g' ~/.config/kitty/kitty.conf
+  sed -i '' 's|^include ~/.config/kitty/kitty-themes/themes/gruvbox-light.conf|# include ~/.config/kitty/kitty-themes/themes/gruvbox-light.conf|g' ~/.config/kitty/kitty.conf
+  sed -i '' 's|^# include ~/.config/kitty/kitty-themes/themes/gruvbox-dark.conf|include ~/.config/kitty/kitty-themes/themes/gruvbox-dark.conf|g' ~/.config/kitty/kitty.conf
 
   # 让 Kitty 自动重载配置
   kill -SIGUSR1 $(pgrep -a kitty | awk '{print $1}') 2>/dev/null
