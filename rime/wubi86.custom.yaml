@@ -1,4 +1,9 @@
 patch:
+
+  # 允许分号作为编码，且不产生候选
+  # 告诉 speller，; 是合法输入码
+  "speller/alphabet": "zyxwvutsrqponmlkjihgfedcba;"
+
   # 开启自动造词功能 (如果你喜欢清歌的智能造词)
   "translator/enable_encoder": true
 
