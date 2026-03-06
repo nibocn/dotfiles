@@ -50,15 +50,17 @@ automatically-unhide-macos-hidden-apps = true
 preset = 'qwerty'
 
 [workspace-to-monitor-force-assignment]
-1='LG ULTRAGEAR'
-2='LG ULTRAGEAR'
-3='LG ULTRAGEAR'
-4='LG ULTRAGEAR'
-5='LG HDR 4K'
-6='Built-in Retina Display'
-7='Built-in Retina Display'
-8='Built-in Retina Display'
-9='Built-in Retina Display'
+1=['Built-in Retina Display', 'LG ULTRAGEAR']
+2=['Built-in Retina Display', 'LG ULTRAGEAR']
+3=['Built-in Retina Display', 'LG ULTRAGEAR']
+4=['Built-in Retina Display', 'LG ULTRAGEAR']
+5=['Built-in Retina Display', 'LG ULTRAGEAR']
+
+# 6-9 优先使用外接显示器。如果有多个外接，按期望的优先级排序。
+6 = ['U2790B', 'LG ULTRAGEAR', 'Built-in Retina Display']
+7 = ['U2790B', 'LG ULTRAGEAR', 'Built-in Retina Display']
+8 = ['LG HDR 4K', 'U2790B', 'LG ULTRAGEAR', 'Built-in Retina Display']
+9 = ['LG HDR 4K', 'U2790B', 'LG ULTRAGEAR', 'Built-in Retina Display']
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
@@ -197,9 +199,14 @@ alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
 alt-tab = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
-ctrl-1 = 'focus-monitor "LG ULTRAGEAR"'
-ctrl-2 = 'focus-monitor "LG HDR 4K"'
-ctrl-3 = 'focus-monitor "Built-in Retina Display"'
+# ctrl-2 = 'focus-monitor "LG ULTRAGEAR"'
+# ctrl-3 = 'focus-monitor "LG HDR 4K"'
+# ctrl-1 = 'focus-monitor "Built-in Retina Display"'
+# ctrl-2 = 'focus-monitor "U2790B"'
+# 按物理方向切换（更符合直觉）
+alt-h = 'focus-monitor left'
+alt-l = 'focus-monitor right'
+
 ctrl-enter = 'fullscreen'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
