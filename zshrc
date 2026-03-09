@@ -160,6 +160,9 @@ function unproxy() {
 HIST_STAMPS="yyyy-mm-dd"
 HISTSIZE=80000
 SAVEHIST=60000
+setopt HIST_IGNORE_ALL_DUPS  # 忽略所有历史记录中的重复命令（保留最新的一条）
+setopt HIST_REDUCE_BLANKS    # 移除命令中多余的空白字符
+setopt SHARE_HISTORY         # 在打开的多个 Tmux pane 或 Kitty 窗口间实时共享历史记录
 # }}}
 
 # Load a few important annexes, without Turbo
