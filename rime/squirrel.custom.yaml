@@ -1,4 +1,12 @@
 patch:
+  app_options:
+    net.kovidgoyal.kitty:
+      ascii_mode: true
+    com.jetbrains.WebStorm:
+      ascii_mode: true
+    com.jetbrains.intellij:
+      ascii_mode: true
+
   style:
     # --- 1. 强制横向排版的核心三要素 ---
     # 必须同时设置这三项，缺一不可，以防被默认值覆盖
