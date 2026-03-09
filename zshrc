@@ -75,6 +75,13 @@ POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{cyan}\uF460%F{073}\uF
 export BAT_STYLE='numbers,changes,header'
 export FZF_DEFAULT_OPTS='--height 95% --preview-window "right:60%" --preview "~/.local/dotfiles/fzf/preview.sh {}"'
 export FZF_DEFAULT_COMMAND='fd --type f'
+# 专门为 Ctrl-R 历史搜索定制的外观与快捷键 (Ctrl-Y 复制)
+export FZF_CTRL_R_OPTS="
+  --reverse
+  --height=40%
+  --preview=''
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic"
 # }}}
 
 alias ssh='TERM=xterm-256color ssh'
@@ -189,8 +196,16 @@ zinit wait="0" lucid for \
   OMZ::lib/history.zsh \
   OMZ::plugins/git/git.plugin.zsh
 
+# 在 wait="0" 之后，用更高的 wait 值确保覆盖 OMZ 的 ctrl-r 绑定
+zinit wait="0b" lucid for \
+  id-as"fzf-key-bindings" \
+  atload'
+    [[ -f $HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh ]] && source $HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh
+    [[ -f $HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh ]] && source $HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh
+  ' \
+  zdharma-continuum/null
+
 zinit wait="1" lucid for \
-    zdharma-continuum/history-search-multi-word \
     OMZ::plugins/rust/rust.plugin.zsh \
   atload='eval "$(lua ${ZINIT[PLUGINS_DIR]}/skywind3000---z.lua/z.lua --init zsh enhanced once fzf)"' \
     skywind3000/z.lua
