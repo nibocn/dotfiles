@@ -143,7 +143,7 @@ alias gfw='cd "/Users/richard/Library/Mobile Documents/com~apple~CloudDocs/sing-
 alias sn='sudo -e'
 # }}}
 # auth: 解锁 SSH key，有效期 1 天 (1d) 或 12 小时 (12h)
-alias ssh-auth="ssh-add -t 1d ~/.ssh/id_ed25519"
+alias ssh-auth="ssh-add -t 3d ~/.ssh/id_ed25519"
 
 # Proxy {{{
 function proxy() {
