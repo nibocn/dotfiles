@@ -30,8 +30,8 @@ nnoremap <C-o> :action Back<CR>
 nnoremap <C-i> :action Forward<CR>
 nnoremap [b gT
 nnoremap ]b gt
-nnoremap <leader>w :w<CR>
-nnoremap <leader>q :wq<CR>
+nnoremap <leader>fs :w<CR>
+nnoremap <leader>qq :wq<CR>
 nnoremap <leader>h <ESC>:action HideAllWindows<CR>
 
 " Find/Files/Fold {{{
@@ -58,7 +58,7 @@ nnoremap <leader>lR <ESC>:action RenameElement<CR>
 " }}}
 
 " 搜索内容（全局）
-nnoremap <leader>fs <ESC>:action FindInPath<CR>
+nnoremap <leader>sg <ESC>:action FindInPath<CR>
 
 " 显示文件结构（类似 tags）
 nnoremap <leader>tt <ESC>:action FileStructurePopup<CR>
