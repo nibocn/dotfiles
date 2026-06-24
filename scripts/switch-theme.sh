@@ -29,8 +29,10 @@ if [[ $BACKGROUND == "light" ]]; then
   # echo "day" > /tmp/nvim_variant
 
   NVIM_CMD="<Esc>:set background=light<CR>"
-  sed -i '' 's/^export NVIM_GRUVBOX_VARIANT=dark/# export NVIM_GRUVBOX_VARIANT=dark/g' ~/.zshrc
-  sed -i '' 's/^# export NVIM_GRUVBOX_VARIANT=light/export NVIM_GRUVBOX_VARIANT=light/g' ~/.zshrc
+  # sed -i '' 's/^export NVIM_GRUVBOX_VARIANT=dark/# export NVIM_GRUVBOX_VARIANT=dark/g' ~/.zshrc
+  # sed -i '' 's/^# export NVIM_GRUVBOX_VARIANT=light/export NVIM_GRUVBOX_VARIANT=light/g' ~/.zshrc
+  sed -i '' 's/^export NVIM_BG=dark/# export NVIM_BG=dark/g' ~/.zshrc
+  sed -i '' 's/^# export NVIM_BG=light/export NVIM_BG=light/g' ~/.zshrc
   echo "light" > /tmp/nvim_variant
 
   # zellij
@@ -98,8 +100,10 @@ elif [[ $BACKGROUND == "dark" ]]; then
   # echo "night" > /tmp/nvim_variant
 
   NVIM_CMD="<Esc>:set background=dark<CR>"
-  sed -i '' 's/^export NVIM_GRUVBOX_VARIANT=light/# export NVIM_GRUVBOX_VARIANT=light/g' ~/.zshrc
-  sed -i '' 's/^# export NVIM_GRUVBOX_VARIANT=dark/export NVIM_GRUVBOX_VARIANT=dark/g' ~/.zshrc
+  # sed -i '' 's/^export NVIM_GRUVBOX_VARIANT=light/# export NVIM_GRUVBOX_VARIANT=light/g' ~/.zshrc
+  # sed -i '' 's/^# export NVIM_GRUVBOX_VARIANT=dark/export NVIM_GRUVBOX_VARIANT=dark/g' ~/.zshrc
+  sed -i '' 's/^export NVIM_BG=light/# export NVIM_BG=light/g' ~/.zshrc
+  sed -i '' 's/^# export NVIM_BG=dark/export NVIM_BG=dark/g' ~/.zshrc
   echo "dark" > /tmp/nvim_variant
 
   # zellij
