@@ -3,8 +3,6 @@ scriptencoding utf-8
 set number
 " 启用相对行号
 set relativenumber
-" 自动切换输入法，依赖 IdeaVimExtension 插件
-set keep-english-in-normal-and-restore-in-insert
 " 搜索智能区分大小写
 set ignorecase smartcase
 " 高亮显示匹配结果
@@ -20,10 +18,6 @@ nnoremap <C-n> :nohl<CR>
 " 移动到文件最后一次编辑位置
 " 类似命令 gi 移动到文件最后一次编辑位置并进入 insert 模式
 nnoremap gn `^
-
-" 启用 Easymotion 插件
-set easymotion
-
 
 " Keymapping
 nnoremap <C-o> :action Back<CR>
@@ -107,5 +101,17 @@ vnoremap K :m '<-2<CR>gv=gv
 vnoremap J :m '>+1<CR>gv=gv
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
+
+" 不显示消息提示，主要是针对下面的输入法自动
+" 切换会在底部有个消息提醒看着不舒服
+set messagesopt=wait:0,history:500
+" 打开或禁用消息提示
+nnoremap <leader>mh :set messagesopt=hit-enter,history:500<CR>
+nnoremap <leader>mq :set messagesopt=wait:0,history:500<CR>
+
+augroup input_method_switch
+  autocmd!
+  autocmd InsertLeave * !/opt/homebrew/bin/im-select com.apple.keylayout.US
+augroup END
 
 " vim: set fdl=0 fdm=marker:
