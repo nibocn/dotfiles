@@ -58,11 +58,12 @@ preset = 'qwerty'
 4=['Built-in Retina Display', 'LG ULTRAGEAR']
 5=['Built-in Retina Display', 'LG ULTRAGEAR']
 
+# RTK UHD HDR - 便携显示器
 # 6-9 优先使用外接显示器。如果有多个外接，按期望的优先级排序。
-6 = ['U2790B', 'LG ULTRAGEAR', 'Built-in Retina Display']
-7 = ['U2790B', 'LG ULTRAGEAR', 'Built-in Retina Display']
-8 = ['LG HDR 4K', 'U2790B', 'LG ULTRAGEAR', 'Built-in Retina Display']
-9 = ['LG HDR 4K', 'U2790B', 'LG ULTRAGEAR', 'Built-in Retina Display']
+6 = ['RTK UHD HDR', 'U2790B', 'LG ULTRAGEAR', 'Built-in Retina Display']
+7 = ['RTK UHD HDR', 'U2790B', 'LG ULTRAGEAR', 'Built-in Retina Display']
+8 = ['RTK UHD HDR', 'LG HDR 4K', 'U2790B', 'LG ULTRAGEAR', 'Built-in Retina Display']
+9 = ['RTK UHD HDR', 'LG HDR 4K', 'U2790B', 'LG ULTRAGEAR', 'Built-in Retina Display']
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
