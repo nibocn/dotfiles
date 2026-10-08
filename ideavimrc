@@ -102,16 +102,16 @@ vnoremap J :m '>+1<CR>gv=gv
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
-" 不显示消息提示，主要是针对下面的输入法自动
-" 切换会在底部有个消息提醒看着不舒服
-set messagesopt=wait:0,history:500
-" 打开或禁用消息提示
-nnoremap <leader>mh :set messagesopt=hit-enter,history:500<CR>
-nnoremap <leader>mq :set messagesopt=wait:0,history:500<CR>
-
-augroup input_method_switch
-  autocmd!
-  autocmd InsertLeave * !/opt/homebrew/bin/im-select com.apple.keylayout.US
-augroup END
+" " 不显示消息提示，主要是针对下面的输入法自动
+" " 切换会在底部有个消息提醒看着不舒服
+" set messagesopt=wait:0,history:500
+" " 打开或禁用消息提示
+" nnoremap <leader>mh :set messagesopt=hit-enter,history:500<CR>
+" nnoremap <leader>mq :set messagesopt=wait:0,history:500<CR>
+"
+" augroup input_method_switch
+"   autocmd!
+"   autocmd InsertLeave * !/opt/homebrew/bin/im-select com.apple.keylayout.US
+" augroup END
 
 " vim: set fdl=0 fdm=marker:

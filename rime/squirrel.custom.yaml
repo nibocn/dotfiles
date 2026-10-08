@@ -5,8 +5,13 @@ patch:
       vim_mode: true
     com.jetbrains.WebStorm:
       ascii_mode: true
+      vim_mode: true
     com.jetbrains.intellij:
       ascii_mode: true
+      vim_mode: true
+    com.jetbrains.pycharm:
+      ascii_mode: true
+      vim_mode: true
 
   "status_icon/show": true
 
