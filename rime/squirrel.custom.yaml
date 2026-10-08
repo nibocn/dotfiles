@@ -2,6 +2,7 @@ patch:
   app_options:
     net.kovidgoyal.kitty:
       ascii_mode: true
+      vim_mode: true
     com.jetbrains.WebStorm:
       ascii_mode: true
     com.jetbrains.intellij:
