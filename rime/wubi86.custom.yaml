@@ -4,6 +4,8 @@ patch:
   # 告诉 speller，; 是合法输入码
   "speller/alphabet": "zyxwvutsrqponmlkjihgfedcba;"
 
+  "switches/@0/abbrev": [ 中, 英 ]
+
   # 开启自动造词功能 (如果你喜欢清歌的智能造词)
   "translator/enable_encoder": true
 

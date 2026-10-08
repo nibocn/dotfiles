@@ -7,6 +7,8 @@ patch:
     com.jetbrains.intellij:
       ascii_mode: true
 
+  "status_icon/show": true
+
   style:
     # --- 1. 强制横向排版的核心三要素 ---
     # 必须同时设置这三项，缺一不可，以防被默认值覆盖
