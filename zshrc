@@ -54,7 +54,7 @@ export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig:/opt/homebrew/opt/zlib
 # di=1;36  -> 1代表粗体，36代表青色 (Cyan)
 export LS_COLORS="$LS_COLORS:di=1;36:"
 
-export PATH=$HOME/go/bin:/usr/local/opt/llvm/bin:/opt/homebrew/opt/llvm/bin:/opt/homebrew/opt/libpq/bin:$HOME/opt/bin:$PATH
+export PATH=$HOME/go/bin:/usr/local/opt/llvm/bin:/opt/homebrew/opt/llvm/bin:/opt/homebrew/opt/libpq/bin:/opt/homebrew/opt/unzip/bin:$HOME/opt/bin:$PATH
 
 
 # Powerlevel10k {{{
