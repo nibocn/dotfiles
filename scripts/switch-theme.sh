@@ -2,6 +2,61 @@
 
 BACKGROUND="$1"
 
+# 切换 macOS Terminal.app 的 Gruvbox 主题
+function switch_terminal_theme() {
+    local mode="$1"
+    local profile
+
+    case "$mode" in
+        dark)
+            profile="Gruvbox-Dark"
+            ;;
+        light)
+            profile="Gruvbox-Light"
+            ;;
+        *)
+            echo "不支持的 Terminal 主题: $mode" >&2
+            return 1
+            ;;
+    esac
+
+    # Terminal 正在运行时，通过 AppleScript 更新
+    if pgrep -x Terminal >/dev/null 2>&1; then
+        /usr/bin/osascript - "$profile" <<'APPLESCRIPT'
+on run argv
+    set profileName to item 1 of argv
+
+    tell application "Terminal"
+        if not (exists settings set profileName) then
+            error "找不到 Terminal 主题: " & profileName
+        end if
+
+        set targetProfile to settings set profileName
+
+        -- 更新默认及启动 Profile
+        set default settings to targetProfile
+        set startup settings to targetProfile
+
+        -- 更新所有已经打开的窗口和标签页
+        repeat with w in windows
+            repeat with t in tabs of w
+                set current settings of t to targetProfile
+            end repeat
+        end repeat
+    end tell
+end run
+APPLESCRIPT
+    else
+        # Terminal 未运行时，只更新持久化偏好设置
+        # 避免 AppleScript 意外启动 Terminal
+        /usr/bin/defaults write com.apple.Terminal \
+            "Default Window Settings" -string "$profile"
+
+        /usr/bin/defaults write com.apple.Terminal \
+            "Startup Window Settings" -string "$profile"
+    fi
+}
+
 # 定义发送通知的函数 (macOS 原生)
 function send_notification() {
     local title="$1"
@@ -75,6 +130,10 @@ if [[ $BACKGROUND == "light" ]]; then
   sed -i '' 's/^# set -g @theme-background "light"/set -g @theme-background "light"/g' ~/.tmux.conf
   tmux source-file ~/.tmux.conf \; display-message "Config reloaded..."
 
+  # Terminal.app
+  switch_terminal_theme light || \
+    echo "Terminal Light 主题切换失败" >&2
+
   echo '完成.'
   # 发送系统通知
   send_notification "主题切换完成" "已切换到 Light 模式 ☀️"
@@ -147,6 +206,10 @@ elif [[ $BACKGROUND == "dark" ]]; then
   sed -i '' 's/^# set -g @theme-background "dark"/set -g @theme-background "dark"/g' ~/.tmux.conf
 
   tmux source-file ~/.tmux.conf \; display-message "Config reloaded..."
+
+  # Terminal.app
+  switch_terminal_theme dark || \
+    echo "Terminal Dark 主题切换失败" >&2
 
   echo '完成.'
   # 发送系统通知

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # 获取当前的外观模式
 get_appearance_mode() {
     osascript -e 'tell application "System Events" to tell appearance preferences to return dark mode'
@@ -16,10 +18,10 @@ while true; do
     if [ "$current_mode" != "$previous_mode" ]; then
         if [ "$current_mode" == "true" ]; then
             echo "Switched to Dark Mode"
-            ./switch-theme.sh dark
+            "$SCRIPT_DIR/switch-theme.sh" dark
         else
             echo "Switched to Light Mode"
-            ./switch-theme.sh light
+            "$SCRIPT_DIR/switch-theme.sh" light
         fi
         # 更新上一个模式
         previous_mode=$current_mode
